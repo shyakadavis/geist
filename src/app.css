@@ -115,6 +115,7 @@
 		/* Shadows */
 		--focus-border: 0 0 0 1px var(--gray-alpha-600), 0px 0px 0px 4px rgba(0, 0, 0, 0.16);
 		--focus-ring: 0 0 0 2px var(--background-100), 0 0 0 4px var(--focus-color);
+		--shadow-border: 0 0 0 1px rgba(0, 0, 0, 0.08);
 	}
 
 	.dark {
@@ -230,11 +231,11 @@
 
 @layer base {
 	* {
-		@apply border-gray-400 hover:border-gray-500 active:border-gray-600;
+		@apply border-gray-400;
 	}
 
 	body {
-		@apply relative bg-background-200 text-gray-1000 font-sans antialiased touch-manipulation;
+		@apply relative bg-background-200 text-gray-1000 font-sans selection:text-contrast-fg selection:bg-blue-800 antialiased touch-manipulation;
 		font-feature-settings: 'rlig' 1, 'calt' 0;
 		text-rendering: optimizeLegibility;
 		font-synthesis: none;

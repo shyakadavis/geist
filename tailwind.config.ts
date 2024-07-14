@@ -129,6 +129,7 @@ const config: Config = {
 				"focus-color": "var(--focus-color)",
 			},
 			boxShadow: {
+				"shadow-border": "var(--shadow-border)",
 				"focus-border": "var(--focus-border)",
 				"focus-ring": "var(--focus-ring)",
 				"border-inset": "var(--shadow-border-inset)",

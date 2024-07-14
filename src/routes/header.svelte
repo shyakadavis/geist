@@ -1,5 +1,6 @@
 <script lang="ts">
 import { Icons } from "$lib/assets/icons";
+import ThemeSwitcher from "./theme-switcher.svelte";
 </script>
 
 <header class="sticky top-0 z-10 mx-auto w-full max-w-[1220px]">
@@ -21,11 +22,17 @@ import { Icons } from "$lib/assets/icons";
 				type="button"
 			>
 				Search Geist
-				<kbd class="rounded text-gray-900" data-geist-kbd="">
-					<span style="min-width:1em;display:inline-block">⌘</span>
-					<span>K</span>
+				<kbd
+					class="pointer-events-none inline-flex h-5 min-w-5 select-none items-center justify-center gap-1 rounded-md border bg-background-100 px-1 font-mono text-xs font-medium text-gray-900"
+				>
+					<span class="text-base">⌘</span>
+					K
 				</kbd>
 			</button>
+
+			<div class="hidden xl:block">
+				<ThemeSwitcher />
+			</div>
 		</div>
 	</div>
 </header>
