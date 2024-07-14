@@ -1,4 +1,5 @@
 @import '@fontsource/geist-sans';
+@import '@fontsource/geist-mono';
 
 @tailwind base;
 @tailwind components;
@@ -6,77 +7,237 @@
 
 @layer base {
 	:root {
-		--background: 0 0% 100%;
-		--foreground: 0 0% 3.9%;
+		--background-100: hsl(0 0% 100%);
+		--background-200: hsl(0 0% 98%);
 
-		--muted: 0 0% 96.1%;
-		--muted-foreground: 0 0% 45.1%;
+		--gray-100: hsl(0 0% 95%);
+		--gray-200: hsl(0 0% 92%);
+		--gray-300: hsl(0 0% 90%);
+		--gray-400: hsl(0 0% 92%);
+		--gray-500: hsl(0 0% 79%);
+		--gray-600: hsl(0 0% 66%);
+		--gray-700: hsl(0 0% 56%);
+		--gray-800: hsl(0 0% 49%);
+		--gray-900: hsl(0 0% 40%);
+		--gray-1000: hsl(0 0% 9%);
 
-		--popover: 0 0% 100%;
-		--popover-foreground: 0 0% 3.9%;
+		--blue-100: hsl(212 100% 97%);
+		--blue-200: hsl(210 100% 96%);
+		--blue-300: hsl(210 100% 94%);
+		--blue-400: hsl(209 100% 90%);
+		--blue-500: hsl(209 100% 80%);
+		--blue-600: hsl(208 100% 66%);
+		--blue-700: hsl(212 100% 48%);
+		--blue-800: hsl(212 100% 41%);
+		--blue-900: hsl(211 100% 42%);
+		--blue-1000: hsl(211 100% 15%);
 
-		--card: 0 0% 100%;
-		--card-foreground: 0 0% 3.9%;
+		--red-100: hsl(0 100% 97%);
+		--red-200: hsl(0 100% 96%);
+		--red-300: hsl(0 100% 95%);
+		--red-400: hsl(0 90% 92%);
+		--red-500: hsl(0 82% 85%);
+		--red-600: hsl(359 90% 71%);
+		--red-700: hsl(358 75% 59%);
+		--red-800: hsl(358 70% 52%);
+		--red-900: hsl(358 66% 48%);
+		--red-1000: hsl(355 49% 15%);
 
-		--border: 0 0% 89.8%;
-		--input: 0 0% 89.8%;
+		--amber-100: hsl(39 100% 95%);
+		--amber-200: hsl(44 100% 92%);
+		--amber-300: hsl(43 96% 90%);
+		--amber-400: hsl(42 100% 78%);
+		--amber-500: hsl(38 100% 71%);
+		--amber-600: hsl(36 90% 62%);
+		--amber-700: hsl(39 100% 57%);
+		--amber-800: hsl(35 100% 52%);
+		--amber-900: hsl(30 100% 32%);
+		--amber-1000: hsl(20 79% 17%);
 
-		--primary: 0 0% 9%;
-		--primary-foreground: 0 0% 98%;
+		--green-100: hsl(120 60% 96%);
+		--green-200: hsl(120 60% 95%);
+		--green-300: hsl(120 60% 91%);
+		--green-400: hsl(122 60% 86%);
+		--green-500: hsl(124 60% 75%);
+		--green-600: hsl(125 60% 64%);
+		--green-700: hsl(131 41% 46%);
+		--green-800: hsl(132 43% 39%);
+		--green-900: hsl(133 50% 32%);
+		--green-1000: hsl(128 29% 15%);
 
-		--secondary: 0 0% 96.1%;
-		--secondary-foreground: 0 0% 9%;
+		--teal-100: hsl(169 70% 96%);
+		--teal-200: hsl(167 70% 94%);
+		--teal-300: hsl(168 70% 90%);
+		--teal-400: hsl(170 70% 85%);
+		--teal-500: hsl(170 70% 72%);
+		--teal-600: hsl(170 70% 57%);
+		--teal-700: hsl(173 80% 36%);
+		--teal-800: hsl(173 83% 30%);
+		--teal-900: hsl(174 91% 25%);
+		--teal-1000: hsl(171 80% 13%);
 
-		--accent: 0 0% 96.1%;
-		--accent-foreground: 0 0% 9%;
+		--purple-100: hsl(276 100% 97%);
+		--purple-200: hsl(277 87% 97%);
+		--purple-300: hsl(274 78% 95%);
+		--purple-400: hsl(276 71% 92%);
+		--purple-500: hsl(274 70% 82%);
+		--purple-600: hsl(273 72% 73%);
+		--purple-700: hsl(272 51% 54%);
+		--purple-800: hsl(272 47% 45%);
+		--purple-900: hsl(274 71% 43%);
+		--purple-1000: hsl(276 100% 15%);
 
-		--destructive: 0 72.2% 50.6%;
-		--destructive-foreground: 0 0% 98%;
+		--pink-100: hsl(330 100% 96%);
+		--pink-200: hsl(340 90% 96%);
+		--pink-300: hsl(340 82% 94%);
+		--pink-400: hsl(341 76% 91%);
+		--pink-500: hsl(340 75% 84%);
+		--pink-600: hsl(341 75% 73%);
+		--pink-700: hsl(336 80% 58%);
+		--pink-800: hsl(336 74% 51%);
+		--pink-900: hsl(336 65% 45%);
+		--pink-1000: hsl(333 74% 15%);
 
-		--ring: 0 0% 3.9%;
+		--gray-alpha-100: rgba(0, 0, 0, 0.05);
+		--gray-alpha-200: rgba(0, 0, 0, 0.08);
+		--gray-alpha-300: rgba(0, 0, 0, 0.1);
+		--gray-alpha-400: rgba(0, 0, 0, 0.08);
+		--gray-alpha-500: rgba(0, 0, 0, 0.21);
+		--gray-alpha-600: rgba(0, 0, 0, 0.34);
+		--gray-alpha-700: rgba(0, 0, 0, 0.44);
+		--gray-alpha-800: rgba(0, 0, 0, 0.51);
+		--gray-alpha-900: rgba(0, 0, 0, 0.61);
+		--gray-alpha-1000: rgba(0, 0, 0, 0.91);
 
-		--radius: 0.5rem;
+		--contrast-fg: hsl(0 0% 100%);
+		--focus-color: var(--blue-700);
+
+		/* Shadows */
+		--focus-border: 0 0 0 1px var(--gray-alpha-600), 0px 0px 0px 4px rgba(0, 0, 0, 0.16);
+		--focus-ring: 0 0 0 2px var(--background-100), 0 0 0 4px var(--focus-color);
+		--shadow-border: 0 0 0 1px rgba(0, 0, 0, 0.08);
 	}
 
 	.dark {
-		--background: 0 0% 3.9%;
-		--foreground: 0 0% 98%;
+		--background-100: hsl(0 0% 4%);
+		--background-200: hsl(0 0% 0%);
 
-		--muted: 0 0% 14.9%;
-		--muted-foreground: 0 0% 63.9%;
+		--gray-100: hsl(0 0% 10%);
+		--gray-200: hsl(0 0% 12%);
+		--gray-300: hsl(0 0% 16%);
+		--gray-400: hsl(0 0% 18%);
+		--gray-500: hsl(0 0% 27%);
+		--gray-600: hsl(0 0% 53%);
+		--gray-700: hsl(0 0% 56%);
+		--gray-800: hsl(0 0% 49%);
+		--gray-900: hsl(0 0% 63%);
+		--gray-1000: hsl(0 0% 93%);
 
-		--popover: 0 0% 3.9%;
-		--popover-foreground: 0 0% 98%;
+		--blue-100: hsl(216 50% 12%);
+		--blue-200: hsl(214 59% 15%);
+		--blue-300: hsl(213 71% 20%);
+		--blue-400: hsl(212 78% 23%);
+		--blue-500: hsl(211 86% 27%);
+		--blue-600: hsl(206 100% 50%);
+		--blue-700: hsl(212 100% 48%);
+		--blue-800: hsl(212 100% 41%);
+		--blue-900: hsl(210 100% 66%);
+		--blue-1000: hsl(206 100% 96%);
 
-		--card: 0 0% 3.9%;
-		--card-foreground: 0 0% 98%;
+		--red-100: hsl(357 37% 12%);
+		--red-200: hsl(357 46% 16%);
+		--red-300: hsl(356 54% 22%);
+		--red-400: hsl(357 55% 26%);
+		--red-500: hsl(357 60% 32%);
+		--red-600: hsl(358 75% 59%);
+		--red-700: hsl(358 75% 59%);
+		--red-800: hsl(358 69% 52%);
+		--red-900: hsl(358 100% 69%);
+		--red-1000: hsl(353 90% 96%);
 
-		--border: 0 0% 14.9%;
-		--input: 0 0% 14.9%;
+		--amber-100: hsl(35 100% 8%);
+		--amber-200: hsl(32 100% 10%);
+		--amber-300: hsl(33 100% 15%);
+		--amber-400: hsl(35 100% 17%);
+		--amber-500: hsl(35 91% 22%);
+		--amber-600: hsl(39 85% 49%);
+		--amber-700: hsl(39 100% 57%);
+		--amber-800: hsl(35 100% 52%);
+		--amber-900: hsl(39 90% 50%);
+		--amber-1000: hsl(40 94% 93%);
 
-		--primary: 0 0% 98%;
-		--primary-foreground: 0 0% 9%;
+		--green-100: hsl(136 50% 9%);
+		--green-200: hsl(137 50% 12%);
+		--green-300: hsl(136 50% 14%);
+		--green-400: hsl(135 70% 16%);
+		--green-500: hsl(135 70% 23%);
+		--green-600: hsl(135 70% 34%);
+		--green-700: hsl(131 41% 46%);
+		--green-800: hsl(132 43% 39%);
+		--green-900: hsl(131 43% 57%);
+		--green-1000: hsl(136 73% 94%);
 
-		--secondary: 0 0% 14.9%;
-		--secondary-foreground: 0 0% 98%;
+		--teal-100: hsl(169 78% 7%);
+		--teal-200: hsl(170 74% 9%);
+		--teal-300: hsl(171 75% 13%);
+		--teal-400: hsl(171 85% 13%);
+		--teal-500: hsl(172 85% 20%);
+		--teal-600: hsl(172 85% 32%);
+		--teal-700: hsl(173 80% 36%);
+		--teal-800: hsl(173 83% 30%);
+		--teal-900: hsl(174 90% 41%);
+		--teal-1000: hsl(166 71% 93%);
 
-		--accent: 0 0% 14.9%;
-		--accent-foreground: 0 0% 98%;
+		--purple-100: hsl(283 30% 12%);
+		--purple-200: hsl(281 38% 16%);
+		--purple-300: hsl(279 44% 23%);
+		--purple-400: hsl(277 46% 28%);
+		--purple-500: hsl(274 49% 35%);
+		--purple-600: hsl(272 51% 54%);
+		--purple-700: hsl(272 51% 54%);
+		--purple-800: hsl(272 47% 45%);
+		--purple-900: hsl(275 80% 71%);
+		--purple-1000: hsl(281 73% 96%);
 
-		--destructive: 0 62.8% 30.6%;
-		--destructive-foreground: 0 0% 98%;
+		--pink-100: hsl(335 32% 12%);
+		--pink-200: hsl(335 43% 16%);
+		--pink-300: hsl(335 47% 21%);
+		--pink-400: hsl(335 51% 22%);
+		--pink-500: hsl(335 57% 27%);
+		--pink-600: hsl(336 75% 40%);
+		--pink-700: hsl(336 80% 58%);
+		--pink-800: hsl(336 74% 51%);
+		--pink-900: hsl(341 90% 67%);
+		--pink-1000: hsl(333 90% 96%);
 
-		--ring: 0 0% 83.1%;
+		--gray-alpha-100: hsla(0, 0%, 100%, 0.06);
+		--gray-alpha-200: hsla(0, 0%, 100%, 0.09);
+		--gray-alpha-300: hsla(0, 0%, 100%, 0.13);
+		--gray-alpha-400: hsla(0, 0%, 100%, 0.14);
+		--gray-alpha-500: hsla(0, 0%, 100%, 0.24);
+		--gray-alpha-600: hsla(0, 0%, 100%, 0.51);
+		--gray-alpha-700: hsla(0, 0%, 100%, 0.54);
+		--gray-alpha-800: hsla(0, 0%, 100%, 0.47);
+		--gray-alpha-900: hsla(0, 0%, 100%, 0.61);
+		--gray-alpha-1000: hsla(0, 0%, 100%, 0.92);
+
+		--focus-color: var(--blue-900);
+
+		/* Shadows */
+		--focus-border: 0 0 0 1px var(--gray-alpha-600), 0px 0px 0px 4px hsla(0, 0%, 100%, 0.24);
+		--shadow-border-inset: inset 0 0 0 1px hsla(0, 0%, 100%, 0.1);
 	}
 }
 
 @layer base {
 	* {
-		@apply border-border;
+		@apply border-gray-400;
 	}
+
 	body {
-		@apply bg-background text-foreground font-sans antialiased;
-		font-synthesis-weight: none;
+		@apply relative bg-background-200 text-gray-1000 font-sans selection:text-contrast-fg selection:bg-blue-800 antialiased touch-manipulation;
+		font-feature-settings: 'rlig' 1, 'calt' 0;
 		text-rendering: optimizeLegibility;
+		font-synthesis: none;
 	}
 }

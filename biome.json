@@ -4,9 +4,14 @@
 		"enabled": true
 	},
 	"linter": {
+		"ignore": ["node_modules", ".svelte-kit", "build"],
 		"enabled": true,
 		"rules": {
 			"recommended": true
 		}
+	},
+	"formatter": {
+		"ignore": ["node_modules", ".svelte-kit", "build"],
+		"enabled": true
 	}
 }
