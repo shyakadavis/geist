@@ -1,8 +1,8 @@
 <script>
-	import { ModeWatcher } from 'mode-watcher';
-	import '../app.css';
-	import Aside from './aside.svelte';
-	import Header from './header.svelte';
+import { ModeWatcher } from "mode-watcher";
+import "../app.css";
+import Aside from "./aside.svelte";
+import Header from "./header.svelte";
 </script>
 
 <ModeWatcher />
