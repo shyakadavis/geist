@@ -225,7 +225,6 @@
 		/* Shadows */
 		--focus-border: 0 0 0 1px var(--gray-alpha-600), 0px 0px 0px 4px hsla(0, 0%, 100%, 0.24);
 		--shadow-border-inset: inset 0 0 0 1px hsla(0, 0%, 100%, 0.1);
-		--focus-ring: 0 0 0 2px var(--background-100), 0 0 0 4px var(--focus-color);
 	}
 }
 
