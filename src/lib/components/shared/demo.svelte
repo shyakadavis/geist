@@ -1,15 +1,15 @@
 <script lang="ts">
-import { Icons } from "$lib/assets/icons";
-import { cn } from "$lib/utils";
+	import { Icons } from '$lib/assets/icons';
+	import { cn } from '$lib/utils';
 
-export let id: string;
-// biome-ignore lint/style/useConst: <explanation>
-let class_name: string | undefined = undefined;
-export { class_name as class };
+	export let id: string;
+	// biome-ignore lint/style/useConst: <explanation>
+	let class_name: string | undefined = undefined;
+	export { class_name as class };
 
-function format_string(str: string) {
-	return str.replace(/-/g, " ").replace(/\b\w/g, (char) => char.toUpperCase());
-}
+	function format_string(str: string) {
+		return str.replace(/-/g, ' ').replace(/\b\w/g, (char) => char.toUpperCase());
+	}
 </script>
 
 <section class="grid border-t p-12">
@@ -21,7 +21,7 @@ function format_string(str: string) {
 		<h2 class="text-2xl font-semibold tracking-tighter">
 			<Icons.Link
 				aria-hidden="true"
-				class="size-4 absolute left-0 top-[8px] opacity-0 outline-none group-hover:opacity-100 group-focus:opacity-100 capitalize"
+				class="size-4 absolute left-0 top-[8px] opacity-0 outline-none group-hover:opacity-100 group-focus:opacity-100"
 			/>
 			{format_string(id)}
 		</h2>
