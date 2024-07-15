@@ -17,6 +17,7 @@ import Globe from "./globe.svg?component";
 import GridSquare from "./grid-square.svg?component";
 import Inbox from "./inbox.svg?component";
 import Key from "./key.svg?component";
+import Link from "./link.svg?component";
 import LogoGeist from "./logo-geist.svg";
 import LogoNext from "./logo-next.svg?component";
 import LogoTurborepo from "./logo-turborepo.svg?component";
@@ -53,6 +54,7 @@ export const Icons = {
 	GridSquare,
 	Inbox,
 	Key,
+	Link,
 	LogoGeist,
 	LogoNext,
 	LogoTurborepo,

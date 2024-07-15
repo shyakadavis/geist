@@ -1,5 +1,6 @@
 <script lang="ts">
 import { page } from "$app/stores";
+import { Badge } from "$lib/components/ui/badge";
 import AsideItem from "./aside-item.svelte";
 import { aside_items } from "./sitemap";
 
@@ -32,6 +33,9 @@ $: is_active = (href: string) => {
 						class="mb-0.5 capitalize flex h-10 items-center text-gray-1000 font-bold text-sm gap-2 py-1.5 pl-1"
 					>
 						{group}
+						{#if group === 'components'}
+							<Badge variant="pink-subtle" size="sm">Internal</Badge>
+						{/if}
 					</dt>
 					<dd>
 						<ul class="relative space-y-0.5" style="width:calc(100% + 8px)">
