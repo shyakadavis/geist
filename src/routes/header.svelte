@@ -3,7 +3,7 @@ import { Icons } from "$lib/assets/icons";
 import ThemeSwitcher from "./theme-switcher.svelte";
 </script>
 
-<header class="sticky top-0 z-10 mx-auto w-full max-w-[1220px]">
+<header class="sticky top-0 z-20 mx-auto w-full max-w-[1220px]">
 	<div
 		class="border-gray-alpha-400 bg-background-100 flex w-full max-w-[1219px] border-b border-l border-r pl-[22px] dark:border-[#242424]"
 	>
