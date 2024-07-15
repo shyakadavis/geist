@@ -3,6 +3,7 @@ import Box from "./box.svg?component";
 import BrandAssets from "./brand-assets.svg?component";
 import CharBarMiddle from "./chart-bar-middle.svg?component";
 import CharTrendingDown from "./chart-trending-down.svg?component";
+import ChevronRightSmall from "./chevron-right-small.svg?component";
 import ChevronRight from "./chevron-right.svg?component";
 import ClockDashed from "./clock-dashed.svg?component";
 import CodeBracket from "./code-bracket.svg?component";
@@ -40,6 +41,7 @@ export const Icons = {
 	BrandAssets,
 	CharBarMiddle,
 	CharTrendingDown,
+	ChevronRightSmall,
 	ChevronRight,
 	ClockDashed,
 	CodeBracket,
