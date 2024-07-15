@@ -18,7 +18,7 @@ $: is_active = (href: string) => {
 </script>
 
 <aside
-	class="border-gray-alpha-400 sticky bottom-0 top-[64px] order-1 hidden w-[260px] flex-col border-l border-r xl:flex"
+	class="border-gray-alpha-400 z-10 sticky bottom-0 top-[64px] order-1 hidden w-[260px] flex-col border-l border-r xl:flex"
 	style="height:calc(100vh - 64px)"
 >
 	<div class="relative flex h-full min-h-0 grow flex-col">
