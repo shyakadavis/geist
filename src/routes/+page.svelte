@@ -116,7 +116,7 @@ const preview_colors = [
 			<IntroductionLink
 				title="Typeface"
 				description="Specifically designed for developers and designers."
-				href="/font"
+				href="https://vercel.com/font"
 			>
 				<div
 					class="border-1 relative grid h-20 grow grid-cols-2 place-items-center justify-around rounded border border-dashed border-gray-400"

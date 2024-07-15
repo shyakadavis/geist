@@ -4,14 +4,26 @@
 		"enabled": true
 	},
 	"linter": {
-		"ignore": ["node_modules", ".svelte-kit", "build"],
+		"ignore": [
+			"node_modules",
+			".svelte-kit",
+			"build",
+			"vite.config.js.timestamp-*",
+			"vite.config.ts.timestamp-*"
+		],
 		"enabled": true,
 		"rules": {
 			"recommended": true
 		}
 	},
 	"formatter": {
-		"ignore": ["node_modules", ".svelte-kit", "build"],
+		"ignore": [
+			"node_modules",
+			".svelte-kit",
+			"build",
+			"vite.config.js.timestamp-*",
+			"vite.config.ts.timestamp-*"
+		],
 		"enabled": true
 	}
 }

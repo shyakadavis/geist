@@ -7,6 +7,10 @@ export let href: string;
 // biome-ignore lint/style/useConst: This is a Svelte state variable
 let class_name: string | undefined = undefined;
 export { class_name as class };
+
+function is_link_external(href: string) {
+	return href.startsWith("http");
+}
 </script>
 
 <a
@@ -15,6 +19,8 @@ export { class_name as class };
 		class_name,
 	)}
 	{href}
+	target={is_link_external(href) ? '_blank' : undefined}
+	rel={is_link_external(href) ? 'noopener noreferrer' : undefined}
 >
 	<slot></slot>
 	<div class="mt-auto">
