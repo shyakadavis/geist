@@ -31,7 +31,7 @@ onMount(() => {
 
 <section class="grid border-t p-12">
 	<a
-		class="focus-visible:shadow-focus-ring group relative -ml-5 inline-block pl-5 no-underline outline-none scroll-mt-8 w-fit"
+		class="focus-visible:shadow-focus-ring group relative -ml-5 inline-block pl-5 no-underline outline-none scroll-mt-20 w-fit"
 		href="#{id}"
 		{id}
 	>
