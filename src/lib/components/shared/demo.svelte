@@ -58,7 +58,7 @@ onMount(() => {
 						aria-hidden="true"
 						class="size-4 group-open:rotate-90 transition-transform"
 					/>
-					<p class="relative inline-flex flex-col h-[1.5em] overflow-hidden">
+					<p class="relative inline-flex flex-col select-none h-[1.5em] overflow-hidden">
 						<span class="transition-transform ease-in-out group-open:-translate-y-full">
 							Show code
 						</span>
