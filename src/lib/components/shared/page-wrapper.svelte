@@ -14,7 +14,7 @@
 	)}
 >
 	<div class="min-w-[300px] max-w-[1200px] border-r">
-		<section class="p-12">
+		<section class="border-b p-12">
 			<h1
 				class="mb-3 text-2xl font-semibold tracking-tighter text-gray-1000 sm:text-3xl md:text-4xl"
 			>
