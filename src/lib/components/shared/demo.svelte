@@ -92,7 +92,7 @@
 
 					<button
 						type="button"
-						class="absolute right-10 top-10 flex items-center justify-center rounded-md border-gray-alpha-400 bg-background-100 p-2 transition-colors hover:bg-gray-alpha-200"
+						class="absolute right-10 top-10 hidden items-center justify-center rounded-md border-gray-alpha-400 bg-background-100 p-2 transition-colors hover:bg-gray-alpha-200 md:flex"
 						on:click={copy_code}
 					>
 						{#if copied}
