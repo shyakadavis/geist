@@ -14,6 +14,6 @@
 </Avatar>
 
 <Avatar icon={Icons.LogoBitbucketColor} class="size-8">
-	<AvatarImage src="https://github.com/evilrabbit.png" alt="@dummdidumm" />
+	<AvatarImage src="https://github.com/dummdidumm.png" alt="@dummdidumm" />
 	<AvatarFallback>SH</AvatarFallback>
 </Avatar>
