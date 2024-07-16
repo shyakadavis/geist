@@ -38,7 +38,11 @@
 					<dd>
 						<ul class="relative space-y-0.5" style="width:calc(100% + 8px)">
 							{#each links as link}
-								<AsideItem active={is_active(link.href)} {link} />
+								<AsideItem
+									active={is_active(link.href)}
+									{link}
+									disabled={link?.status === 'soon'}
+								/>
 							{/each}
 						</ul>
 					</dd>

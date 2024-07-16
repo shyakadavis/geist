@@ -1,14 +1,19 @@
 <script lang="ts">
+	import { Badge } from '$lib/components/ui/badge';
 	import { cn } from '$lib/utils';
 	import type { Link } from './sitemap';
 
 	export let link: Link;
 	export let active: boolean;
+	export let disabled: boolean | undefined = undefined;
 </script>
 
 <li>
-	<a
-		class="group no-underline outline-none"
+	<svelte:element
+		this={disabled ? 'span' : 'a'}
+		class={cn('group no-underline outline-none', {
+			'pointer-events-none select-none opacity-50': disabled
+		})}
 		href={link.href}
 		aria-current={active ? 'true' : 'false'}
 	>
@@ -26,6 +31,13 @@
 				</span>
 			{/if}
 			<span>{link.title}</span>
+
+			{#if link.status === 'new'}
+				<Badge variant="blue" size="sm">New</Badge>
+			{/if}
+			{#if link.status === 'soon'}
+				<Badge variant="gray-subtle" size="sm">Soon</Badge>
+			{/if}
 		</span>
-	</a>
+	</svelte:element>
 </li>
