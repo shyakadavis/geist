@@ -4,8 +4,8 @@
 	import { aside_items, type Link } from './sitemap';
 
 	function generate_prev_next_links(current_href: string): {
-		prev: Link | null;
-		next: Link | null;
+		prev: Link | undefined;
+		next: Link | undefined;
 	} {
 		const all_links: Link[] = Object.values(aside_items)
 			.flat()
@@ -13,11 +13,11 @@
 		const current_index = all_links.findIndex((link) => link.href === current_href);
 
 		if (current_index === -1) {
-			return { prev: null, next: null };
+			return { prev: undefined, next: undefined };
 		}
 
-		const prev = current_index > 0 ? all_links[current_index - 1] : null;
-		const next = current_index < all_links.length - 1 ? all_links[current_index + 1] : null;
+		const prev = current_index > 0 ? all_links[current_index - 1] : undefined;
+		const next = current_index < all_links.length - 1 ? all_links[current_index + 1] : undefined;
 
 		return { prev, next };
 	}
