@@ -1,9 +1,9 @@
 <script lang="ts">
-import { cn } from "$lib/utils";
-import type { Link } from "./sitemap";
+	import { cn } from '$lib/utils';
+	import type { Link } from './sitemap';
 
-export let link: Link;
-export let active: boolean;
+	export let link: Link;
+	export let active: boolean;
 </script>
 
 <li>
@@ -14,10 +14,10 @@ export let active: boolean;
 	>
 		<span
 			class={cn(
-				'group-focus-visible:shadow-focus-ring group relative -ml-2 flex h-[40px] items-center gap-2.5 rounded-md px-3 py-1.5 outline-none text-gray-900 hover:bg-gray-100 text-sm font-normal',
+				'group relative -ml-2 flex h-[40px] items-center gap-2.5 rounded-md px-3 py-1.5 text-sm font-normal text-gray-900 outline-none hover:bg-gray-100 group-focus-visible:shadow-focus-ring',
 				{
-					'text-gray-1000 bg-gray-alpha-100': active,
-				},
+					'bg-gray-alpha-100 text-gray-1000': active
+				}
 			)}
 		>
 			{#if link.icon}
