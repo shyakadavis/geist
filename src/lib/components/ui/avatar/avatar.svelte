@@ -24,7 +24,7 @@
 	{#if icon}
 		<svelte:component
 			this={icon}
-			class="absolute -bottom-[5px] -left-[3px] size-3.5 overflow-visible rounded-full bg-background-200"
+			class="absolute -bottom-[5px] -left-[3px] size-3.5 rounded-full bg-background-200"
 			aria-hidden="true"
 		/>
 	{/if}
