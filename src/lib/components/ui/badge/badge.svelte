@@ -1,19 +1,15 @@
 <script lang="ts">
-import { cn } from "$lib/utils.js";
-import { type Props, badgeVariants } from "./index.js";
+	import { cn } from '$lib/utils.js';
+	import { type Props, badgeVariants } from './index.js';
 
-type $$Props = Props;
+	type $$Props = Props;
 
-// biome-ignore lint/style/useConst: <explanation>
-let className: string | undefined | null = undefined;
-// biome-ignore lint/style/useConst: <explanation>
-export let href: string | undefined = undefined;
-export let variant: $$Props["variant"];
-// biome-ignore lint/style/useConst: <explanation>
-export let size: $$Props["size"] = "md";
-export { className as class };
-// biome-ignore lint/style/useConst: <explanation>
-export let icon: $$Props["icon"] = undefined;
+	let className: string | undefined | null = undefined;
+	export let href: string | undefined = undefined;
+	export let variant: $$Props['variant'];
+	export let size: $$Props['size'] = 'md';
+	export { className as class };
+	export let icon: $$Props['icon'] = undefined;
 </script>
 
 <svelte:element

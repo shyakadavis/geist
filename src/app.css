@@ -235,7 +235,9 @@
 	}
 
 	body {
-		@apply relative bg-background-200 text-gray-1000 font-sans selection:text-contrast-fg selection:bg-blue-800 antialiased touch-manipulation overflow-x-hidden;
-		font-feature-settings: 'rlig' 1, 'calt' 0;
+		@apply relative touch-manipulation overflow-x-hidden bg-background-200 font-sans text-gray-1000 antialiased selection:bg-blue-800 selection:text-contrast-fg;
+		font-feature-settings:
+			'rlig' 1,
+			'calt' 0;
 	}
 }

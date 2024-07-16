@@ -1,8 +1,8 @@
 <script lang="ts">
-import { Icons } from "$lib/assets/icons";
-import Demo from "$lib/components/shared/demo.svelte";
-import PageWrapper from "$lib/components/shared/page-wrapper.svelte";
-import { Badge } from "$lib/components/ui/badge";
+	import { Icons } from '$lib/assets/icons';
+	import Demo from '$lib/components/shared/demo.svelte';
+	import PageWrapper from '$lib/components/shared/page-wrapper.svelte';
+	import { Badge } from '$lib/components/ui/badge';
 </script>
 
 <PageWrapper

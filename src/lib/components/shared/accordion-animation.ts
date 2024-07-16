@@ -13,9 +13,9 @@ class Accordion {
 		// Store the <details> element
 		this.el = el;
 		// Store the <summary> element
-		this.summary = el.querySelector("summary") as HTMLElement;
+		this.summary = el.querySelector('summary') as HTMLElement;
 		// Store the <div class="content"> element
-		this.content = el.querySelector(".content") as HTMLElement;
+		this.content = el.querySelector('.content') as HTMLElement;
 		// Store the animation object (so we can cancel it if needed)
 		this.animation = null;
 		// Store if the element is closing
@@ -25,7 +25,7 @@ class Accordion {
 		// Store the click handler
 		this.click_handler = (e) => this.on_click(e);
 		// Detect user clicks on the summary element
-		this.summary.addEventListener("click", this.click_handler);
+		this.summary.addEventListener('click', this.click_handler);
 		// Store the custom animation duration
 		this.animation_duration = animation_duration;
 	}
@@ -33,7 +33,7 @@ class Accordion {
 	on_click(e: Event): void {
 		e.preventDefault();
 		// Add an overflow on the <details> to avoid content overflowing
-		this.el.style.overflow = "hidden";
+		this.el.style.overflow = 'hidden';
 		// Check if the element is being closed or is already closed
 		if (this.is_closing || !this.el.open) {
 			this.open();
@@ -62,18 +62,17 @@ class Accordion {
 		this.animation = this.el.animate(
 			{
 				// Set the keyframes from the start_height to end_height
-				height: [start_height, end_height],
+				height: [start_height, end_height]
 			},
 			{
 				duration: this.animation_duration,
-				easing: "ease-out",
-			},
+				easing: 'ease-out'
+			}
 		);
 
 		// When the animation is complete, call on_animation_finish()
 		this.animation.onfinish = () => this.on_animation_finish(false);
 		// If the animation is cancelled, isClosing variable is set to false
-		// biome-ignore lint/suspicious/noAssignInExpressions: <explanation>
 		this.animation.oncancel = () => (this.is_closing = false);
 	}
 
@@ -104,17 +103,16 @@ class Accordion {
 		this.animation = this.el.animate(
 			{
 				// Set the keyframes from the start_height to end_height
-				height: [start_height, end_height],
+				height: [start_height, end_height]
 			},
 			{
 				duration: this.animation_duration,
-				easing: "ease-out",
-			},
+				easing: 'ease-out'
+			}
 		);
 		// When the animation is complete, call on_animation_finish()
 		this.animation.onfinish = () => this.on_animation_finish(true);
 		// If the animation is cancelled, is_expanding variable is set to false
-		// biome-ignore lint/suspicious/noAssignInExpressions: <explanation>
 		this.animation.oncancel = () => (this.is_expanding = false);
 	}
 
@@ -127,12 +125,12 @@ class Accordion {
 		this.is_closing = false;
 		this.is_expanding = false;
 		// Remove the overflow hidden and the fixed height
-		this.el.style.height = "";
-		this.el.style.overflow = "";
+		this.el.style.height = '';
+		this.el.style.overflow = '';
 	}
 
 	destroy(): void {
-		this.summary.removeEventListener("click", this.click_handler);
+		this.summary.removeEventListener('click', this.click_handler);
 		if (this.animation) {
 			this.animation.cancel();
 		}

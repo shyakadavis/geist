@@ -1,4 +1,4 @@
-import { Icons } from "$lib/assets/icons";
+import { Icons } from '$lib/assets/icons';
 
 export type Aside = Record<string, Link[]>;
 export type Link = {
@@ -10,220 +10,220 @@ export type Link = {
 export const aside_items: Aside = {
 	foundations: [
 		{
-			title: "Introduction",
-			href: "/",
+			title: 'Introduction',
+			href: '/'
 		},
 		{
-			title: "Colors",
-			href: "/colors",
+			title: 'Colors',
+			href: '/colors'
 		},
 		{
-			title: "Icons",
-			href: "/icons",
-		},
+			title: 'Icons',
+			href: '/icons'
+		}
 	],
 	brands: [
 		{
-			title: "Vercel",
-			href: "brands#vercel",
-			icon: Icons.LogoVercel,
+			title: 'Vercel',
+			href: 'brands#vercel',
+			icon: Icons.LogoVercel
 		},
 		{
-			title: "Next.js",
-			href: "brands#next.js",
-			icon: Icons.LogoNext,
+			title: 'Next.js',
+			href: 'brands#next.js',
+			icon: Icons.LogoNext
 		},
 		{
-			title: "Turbo",
-			href: "brands#turbo",
-			icon: Icons.LogoTurborepo,
+			title: 'Turbo',
+			href: 'brands#turbo',
+			icon: Icons.LogoTurborepo
 		},
 		{
-			title: "v0",
-			href: "brands#v0",
-			icon: Icons.LogoV0,
-		},
+			title: 'v0',
+			href: 'brands#v0',
+			icon: Icons.LogoV0
+		}
 	],
 	components: [
 		{
-			title: "Avatar",
-			href: "/avatar",
+			title: 'Avatar',
+			href: '/avatar'
 		},
 		{
-			title: "Badge",
-			href: "/badge",
+			title: 'Badge',
+			href: '/badge'
 		},
 		{
-			title: "Book",
-			href: "/book",
+			title: 'Book',
+			href: '/book'
 		},
 		{
-			title: "Button",
-			href: "/button",
+			title: 'Button',
+			href: '/button'
 		},
 		{
-			title: "Calendar",
-			href: "/calendar",
+			title: 'Calendar',
+			href: '/calendar'
 		},
 		{
-			title: "Checkbox",
-			href: "/checkbox",
+			title: 'Checkbox',
+			href: '/checkbox'
 		},
 		{
-			title: "Choicebox",
-			href: "/choicebox",
+			title: 'Choicebox',
+			href: '/choicebox'
 		},
 		{
-			title: "Code Block",
-			href: "/code-block",
+			title: 'Code Block',
+			href: '/code-block'
 		},
 		{
-			title: "Collapse",
-			href: "/collapse",
+			title: 'Collapse',
+			href: '/collapse'
 		},
 		{
-			title: "Combobox",
-			href: "/combobox",
+			title: 'Combobox',
+			href: '/combobox'
 		},
 		{
-			title: "Context Menu",
-			href: "/context-menu",
+			title: 'Context Menu',
+			href: '/context-menu'
 		},
 		{
-			title: "Description",
-			href: "/description",
+			title: 'Description',
+			href: '/description'
 		},
 		{
-			title: "Drawer",
-			href: "/drawer",
+			title: 'Drawer',
+			href: '/drawer'
 		},
 		{
-			title: "Empty State",
-			href: "/empty-state",
+			title: 'Empty State',
+			href: '/empty-state'
 		},
 		{
-			title: "Error",
-			href: "/error",
+			title: 'Error',
+			href: '/error'
 		},
 		{
-			title: "Feedback",
-			href: "/feedback",
+			title: 'Feedback',
+			href: '/feedback'
 		},
 		{
-			title: "Gauge",
-			href: "/gauge",
+			title: 'Gauge',
+			href: '/gauge'
 		},
 		{
-			title: "Grid",
-			href: "/grid",
+			title: 'Grid',
+			href: '/grid'
 		},
 		{
-			title: "Input",
-			href: "/input",
+			title: 'Input',
+			href: '/input'
 		},
 		{
-			title: "Keyboard Input",
-			href: "/keyboard-input",
+			title: 'Keyboard Input',
+			href: '/keyboard-input'
 		},
 		{
-			title: "Loading Dots",
-			href: "/loading-dots",
+			title: 'Loading Dots',
+			href: '/loading-dots'
 		},
 		{
-			title: "Menu",
-			href: "/menu",
+			title: 'Menu',
+			href: '/menu'
 		},
 		{
-			title: "Modal",
-			href: "/modal",
+			title: 'Modal',
+			href: '/modal'
 		},
 		{
-			title: "Note",
-			href: "/note",
+			title: 'Note',
+			href: '/note'
 		},
 		{
-			title: "Pagination",
-			href: "/pagination",
+			title: 'Pagination',
+			href: '/pagination'
 		},
 		{
-			title: "Progress",
-			href: "/progress",
+			title: 'Progress',
+			href: '/progress'
 		},
 		{
-			title: "Radio",
-			href: "/radio",
+			title: 'Radio',
+			href: '/radio'
 		},
 		{
-			title: "Scroller",
-			href: "/scroller",
+			title: 'Scroller',
+			href: '/scroller'
 		},
 		{
-			title: "Select",
-			href: "/select",
+			title: 'Select',
+			href: '/select'
 		},
 		{
-			title: "Show more",
-			href: "/show-more",
+			title: 'Show more',
+			href: '/show-more'
 		},
 		{
-			title: "Skeleton",
-			href: "/skeleton",
+			title: 'Skeleton',
+			href: '/skeleton'
 		},
 		{
-			title: "Snippet",
-			href: "/snippet",
+			title: 'Snippet',
+			href: '/snippet'
 		},
 		{
-			title: "Spinner",
-			href: "/spinner",
+			title: 'Spinner',
+			href: '/spinner'
 		},
 		{
-			title: "Stack",
-			href: "/stack",
+			title: 'Stack',
+			href: '/stack'
 		},
 		{
-			title: "Status Dot",
-			href: "/status-dot",
+			title: 'Status Dot',
+			href: '/status-dot'
 		},
 		{
-			title: "Switch",
-			href: "/switch",
+			title: 'Switch',
+			href: '/switch'
 		},
 		{
-			title: "Table",
-			href: "/table",
+			title: 'Table',
+			href: '/table'
 		},
 		{
-			title: "Tabs",
-			href: "/tabs",
+			title: 'Tabs',
+			href: '/tabs'
 		},
 		{
-			title: "Text",
-			href: "/text",
+			title: 'Text',
+			href: '/text'
 		},
 		{
-			title: "Textarea",
-			href: "/textarea",
+			title: 'Textarea',
+			href: '/textarea'
 		},
 		{
-			title: "Theme Switcher",
-			href: "/theme-switcher",
+			title: 'Theme Switcher',
+			href: '/theme-switcher'
 		},
 		{
-			title: "Toast",
-			href: "/toast",
+			title: 'Toast',
+			href: '/toast'
 		},
 		{
-			title: "Toggle",
-			href: "/toggle",
+			title: 'Toggle',
+			href: '/toggle'
 		},
 		{
-			title: "Tooltip",
-			href: "/tooltip",
+			title: 'Tooltip',
+			href: '/tooltip'
 		},
 		{
-			title: "Window",
-			href: "/window",
-		},
-	],
+			title: 'Window',
+			href: '/window'
+		}
+	]
 };

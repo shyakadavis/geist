@@ -1,7 +1,7 @@
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces
 
-import "@poppanator/sveltekit-svg/dist/svg";
+import '@poppanator/sveltekit-svg/dist/svg';
 
 declare global {
 	namespace App {
@@ -13,5 +13,4 @@ declare global {
 	}
 }
 
-// biome-ignore lint/complexity/noUselessEmptyExport: This is a placeholder for the `export type {}` syntax
 export type {};

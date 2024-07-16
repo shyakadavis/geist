@@ -45,4 +45,4 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - run: pnpm format:lint
+      - run: pnpm lint
