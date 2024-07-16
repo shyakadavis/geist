@@ -5,7 +5,7 @@ export type Link = {
 	title: string;
 	href: string;
 	icon?: typeof Icons.LogoNext;
-	status?: 'new' | 'soon';
+	status?: 'new' | 'soon' | 'draft';
 };
 
 export const aside_items: Aside = {
@@ -55,7 +55,7 @@ export const aside_items: Aside = {
 		{
 			title: 'Avatar',
 			href: '/avatar',
-			status: 'soon'
+			status: 'new'
 		},
 		{
 			title: 'Badge',

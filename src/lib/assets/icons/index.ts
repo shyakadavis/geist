@@ -21,7 +21,10 @@ import GridSquare from './grid-square.svg?component';
 import Inbox from './inbox.svg?component';
 import Key from './key.svg?component';
 import Link from './link.svg?component';
-import LogoGeist from './logo-geist.svg';
+import LogoBitbucketColor from './logo-bitbucket-color.svg?component';
+import LogoGeist from './logo-geist.svg?component';
+import LogoGithub from './logo-github.svg?component';
+import LogoGitlab from './logo-gitlab.svg?component';
 import LogoNext from './logo-next.svg?component';
 import LogoTurborepo from './logo-turborepo.svg?component';
 import LogoV0 from './logo-v0.svg?component';
@@ -61,7 +64,10 @@ export const Icons = {
 	Inbox,
 	Key,
 	Link,
+	LogoBitbucketColor,
 	LogoGeist,
+	LogoGithub,
+	LogoGitlab,
 	LogoNext,
 	LogoTurborepo,
 	LogoV0,

@@ -2,7 +2,7 @@ import type { Icons } from '$lib/assets/icons';
 import { type VariantProps, tv } from 'tailwind-variants';
 
 export { default as Badge } from './badge.svelte';
-export const badgeVariants = tv({
+export const badge_variants = tv({
 	base: 'inline-flex select-none items-center justify-center shrink-0 rounded-full font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-focus-color focus:ring-offset-2 capitalize whitespace-nowrap tabular-nums hover:cursor-text',
 	variants: {
 		variant: {
@@ -37,8 +37,8 @@ export const badgeVariants = tv({
 	}
 });
 
-type Variant = VariantProps<typeof badgeVariants>['variant'];
-type Size = VariantProps<typeof badgeVariants>['size'];
+type Variant = VariantProps<typeof badge_variants>['variant'];
+type Size = VariantProps<typeof badge_variants>['size'];
 
 export type Props = {
 	variant: Variant;
