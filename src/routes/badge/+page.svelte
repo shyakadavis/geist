@@ -7,12 +7,11 @@
 	import variants_code from './variants.svelte?raw';
 	import WithIcons from './with-icons.svelte';
 	import with_icons_code from './with-icons.svelte?raw';
+
+	export let data;
 </script>
 
-<PageWrapper
-	title="Badge"
-	description="A label that emphasizes an element that requires attention, or helps categorize with other similar elements."
->
+<PageWrapper title={data.title} description={data.description}>
 	<Demo id="variants" class="space-y-2" code={variants_code}>
 		<Variants />
 	</Demo>

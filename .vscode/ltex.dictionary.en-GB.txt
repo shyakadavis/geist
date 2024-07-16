@@ -1,0 +1,3 @@
+Geist
+Vercel
+shadcn-svelte

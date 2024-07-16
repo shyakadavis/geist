@@ -1,10 +1,18 @@
 <script>
+	import { page } from '$app/stores';
+	import extend from 'just-extend';
 	import { ModeWatcher } from 'mode-watcher';
+	import { MetaTags } from 'svelte-meta-tags';
 	import '../app.css';
 	import Aside from './aside.svelte';
 	import Header from './header.svelte';
+
+	export let data;
+
+	$: metaTags = extend(true, {}, data.baseMetaTags, $page.data.pageMetaTags);
 </script>
 
+<MetaTags {...metaTags} />
 <ModeWatcher />
 <div>
 	<Header />

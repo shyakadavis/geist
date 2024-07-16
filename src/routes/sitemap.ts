@@ -5,6 +5,7 @@ export type Link = {
 	title: string;
 	href: string;
 	icon?: typeof Icons.LogoNext;
+	status?: 'new' | 'soon';
 };
 
 export const aside_items: Aside = {
@@ -15,215 +16,266 @@ export const aside_items: Aside = {
 		},
 		{
 			title: 'Colors',
-			href: '/colors'
+			href: '/colors',
+			status: 'soon'
 		},
 		{
 			title: 'Icons',
-			href: '/icons'
+			href: '/icons',
+			status: 'soon'
 		}
 	],
 	brands: [
 		{
 			title: 'Vercel',
 			href: 'brands#vercel',
-			icon: Icons.LogoVercel
+			icon: Icons.LogoVercel,
+			status: 'soon'
 		},
 		{
 			title: 'Next.js',
 			href: 'brands#next.js',
-			icon: Icons.LogoNext
+			icon: Icons.LogoNext,
+			status: 'soon'
 		},
 		{
 			title: 'Turbo',
 			href: 'brands#turbo',
-			icon: Icons.LogoTurborepo
+			icon: Icons.LogoTurborepo,
+			status: 'soon'
 		},
 		{
 			title: 'v0',
 			href: 'brands#v0',
-			icon: Icons.LogoV0
+			icon: Icons.LogoV0,
+			status: 'soon'
 		}
 	],
 	components: [
 		{
 			title: 'Avatar',
-			href: '/avatar'
+			href: '/avatar',
+			status: 'soon'
 		},
 		{
 			title: 'Badge',
-			href: '/badge'
+			href: '/badge',
+			status: 'new'
 		},
 		{
 			title: 'Book',
-			href: '/book'
+			href: '/book',
+			status: 'soon'
 		},
 		{
 			title: 'Button',
-			href: '/button'
+			href: '/button',
+			status: 'soon'
 		},
 		{
 			title: 'Calendar',
-			href: '/calendar'
+			href: '/calendar',
+			status: 'soon'
 		},
 		{
 			title: 'Checkbox',
-			href: '/checkbox'
+			href: '/checkbox',
+			status: 'soon'
 		},
 		{
 			title: 'Choicebox',
-			href: '/choicebox'
+			href: '/choicebox',
+			status: 'soon'
 		},
 		{
 			title: 'Code Block',
-			href: '/code-block'
+			href: '/code-block',
+			status: 'soon'
 		},
 		{
 			title: 'Collapse',
-			href: '/collapse'
+			href: '/collapse',
+			status: 'soon'
 		},
 		{
 			title: 'Combobox',
-			href: '/combobox'
+			href: '/combobox',
+			status: 'soon'
 		},
 		{
 			title: 'Context Menu',
-			href: '/context-menu'
+			href: '/context-menu',
+			status: 'soon'
 		},
 		{
 			title: 'Description',
-			href: '/description'
+			href: '/description',
+			status: 'soon'
 		},
 		{
 			title: 'Drawer',
-			href: '/drawer'
+			href: '/drawer',
+			status: 'soon'
 		},
 		{
 			title: 'Empty State',
-			href: '/empty-state'
+			href: '/empty-state',
+			status: 'soon'
 		},
 		{
 			title: 'Error',
-			href: '/error'
+			href: '/error',
+			status: 'soon'
 		},
 		{
 			title: 'Feedback',
-			href: '/feedback'
+			href: '/feedback',
+			status: 'soon'
 		},
 		{
 			title: 'Gauge',
-			href: '/gauge'
+			href: '/gauge',
+			status: 'soon'
 		},
 		{
 			title: 'Grid',
-			href: '/grid'
+			href: '/grid',
+			status: 'soon'
 		},
 		{
 			title: 'Input',
-			href: '/input'
+			href: '/input',
+			status: 'soon'
 		},
 		{
 			title: 'Keyboard Input',
-			href: '/keyboard-input'
+			href: '/keyboard-input',
+			status: 'soon'
 		},
 		{
 			title: 'Loading Dots',
-			href: '/loading-dots'
+			href: '/loading-dots',
+			status: 'soon'
 		},
 		{
 			title: 'Menu',
-			href: '/menu'
+			href: '/menu',
+			status: 'soon'
 		},
 		{
 			title: 'Modal',
-			href: '/modal'
+			href: '/modal',
+			status: 'soon'
 		},
 		{
 			title: 'Note',
-			href: '/note'
+			href: '/note',
+			status: 'soon'
 		},
 		{
 			title: 'Pagination',
-			href: '/pagination'
+			href: '/pagination',
+			status: 'soon'
 		},
 		{
 			title: 'Progress',
-			href: '/progress'
+			href: '/progress',
+			status: 'soon'
 		},
 		{
 			title: 'Radio',
-			href: '/radio'
+			href: '/radio',
+			status: 'soon'
 		},
 		{
 			title: 'Scroller',
-			href: '/scroller'
+			href: '/scroller',
+			status: 'soon'
 		},
 		{
 			title: 'Select',
-			href: '/select'
+			href: '/select',
+			status: 'soon'
 		},
 		{
 			title: 'Show more',
-			href: '/show-more'
+			href: '/show-more',
+			status: 'soon'
 		},
 		{
 			title: 'Skeleton',
-			href: '/skeleton'
+			href: '/skeleton',
+			status: 'soon'
 		},
 		{
 			title: 'Snippet',
-			href: '/snippet'
+			href: '/snippet',
+			status: 'soon'
 		},
 		{
 			title: 'Spinner',
-			href: '/spinner'
+			href: '/spinner',
+			status: 'soon'
 		},
 		{
 			title: 'Stack',
-			href: '/stack'
+			href: '/stack',
+			status: 'soon'
 		},
 		{
 			title: 'Status Dot',
-			href: '/status-dot'
+			href: '/status-dot',
+			status: 'soon'
 		},
 		{
 			title: 'Switch',
-			href: '/switch'
+			href: '/switch',
+			status: 'soon'
 		},
 		{
 			title: 'Table',
-			href: '/table'
+			href: '/table',
+			status: 'soon'
 		},
 		{
 			title: 'Tabs',
-			href: '/tabs'
+			href: '/tabs',
+			status: 'soon'
 		},
 		{
 			title: 'Text',
-			href: '/text'
+			href: '/text',
+			status: 'soon'
 		},
 		{
 			title: 'Textarea',
-			href: '/textarea'
+			href: '/textarea',
+			status: 'soon'
 		},
 		{
 			title: 'Theme Switcher',
-			href: '/theme-switcher'
+			href: '/theme-switcher',
+			status: 'soon'
 		},
 		{
 			title: 'Toast',
-			href: '/toast'
+			href: '/toast',
+			status: 'soon'
 		},
 		{
 			title: 'Toggle',
-			href: '/toggle'
+			href: '/toggle',
+			status: 'soon'
 		},
 		{
 			title: 'Tooltip',
-			href: '/tooltip'
+			href: '/tooltip',
+			status: 'soon'
 		},
 		{
 			title: 'Window',
-			href: '/window'
+			href: '/window',
+			status: 'soon'
 		}
 	]
 };

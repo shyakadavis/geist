@@ -42,6 +42,9 @@ importers:
       autoprefixer:
         specifier: ^10.4.19
         version: 10.4.19(postcss@8.4.39)
+      just-extend:
+        specifier: ^6.2.0
+        version: 6.2.0
       mode-watcher:
         specifier: ^0.4.0
         version: 0.4.0(svelte@4.2.18)
@@ -66,6 +69,9 @@ importers:
       svelte-check:
         specifier: ^3.8.4
         version: 3.8.4(postcss-load-config@4.0.2(postcss@8.4.39))(postcss@8.4.39)(svelte@4.2.18)
+      svelte-meta-tags:
+        specifier: ^3.1.2
+        version: 3.1.2(svelte@4.2.18)(typescript@5.5.3)
       tailwindcss:
         specifier: ^3.4.4
         version: 3.4.4
@@ -755,6 +761,9 @@ packages:
     resolution: {integrity: sha512-2yTgeWTWzMWkHu6Jp9NKgePDaYHbntiwvYuuJLbbN9vl7DC9DvXKOB2BC3ZZ92D3cvV/aflH0osDfwpHepQ53w==}
     hasBin: true
 
+  just-extend@6.2.0:
+    resolution: {integrity: sha512-cYofQu2Xpom82S6qD778jBDpwvvy39s1l/hrYij2u9AMdQcGRpaBu6kY4mVhuno5kJVi1DAz4aiphA2WI1/OAw==}
+
   kleur@4.1.5:
     resolution: {integrity: sha512-o+NO+8WrRiQEE4/7nwRJhN1HWpVmJm511pBHUxPLtp0BUISzlBplORYSmTclCnJvQq2tKu/sgl3xVpkc7ZWuQQ==}
     engines: {node: '>=6'}
@@ -1055,6 +1064,11 @@ packages:
   sander@0.5.1:
     resolution: {integrity: sha512-3lVqBir7WuKDHGrKRDn/1Ye3kwpXaDOMsiRP1wd6wpZW56gJhsbp5RqQpA6JG/P+pkXizygnr1dKR8vzWaVsfA==}
 
+  schema-dts@1.1.2:
+    resolution: {integrity: sha512-MpNwH0dZJHinVxk9bT8XUdjKTxMYrA5bLtrrGmFA6PTLwlOKnhi67XoRd6/ty+Djt6ZC0slR57qFhZDNMI6DhQ==}
+    peerDependencies:
+      typescript: '>=4.1.0'
+
   set-cookie-parser@2.6.0:
     resolution: {integrity: sha512-RVnVQxTXuerk653XfuliOxBP81Sf0+qfQE73LIYKcyMYHG94AuH0kgrQpRDuTZnSmjpysHmzxJXKNfa6PjFhyQ==}
 
@@ -1125,6 +1139,11 @@ packages:
     engines: {node: ^12.20 || ^14.13.1 || >= 16}
     peerDependencies:
       svelte: ^3.19.0 || ^4.0.0
+
+  svelte-meta-tags@3.1.2:
+    resolution: {integrity: sha512-zw8xSA10ce7atFO1o0N1x41+qU+HBnpGx8KcVRAWPy5iiRdO6fvUFMg6VwJVgMhLSBEUTZXKAvMALLUssbCoCw==}
+    peerDependencies:
+      svelte: ^3.55.0 || ^4.0.0
 
   svelte-preprocess@5.1.4:
     resolution: {integrity: sha512-IvnbQ6D6Ao3Gg6ftiM5tdbR6aAETwjhHV+UKGf5bHGYR69RQvF1ho0JKPcbUON4vy4R7zom13jPjgdOWCQ5hDA==}
@@ -1878,6 +1897,8 @@ snapshots:
 
   jiti@1.21.6: {}
 
+  just-extend@6.2.0: {}
+
   kleur@4.1.5: {}
 
   lilconfig@2.1.0: {}
@@ -2106,6 +2127,10 @@ snapshots:
       mkdirp: 0.5.6
       rimraf: 2.7.1
 
+  schema-dts@1.1.2(typescript@5.5.3):
+    dependencies:
+      typescript: 5.5.3
+
   set-cookie-parser@2.6.0: {}
 
   shebang-command@2.0.0:
@@ -2195,6 +2220,13 @@ snapshots:
   svelte-hmr@0.16.0(svelte@4.2.18):
     dependencies:
       svelte: 4.2.18
+
+  svelte-meta-tags@3.1.2(svelte@4.2.18)(typescript@5.5.3):
+    dependencies:
+      schema-dts: 1.1.2(typescript@5.5.3)
+      svelte: 4.2.18
+    transitivePeerDependencies:
+      - typescript
 
   svelte-preprocess@5.1.4(postcss-load-config@4.0.2(postcss@8.4.39))(postcss@8.4.39)(svelte@4.2.18)(typescript@5.5.3):
     dependencies:
