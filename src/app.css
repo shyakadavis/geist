@@ -241,3 +241,14 @@
 			'calt' 0;
 	}
 }
+
+/* Class-based Dark Mode for highlighted code blocks */
+html.dark .shiki,
+html.dark .shiki span {
+	color: var(--shiki-dark) !important;
+	background-color: transparent !important;
+	/* Optional, if you also want font styles */
+	font-style: 'Geist Mono', monospace !important;
+	font-weight: var(--shiki-dark-font-weight) !important;
+	text-decoration: var(--shiki-dark-text-decoration) !important;
+}

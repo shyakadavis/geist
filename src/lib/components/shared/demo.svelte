@@ -2,18 +2,22 @@
 	import { Icons } from '$lib/assets/icons';
 	import { cn } from '$lib/utils';
 	import { onMount } from 'svelte';
+	import { scale } from 'svelte/transition';
 	import Accordion from './accordion-animation';
+	import { get_highlighted_code } from './shiki';
 
-	export let id: string;
 	let class_name: string | undefined = undefined;
+	export let id: string;
+	export let code: string;
 	export { class_name as class };
 
+	// e.g. "with-icons" -> "With Icons"
 	function format_string(str: string) {
 		return str.replace(/-/g, ' ').replace(/\b\w/g, (char) => char.toUpperCase());
 	}
 
+	// Show/hide code details animation
 	const accordions: Accordion[] = [];
-
 	onMount(() => {
 		document.querySelectorAll('details').forEach((el) => {
 			accordions.push(new Accordion(el));
@@ -24,6 +28,21 @@
 			accordions.forEach((accordion) => accordion.destroy());
 		};
 	});
+
+	// Code highlighting
+	let highlighted_code: string;
+	onMount(async () => {
+		highlighted_code = await get_highlighted_code(code);
+	});
+
+	let copied = false;
+	function copy_code() {
+		navigator.clipboard.writeText(code);
+		copied = true;
+		setTimeout(() => {
+			copied = false;
+		}, 1000);
+	}
 </script>
 
 <section class="grid border-t p-12">
@@ -66,7 +85,32 @@
 						</span>
 					</p>
 				</summary>
-				<div class="content p-6">Something small enough to escape casual notice.</div>
+				<div
+					class="content prose prose-invert relative max-w-none p-6 dark:prose-invert prose-pre:bg-transparent"
+				>
+					{@html highlighted_code}
+
+					<button
+						type="button"
+						class="absolute right-10 top-10 flex items-center justify-center rounded-md border-gray-alpha-400 bg-background-100 p-2 transition-colors hover:bg-gray-alpha-200"
+						on:click={copy_code}
+					>
+						{#if copied}
+							<div in:scale={{ duration: 200 }}>
+								<Icons.Check aria-hidden="true" class="size-4" />
+								<span class="sr-only">Copied</span>
+							</div>
+						{:else}
+							<div
+								class="text-background-100 transition-colors group-hover:text-gray-1000"
+								in:scale={{ duration: 100 }}
+							>
+								<Icons.Copy aria-hidden="true" class="size-4" />
+								<span class="sr-only">Copy code</span>
+							</div>
+						{/if}
+					</button>
+				</div>
 			</details>
 		</section>
 	</div>
