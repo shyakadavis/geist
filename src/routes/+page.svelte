@@ -47,7 +47,7 @@
 	title="Geist Design System"
 	description="Vercel design system for building consistent web experiences."
 >
-	<section class="grid auto-rows-fr border-t sm:grid-cols-2">
+	<section class="grid auto-rows-fr sm:grid-cols-2">
 		<IntroductionLink
 			title="Brand Assets"
 			description="Learn how to work with our brand assets."
@@ -121,6 +121,6 @@
 		</IntroductionLink>
 	</section>
 	<slot name="footer">
-		<Footer next_title="Colors" next_href="/colors" />
+		<Footer />
 	</slot>
 </PageWrapper>

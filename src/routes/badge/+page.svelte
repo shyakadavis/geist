@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Demo from '$lib/components/shared/demo.svelte';
 	import PageWrapper from '$lib/components/shared/page-wrapper.svelte';
+	import Footer from '../footer.svelte';
 	import Sizes from './sizes.svelte';
 	import sizes_code from './sizes.svelte?raw';
 	import Variants from './variants.svelte';
@@ -23,4 +24,8 @@
 	<Demo id="with-icons" class="space-y-2" code={with_icons_code}>
 		<WithIcons />
 	</Demo>
+
+	<slot name="footer">
+		<Footer />
+	</slot>
 </PageWrapper>

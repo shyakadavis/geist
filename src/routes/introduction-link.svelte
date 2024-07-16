@@ -14,7 +14,7 @@
 
 <a
 	class={cn(
-		'group relative flex h-full flex-col gap-6 border-b p-8 no-underline outline-none transition-colors delay-0 odd:border-r hover:bg-background-100',
+		'group relative flex h-full flex-col gap-6 p-8 no-underline outline-none transition-colors delay-0 odd:border-r hover:bg-background-100 [&:not(:nth-last-child(-n+2))]:border-b',
 		class_name
 	)}
 	{href}
