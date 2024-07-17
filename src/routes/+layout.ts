@@ -29,6 +29,15 @@ export function load({ url }) {
 					type: 'image/jpeg'
 				}
 			]
+		},
+		twitter: {
+			handle: '@shyakadavis7',
+			site: 'https://geist.shyakadavis.me/',
+			cardType: 'summary_large_image' as const,
+			title,
+			description,
+			imageAlt: 'Geist',
+			image: 'https://geist.shyakadavis.me/og.jpg'
 		}
 	}) satisfies MetaTagsProps;
 
