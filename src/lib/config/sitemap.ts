@@ -80,7 +80,7 @@ export const aside_items: Aside = {
 		{
 			title: 'Checkbox',
 			href: '/checkbox',
-			status: 'soon'
+			status: 'draft'
 		},
 		{
 			title: 'Choicebox',
