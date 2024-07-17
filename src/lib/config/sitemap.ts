@@ -70,7 +70,7 @@ export const aside_items: Aside = {
 		{
 			title: 'Button',
 			href: '/button',
-			status: 'soon'
+			status: 'draft'
 		},
 		{
 			title: 'Calendar',

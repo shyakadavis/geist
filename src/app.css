@@ -116,6 +116,8 @@
 		--focus-border: 0 0 0 1px var(--gray-alpha-600), 0px 0px 0px 4px rgba(0, 0, 0, 0.16);
 		--focus-ring: 0 0 0 2px var(--background-100), 0 0 0 4px var(--focus-color);
 		--shadow-border: 0 0 0 1px rgba(0, 0, 0, 0.08);
+		--shadow-small: 0px 1px 2px rgba(0, 0, 0, 0.16);
+		--shadow-border-small: var(--shadow-border), var(--shadow-small);
 	}
 
 	.dark {
@@ -226,6 +228,7 @@
 		/* Shadows */
 		--focus-border: 0 0 0 1px var(--gray-alpha-600), 0px 0px 0px 4px hsla(0, 0%, 100%, 0.24);
 		--shadow-border-inset: inset 0 0 0 1px hsla(0, 0%, 100%, 0.1);
+		--shadow-border-small: var(--shadow-border), 0px 1px 2px rgba(0, 0, 0, 0.16);
 	}
 }
 

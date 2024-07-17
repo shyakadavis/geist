@@ -1,3 +1,6 @@
+import ArrowLeft from './arrow-left.svg?component';
+import ArrowRight from './arrow-right.svg?component';
+import ArrowUp from './arrow-up.svg?component';
 import Bell from './bell.svg?component';
 import Box from './box.svg?component';
 import BrandAssets from './brand-assets.svg?component';
@@ -22,6 +25,7 @@ import GridSquare from './grid-square.svg?component';
 import Inbox from './inbox.svg?component';
 import Key from './key.svg?component';
 import Link from './link.svg?component';
+import LoaderCircle from './loader-circle.svg?component';
 import LogoBitbucketColor from './logo-bitbucket-color.svg?component';
 import LogoGeist from './logo-geist.svg?component';
 import LogoGithub from './logo-github.svg?component';
@@ -42,6 +46,9 @@ import ThemeSwitchLight from './theme-switch-light.svg?component';
 import ThemeSwitchSystem from './theme-switch-system.svg?component';
 
 export const Icons = {
+	ArrowLeft,
+	ArrowRight,
+	ArrowUp,
 	Bell,
 	Box,
 	BrandAssets,
@@ -66,6 +73,7 @@ export const Icons = {
 	Inbox,
 	Key,
 	Link,
+	LoaderCircle,
 	LogoBitbucketColor,
 	LogoGeist,
 	LogoGithub,
