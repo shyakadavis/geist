@@ -1,6 +1,6 @@
 {
 	"$schema": "https://shadcn-svelte.com/schema.json",
-	"style": "new-york",
+	"style": "default",
 	"tailwind": {
 		"config": "tailwind.config.ts",
 		"css": "src/app.css",

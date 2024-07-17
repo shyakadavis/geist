@@ -4,5 +4,6 @@
 	"trailingComma": "none",
 	"printWidth": 100,
 	"plugins": ["prettier-plugin-svelte", "prettier-plugin-tailwindcss"],
+	"tailwindFunctions": ["tv", "cn"],
 	"overrides": [{ "files": "*.svelte", "options": { "parser": "svelte" } }]
 }

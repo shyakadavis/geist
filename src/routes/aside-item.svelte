@@ -38,6 +38,9 @@
 			{#if link.status === 'soon'}
 				<Badge variant="gray-subtle" size="sm">Soon</Badge>
 			{/if}
+			{#if link.status === 'draft'}
+				<Badge variant="purple-subtle" size="sm">Draft</Badge>
+			{/if}
 		</span>
 	</svelte:element>
 </li>

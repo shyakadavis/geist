@@ -1,3 +1,4 @@
+import ArrowUp from './arrow-up.svg?component';
 import Bell from './bell.svg?component';
 import Box from './box.svg?component';
 import BrandAssets from './brand-assets.svg?component';
@@ -42,6 +43,7 @@ import ThemeSwitchLight from './theme-switch-light.svg?component';
 import ThemeSwitchSystem from './theme-switch-system.svg?component';
 
 export const Icons = {
+	ArrowUp,
 	Bell,
 	Box,
 	BrandAssets,
