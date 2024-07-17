@@ -30,7 +30,7 @@
 
 	<Demo
 		id="shapes"
-		subtitle="Icon-only buttons should include the `svg_only` prop and an `aria_label`."
+		subtitle="Icon-only buttons should include the `svg_only` prop and an `aria-label`."
 		code={shapes_code}
 	>
 		<Shapes />
