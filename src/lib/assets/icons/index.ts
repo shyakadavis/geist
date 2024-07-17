@@ -1,3 +1,5 @@
+import ArrowLeft from './arrow-left.svg?component';
+import ArrowRight from './arrow-right.svg?component';
 import ArrowUp from './arrow-up.svg?component';
 import Bell from './bell.svg?component';
 import Box from './box.svg?component';
@@ -43,6 +45,8 @@ import ThemeSwitchLight from './theme-switch-light.svg?component';
 import ThemeSwitchSystem from './theme-switch-system.svg?component';
 
 export const Icons = {
+	ArrowLeft,
+	ArrowRight,
 	ArrowUp,
 	Bell,
 	Box,

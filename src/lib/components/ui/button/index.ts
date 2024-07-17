@@ -1,9 +1,10 @@
+import type { Icons } from '$lib/assets/icons';
 import type { Button as ButtonPrimitive } from 'bits-ui';
 import { type VariantProps, tv } from 'tailwind-variants';
 import Root from './button.svelte';
 
 const button_variants = tv({
-	base: 'inline-flex select-none items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background-200 transition-[border-color,background,color,transform,box-shadow] ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus-color focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&>svg]:size-4',
+	base: 'inline-flex select-none items-center justify-center gap-x-1.5 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background-200 transition-[border-color,background,color,transform,box-shadow] ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus-color focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&>svg]:size-4',
 	variants: {
 		variant: {
 			default: 'bg-gray-1000 text-background-100',
@@ -48,6 +49,8 @@ type NormalButton = {
 	svg_only?: false;
 	size?: Exclude<Size, 'tiny'>;
 	variant?: Variant;
+	affix?: typeof Icons.ArrowLeft;
+	suffix?: typeof Icons.ArrowLeft;
 };
 
 type Props = ButtonPrimitive.Props & (NormalButton | SVGButton);

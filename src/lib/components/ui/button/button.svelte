@@ -48,6 +48,12 @@ If `svg_only` is not provided, then the button should be a normal button, but th
 		on:click
 		on:keydown
 	>
+		{#if props.affix}
+			<svelte:component this={props.affix} aria-hidden="true" />
+		{/if}
 		<slot />
+		{#if props.suffix}
+			<svelte:component this={props.suffix} aria-hidden="true" />
+		{/if}
 	</ButtonPrimitive.Root>
 {/if}
