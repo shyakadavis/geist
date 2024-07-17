@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Icons } from '$lib/assets/icons';
-	import ThemeSwitcher from './theme-switcher.svelte';
+	import ThemeSwitcher from '$lib/components/shared/theme-switcher.svelte';
 </script>
 
 <header class="sticky top-0 z-20 mx-auto w-full max-w-[1220px]">
