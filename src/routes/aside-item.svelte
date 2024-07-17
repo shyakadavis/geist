@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Badge } from '$lib/components/ui/badge';
+	import type { Link } from '$lib/config/sitemap';
 	import { cn } from '$lib/utils';
-	import type { Link } from './sitemap';
 
 	export let link: Link;
 	export let active: boolean;
