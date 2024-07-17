@@ -8,7 +8,7 @@
 </script>
 
 <PageWrapper title={data.title} description={data.description}>
-	<Demo id="default" class="space-y-2" code={default_code}>
+	<Demo id="default" code={default_code}>
 		<Default />
 	</Demo>
 </PageWrapper>
