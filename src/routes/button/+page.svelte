@@ -1,8 +1,8 @@
 <script lang="ts">
 	import Demo from '$lib/components/shared/demo.svelte';
 	import PageWrapper from '$lib/components/shared/page-wrapper.svelte';
-	import PrefixAndSuffix from './prefix-and-suffix.svelte';
-	import prefix_and_suffix_code from './prefix-and-suffix.svelte?raw';
+	import AffixAndSuffix from './affix-and-suffix.svelte';
+	import affix_and_suffix_code from './affix-and-suffix.svelte?raw';
 	import Shapes from './shapes.svelte';
 	import shapes_code from './shapes.svelte?raw';
 	import Sizes from './sizes.svelte';
@@ -30,7 +30,7 @@
 		<Shapes />
 	</Demo>
 
-	<Demo id="prefix-and-suffix" code={prefix_and_suffix_code}>
-		<PrefixAndSuffix />
+	<Demo id="affix-and-suffix" code={affix_and_suffix_code}>
+		<AffixAndSuffix />
 	</Demo>
 </PageWrapper>
