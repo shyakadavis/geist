@@ -51,6 +51,8 @@ type NormalButton = {
 	variant?: Variant;
 	affix?: typeof Icons.ArrowLeft;
 	suffix?: typeof Icons.ArrowLeft;
+	shape?: 'rounded';
+	shadow?: boolean;
 };
 
 type Props = ButtonPrimitive.Props & (NormalButton | SVGButton);

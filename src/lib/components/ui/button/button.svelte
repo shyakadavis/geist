@@ -42,7 +42,10 @@ If `svg_only` is not provided, then the button should be a normal button, but th
 {:else}
 	<ButtonPrimitive.Root
 		{builders}
-		class={cn(button_variants({ variant, size: props.size, className: class_name }))}
+		class={cn(button_variants({ variant, size: props.size, className: class_name }), {
+			'rounded-full': props.shape === 'rounded',
+			'shadow-shadow-border-small': props.shadow
+		})}
 		type="button"
 		{...$$restProps}
 		on:click

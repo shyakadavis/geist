@@ -135,7 +135,8 @@ const config: Config = {
 				'shadow-border': 'var(--shadow-border)',
 				'focus-border': 'var(--focus-border)',
 				'focus-ring': 'var(--focus-ring)',
-				'border-inset': 'var(--shadow-border-inset)'
+				'border-inset': 'var(--shadow-border-inset)',
+				'shadow-border-small': 'var(--shadow-border-small)'
 			},
 			fontFamily: {
 				sans: ['Geist Sans, sans-serif', ...fontFamily.sans],

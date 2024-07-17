@@ -3,6 +3,8 @@
 	import PageWrapper from '$lib/components/shared/page-wrapper.svelte';
 	import AffixAndSuffix from './affix-and-suffix.svelte';
 	import affix_and_suffix_code from './affix-and-suffix.svelte?raw';
+	import Rounded from './rounded.svelte';
+	import rounded_code from './rounded.svelte?raw';
 	import Shapes from './shapes.svelte';
 	import shapes_code from './shapes.svelte?raw';
 	import Sizes from './sizes.svelte';
@@ -32,5 +34,13 @@
 
 	<Demo id="affix-and-suffix" code={affix_and_suffix_code}>
 		<AffixAndSuffix />
+	</Demo>
+
+	<Demo
+		id="rounded"
+		subtitle={`Combination of \`shape="rounded"\` and the \`shadow\` prop, often used on marketing pages.`}
+		code={rounded_code}
+	>
+		<Rounded />
 	</Demo>
 </PageWrapper>
