@@ -4,7 +4,7 @@ import { type VariantProps, tv } from 'tailwind-variants';
 import Root from './button.svelte';
 
 const button_variants = tv({
-	base: 'inline-flex select-none items-center justify-center gap-x-1.5 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background-200 transition-[border-color,background,color,transform,box-shadow] ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus-color focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&>svg]:size-4',
+	base: 'inline-flex select-none items-center justify-center gap-x-1.5 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background-200 transition-[border-color,background,color,transform,box-shadow] ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus-color focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:border disabled:bg-gray-100 disabled:text-gray-700 [&>svg]:size-4',
 	variants: {
 		variant: {
 			default: 'bg-gray-1000 text-background-100',
@@ -53,6 +53,7 @@ type NormalButton = {
 	suffix?: typeof Icons.ArrowLeft;
 	shape?: 'rounded';
 	shadow?: boolean;
+	loading?: boolean;
 };
 
 type Props = ButtonPrimitive.Props & (NormalButton | SVGButton);

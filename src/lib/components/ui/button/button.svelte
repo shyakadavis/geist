@@ -10,6 +10,7 @@ But basically, here is the goal; if a user provides `svg_only`, then the button 
 If `svg_only` is not provided, then the button should be a normal button, but the `tiny` size should not be available.
  -->
 <script lang="ts">
+	import { Icons } from '$lib/assets/icons/index.js';
 	import { cn } from '$lib/utils.js';
 	import { Button as ButtonPrimitive } from 'bits-ui';
 	import { type Events, type Props, button_variants } from './index.js';
@@ -50,7 +51,11 @@ If `svg_only` is not provided, then the button should be a normal button, but th
 		{...$$restProps}
 		on:click
 		on:keydown
+		disabled={props.loading}
 	>
+		{#if props.loading}
+			<Icons.LoaderCircle class={cn('animate-spin', { '!size-6': props.size === 'lg' })} />
+		{/if}
 		{#if props.affix}
 			<svelte:component this={props.affix} aria-hidden="true" />
 		{/if}

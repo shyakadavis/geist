@@ -25,6 +25,7 @@ import GridSquare from './grid-square.svg?component';
 import Inbox from './inbox.svg?component';
 import Key from './key.svg?component';
 import Link from './link.svg?component';
+import LoaderCircle from './loader-circle.svg?component';
 import LogoBitbucketColor from './logo-bitbucket-color.svg?component';
 import LogoGeist from './logo-geist.svg?component';
 import LogoGithub from './logo-github.svg?component';
@@ -72,6 +73,7 @@ export const Icons = {
 	Inbox,
 	Key,
 	Link,
+	LoaderCircle,
 	LogoBitbucketColor,
 	LogoGeist,
 	LogoGithub,
