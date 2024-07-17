@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { Badge } from '$lib/components/ui/badge';
+	import { aside_items } from '$lib/config/sitemap';
 	import AsideItem from './aside-item.svelte';
-	import { aside_items } from './sitemap';
 
 	$: is_active = (href: string) => {
 		if (href.includes('#')) {

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { Icons } from '$lib/assets/icons';
-	import { aside_items, type Link } from './sitemap';
+	import { aside_items, type Link } from '$lib/config/sitemap';
 
 	function generate_prev_next_links(current_href: string): {
 		prev: Link | undefined;

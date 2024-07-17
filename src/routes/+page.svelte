@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { Icons } from '$lib/assets/icons';
 	import PageWrapper from '$lib/components/shared/page-wrapper.svelte';
-	import Footer from './footer.svelte';
 	import IntroductionLink from './introduction-link.svelte';
 
 	const preview_icons = [
@@ -120,7 +119,4 @@
 			</div>
 		</IntroductionLink>
 	</section>
-	<slot name="footer">
-		<Footer />
-	</slot>
 </PageWrapper>

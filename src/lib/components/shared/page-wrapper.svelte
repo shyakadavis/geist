@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { cn } from '$lib/utils';
+	import Footer from './footer.svelte';
 
 	let class_name: string | undefined = undefined;
 	export { class_name as class };
@@ -26,5 +27,5 @@
 		</section>
 		<slot></slot>
 	</div>
-	<slot name="footer"></slot>
+	<Footer />
 </section>

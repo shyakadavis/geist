@@ -45,7 +45,7 @@
 	}
 </script>
 
-<div class="grid p-12 [&:not(:nth-last-child(2))]:border-b">
+<div class="grid p-12 [&:not(:last-child)]:border-b">
 	<a
 		class="group relative -ml-5 inline-block w-fit scroll-mt-20 pl-5 no-underline outline-none focus-visible:shadow-focus-ring"
 		href="#{id}"
