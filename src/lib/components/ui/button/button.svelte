@@ -28,7 +28,7 @@ If `svg_only` is not provided, then the button should be a normal button, but th
 
 {#if props.svg_only}
 	<ButtonPrimitive.Root
-		aria-label={props.aria_label}
+		aria-label={props['aria-label']}
 		{builders}
 		class={cn(button_variants({ variant, svg_size: props.size, className: class_name }), {
 			'rounded-full': props.shape === 'circle'

@@ -38,7 +38,7 @@ type Size = VariantProps<typeof button_variants>['size'];
 type SVGSize = VariantProps<typeof button_variants>['svg_size'];
 
 type SVGButton = {
-	aria_label: string;
+	'aria-label': string;
 	svg_only: true;
 	variant?: Variant;
 	size: SVGSize;

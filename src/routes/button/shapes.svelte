@@ -4,35 +4,35 @@
 </script>
 
 <div class="flex flex-row justify-between gap-4">
-	<Button svg_only aria_label="Upload" shape="square" size="tiny">
+	<Button svg_only aria-label="Upload" shape="square" size="tiny">
 		<Icons.ArrowUp aria-hidden="true" />
 	</Button>
 
-	<Button svg_only aria_label="Upload" shape="square" size="sm">
+	<Button svg_only aria-label="Upload" shape="square" size="sm">
 		<Icons.ArrowUp aria-hidden="true" />
 	</Button>
 
-	<Button svg_only aria_label="Upload" shape="square" size="md">
+	<Button svg_only aria-label="Upload" shape="square" size="md">
 		<Icons.ArrowUp aria-hidden="true" />
 	</Button>
 
-	<Button svg_only aria_label="Upload" shape="square" size="lg">
+	<Button svg_only aria-label="Upload" shape="square" size="lg">
 		<Icons.ArrowUp aria-hidden="true" />
 	</Button>
 
-	<Button svg_only aria_label="Upload" shape="circle" size="tiny">
+	<Button svg_only aria-label="Upload" shape="circle" size="tiny">
 		<Icons.ArrowUp aria-hidden="true" />
 	</Button>
 
-	<Button svg_only aria_label="Upload" shape="circle" size="sm">
+	<Button svg_only aria-label="Upload" shape="circle" size="sm">
 		<Icons.ArrowUp aria-hidden="true" />
 	</Button>
 
-	<Button svg_only aria_label="Upload" shape="circle" size="md">
+	<Button svg_only aria-label="Upload" shape="circle" size="md">
 		<Icons.ArrowUp aria-hidden="true" />
 	</Button>
 
-	<Button svg_only aria_label="Upload" shape="circle" size="lg">
+	<Button svg_only aria-label="Upload" shape="circle" size="lg">
 		<Icons.ArrowUp aria-hidden="true" />
 	</Button>
 </div>
