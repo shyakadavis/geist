@@ -51,7 +51,7 @@ If `svg_only` is not provided, then the button should be a normal button, but th
 		{...$$restProps}
 		on:click
 		on:keydown
-		disabled={props.loading}
+		disabled={props.loading || props.disabled}
 	>
 		{#if props.loading}
 			<Icons.LoaderCircle class={cn('animate-spin', { '!size-6': props.size === 'lg' })} />

@@ -54,6 +54,7 @@ type NormalButton = {
 	shape?: 'rounded';
 	shadow?: boolean;
 	loading?: boolean;
+	disabled?: boolean;
 };
 
 type Props = ButtonPrimitive.Props & (NormalButton | SVGButton);

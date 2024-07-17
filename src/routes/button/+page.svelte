@@ -3,6 +3,8 @@
 	import PageWrapper from '$lib/components/shared/page-wrapper.svelte';
 	import AffixAndSuffix from './affix-and-suffix.svelte';
 	import affix_and_suffix_code from './affix-and-suffix.svelte?raw';
+	import Disabled from './disabled.svelte';
+	import disabled_code from './disabled.svelte?raw';
 	import Loading from './loading.svelte';
 	import loading_code from './loading.svelte?raw';
 	import Rounded from './rounded.svelte';
@@ -48,5 +50,9 @@
 
 	<Demo id="loading" code={loading_code}>
 		<Loading />
+	</Demo>
+
+	<Demo id="disabled" code={disabled_code}>
+		<Disabled />
 	</Demo>
 </PageWrapper>
