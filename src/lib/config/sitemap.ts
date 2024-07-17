@@ -255,7 +255,7 @@ export const aside_items: Aside = {
 		{
 			title: 'Theme Switcher',
 			href: '/theme-switcher',
-			status: 'soon'
+			status: 'new'
 		},
 		{
 			title: 'Toast',
