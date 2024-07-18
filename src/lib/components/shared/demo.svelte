@@ -88,8 +88,9 @@
 					</span>
 				</p>
 			</summary>
-			<!-- TODO: Fix overflow when code lines/blocks are too long. -->
-			<div class="content relative p-6 font-mono text-sm">
+			<div
+				class="content relative p-6 font-mono text-sm [&>pre>code]:whitespace-pre-wrap [&>pre>code]:break-words"
+			>
 				{@html highlighted_code}
 
 				<button
