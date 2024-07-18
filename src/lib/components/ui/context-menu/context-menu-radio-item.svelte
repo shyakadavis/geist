@@ -1,7 +1,7 @@
-<!-- <script lang="ts">
-	import { ContextMenu as ContextMenuPrimitive } from 'bits-ui';
-	import Circle from 'lucide-svelte/icons/circle';
+<script lang="ts">
+	import { Icons } from '$lib/assets/icons';
 	import { cn } from '$lib/utils.js';
+	import { ContextMenu as ContextMenuPrimitive } from 'bits-ui';
 
 	type $$Props = ContextMenuPrimitive.RadioItemProps;
 	type $$Events = ContextMenuPrimitive.RadioItemEvents;
@@ -13,7 +13,7 @@
 
 <ContextMenuPrimitive.RadioItem
 	class={cn(
-		'data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+		'relative flex h-10 cursor-pointer select-none items-center rounded-md pl-8 pr-2 text-sm outline-none data-[disabled]:cursor-default data-[highlighted]:bg-gray-200',
 		className
 	)}
 	{value}
@@ -26,10 +26,10 @@
 	on:pointerleave
 	on:pointermove
 >
-	<span class="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+	<span class="absolute left-2 flex size-3.5 items-center justify-center">
 		<ContextMenuPrimitive.RadioIndicator>
-			<Circle class="h-2 w-2 fill-current" />
+			<Icons.Status class="size-3 fill-current" />
 		</ContextMenuPrimitive.RadioIndicator>
 	</span>
 	<slot />
-</ContextMenuPrimitive.RadioItem> -->
+</ContextMenuPrimitive.RadioItem>

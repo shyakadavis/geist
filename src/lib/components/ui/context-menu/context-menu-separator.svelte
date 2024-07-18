@@ -1,6 +1,6 @@
-<!-- <script lang="ts">
-	import { ContextMenu as ContextMenuPrimitive } from 'bits-ui';
+<script lang="ts">
 	import { cn } from '$lib/utils.js';
+	import { ContextMenu as ContextMenuPrimitive } from 'bits-ui';
 
 	type $$Props = ContextMenuPrimitive.SeparatorProps;
 
@@ -9,6 +9,6 @@
 </script>
 
 <ContextMenuPrimitive.Separator
-	class={cn('bg-border -mx-1 my-1 h-px', className)}
+	class={cn('-mx-1 my-1 h-px bg-gray-400', className)}
 	{...$$restProps}
-/> -->
+/>

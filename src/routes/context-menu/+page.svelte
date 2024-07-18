@@ -7,6 +7,8 @@
 	import default_code from './default.svelte?raw';
 	import DisabledItems from './disabled-items.svelte';
 	import disabled_items_code from './disabled-items.svelte?raw';
+	import Extended from './extended.svelte';
+	import extended_code from './extended.svelte?raw';
 	import LinkItems from './link-items.svelte';
 	import link_items_code from './link-items.svelte?raw';
 
@@ -28,5 +30,9 @@
 
 	<Demo id="affix-and-suffix" code={affix_and_suffix_code}>
 		<AffixAndSuffix />
+	</Demo>
+
+	<Demo id="extended" code={extended_code}>
+		<Extended />
 	</Demo>
 </PageWrapper>

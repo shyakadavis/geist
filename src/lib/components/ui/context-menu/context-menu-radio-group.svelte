@@ -1,4 +1,4 @@
-<!-- <script lang="ts">
+<script lang="ts">
 	import { ContextMenu as ContextMenuPrimitive } from 'bits-ui';
 
 	type $$Props = ContextMenuPrimitive.RadioGroupProps;
@@ -8,4 +8,4 @@
 
 <ContextMenuPrimitive.RadioGroup {...$$restProps} bind:value>
 	<slot />
-</ContextMenuPrimitive.RadioGroup> -->
+</ContextMenuPrimitive.RadioGroup>

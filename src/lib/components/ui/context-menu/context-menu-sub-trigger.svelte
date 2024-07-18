@@ -1,7 +1,7 @@
-<!-- <script lang="ts">
-	import { ContextMenu as ContextMenuPrimitive } from 'bits-ui';
-	import ChevronRight from 'lucide-svelte/icons/chevron-right';
+<script lang="ts">
+	import { Icons } from '$lib/assets/icons';
 	import { cn } from '$lib/utils.js';
+	import { ContextMenu as ContextMenuPrimitive } from 'bits-ui';
 
 	type $$Props = ContextMenuPrimitive.SubTriggerProps & {
 		inset?: boolean;
@@ -15,7 +15,7 @@
 
 <ContextMenuPrimitive.SubTrigger
 	class={cn(
-		'data-[highlighted]:bg-accent data-[state=open]:bg-accent data-[highlighted]:text-accent-foreground data-[state=open]:text-accent-foreground flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none',
+		'flex h-10 cursor-pointer select-none items-center rounded-md px-2 text-sm outline-none data-[highlighted]:bg-gray-200 data-[state=open]:bg-gray-200',
 		inset && 'pl-8',
 		className
 	)}
@@ -28,5 +28,5 @@
 	on:pointermove
 >
 	<slot />
-	<ChevronRight class="ml-auto h-4 w-4" />
-</ContextMenuPrimitive.SubTrigger> -->
+	<Icons.ChevronRight class="ml-auto size-4" />
+</ContextMenuPrimitive.SubTrigger>

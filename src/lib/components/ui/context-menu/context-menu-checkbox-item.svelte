@@ -1,7 +1,7 @@
-<!-- <script lang="ts">
-	import { ContextMenu as ContextMenuPrimitive } from 'bits-ui';
-	import Check from 'lucide-svelte/icons/check';
+<script lang="ts">
+	import { Icons } from '$lib/assets/icons';
 	import { cn } from '$lib/utils.js';
+	import { ContextMenu as ContextMenuPrimitive } from 'bits-ui';
 
 	type $$Props = ContextMenuPrimitive.CheckboxItemProps;
 	type $$Events = ContextMenuPrimitive.CheckboxItemEvents;
@@ -14,7 +14,7 @@
 <ContextMenuPrimitive.CheckboxItem
 	bind:checked
 	class={cn(
-		'data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+		'relative flex h-10 cursor-pointer select-none items-center rounded-md pl-8 pr-2 text-sm outline-none data-[disabled]:cursor-default data-[highlighted]:bg-gray-200 data-[disabled]:text-gray-700',
 		className
 	)}
 	{...$$restProps}
@@ -26,10 +26,10 @@
 	on:pointerleave
 	on:pointermove
 >
-	<span class="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+	<span class="absolute left-2 flex size-3.5 items-center justify-center">
 		<ContextMenuPrimitive.CheckboxIndicator>
-			<Check class="h-4 w-4" />
+			<Icons.Check class="size-3" />
 		</ContextMenuPrimitive.CheckboxIndicator>
 	</span>
 	<slot />
-</ContextMenuPrimitive.CheckboxItem> -->
+</ContextMenuPrimitive.CheckboxItem>

@@ -42,6 +42,7 @@ import PencilEdit from './pencil-edit.svg?component';
 import Router from './router.svg?component';
 import SettingsSliders from './settings-sliders.svg?component';
 import Shield from './shield.svg?component';
+import Status from './status.svg?component';
 import Tabs from './tabs.svg?component';
 import ThemeSwitchDark from './theme-switch-dark.svg?component';
 import ThemeSwitchLight from './theme-switch-light.svg?component';
@@ -92,6 +93,7 @@ export const Icons = {
 	Router,
 	SettingsSliders,
 	Shield,
+	Status,
 	Tabs,
 	ThemeSwitchDark,
 	ThemeSwitchLight,

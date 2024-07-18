@@ -1,6 +1,6 @@
-<!-- <script lang="ts">
-	import { ContextMenu as ContextMenuPrimitive } from 'bits-ui';
+<script lang="ts">
 	import { cn, flyAndScale } from '$lib/utils.js';
+	import { ContextMenu as ContextMenuPrimitive } from 'bits-ui';
 
 	type $$Props = ContextMenuPrimitive.SubContentProps;
 
@@ -17,7 +17,7 @@
 	{transition}
 	{transitionConfig}
 	class={cn(
-		'bg-popover text-popover-foreground z-50 min-w-[8rem] overflow-hidden rounded-md border p-1 shadow-md focus:outline-none',
+		'z-50 min-w-[10rem] overflow-hidden rounded-xl bg-background-100 p-2 text-sm text-gray-1000 shadow-shadow-menu focus:outline-none',
 		className
 	)}
 	{...$$restProps}
@@ -26,4 +26,4 @@
 	on:pointermove
 >
 	<slot />
-</ContextMenuPrimitive.SubContent> -->
+</ContextMenuPrimitive.SubContent>
