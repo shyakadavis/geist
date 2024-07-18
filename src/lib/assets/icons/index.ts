@@ -33,6 +33,7 @@ import LogoGitlab from './logo-gitlab.svg?component';
 import LogoNext from './logo-next.svg?component';
 import LogoTurborepo from './logo-turborepo.svg?component';
 import LogoV0 from './logo-v0.svg?component';
+import LogoVercelCircle from './logo-vercel-circle.svg?component';
 import LogoVercel from './logo-vercel.svg?component';
 import Minus from './minus.svg?component';
 import Notification from './notification.svg?component';
@@ -82,6 +83,7 @@ export const Icons = {
 	LogoNext,
 	LogoTurborepo,
 	LogoV0,
+	LogoVercelCircle,
 	LogoVercel,
 	Minus,
 	Notification,

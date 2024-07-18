@@ -88,9 +88,8 @@
 					</span>
 				</p>
 			</summary>
-			<div
-				class="content prose prose-invert relative max-w-none p-6 dark:prose-invert prose-pre:bg-transparent"
-			>
+			<!-- TODO: Fix overflow when code lines/blocks are too long. -->
+			<div class="content relative p-6 font-mono text-sm">
 				{@html highlighted_code}
 
 				<button
