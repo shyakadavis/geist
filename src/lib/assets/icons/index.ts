@@ -33,6 +33,7 @@ import LogoGitlab from './logo-gitlab.svg?component';
 import LogoNext from './logo-next.svg?component';
 import LogoTurborepo from './logo-turborepo.svg?component';
 import LogoV0 from './logo-v0.svg?component';
+import LogoVercelCircle from './logo-vercel-circle.svg?component';
 import LogoVercel from './logo-vercel.svg?component';
 import Minus from './minus.svg?component';
 import Notification from './notification.svg?component';
@@ -41,6 +42,7 @@ import PencilEdit from './pencil-edit.svg?component';
 import Router from './router.svg?component';
 import SettingsSliders from './settings-sliders.svg?component';
 import Shield from './shield.svg?component';
+import Status from './status.svg?component';
 import Tabs from './tabs.svg?component';
 import ThemeSwitchDark from './theme-switch-dark.svg?component';
 import ThemeSwitchLight from './theme-switch-light.svg?component';
@@ -82,6 +84,7 @@ export const Icons = {
 	LogoNext,
 	LogoTurborepo,
 	LogoV0,
+	LogoVercelCircle,
 	LogoVercel,
 	Minus,
 	Notification,
@@ -90,6 +93,7 @@ export const Icons = {
 	Router,
 	SettingsSliders,
 	Shield,
+	Status,
 	Tabs,
 	ThemeSwitchDark,
 	ThemeSwitchLight,

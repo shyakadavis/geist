@@ -105,7 +105,7 @@ export const aside_items: Aside = {
 		{
 			title: 'Context Menu',
 			href: '/context-menu',
-			status: 'soon'
+			status: 'draft'
 		},
 		{
 			title: 'Description',

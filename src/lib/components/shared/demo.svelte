@@ -89,7 +89,7 @@
 				</p>
 			</summary>
 			<div
-				class="content prose prose-invert relative max-w-none p-6 dark:prose-invert prose-pre:bg-transparent"
+				class="content relative p-6 font-mono text-sm [&>pre>code]:whitespace-pre-wrap [&>pre>code]:break-words"
 			>
 				{@html highlighted_code}
 
