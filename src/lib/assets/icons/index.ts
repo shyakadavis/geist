@@ -5,6 +5,7 @@ import Bell from './bell.svg?component';
 import Box from './box.svg?component';
 import BrandAssets from './brand-assets.svg?component';
 import CharBarMiddle from './chart-bar-middle.svg?component';
+import ChartBarPeak from './chart-bar-peak.svg?component';
 import CharTrendingDown from './chart-trending-down.svg?component';
 import Check from './check.svg?component';
 import ChevronLeft from './chevron-left.svg?component';
@@ -15,6 +16,7 @@ import CodeBracket from './code-bracket.svg?component';
 import Command from './command.svg?component';
 import Copy from './copy.svg?component';
 import Database from './database.svg?component';
+import ErrorStates from './error-states.svg?component';
 import External from './external.svg?component';
 import FileText from './file-text.svg?component';
 import Flag from './flag.svg?component';
@@ -56,6 +58,7 @@ export const Icons = {
 	Box,
 	BrandAssets,
 	CharBarMiddle,
+	ChartBarPeak,
 	CharTrendingDown,
 	Check,
 	ChevronLeft,
@@ -66,6 +69,7 @@ export const Icons = {
 	Command,
 	Copy,
 	Database,
+	ErrorStates,
 	External,
 	FileText,
 	Flag,

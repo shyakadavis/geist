@@ -258,3 +258,10 @@ html.dark .shiki span {
 	font-weight: var(--shiki-dark-font-weight) !important;
 	text-decoration: var(--shiki-dark-text-decoration) !important;
 }
+
+/* 
+The styles for ``
+ */
+.prose code:not(pre > code) {
+	@apply rounded-md border border-gray-300 bg-gray-100 px-[3.6px] py-0.5 font-mono text-sm before:content-[''] after:content-[''];
+}

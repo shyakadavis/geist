@@ -19,7 +19,7 @@
 	{...$$restProps}
 >
 	{#if icon}
-		<svelte:component this={icon} class="size-4" />
+		<svelte:component this={icon} aria-hidden="true" class="size-4" />
 	{/if}
 	<slot />
 </svelte:element>

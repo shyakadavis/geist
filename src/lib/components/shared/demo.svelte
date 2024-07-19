@@ -2,9 +2,9 @@
 	import { Icons } from '$lib/assets/icons';
 	import { cn } from '$lib/utils';
 	import { onMount } from 'svelte';
+	import Markdown from 'svelte-exmarkdown';
 	import { scale } from 'svelte/transition';
 	import Accordion from './accordion-animation';
-	import { format_string, parse_back_ticks } from './demo-utils';
 	import { get_highlighted_code } from './shiki';
 
 	let class_name: string | undefined = undefined;
@@ -12,6 +12,11 @@
 	export let code: string;
 	export let subtitle: string | undefined = undefined;
 	export { class_name as class };
+
+	// e.g. "with-icons" -> "With Icons"
+	function format_string(str: string) {
+		return str.replace(/-/g, ' ').replace(/\b\w/g, (char) => char.toUpperCase());
+	}
 
 	// Show/hide code details animation
 	const accordions: Accordion[] = [];
@@ -58,9 +63,10 @@
 	</a>
 	{#if subtitle}
 		<p
-			class="mt-2 leading-6 text-gray-900 xl:mt-4 [&>code]:rounded-md [&>code]:border [&>code]:border-gray-300 [&>code]:bg-gray-100 [&>code]:px-[3.6px] [&>code]:py-0.5 [&>code]:font-mono [&>code]:text-sm"
+			class="prose prose-neutral mt-2 max-w-none text-gray-900 dark:prose-invert marker:content-['-'] prose-strong:font-normal prose-strong:text-gray-1000 xl:mt-4"
 		>
-			{@html parse_back_ticks(subtitle)}
+			<Markdown md={subtitle} />
+			<slot name="image"></slot>
 		</p>
 	{/if}
 	<div
