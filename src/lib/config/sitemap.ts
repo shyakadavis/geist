@@ -120,7 +120,7 @@ export const aside_items: Aside = {
 		{
 			title: 'Empty State',
 			href: '/empty-state',
-			status: 'soon'
+			status: 'draft'
 		},
 		{
 			title: 'Error',
