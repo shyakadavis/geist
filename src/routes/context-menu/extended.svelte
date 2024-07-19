@@ -18,7 +18,7 @@
 	let show_bookmarks = false;
 	let show_full_urls = true;
 
-	let value = 'pedro';
+	let value = 'huntabyte';
 </script>
 
 <ContextMenu>
@@ -63,8 +63,8 @@
 		<ContextMenuRadioGroup bind:value>
 			<ContextMenuLabel inset>People</ContextMenuLabel>
 			<ContextMenuSeparator />
-			<ContextMenuRadioItem value="pedro">Pedro Duarte</ContextMenuRadioItem>
-			<ContextMenuRadioItem value="colm">Colm Tuite</ContextMenuRadioItem>
+			<ContextMenuRadioItem value="shyaka">SHYAKA Davis</ContextMenuRadioItem>
+			<ContextMenuRadioItem value="huntabyte">Hunter Johnston</ContextMenuRadioItem>
 		</ContextMenuRadioGroup>
 	</ContextMenuContent>
 </ContextMenu>
