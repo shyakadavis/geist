@@ -17,6 +17,7 @@ import Command from './command.svg?component';
 import Copy from './copy.svg?component';
 import Database from './database.svg?component';
 import ErrorStates from './error-states.svg?component';
+import ExternalSmall from './external-small.svg?component';
 import External from './external.svg?component';
 import FileText from './file-text.svg?component';
 import Flag from './flag.svg?component';
@@ -70,6 +71,7 @@ export const Icons = {
 	Copy,
 	Database,
 	ErrorStates,
+	ExternalSmall,
 	External,
 	FileText,
 	Flag,

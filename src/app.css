@@ -109,6 +109,15 @@
 		--gray-alpha-900: rgba(0, 0, 0, 0.61);
 		--gray-alpha-1000: rgba(0, 0, 0, 0.91);
 
+		--accents-1: #fafafa;
+		--accents-2: #eaeaea;
+		--accents-3: #999;
+		--accents-4: #888;
+		--accents-5: #666;
+		--accents-6: #444;
+		--accents-7: #333;
+		--accents-8: #111;
+
 		--contrast-fg: hsl(0 0% 100%);
 		--focus-color: var(--blue-700);
 
@@ -224,6 +233,15 @@
 		--gray-alpha-800: hsla(0, 0%, 100%, 0.47);
 		--gray-alpha-900: hsla(0, 0%, 100%, 0.61);
 		--gray-alpha-1000: hsla(0, 0%, 100%, 0.92);
+
+		--accents-1: #111;
+		--accents-2: #333;
+		--accents-3: #444;
+		--accents-4: #666;
+		--accents-5: #888;
+		--accents-6: #999;
+		--accents-7: #eaeaea;
+		--accents-8: #fafafa;
 
 		--focus-color: var(--blue-900);
 
