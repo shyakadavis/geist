@@ -21,7 +21,7 @@
 			>
 				{title}
 			</h1>
-			<p class="text-base text-gray-900 sm:text-lg md:text-xl">
+			<p class="text-base tracking-tight text-gray-900 sm:text-lg md:text-xl">
 				{description}
 			</p>
 		</section>

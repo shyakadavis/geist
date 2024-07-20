@@ -125,7 +125,7 @@ export const aside_items: Aside = {
 		{
 			title: 'Error',
 			href: '/error',
-			status: 'soon'
+			status: 'draft'
 		},
 		{
 			title: 'Feedback',
