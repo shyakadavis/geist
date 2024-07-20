@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { cn } from '$lib/utils.js';
-	import { type Props, badge_variants } from './index.js';
+	import { type Props, empty_state_variants } from './index.js';
 
 	type $$Props = Props;
 
@@ -15,7 +15,7 @@
 	$: icon_parent_size = icon_size ? icon_size + 28 : 32;
 </script>
 
-<div class={cn(badge_variants({ variant, className: class_name }))} {...$$restProps}>
+<div class={cn(empty_state_variants({ variant, className: class_name }))} {...$$restProps}>
 	{#if icon}
 		<span
 			class="grid place-items-center rounded-lg border border-gray-alpha-400 bg-background-100 p-[14px]"

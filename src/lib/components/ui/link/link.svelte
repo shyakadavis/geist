@@ -20,7 +20,7 @@
 	class={cn(link_variants({ variant, className: class_name }))}
 	{href}
 	target={external ? '_blank' : undefined}
-	rel={external ? 'noopener noreferrer' : undefined}
+	rel={external ? 'noopener' : undefined}
 	{...$$restProps}
 	on:click
 	on:keydown

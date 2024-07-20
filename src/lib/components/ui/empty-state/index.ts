@@ -3,7 +3,7 @@ import { type VariantProps, tv } from 'tailwind-variants';
 
 export { default as EmptyState } from './empty-state.svelte';
 
-export const badge_variants = tv({
+export const empty_state_variants = tv({
 	base: 'grid place-items-center gap-4 text-gray-900',
 	variants: {
 		variant: {}
@@ -11,7 +11,7 @@ export const badge_variants = tv({
 	defaultVariants: {}
 });
 
-type Variant = VariantProps<typeof badge_variants>['variant'];
+type Variant = VariantProps<typeof empty_state_variants>['variant'];
 
 export type Props = {
 	variant?: Variant;
