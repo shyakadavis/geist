@@ -22,7 +22,7 @@ export const aside_items: Aside = {
 		{
 			title: 'Icons',
 			href: '/icons',
-			status: 'soon'
+			status: 'draft'
 		}
 	],
 	brands: [
