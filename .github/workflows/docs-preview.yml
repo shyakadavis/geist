@@ -55,4 +55,3 @@ jobs:
           projectName: geist
           directory: ./build
           deploymentName: Preview
-          wranglerVersion: 3.65.1
