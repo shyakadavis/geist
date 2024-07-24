@@ -27,9 +27,9 @@
 		navigator.clipboard.writeText(name);
 	}
 
-	// e.g. <svelte:component this={ArrowLeft} aria-hidden="true" height="16" width="16" />
+	// e.g. <ArrowLeft aria-hidden="true" height="16" width="16" />
 	function copy_svelte_component(name: string) {
-		const value = `<svelte:component this={${name}} aria-hidden="true" height="16" width="16" />`;
+		const value = `<${name} aria-hidden="true" height="16" width="16" />`;
 		navigator.clipboard.writeText(value);
 	}
 
