@@ -60,7 +60,15 @@
 			<ContextMenuTrigger
 				class={cn(
 					'flex h-28 w-full cursor-pointer flex-col items-center justify-center gap-1.5 px-4 text-gray-900 hover:bg-background-100',
-					// Border-specifics.
+					/* 
+						This code applies border styles to elements based on their position and screen size:
+						- Adds bottom and right borders to all elements.
+						- Removes the right border for every second element.
+						- At the small (sm) breakpoint:
+							- Adds the right border back to every second element.
+							- Removes the right border for every fourth element.
+						- Removes the bottom border for elements in the last row.
+					*/
 					'border-b border-r [&:nth-child(2n)]:border-r-0 sm:[&:nth-child(2n)]:border-r sm:[&:nth-child(4n)]:border-r-0',
 					{
 						'border-b-0': i >= preview_icons.length - last_row_count
