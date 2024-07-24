@@ -11,9 +11,6 @@ dependencies:
   clsx:
     specifier: ^2.1.1
     version: 2.1.1
-  cmdk-sv:
-    specifier: ^0.0.18
-    version: 0.0.18(svelte@4.2.18)
   lucide-svelte:
     specifier: ^0.414.0
     version: 0.414.0(svelte@4.2.18)
@@ -886,16 +883,6 @@ packages:
   /clsx@2.1.1:
     resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
     engines: {node: '>=6'}
-    dev: false
-
-  /cmdk-sv@0.0.18(svelte@4.2.18):
-    resolution: {integrity: sha512-istixiQSy9Ez/mQ4VXWB69btqNyDZckbd1XFEwR46Vw+n5zjdmvoWAcOTj0uX3FZXtw9ikwLVmfoW2nwwMClRg==}
-    peerDependencies:
-      svelte: ^4.0.0 || ^5.0.0-next.1
-    dependencies:
-      bits-ui: 0.21.12(svelte@4.2.18)
-      nanoid: 5.0.7
-      svelte: 4.2.18
     dev: false
 
   /code-red@1.0.4:
