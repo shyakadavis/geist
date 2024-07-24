@@ -8,15 +8,15 @@
 	const toggleOpen = () => (open = true);
 
 	const docKeydown = (e: KeyboardEvent) => {
-		if (e.ctrlKey && e.key.toLowerCase() == "k") {
+		if (e.ctrlKey && e.key.toLowerCase() == 'k') {
 			toggleOpen();
 		}
-	}
+	};
 </script>
 
-<svelte:document on:keydown={docKeydown} /> 
+<svelte:document on:keydown={docKeydown} />
 
-<Command bind:open/>
+<Command bind:open />
 
 <header class="sticky top-0 z-20 mx-auto w-full max-w-[1220px]">
 	<div
@@ -56,7 +56,7 @@
 					on:click={toggleOpen}
 				>
 					<!-- Make sure to put a search icon here this is just here as a placeholder -->
-					<Icons.ArrowLeft width="16" height="16" aria-hidden="true" />
+					<Icons.MagnifyingGlass width="16" height="16" aria-hidden="true" />
 				</button>
 			</div>
 		</div>

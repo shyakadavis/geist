@@ -38,6 +38,7 @@ import LogoTurborepo from './logo-turborepo.svg?component';
 import LogoV0 from './logo-v0.svg?component';
 import LogoVercelCircle from './logo-vercel-circle.svg?component';
 import LogoVercel from './logo-vercel.svg?component';
+import MagnifyingGlass from './magnifying-glass.svg';
 import Minus from './minus.svg?component';
 import Notification from './notification.svg?component';
 import Paperclip from './paperclip.svg?component';
@@ -93,6 +94,7 @@ export const Icons = {
 	LogoV0,
 	LogoVercelCircle,
 	LogoVercel,
+	MagnifyingGlass,
 	Minus,
 	Notification,
 	Paperclip,
