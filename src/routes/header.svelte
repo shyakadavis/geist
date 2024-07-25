@@ -9,6 +9,7 @@
 
 	const docKeydown = (e: KeyboardEvent) => {
 		if (e.ctrlKey && e.key.toLowerCase() == 'k') {
+			e.preventDefault();
 			toggleOpen();
 		}
 	};
