@@ -21,7 +21,7 @@
 
 <header class="sticky top-0 z-20 mx-auto w-full max-w-[1220px]">
 	<div
-		class="flex w-full max-w-[1200px] xl:max-w-[1219px] border-b border-l border-r border-gray-alpha-400 bg-background-100 pl-[22px] dark:border-[#242424]"
+		class="flex w-full max-w-[1200px] border-b border-l border-r border-gray-alpha-400 bg-background-100 pl-[22px] dark:border-[#242424] xl:max-w-[1219px]"
 	>
 		<div
 			class="flex grow items-center gap-4 border-r border-gray-alpha-400 py-4 pl-px xl:w-[237px] xl:grow-0"
