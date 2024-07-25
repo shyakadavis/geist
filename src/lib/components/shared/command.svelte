@@ -6,7 +6,7 @@
 	import CommandList from './command/command-list.svelte';
 
 	export let open = false;
-	const isDesktop = mediaQuery('(min-width: 768px)');
+	const isDesktop = mediaQuery('(min-width: 600px)');
 
 	let search = '';
 
