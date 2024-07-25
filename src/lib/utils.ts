@@ -60,7 +60,6 @@ export const flyAndScale = (
 export const context = <T>(key: string) => {
 	return {
 		init: (value: T) => setContext(key, writable(value)),
-		get: (): Writable<T> => getContext(key),
+		get: (): Writable<T> => getContext(key)
 	};
 };
-

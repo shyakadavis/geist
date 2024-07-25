@@ -4,7 +4,7 @@
 	import * as Drawer from '$lib/components/ui/drawer/index.js';
 	import { goto } from '$app/navigation';
 	import CommandList from './command-list.svelte';
-	import { closeContext } from "./index"
+	import { closeContext } from './index';
 
 	export let open = false;
 	const isDesktop = mediaQuery('(min-width: 600px)');
