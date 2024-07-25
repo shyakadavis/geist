@@ -27,9 +27,9 @@
 			href={link.href}
 			aria-disabled={disabled}
 			on:click={close}
-			data-focused={false}
+			aria-selected={false}
 			class={cn(
-				'flex place-items-center gap-2 rounded-md px-2 py-2 text-sm data-[focused=true]:bg-gray-400',
+				'flex place-items-center gap-2 rounded-md px-2 py-2 text-sm aria-selected:bg-gray-400',
 				{
 					'pointer-events-none select-none opacity-50': disabled
 				}

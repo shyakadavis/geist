@@ -3,7 +3,7 @@
 	import ThemeSwitcher from '$lib/components/shared/theme-switcher.svelte';
 	import Command from '$lib/components/shared/command.svelte';
 
-	let open = true;
+	let open = false;
 
 	const toggleOpen = () => (open = true);
 
@@ -55,7 +55,6 @@
 					class="flex size-8 place-items-center justify-center rounded-full border"
 					on:click={toggleOpen}
 				>
-					<!-- Make sure to put a search icon here this is just here as a placeholder -->
 					<Icons.MagnifyingGlass width="16" height="16" aria-hidden="true" />
 				</button>
 			</div>

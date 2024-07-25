@@ -18,15 +18,15 @@
 
 	const navigate = (up: boolean) => {
 		const children = Array.from(listRef.children).filter(
-			(a) => a.hasAttribute('data-focused') && a.tagName == 'A'
+			(a) => a.hasAttribute('aria-selected') && a.tagName == 'A'
 		);
 
 		let startIndex: number = selectedIndex;
 
 		for (let i = 0; i < children.length; i++) {
 			const child = children[i];
-			if (child.getAttribute('data-focused') == 'true') {
-				child.setAttribute('data-focused', 'false');
+			if (child.getAttribute('aria-selected') == 'true') {
+				child.setAttribute('aria-selected', 'false');
 				break;
 			}
 		}
@@ -45,7 +45,7 @@
 
 		const child = children[i] as HTMLButtonElement;
 
-		child.setAttribute('data-focused', 'true');
+		child.setAttribute('aria-selected', 'true');
 
 		selectedIndex = i;
 
@@ -68,7 +68,7 @@
 		const children = Array.from(listRef.children);
 
 		children.forEach((child) => {
-			if (child.getAttribute('data-focused') == 'true') {
+			if (child.getAttribute('aria-selected') == 'true') {
 				goto((child as HTMLAnchorElement).href);
 				open = false;
 				return;
@@ -77,26 +77,26 @@
 	};
 
 	const listMouseMove = (e: MouseEvent) => {
-		const option = findAncestor(e.target as Node, (a) => a?.hasAttribute('data-focused') ?? false);
+		const option = findAncestor(e.target as Node, (a) => a?.hasAttribute('aria-selected') ?? false);
 		const children = Array.from(listRef.children);
 		if (!option) {
 			for (let i = 0; i < children.length; i++) {
 				const child = children[i];
-				child.setAttribute('data-focused', 'false');
+				child.setAttribute('aria-selected', 'false');
 			}
 			return;
 		}
 
 		for (let i = 0; i < children.length; i++) {
 			const child = children[i];
-			child.setAttribute('data-focused', 'false');
+			child.setAttribute('aria-selected', 'false');
 		}
 
-		option.setAttribute('data-focused', 'true');
+		option.setAttribute('aria-selected', 'true');
 
 		for (let i = 0; i < children.length; i++) {
 			const child = children[i];
-			if (child.getAttribute('data-focused') == 'true') {
+			if (child.getAttribute('aria-selected') == 'true') {
 				selectedIndex = i;
 				break;
 			}
@@ -151,7 +151,6 @@
 		<Dialog.Content class="bg-background-100 p-0 sm:max-w-[640px]" includeX={false}>
 			<div class="flex flex-col">
 				<div class="flex h-[53px] place-items-center justify-between border-b px-3">
-					<!-- search -->
 					<input
 						bind:value={search}
 						type="text"
@@ -182,7 +181,6 @@
 		<Drawer.Content class="h-3/4 bg-background-100 p-0">
 			<div class="flex flex-col">
 				<div class="flex h-[53px] place-items-center justify-between border-b px-3">
-					<!-- search -->
 					<input
 						bind:value={search}
 						type="text"
