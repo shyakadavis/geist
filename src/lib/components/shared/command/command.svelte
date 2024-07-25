@@ -3,7 +3,8 @@
 	import * as Dialog from '$lib/components/ui/dialog/index.js';
 	import * as Drawer from '$lib/components/ui/drawer/index.js';
 	import { goto } from '$app/navigation';
-	import CommandList from './command/command-list.svelte';
+	import CommandList from './command-list.svelte';
+	import { closeContext } from "./index"
 
 	export let open = false;
 	const isDesktop = mediaQuery('(min-width: 600px)');
@@ -11,6 +12,8 @@
 	let search = '';
 
 	const close = () => (open = false);
+
+	closeContext.init(close);
 
 	let listRef: HTMLDivElement;
 
@@ -148,7 +151,7 @@
 
 {#if $isDesktop}
 	<Dialog.Root bind:open>
-		<Dialog.Content class="bg-background-100 p-0 sm:max-w-[640px]" includeX={false}>
+		<Dialog.Content class="p-0 sm:max-w-[640px]" includeX={false}>
 			<div class="flex flex-col">
 				<div class="flex h-[53px] place-items-center justify-between border-b px-3">
 					<input

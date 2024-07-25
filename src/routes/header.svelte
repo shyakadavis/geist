@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Icons } from '$lib/assets/icons';
 	import ThemeSwitcher from '$lib/components/shared/theme-switcher.svelte';
-	import Command from '$lib/components/shared/command.svelte';
+	import Command from '$lib/components/shared/command/command.svelte';
 
 	let open = false;
 

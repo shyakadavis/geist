@@ -3,8 +3,11 @@
 	import { Badge } from '$lib/components/ui/badge';
 	import { aside_items } from '$lib/config/sitemap';
 	import { cn } from '$lib/utils';
+	import { closeContext } from './index';
 
 	export let search: string;
+
+	const close = closeContext.get();
 </script>
 
 {#each Object.entries(aside_items) as item}
@@ -25,8 +28,12 @@
 		<svelte:element
 			this={disabled ? 'span' : 'a'}
 			href={link.href}
+			on:click={() => {
+				if (disabled || !$close) return;
+
+				$close();
+			}}
 			aria-disabled={disabled}
-			on:click={close}
 			aria-selected={false}
 			class={cn(
 				'flex place-items-center gap-2 rounded-md px-2 py-2 text-sm aria-selected:bg-gray-400',

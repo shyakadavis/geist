@@ -2,6 +2,8 @@ import { type ClassValue, clsx } from 'clsx';
 import { cubicOut } from 'svelte/easing';
 import type { TransitionConfig } from 'svelte/transition';
 import { twMerge } from 'tailwind-merge';
+import { getContext, setContext } from 'svelte';
+import { writable, type Writable } from 'svelte/store';
 
 export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));
@@ -54,3 +56,11 @@ export const flyAndScale = (
 		easing: cubicOut
 	};
 };
+
+export const context = <T>(key: string) => {
+	return {
+		init: (value: T) => setContext(key, writable(value)),
+		get: (): Writable<T> => getContext(key),
+	};
+};
+

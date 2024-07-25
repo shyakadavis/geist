@@ -38,7 +38,7 @@ import LogoTurborepo from './logo-turborepo.svg?component';
 import LogoV0 from './logo-v0.svg?component';
 import LogoVercelCircle from './logo-vercel-circle.svg?component';
 import LogoVercel from './logo-vercel.svg?component';
-import MagnifyingGlass from './magnifying-glass.svg';
+import MagnifyingGlass from './magnifying-glass.svg?component';
 import Minus from './minus.svg?component';
 import Notification from './notification.svg?component';
 import Paperclip from './paperclip.svg?component';
@@ -52,6 +52,7 @@ import Tabs from './tabs.svg?component';
 import ThemeSwitchDark from './theme-switch-dark.svg?component';
 import ThemeSwitchLight from './theme-switch-light.svg?component';
 import ThemeSwitchSystem from './theme-switch-system.svg?component';
+import X from './x.svg?component';
 
 export const Icons = {
 	ArrowLeft,
@@ -107,5 +108,6 @@ export const Icons = {
 	Tabs,
 	ThemeSwitchDark,
 	ThemeSwitchLight,
-	ThemeSwitchSystem
+	ThemeSwitchSystem,
+	X
 };
