@@ -275,7 +275,7 @@ export const aside_items: Aside = {
 		{
 			title: 'Window',
 			href: '/window',
-			status: 'soon'
+			status: 'draft'
 		}
 	]
 };
