@@ -8,7 +8,7 @@
 	const doc_keydown = (e: KeyboardEvent) => {
 		if (e.ctrlKey && e.key.toLowerCase() == 'k') {
 			e.preventDefault();
-			e.stopPropagation();
+			e.stopPropagation(); // here for FireFox ❤️
 			command_open_state.toggle();
 		}
 	};
