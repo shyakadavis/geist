@@ -1,6 +1,6 @@
 import { writable } from 'svelte/store';
 
-function createCommandStore(initial_state: boolean) {
+function create_command_store(initial_state: boolean) {
 	const command = writable(initial_state);
 
 	function toggle() {
@@ -13,4 +13,4 @@ function createCommandStore(initial_state: boolean) {
 	};
 }
 
-export const commandOpenState = createCommandStore(false);
+export const command_open_state = create_command_store(false);

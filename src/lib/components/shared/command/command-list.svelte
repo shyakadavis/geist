@@ -4,7 +4,7 @@
 	import { aside_items } from '$lib/config/sitemap';
 	import { cn } from '$lib/utils';
 	import * as Command from '$lib/components/ui/command';
-	import { commandOpenState } from '$lib/stores';
+	import { command_open_state } from '$lib/stores';
 	import { goto } from '$app/navigation';
 
 	export let search: string;
@@ -15,7 +15,7 @@
 
 	const navigate = (link: string) => {
 		goto(link);
-		commandOpenState.toggle();
+		command_open_state.toggle();
 	};
 </script>
 

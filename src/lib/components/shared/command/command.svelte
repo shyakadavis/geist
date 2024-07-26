@@ -2,7 +2,7 @@
 	import { mediaQuery } from 'svelte-legos';
 	import * as Drawer from '$lib/components/ui/drawer/index.js';
 	import CommandList from './command-list.svelte';
-	import { commandOpenState } from '$lib/stores';
+	import { command_open_state } from '$lib/stores';
 	import * as Command from '$lib/components/ui/command';
 	import { Button } from '$lib/components/ui/button';
 
@@ -13,7 +13,7 @@
 
 {#if $isDesktop}
 	<Command.Dialog
-		bind:open={$commandOpenState}
+		bind:open={$command_open_state}
 		class="p-0"
 		dialogContentClassName="!max-w-[640px] w-full"
 	>
@@ -26,7 +26,7 @@
 		<CommandList {search} />
 	</Command.Dialog>
 {:else}
-	<Drawer.Root bind:open={$commandOpenState}>
+	<Drawer.Root bind:open={$command_open_state}>
 		<Drawer.Content class="h-3/4 bg-background-100 p-0">
 			<Command.Root>
 				<Drawer.Header class="flex h-[53px] place-items-center justify-between border-b px-2">
@@ -38,7 +38,7 @@
 						wrapperClass="border-none w-full flex place-items-center"
 					/>
 					<Button
-						on:click={commandOpenState.toggle}
+						on:click={command_open_state.toggle}
 						size="sm"
 						variant="secondary"
 						class="h-5 px-1.5 text-xs"
