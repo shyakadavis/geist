@@ -2,4 +2,4 @@ import { context } from '$lib/utils';
 
 export type CloseFunc = () => void;
 
-export const closeContext = context<CloseFunc | undefined>('gui-command-menu');
+export const openContext = context<CloseFunc | undefined>('gui-command-menu');

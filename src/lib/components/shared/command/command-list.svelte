@@ -3,64 +3,64 @@
 	import { Badge } from '$lib/components/ui/badge';
 	import { aside_items } from '$lib/config/sitemap';
 	import { cn } from '$lib/utils';
-	import { closeContext } from './index';
+	import * as Command from '$lib/components/ui/command';
+	import { commandOpenState } from '$lib/stores';
+	import { goto } from '$app/navigation';
 
 	export let search: string;
 
-	const close = closeContext.get();
+	let className = '';
+
+	export { className as class };
+
+	const navigate = (link: string) => {
+		goto(link);
+		commandOpenState.toggle();
+	};
 </script>
 
-{#each Object.entries(aside_items) as item}
-	{@const [group, links] = item}
-	{@const filteredLinks = links.filter(
-		(link) =>
-			link.title.toLowerCase().includes(search.toLowerCase()) ||
-			search.toLowerCase().includes(link.title.toLowerCase())
-	)}
-	{#if filteredLinks.length > 0}
-		<span class="px-2 py-3 pb-3 text-xs font-light capitalize text-gray-700 first:pb-3 first:pt-2">
-			{group}
-		</span>
-	{/if}
-	{#each filteredLinks as link}
-		{@const disabled = link.status == 'soon'}
-		<!-- svelte-ignore a11y-no-static-element-interactions -->
-		<svelte:element
-			this={disabled ? 'span' : 'a'}
-			href={link.href}
-			on:click={() => {
-				if (disabled || !$close) return;
-
-				$close();
-			}}
-			aria-disabled={disabled}
-			aria-selected={false}
-			class={cn(
-				'flex place-items-center gap-2 rounded-md px-2 py-2 text-sm aria-selected:bg-gray-400',
-				{
-					'pointer-events-none select-none opacity-50': disabled
-				}
-			)}
+<Command.List class={cn('max-h-none px-1 pb-1 sm:h-[436px]', className)} {...$$restProps}>
+	<Command.Empty class="text-gray-600">
+		No results found for
+		<span class="text-gray-1000">
+			"{search}"
+		</span>.
+	</Command.Empty>
+	{#each Object.entries(aside_items) as item}
+		{@const [group, links] = item}
+		<Command.Group
+			heading={group}
+			class="[&_[data-cmdk-group-heading]]:py-3 [&_[data-cmdk-group-heading]]:capitalize [&_[data-cmdk-group-heading]]:text-gray-700"
 		>
-			{#if link.icon}
-				<span class="text-gray-1000">
-					<svelte:component this={link.icon} aria-hidden="true" width="16" height="16" />
-				</span>
-			{:else}
-				<span class="text-gray-1000">
-					<Icons.ArrowRight width="16" height="16" class="text-gray-600" aria-hidden="true" />
-				</span>
-			{/if}
-			{link.title}
-			{#if link.status === 'new'}
-				<Badge variant="blue" size="sm">New</Badge>
-			{/if}
-			{#if link.status === 'soon'}
-				<Badge variant="gray-subtle" size="sm">Soon</Badge>
-			{/if}
-			{#if link.status === 'draft'}
-				<Badge variant="purple-subtle" size="sm">Draft</Badge>
-			{/if}
-		</svelte:element>
+			{#each links as link}
+				{@const disabled = link.status == 'soon'}
+				<Command.Item
+					value={link.title}
+					onSelect={() => navigate(link.href)}
+					{disabled}
+					class="flex place-items-center gap-3 rounded-md py-3 hover:cursor-pointer hover:bg-gray-100 aria-selected:bg-gray-100"
+				>
+					{#if link.icon}
+						<span class="text-gray-1000">
+							<svelte:component this={link.icon} aria-hidden="true" width="16" height="16" />
+						</span>
+					{:else}
+						<span class="text-gray-1000">
+							<Icons.ArrowRight width="16" height="16" class="text-gray-600" aria-hidden="true" />
+						</span>
+					{/if}
+					<span>{link.title}</span>
+					{#if link.status === 'new'}
+						<Badge variant="blue" size="sm">New</Badge>
+					{/if}
+					{#if link.status === 'soon'}
+						<Badge variant="gray-subtle" size="sm">Soon</Badge>
+					{/if}
+					{#if link.status === 'draft'}
+						<Badge variant="purple-subtle" size="sm">Draft</Badge>
+					{/if}
+				</Command.Item>
+			{/each}
+		</Command.Group>
 	{/each}
-{/each}
+</Command.List>

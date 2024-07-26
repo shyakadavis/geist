@@ -2,22 +2,19 @@
 	import { Icons } from '$lib/assets/icons';
 	import ThemeSwitcher from '$lib/components/shared/theme-switcher.svelte';
 	import Command from '$lib/components/shared/command/command.svelte';
-
-	let open = false;
-
-	const toggleOpen = () => (open = true);
+	import { commandOpenState } from '$lib/stores';
 
 	const docKeydown = (e: KeyboardEvent) => {
 		if (e.ctrlKey && e.key.toLowerCase() == 'k') {
 			e.preventDefault();
-			toggleOpen();
+			commandOpenState.toggle();
 		}
 	};
 </script>
 
 <svelte:document on:keydown={docKeydown} />
 
-<Command bind:open />
+<Command />
 
 <header class="sticky top-0 z-20 mx-auto w-full max-w-[1220px]">
 	<div
@@ -36,7 +33,7 @@
 			<button
 				class="hidden h-8 w-[220px] cursor-pointer items-center justify-between rounded-md border border-gray-400 bg-transparent pl-2 pr-1.5 font-sans text-sm text-gray-700 outline-none hover:bg-background-200 focus-visible:shadow-focus-ring xl:flex"
 				type="button"
-				on:click={toggleOpen}
+				on:click={commandOpenState.toggle}
 			>
 				Search Geist
 				<kbd
@@ -54,7 +51,7 @@
 			<div class="flex place-items-center xl:hidden">
 				<button
 					class="flex size-8 place-items-center justify-center rounded-full border"
-					on:click={toggleOpen}
+					on:click={commandOpenState.toggle}
 				>
 					<Icons.MagnifyingGlass width="16" height="16" aria-hidden="true" />
 				</button>

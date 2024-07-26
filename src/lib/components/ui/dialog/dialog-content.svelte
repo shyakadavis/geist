@@ -3,9 +3,10 @@
 	import { Icons } from '$lib/assets/icons';
 	import * as Dialog from './index.js';
 	import { cn, flyAndScale } from '$lib/utils.js';
+	import { Button } from '$lib/components/ui/button';
 
 	interface $$Props extends DialogPrimitive.ContentProps {
-		includeX: boolean;
+		useEscape?: boolean;
 	}
 
 	let className: $$Props['class'] = undefined;
@@ -14,7 +15,7 @@
 		duration: 200
 	};
 	export { className as class };
-	export let includeX: $$Props['includeX'] = true;
+	export let useEscape: $$Props['useEscape'] = true;
 </script>
 
 <Dialog.Portal>
@@ -29,13 +30,24 @@
 		{...$$restProps}
 	>
 		<slot />
-		{#if includeX}
-			<DialogPrimitive.Close
-				class="ring-offset-background focus:ring-ring data-[state=open]:bg-accent data-[state=open]:text-muted-foreground absolute right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none"
-			>
+		<DialogPrimitive.Close
+			class={cn(
+				'ring-offset-background focus:ring-ring data-[state=open]:bg-accent data-[state=open]:text-muted-foreground absolute right-4 top-4 flex place-items-center rounded-sm focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none',
+				{
+					'opacity-70 transition-opacity hover:opacity-100': !useEscape
+				}
+			)}
+		>
+			{#if useEscape}
+				<Button
+					size="sm"
+					variant="secondary"
+					class="h-5 px-1.5 text-xs text-gray-1000 hover:bg-transparent">Esc</Button
+				>
+			{:else}
 				<Icons.X class="h-4 w-4" />
-				<span class="sr-only">Close</span>
-			</DialogPrimitive.Close>
-		{/if}
+			{/if}
+			<span class="sr-only">Close</span>
+		</DialogPrimitive.Close>
 	</DialogPrimitive.Content>
 </Dialog.Portal>
