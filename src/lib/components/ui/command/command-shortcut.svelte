@@ -8,9 +8,6 @@
 	export { className as class };
 </script>
 
-<span
-	class={cn('text-muted-foreground ml-auto text-xs tracking-widest', className)}
-	{...$$restProps}
->
+<span class={cn('ml-auto text-xs tracking-widest text-gray-600', className)} {...$$restProps}>
 	<slot />
 </span>

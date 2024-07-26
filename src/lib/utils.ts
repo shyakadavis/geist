@@ -2,8 +2,6 @@ import { type ClassValue, clsx } from 'clsx';
 import { cubicOut } from 'svelte/easing';
 import type { TransitionConfig } from 'svelte/transition';
 import { twMerge } from 'tailwind-merge';
-import { getContext, setContext } from 'svelte';
-import { writable, type Writable } from 'svelte/store';
 
 export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));

@@ -3,7 +3,6 @@
 	import { Icons } from '$lib/assets/icons';
 	import * as Dialog from './index.js';
 	import { cn, flyAndScale } from '$lib/utils.js';
-	import { Button } from '$lib/components/ui/button';
 	import Kbd from '../kbd/kbd.svelte';
 
 	interface $$Props extends DialogPrimitive.ContentProps {
@@ -33,7 +32,7 @@
 		<slot />
 		<DialogPrimitive.Close
 			class={cn(
-				'ring-offset-background focus:ring-ring data-[state=open]:bg-accent data-[state=open]:text-muted-foreground absolute right-4 top-4 flex place-items-center rounded-sm focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none',
+				'ring-offset-background focus:ring-ring data-[state=open]:bg-accent absolute right-4 top-4 flex place-items-center rounded-sm focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:text-gray-600',
 				{
 					'opacity-70 transition-opacity hover:opacity-100': !useEscape
 				}
