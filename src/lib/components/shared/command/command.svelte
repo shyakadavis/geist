@@ -6,16 +6,16 @@
 	import * as Command from '$lib/components/ui/command';
 	import { Button } from '$lib/components/ui/button';
 
-	const isDesktop = mediaQuery('(min-width: 640px)');
+	const is_desktop = mediaQuery('(min-width: 640px)');
 
 	let search = '';
 </script>
 
-{#if $isDesktop}
+{#if $is_desktop}
 	<Command.Dialog
 		bind:open={$command_open_state}
 		class="p-0"
-		dialogContentClassName="!max-w-[640px] w-full"
+		dialog_content_class_name="!max-w-[640px] w-full"
 	>
 		<Command.Input
 			placeholder="Search..."

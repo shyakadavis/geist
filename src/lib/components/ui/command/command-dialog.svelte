@@ -7,16 +7,16 @@
 
 	type $$Props = DialogPrimitive.Props &
 		CommandPrimitive.CommandProps & {
-			dialogContentClassName?: string;
+			dialog_content_class_name?: string;
 		};
 
 	export let open: $$Props['open'] = false;
 	export let value: $$Props['value'] = undefined;
-	export let dialogContentClassName: $$Props['class'] = undefined;
+	export let dialog_content_class_name: $$Props['class'] = undefined;
 </script>
 
 <Dialog.Root bind:open {...$$restProps}>
-	<Dialog.Content class={cn('overflow-hidden p-0 shadow-lg', dialogContentClassName)} useEscape>
+	<Dialog.Content class={cn('overflow-hidden p-0 shadow-lg', dialog_content_class_name)} useEscape>
 		<Command
 			class="[&_[data-cmdk-group-heading]]:px-2 [&_[data-cmdk-group-heading]]:font-medium [&_[data-cmdk-group-heading]]:text-gray-600 [&_[data-cmdk-group]:not([hidden])_~[data-cmdk-group]]:pt-0 [&_[data-cmdk-group]]:px-2 [&_[data-cmdk-input-wrapper]_svg]:h-5 [&_[data-cmdk-input-wrapper]_svg]:w-5 [&_[data-cmdk-input]]:h-12 [&_[data-cmdk-item]]:px-2 [&_[data-cmdk-item]]:py-3 [&_[data-cmdk-item]_svg]:h-5 [&_[data-cmdk-item]_svg]:w-5"
 			{...$$restProps}
