@@ -5,7 +5,7 @@
 	import { command_open_state } from '$lib/stores';
 	import { Button } from '$lib/components/ui/button';
 
-	const docKeydown = (e: KeyboardEvent) => {
+	const doc_keydown = (e: KeyboardEvent) => {
 		if (e.ctrlKey && e.key.toLowerCase() == 'k') {
 			e.preventDefault();
 			e.stopPropagation();
@@ -14,7 +14,7 @@
 	};
 </script>
 
-<svelte:document on:keydown={docKeydown} />
+<svelte:document on:keydown={doc_keydown} />
 
 <Command />
 
