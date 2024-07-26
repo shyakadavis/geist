@@ -6,7 +6,7 @@
 	export { class_name as class };
 </script>
 
-<div class={cn('flex flex-col rounded-md border', class_name)}>
+<div class={cn('flex flex-col rounded-md border shadow-sm', class_name)}>
 	<div class="flex h-9 place-items-center justify-between border-b px-2">
 		<div class="flex place-items-center gap-2">
 			<div class="size-3 rounded-full bg-[#ff5f56]"></div>
