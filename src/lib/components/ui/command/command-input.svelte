@@ -4,19 +4,19 @@
 	import { cn } from '$lib/utils.js';
 
 	type $$Props = CommandPrimitive.InputProps & {
-		wrapperClass?: string | undefined;
-		hideSearchIcon?: boolean;
+		wrapper_class?: string | undefined;
+		hide_search_icon?: boolean;
 	};
 
 	let className: string | undefined | null = undefined;
 	export { className as class };
 	export let value: string = '';
-	export let wrapperClass: $$Props['wrapperClass'] = undefined;
-	export let hideSearchIcon: $$Props['hideSearchIcon'] = false;
+	export let wrapper_class: $$Props['wrapper_class'] = undefined;
+	export let hide_search_icon: $$Props['hide_search_icon'] = false;
 </script>
 
-<div class={cn('flex items-center border-b px-2', wrapperClass)} data-cmdk-input-wrapper="">
-	{#if !hideSearchIcon}
+<div class={cn('flex items-center border-b px-2', wrapper_class)} data-cmdk-input-wrapper="">
+	{#if !hide_search_icon}
 		<Icons.MagnifyingGlass class="mr-2 h-4 w-4 shrink-0 opacity-50" />
 	{/if}
 	<CommandPrimitive.Input

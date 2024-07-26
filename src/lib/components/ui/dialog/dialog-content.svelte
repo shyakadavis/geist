@@ -6,7 +6,7 @@
 	import Kbd from '../kbd/kbd.svelte';
 
 	interface $$Props extends DialogPrimitive.ContentProps {
-		useEscape?: boolean;
+		use_escape?: boolean;
 	}
 
 	let className: $$Props['class'] = undefined;
@@ -15,7 +15,7 @@
 		duration: 200
 	};
 	export { className as class };
-	export let useEscape: $$Props['useEscape'] = true;
+	export let use_escape: $$Props['use_escape'] = true;
 </script>
 
 <Dialog.Portal>
@@ -34,11 +34,11 @@
 			class={cn(
 				'ring-offset-background focus:ring-ring data-[state=open]:bg-accent absolute right-4 top-4 flex place-items-center rounded-sm focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:text-gray-600',
 				{
-					'opacity-70 transition-opacity hover:opacity-100': !useEscape
+					'opacity-70 transition-opacity hover:opacity-100': !use_escape
 				}
 			)}
 		>
-			{#if useEscape}
+			{#if use_escape}
 				<Kbd keys={['escape']} />
 			{:else}
 				<Icons.X class="h-4 w-4" />

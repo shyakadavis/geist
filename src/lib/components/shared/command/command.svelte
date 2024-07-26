@@ -19,7 +19,7 @@
 	>
 		<Command.Input
 			placeholder="Search..."
-			hideSearchIcon
+			hide_search_icon
 			bind:value={search}
 			class="h-[53px] p-0 px-1 text-lg placeholder:text-gray-600"
 		/>
@@ -31,11 +31,11 @@
 			<Command.Root>
 				<Drawer.Header class="flex h-[53px] place-items-center justify-between border-b px-2">
 					<Command.Input
-						hideSearchIcon
+						hide_search_icon
 						placeholder="Search..."
 						class="h-7 flex-grow border-none text-lg placeholder:text-gray-600"
 						bind:value={search}
-						wrapperClass="border-none w-full flex place-items-center"
+						wrapper_class="border-none w-full flex place-items-center"
 					/>
 					<Button
 						on:click={command_open_state.toggle}
