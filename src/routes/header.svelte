@@ -41,7 +41,7 @@
 				<kbd
 					class="pointer-events-none inline-flex h-5 min-w-5 select-none items-center justify-center gap-1 rounded-md border bg-background-100 px-1 font-mono text-xs font-medium text-gray-900"
 				>
-					<span class="text-base">⌘</span>
+					<span class="text-xs">⌘</span>
 					K
 				</kbd>
 			</button>
