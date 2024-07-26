@@ -3,6 +3,7 @@
 	import ThemeSwitcher from '$lib/components/shared/theme-switcher.svelte';
 	import Command from '$lib/components/shared/command/command.svelte';
 	import { command_open_state } from '$lib/stores';
+	import { Button } from '$lib/components/ui/button';
 
 	const docKeydown = (e: KeyboardEvent) => {
 		if (e.ctrlKey && e.key.toLowerCase() == 'k') {
@@ -50,12 +51,17 @@
 			</div>
 
 			<div class="flex place-items-center xl:hidden">
-				<button
-					class="flex size-8 place-items-center justify-center rounded-full border"
+				<Button
+					svg_only
+					aria-label="Search"
+					variant="secondary"
+					shape="circle"
+					size="sm"
+					class="text-gray-1000 xl:hidden"
 					on:click={command_open_state.toggle}
 				>
-					<Icons.MagnifyingGlass width="16" height="16" aria-hidden="true" />
-				</button>
+					<Icons.MagnifyingGlass width="20" height="20" aria-hidden="true" />
+				</Button>
 			</div>
 		</div>
 	</div>
