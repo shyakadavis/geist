@@ -4,6 +4,7 @@
 	import * as Dialog from './index.js';
 	import { cn, flyAndScale } from '$lib/utils.js';
 	import { Button } from '$lib/components/ui/button';
+	import Kbd from '../kbd/kbd.svelte';
 
 	interface $$Props extends DialogPrimitive.ContentProps {
 		useEscape?: boolean;
@@ -39,11 +40,7 @@
 			)}
 		>
 			{#if useEscape}
-				<Button
-					size="sm"
-					variant="secondary"
-					class="h-5 px-1.5 text-xs text-gray-1000 hover:bg-transparent">Esc</Button
-				>
+				<Kbd keys={['escape']} />
 			{:else}
 				<Icons.X class="h-4 w-4" />
 			{/if}
