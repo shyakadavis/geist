@@ -36,7 +36,7 @@
 	</Command.Dialog>
 {:else}
 	<Drawer.Root bind:open={$command_open_state}>
-		<Drawer.Content class="h-3/4 bg-background-100 p-0">
+		<Drawer.Content class="h-3/4" hide_dismiss_bar>
 			<Command.Root>
 				<Drawer.Header class="flex h-[53px] place-items-center justify-between border-b px-2">
 					<Command.Input

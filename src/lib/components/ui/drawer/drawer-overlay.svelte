@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Drawer as DrawerPrimitive } from 'vaul-svelte';
 	import { cn } from '$lib/utils.js';
+	import { Drawer as DrawerPrimitive } from 'vaul-svelte';
 
 	type $$Props = DrawerPrimitive.OverlayProps;
 
@@ -11,7 +11,7 @@
 
 <DrawerPrimitive.Overlay
 	bind:el
-	class={cn('bg-black/80 fixed inset-0 z-50', className)}
+	class={cn('fixed inset-0 z-50 bg-[#000]/80', className)}
 	{...$$restProps}
 >
 	<slot />

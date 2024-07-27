@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Drawer as DrawerPrimitive } from 'vaul-svelte';
 	import { cn } from '$lib/utils.js';
+	import { Drawer as DrawerPrimitive } from 'vaul-svelte';
 
 	type $$Props = DrawerPrimitive.DescriptionProps;
 
@@ -11,7 +11,7 @@
 
 <DrawerPrimitive.Description
 	bind:el
-	class={cn('text-sm text-gray-600', className)}
+	class={cn('text-sm text-gray-700', className)}
 	{...$$restProps}
 >
 	<slot />
