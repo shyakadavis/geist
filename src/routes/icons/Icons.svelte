@@ -6,11 +6,22 @@
 		ContextMenuItem,
 		ContextMenuTrigger
 	} from '$lib/components/ui/context-menu';
+	import { SearchInput } from '$lib/components/ui/input';
 	import { cn } from '$lib/utils';
 	import { onMount } from 'svelte';
+	import { derived, writable } from 'svelte/store';
 
 	const icons_to_exclude = ['BrandAssets', 'ErrorStates'];
-	const preview_icons = Object.entries(Icons).filter(([name]) => !icons_to_exclude.includes(name));
+	const preview_icons = writable(
+		Object.entries(Icons).filter(([name]) => !icons_to_exclude.includes(name))
+	);
+	const search_term = writable('');
+
+	// TODO: Improve search algorithm
+	const filtered_icons = derived([preview_icons, search_term], ([$preview_icons, $search_term]) => {
+		const term = $search_term.toLowerCase();
+		return $preview_icons.filter(([name]) => name.toLowerCase().includes(term));
+	});
 
 	// e.g. "ArrowUp" -> "arrow-up"
 	function format_name(str: string) {
@@ -43,19 +54,26 @@
 		navigator.clipboard.writeText(value);
 	}
 
-	let last_row_count = 0;
+	const last_row_count = writable(0);
 
-	const update_last_row_count = () => {
-		last_row_count = window.innerWidth >= 640 ? preview_icons.length % 4 : preview_icons.length % 2;
-	};
+	function update_last_row_count() {
+		filtered_icons.subscribe(($filtered_icons) => {
+			const columns = window.innerWidth >= 640 ? 4 : 2;
+			last_row_count.set($filtered_icons.length % columns);
+		});
+	}
 
 	onMount(update_last_row_count);
 </script>
 
 <svelte:window on:resize={update_last_row_count} />
 
+<section id="search" class="grid w-full place-items-center border-b p-10">
+	<SearchInput placeholder="Search icons..." class="w-full" bind:value={$search_term} />
+</section>
+
 <section class="grid grid-cols-2 sm:grid-cols-4">
-	{#each preview_icons as [name, icon], i}
+	{#each $filtered_icons as [name, icon], i}
 		<ContextMenu>
 			<ContextMenuTrigger
 				class={cn(
@@ -71,7 +89,8 @@
 					*/
 					'border-b border-r [&:nth-child(2n)]:border-r-0 sm:[&:nth-child(2n)]:border-r sm:[&:nth-child(4n)]:border-r-0',
 					{
-						'border-b-0': i >= preview_icons.length - last_row_count
+						'border-b-0':
+							i >= $filtered_icons.length - $last_row_count || $filtered_icons.length <= 4
 					}
 				)}
 			>
