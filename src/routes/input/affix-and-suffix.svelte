@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { Icons } from '$lib/assets/icons';
-
 	import { Input } from '$lib/components/ui/input';
 </script>
 
