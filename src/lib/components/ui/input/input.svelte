@@ -27,7 +27,7 @@
 {/if}
 <div
 	class={cn(
-		'flex max-w-full items-center rounded-md shadow-shadow-border  transition-[border-color,box-shadow] delay-0 focus-within:shadow-shadow-input',
+		'flex max-w-full items-center rounded-md shadow-shadow-border transition-[border-color,box-shadow] delay-0 focus-within:shadow-shadow-input',
 		{
 			'h-8': size === 'sm',
 			'h-10': size === 'md',
