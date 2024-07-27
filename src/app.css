@@ -129,6 +129,7 @@
 		--shadow-border-small: var(--shadow-border), var(--shadow-small);
 		--shadow-menu: var(--shadow-border), 0px 1px 1px rgba(0, 0, 0, 0.02),
 			0px 4px 8px -4px rgba(0, 0, 0, 0.04), 0px 16px 24px -8px rgba(0, 0, 0, 0.06);
+		--shadow-input: 0 0 0 1px var(--gray-alpha-600), 0 0 0 4px rgba(0, 0, 0, 0.16);
 	}
 
 	.dark {
@@ -250,6 +251,7 @@
 		--focus-border: 0 0 0 1px var(--gray-alpha-600), 0px 0px 0px 4px hsla(0, 0%, 100%, 0.24);
 		--shadow-border-inset: inset 0 0 0 1px hsla(0, 0%, 100%, 0.1);
 		--shadow-border-small: var(--shadow-border), 0px 1px 2px rgba(0, 0, 0, 0.16);
+		--shadow-input: 0 0 0 1px var(--gray-alpha-600), 0 0 0 4px hsla(0, 0%, 100%, 0.24);
 	}
 }
 

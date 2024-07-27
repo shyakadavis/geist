@@ -1,3 +1,4 @@
+import ArrowCircleUp from './arrow-circle-up.svg?component';
 import ArrowLeft from './arrow-left.svg?component';
 import ArrowRight from './arrow-right.svg?component';
 import ArrowUp from './arrow-up.svg?component';
@@ -55,6 +56,7 @@ import ThemeSwitchLight from './theme-switch-light.svg?component';
 import ThemeSwitchSystem from './theme-switch-system.svg?component';
 
 export const Icons = {
+	ArrowCircleUp,
 	ArrowLeft,
 	ArrowRight,
 	ArrowUp,
