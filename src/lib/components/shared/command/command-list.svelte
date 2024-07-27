@@ -1,11 +1,11 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import { Icons } from '$lib/assets/icons';
 	import { Badge } from '$lib/components/ui/badge';
-	import { aside_items } from '$lib/config/sitemap';
-	import { cn } from '$lib/utils';
 	import * as Command from '$lib/components/ui/command';
+	import { aside_items } from '$lib/config/sitemap';
 	import { command_open_state } from '$lib/stores';
-	import { goto } from '$app/navigation';
+	import { cn } from '$lib/utils';
 
 	export let search: string;
 
@@ -19,10 +19,10 @@
 	};
 </script>
 
-<Command.List class={cn('max-h-none px-1 pb-1 sm:h-[436px]', className)} {...$$restProps}>
+<Command.List class={cn('px-1 pb-1', className)} {...$$restProps}>
 	<Command.Empty class="text-gray-600">
 		No results found for
-		<span class="text-gray-1000">
+		<span class="font-semibold text-gray-1000">
 			"{search}"
 		</span>.
 	</Command.Empty>

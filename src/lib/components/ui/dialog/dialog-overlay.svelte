@@ -13,7 +13,7 @@
 	export { className as class };
 </script>
 
-<!-- TODO: Messed up when I removed opacity modifiers. 🤦‍♂️ i.e. being able to do `bg-background-200/80`. And Tailwind v4 will deprecate the `opacity` utility class. A resolution will require re-writing the tokens in app.css -->
+<!-- TODO: Messed up when I removed opacity modifiers. 🤦‍♂️ i.e. being able to do `bg-background-200/80`. And Tailwind v4 will deprecate the `opacity` utility class. A resolution will require re-writing the tokens in app.css because doing `opacity-80` doesn't show the blur, for example. -->
 <DialogPrimitive.Overlay
 	{transition}
 	{transitionConfig}

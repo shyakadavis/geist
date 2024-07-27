@@ -23,7 +23,7 @@
 {#if $is_desktop}
 	<Command.Dialog
 		bind:open={$command_open_state}
-		class="w-full max-w-[640px] p-0"
+		class="top-[43%] max-w-[640px] sm:rounded-xl"
 		close_button="esc"
 	>
 		<Command.Input
@@ -32,19 +32,19 @@
 			bind:value={search}
 			class="h-[53px] p-0 px-1 text-lg"
 		/>
-		<CommandList {search} />
+		<CommandList {search} class="h-[436px] max-h-none" />
 	</Command.Dialog>
 {:else}
 	<Drawer.Root bind:open={$command_open_state}>
 		<Drawer.Content class="h-3/4" hide_dismiss_bar>
 			<Command.Root>
-				<Drawer.Header class="flex h-[53px] place-items-center justify-between border-b px-2">
+				<Drawer.Header class="flex h-[53px] items-center justify-between border-b px-2">
 					<Command.Input
 						hide_search_icon
 						placeholder="Search..."
 						class="h-7 flex-grow border-none text-lg"
 						bind:value={search}
-						wrapper_class="border-none w-full flex place-items-center"
+						wrapper_class="border-none w-full flex items-center"
 					/>
 					<Button
 						on:click={command_open_state.toggle}
@@ -55,7 +55,7 @@
 						Esc
 					</Button>
 				</Drawer.Header>
-				<CommandList {search} style="height: calc(74svh - 53px);" />
+				<CommandList {search} class="max-h-full" />
 			</Command.Root>
 		</Drawer.Content>
 	</Drawer.Root>
