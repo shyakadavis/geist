@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Window from '$lib/components/ui/window/window.svelte';
+	import { Window } from '$lib/components/ui/window';
 </script>
 
 <Window title="Hello" class="max-w-md">

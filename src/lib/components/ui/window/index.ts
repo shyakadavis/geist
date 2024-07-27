@@ -1,3 +1,6 @@
-import Root from './window.svelte';
+export { default as Window } from './window.svelte';
 
-export default Root;
+export type Props = {
+	class?: string | null;
+	title: string;
+};
