@@ -1,15 +1,24 @@
 <script lang="ts">
-	import { mediaQuery } from 'svelte-legos';
-	import * as Drawer from '$lib/components/ui/drawer/index.js';
-	import CommandList from './command-list.svelte';
-	import { command_open_state } from '$lib/stores';
-	import * as Command from '$lib/components/ui/command';
 	import { Button } from '$lib/components/ui/button';
+	import * as Command from '$lib/components/ui/command';
+	import * as Drawer from '$lib/components/ui/drawer/index.js';
+	import { command_open_state } from '$lib/stores';
+	import { mediaQuery } from 'svelte-legos';
+	import CommandList from './command-list.svelte';
+
+	function doc_keydown(e: KeyboardEvent) {
+		if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
+			e.preventDefault();
+			command_open_state.toggle();
+		}
+	}
 
 	const is_desktop = mediaQuery('(min-width: 640px)');
 
 	let search = '';
 </script>
+
+<svelte:document on:keydown={doc_keydown} />
 
 {#if $is_desktop}
 	<Command.Dialog

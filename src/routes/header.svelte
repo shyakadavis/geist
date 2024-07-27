@@ -1,20 +1,10 @@
 <script lang="ts">
 	import { Icons } from '$lib/assets/icons';
-	import ThemeSwitcher from '$lib/components/shared/theme-switcher.svelte';
 	import Command from '$lib/components/shared/command/command.svelte';
-	import { command_open_state } from '$lib/stores';
+	import ThemeSwitcher from '$lib/components/shared/theme-switcher.svelte';
 	import { Button } from '$lib/components/ui/button';
-
-	const doc_keydown = (e: KeyboardEvent) => {
-		if (e.ctrlKey && e.key.toLowerCase() == 'k') {
-			e.preventDefault();
-			e.stopPropagation(); // here for FireFox ❤️
-			command_open_state.toggle();
-		}
-	};
+	import { command_open_state } from '$lib/stores';
 </script>
-
-<svelte:document on:keydown={doc_keydown} />
 
 <Command />
 
