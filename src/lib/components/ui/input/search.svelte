@@ -4,11 +4,14 @@
 	import type { HTMLInputAttributes } from 'svelte/elements';
 	import Input from './input.svelte';
 
-	type $$Props = HTMLInputAttributes;
+	type $$Props = HTMLInputAttributes & {
+		el?: HTMLInputElement;
+	};
 
 	let class_name: string | undefined | null = undefined;
 	export { class_name as class };
 	export let value: string = '';
+	export let el: $$Props['el'] = undefined;
 
 	// Automatically clear the input if escape is pressed.
 	function key_down_handler(event: KeyboardEvent) {
@@ -27,6 +30,7 @@
 		affix_styling={false}
 		aria-labelledby="Search"
 		bind:value
+		bind:el
 		{...$$restProps}
 	/>
 </div>

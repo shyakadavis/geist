@@ -36,6 +36,20 @@
 				</kbd>
 			</button>
 
+			<Button
+				svg_only
+				aria-label="Search"
+				variant="secondary"
+				shape="circle"
+				size="sm"
+				class="ml-auto mr-2 text-gray-1000"
+				href="https://github.com/shyakadavis/geist"
+				target="_blank"
+				rel="noopener"
+			>
+				<Icons.LogoGithub width="20" height="20" aria-hidden="true" />
+			</Button>
+
 			<div class="hidden xl:block">
 				<ThemeSwitcher />
 			</div>

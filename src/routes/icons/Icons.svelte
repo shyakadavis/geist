@@ -65,13 +65,23 @@
 		});
 	}
 
-	onMount(update_last_row_count);
+	let search_field: HTMLInputElement;
+
+	onMount(() => {
+		search_field.focus();
+		update_last_row_count();
+	});
 </script>
 
 <svelte:window on:resize={update_last_row_count} />
 
 <section id="search" class="grid w-full place-items-center border-b p-10">
-	<SearchInput placeholder="Search icons..." class="w-full" bind:value={$search_term} />
+	<SearchInput
+		bind:el={search_field}
+		placeholder="Search icons..."
+		class="w-full"
+		bind:value={$search_term}
+	/>
 </section>
 
 {#if $filtered_icons.length === 0}
