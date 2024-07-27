@@ -145,7 +145,7 @@ export const aside_items: Aside = {
 		{
 			title: 'Input',
 			href: '/input',
-			status: 'soon'
+			status: 'draft'
 		},
 		{
 			title: 'Keyboard Input',
