@@ -15,7 +15,7 @@ multiple small pull requests than one that is large.
 ```sh
 git clone https://github.com/<your username>/geist.git
 cd geist
-git remote add upstream https://github.com/geist/geist.git
+git remote add upstream https://github.com/shyakadavis/geist.git
 ```
 
 3. Synchronize your local `main` branch with the upstream remote:
