@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Command as CommandPrimitive } from 'cmdk-sv';
 	import { cn } from '$lib/utils.js';
+	import { Command as CommandPrimitive } from 'cmdk-sv';
 
 	type $$Props = CommandPrimitive.CommandProps;
 
@@ -11,10 +11,7 @@
 </script>
 
 <CommandPrimitive.Root
-	class={cn(
-		'bg-popover text-popover-foreground flex h-full w-full flex-col overflow-hidden rounded-md',
-		className
-	)}
+	class={cn('flex h-full w-full flex-col overflow-hidden rounded-md bg-background-100', className)}
 	bind:value
 	{...$$restProps}
 >

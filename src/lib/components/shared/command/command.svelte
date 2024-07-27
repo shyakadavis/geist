@@ -23,14 +23,14 @@
 {#if $is_desktop}
 	<Command.Dialog
 		bind:open={$command_open_state}
-		class="p-0"
-		dialog_content_class_name="!max-w-[640px] w-full"
+		class="w-full max-w-[640px] p-0"
+		close_button="esc"
 	>
 		<Command.Input
 			placeholder="Search..."
 			hide_search_icon
 			bind:value={search}
-			class="h-[53px] p-0 px-1 text-lg placeholder:text-gray-600"
+			class="h-[53px] p-0 px-1 text-lg"
 		/>
 		<CommandList {search} />
 	</Command.Dialog>
@@ -42,7 +42,7 @@
 					<Command.Input
 						hide_search_icon
 						placeholder="Search..."
-						class="h-7 flex-grow border-none text-lg placeholder:text-gray-600"
+						class="h-7 flex-grow border-none text-lg"
 						bind:value={search}
 						wrapper_class="border-none w-full flex place-items-center"
 					/>

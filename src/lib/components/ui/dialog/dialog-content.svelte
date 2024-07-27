@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { Dialog as DialogPrimitive } from 'bits-ui';
-	import { Icons } from '$lib/assets/icons';
-	import * as Dialog from './index.js';
+	import { Icons } from '$lib/assets/icons/index.js';
 	import { cn, flyAndScale } from '$lib/utils.js';
-	import Kbd from '../kbd/kbd.svelte';
+	import { Dialog as DialogPrimitive } from 'bits-ui';
+	import { Button } from '../button/index.js';
+	import * as Dialog from './index.js';
 
-	interface $$Props extends DialogPrimitive.ContentProps {
-		use_escape?: boolean;
-	}
+	type $$Props = DialogPrimitive.ContentProps & {
+		close_button?: 'esc' | 'x';
+	};
 
 	let className: $$Props['class'] = undefined;
 	export let transition: $$Props['transition'] = flyAndScale;
@@ -15,7 +15,7 @@
 		duration: 200
 	};
 	export { className as class };
-	export let use_escape: $$Props['use_escape'] = true;
+	export let close_button: $$Props['close_button'] = 'x';
 </script>
 
 <Dialog.Portal>
@@ -24,26 +24,34 @@
 		{transition}
 		{transitionConfig}
 		class={cn(
-			'fixed left-[50%] top-[15%] z-50 grid w-full max-w-lg translate-x-[-50%] gap-4 border bg-background-100 p-6 shadow-lg sm:rounded-lg md:w-full',
+			'fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background-100 p-6 shadow-lg sm:rounded-lg md:w-full',
 			className
 		)}
 		{...$$restProps}
 	>
 		<slot />
-		<DialogPrimitive.Close
-			class={cn(
-				'ring-offset-background focus:ring-ring data-[state=open]:bg-accent absolute right-4 top-4 flex place-items-center rounded-sm focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:text-gray-600',
-				{
-					'opacity-70 transition-opacity hover:opacity-100': !use_escape
-				}
-			)}
-		>
-			{#if use_escape}
-				<Kbd keys={['escape']} />
-			{:else}
-				<Icons.X class="h-4 w-4" />
+		<DialogPrimitive.Close asChild let:builder>
+			{#if close_button === 'esc'}
+				<Button
+					builders={[builder]}
+					size="sm"
+					variant="secondary"
+					class="absolute right-4 top-3 h-5 px-1.5 text-xs "
+				>
+					Esc
+				</Button>
+			{:else if close_button === 'x'}
+				<Button
+					svg_only
+					aria-label="Close"
+					shape="square"
+					size="tiny"
+					variant="secondary"
+					class="absolute right-4 top-3 px-1.5"
+				>
+					<Icons.X aria-hidden="true" class="size-5" />
+				</Button>
 			{/if}
-			<span class="sr-only">Close</span>
 		</DialogPrimitive.Close>
 	</DialogPrimitive.Content>
 </Dialog.Portal>
