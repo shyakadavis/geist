@@ -17,12 +17,12 @@ export const input_variants = tv({
 	}
 });
 
-export type Props = Omit<HTMLInputAttributes, 'size' | 'prefix'> & {
+export type Props = Omit<HTMLInputAttributes, 'size'> & {
 	size?: 'sm' | 'md' | 'lg';
 	'aria-labelledby': string;
-	prefix?: typeof Icons.ArrowCircleUp | string;
+	affix?: typeof Icons.ArrowCircleUp | string;
 	suffix?: typeof Icons.ArrowCircleUp | string;
-	prefix_styling?: boolean;
+	affix_styling?: boolean;
 	suffix_styling?: boolean;
 	label?: string;
 };

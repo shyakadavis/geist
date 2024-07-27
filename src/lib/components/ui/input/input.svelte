@@ -11,9 +11,9 @@
 	export let value: $$Props['value'] = undefined;
 	export { class_name as class };
 	export let size: $$Props['size'] = 'md';
-	export let prefix: $$Props['prefix'] = undefined;
+	export let affix: $$Props['affix'] = undefined;
 	export let suffix: $$Props['suffix'] = undefined;
-	export let prefix_styling: $$Props['prefix_styling'] = true;
+	export let affix_styling: $$Props['affix_styling'] = true;
 	export let suffix_styling: $$Props['suffix_styling'] = true;
 	export let label: $$Props['label'] = undefined;
 
@@ -35,17 +35,17 @@
 		}
 	)}
 >
-	{#if prefix}
+	{#if affix}
 		<span
 			class={cn('flex h-full items-center rounded-[inherit] rounded-r-none p-3 text-gray-700', {
-				'border-r bg-background-200': prefix_styling
+				'border-r bg-background-200': affix_styling
 			})}
 		>
-			{#if typeof prefix === 'string'}
-				{prefix}
+			{#if typeof affix === 'string'}
+				{affix}
 			{:else}
 				<svelte:component
-					this={prefix}
+					this={affix}
 					aria-hidden="true"
 					class={cn({
 						'size-3': size === 'sm',

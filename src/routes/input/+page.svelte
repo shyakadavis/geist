@@ -1,14 +1,14 @@
 <script lang="ts">
 	import Demo from '$lib/components/shared/demo.svelte';
 	import PageWrapper from '$lib/components/shared/page-wrapper.svelte';
+	import AffixAndSuffix from './affix-and-suffix.svelte';
+	import affix_and_suffix_code from './affix-and-suffix.svelte?raw';
 	import Default from './default.svelte';
 	import default_code from './default.svelte?raw';
 	import Disabled from './disabled.svelte';
 	import disabled_code from './disabled.svelte?raw';
 	import Label from './label.svelte';
 	import label_code from './label.svelte?raw';
-	import PrefixAndSuffix from './prefix-and-suffix.svelte';
-	import prefix_and_suffix_code from './prefix-and-suffix.svelte?raw';
 	export let data;
 </script>
 
@@ -17,8 +17,8 @@
 		<Default />
 	</Demo>
 
-	<Demo id="prefix-and-suffix" code={prefix_and_suffix_code}>
-		<PrefixAndSuffix />
+	<Demo id="affix-and-suffix" code={affix_and_suffix_code}>
+		<AffixAndSuffix />
 	</Demo>
 
 	<Demo id="disabled" code={disabled_code}>
