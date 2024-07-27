@@ -3,7 +3,7 @@
 	import { Input } from '$lib/components/ui/input';
 </script>
 
-<div class="grid w-fit gap-4">
+<div class="flex flex-col items-start gap-4">
 	<Input aria-labelledby="Demo" placeholder="Default" affix={Icons.ArrowCircleUp} />
 	<Input aria-labelledby="Demo" placeholder="Default" suffix={Icons.ArrowCircleUp} />
 	<Input aria-labelledby="Demo" placeholder="Default" affix="https://" suffix=".com" />

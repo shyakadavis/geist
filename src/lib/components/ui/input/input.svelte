@@ -27,7 +27,7 @@
 {/if}
 <div
 	class={cn(
-		'flex w-fit items-center rounded-md shadow-shadow-border  transition-[border-color,box-shadow] focus-within:shadow-shadow-input',
+		'flex max-w-full items-center rounded-md shadow-shadow-border  transition-[border-color,box-shadow] delay-0 focus-within:shadow-shadow-input',
 		{
 			'h-8': size === 'sm',
 			'h-10': size === 'md',
@@ -37,8 +37,9 @@
 >
 	{#if affix}
 		<span
-			class={cn('flex h-full items-center rounded-[inherit] rounded-r-none p-3 text-gray-700', {
-				'border-r bg-background-200': affix_styling
+			class={cn('flex h-full items-center rounded-[inherit] rounded-r-none text-gray-700', {
+				'border-r bg-background-200 p-3': affix_styling,
+				'pl-3': !affix_styling
 			})}
 		>
 			{#if typeof affix === 'string'}
@@ -85,8 +86,9 @@
 	/>
 	{#if suffix}
 		<span
-			class={cn('flex h-full items-center rounded-[inherit] rounded-l-none p-3 text-gray-700', {
-				'border-l bg-background-200': suffix_styling
+			class={cn('flex h-full items-center rounded-[inherit] rounded-l-none text-gray-700', {
+				'border-l bg-background-200 p-3': suffix_styling,
+				'pr-3': !suffix_styling
 			})}
 		>
 			{#if typeof suffix === 'string'}

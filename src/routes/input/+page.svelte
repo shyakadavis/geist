@@ -9,6 +9,9 @@
 	import disabled_code from './disabled.svelte?raw';
 	import Label from './label.svelte';
 	import label_code from './label.svelte?raw';
+	import Search from './search.svelte';
+	import search_code from './search.svelte?raw';
+
 	export let data;
 </script>
 
@@ -25,9 +28,13 @@
 		<Disabled />
 	</Demo>
 
-	<!-- TODO: Search
-     Svelte 4 has some limitations: 'type' attribute cannot be dynamic if input uses two-way binding svelte(invalid-type)
-     Will revisit this when Svelte 5 is released. -->
+	<Demo
+		id="search"
+		subtitle="Automatically clears the input if escape is pressed."
+		code={search_code}
+	>
+		<Search />
+	</Demo>
 
 	<!-- TODO: Error
       Something in the areas of how Formsnap does it. -->
