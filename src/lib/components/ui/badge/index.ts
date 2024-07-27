@@ -1,9 +1,9 @@
-import type { Icons } from '$lib/assets/icons';
+import { Icons } from '$lib/assets/icons';
 import { type VariantProps, tv } from 'tailwind-variants';
 
 export { default as Badge } from './badge.svelte';
 export const badge_variants = tv({
-	base: 'inline-flex shrink-0 select-none items-center justify-center whitespace-nowrap rounded-full font-medium capitalize tabular-nums transition-colors hover:cursor-text focus:outline-none focus:ring-2 focus:ring-focus-color focus:ring-offset-2',
+	base: 'inline-flex shrink-0 select-none items-center justify-center whitespace-nowrap rounded-full font-medium capitalize tabular-nums transition-colors hover:cursor-auto focus:outline-none focus:ring-2 focus:ring-focus-color focus:ring-offset-2',
 	variants: {
 		variant: {
 			gray: 'bg-gray-700 text-contrast-fg',
