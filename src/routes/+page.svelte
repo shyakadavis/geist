@@ -6,7 +6,7 @@
 	const preview_icons = [
 		Icons.GridSquare,
 		Icons.External,
-		Icons.CharBarMiddle,
+		Icons.ChartBarMiddle,
 		Icons.ClockDashed,
 		Icons.Globe,
 		Icons.Flag,
@@ -18,7 +18,7 @@
 		Icons.FileText,
 		Icons.Notification,
 		Icons.Paperclip,
-		Icons.CharTrendingDown,
+		Icons.ChartTrendingDown,
 		Icons.CodeBracket,
 		Icons.Key,
 		Icons.FloppyDisk,

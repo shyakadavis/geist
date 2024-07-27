@@ -22,7 +22,7 @@ export const aside_items: Aside = {
 		{
 			title: 'Icons',
 			href: '/icons',
-			status: 'soon'
+			status: 'draft'
 		}
 	],
 	brands: [
@@ -145,7 +145,7 @@ export const aside_items: Aside = {
 		{
 			title: 'Input',
 			href: '/input',
-			status: 'soon'
+			status: 'draft'
 		},
 		{
 			title: 'Keyboard Input',
