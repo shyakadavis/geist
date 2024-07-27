@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { cn } from '$lib/utils.js';
+	import { Label } from '../label/index.js';
 	import { input_variants, type InputEvents, type Props } from './index.js';
 
 	type $$Props = Props;
@@ -14,15 +15,19 @@
 	export let suffix: $$Props['suffix'] = undefined;
 	export let prefix_styling: $$Props['prefix_styling'] = true;
 	export let suffix_styling: $$Props['suffix_styling'] = true;
+	export let label: $$Props['label'] = undefined;
 
 	// Workaround for https://github.com/sveltejs/svelte/issues/9305
 	// Fixed in Svelte 5, but not backported to 4.x.
 	export let readonly: $$Props['readonly'] = undefined;
 </script>
 
+{#if label}
+	<Label for={label} class="mb-2 max-w-full text-[13px] text-gray-900">{label}</Label>
+{/if}
 <div
 	class={cn(
-		'flex w-fit items-center rounded-md shadow-shadow-border  transition-[border-color,box-shadow] focus-within:shadow-shadow-input',
+		'focus-within:shadow-shadow-input flex w-fit items-center rounded-md  shadow-shadow-border transition-[border-color,box-shadow]',
 		{
 			'h-8': size === 'sm',
 			'h-10': size === 'md',
@@ -52,6 +57,7 @@
 		</span>
 	{/if}
 	<input
+		id={label}
 		class={cn(input_variants({ size, className: class_name }))}
 		bind:value
 		{readonly}

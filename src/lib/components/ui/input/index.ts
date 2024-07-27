@@ -24,6 +24,7 @@ export type Props = Omit<HTMLInputAttributes, 'size' | 'prefix'> & {
 	suffix?: typeof Icons.ArrowCircleUp | string;
 	prefix_styling?: boolean;
 	suffix_styling?: boolean;
+	label?: string;
 };
 
 export type FormInputEvent<T extends Event = Event> = T & {

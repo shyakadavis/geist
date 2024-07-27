@@ -5,9 +5,10 @@
 	import default_code from './default.svelte?raw';
 	import Disabled from './disabled.svelte';
 	import disabled_code from './disabled.svelte?raw';
+	import Label from './label.svelte';
+	import label_code from './label.svelte?raw';
 	import PrefixAndSuffix from './prefix-and-suffix.svelte';
 	import prefix_and_suffix_code from './prefix-and-suffix.svelte?raw';
-
 	export let data;
 </script>
 
@@ -22,5 +23,9 @@
 
 	<Demo id="disabled" code={disabled_code}>
 		<Disabled />
+	</Demo>
+
+	<Demo id="label" code={label_code}>
+		<Label />
 	</Demo>
 </PageWrapper>
