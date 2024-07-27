@@ -25,6 +25,13 @@
 		<Disabled />
 	</Demo>
 
+	<!-- TODO: Search
+     Svelte 4 has some limitations: 'type' attribute cannot be dynamic if input uses two-way binding svelte(invalid-type)
+     Will revisit this when Svelte 5 is released. -->
+
+	<!-- TODO: Error
+      Something in the areas of how Formsnap does it. -->
+
 	<Demo id="label" code={label_code}>
 		<Label />
 	</Demo>
