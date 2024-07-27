@@ -3,6 +3,8 @@
 	import PageWrapper from '$lib/components/shared/page-wrapper.svelte';
 	import Default from './default.svelte';
 	import default_code from './default.svelte?raw';
+	import Disabled from './disabled.svelte';
+	import disabled_code from './disabled.svelte?raw';
 	import PrefixAndSuffix from './prefix-and-suffix.svelte';
 	import prefix_and_suffix_code from './prefix-and-suffix.svelte?raw';
 
@@ -16,5 +18,9 @@
 
 	<Demo id="prefix-and-suffix" code={prefix_and_suffix_code}>
 		<PrefixAndSuffix />
+	</Demo>
+
+	<Demo id="disabled" code={disabled_code}>
+		<Disabled />
 	</Demo>
 </PageWrapper>
