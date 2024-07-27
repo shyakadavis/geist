@@ -1,7 +1,7 @@
 <script lang="ts">
+	import { cn } from '$lib/utils.js';
 	import { Dialog as DialogPrimitive } from 'bits-ui';
 	import { fade } from 'svelte/transition';
-	import { cn } from '$lib/utils.js';
 
 	type $$Props = DialogPrimitive.OverlayProps;
 
@@ -13,9 +13,10 @@
 	export { className as class };
 </script>
 
+<!-- TODO: Messed up when I removed opacity modifiers. 🤦‍♂️ i.e. being able to do `bg-background-200/80`. And Tailwind v4 will deprecate the `opacity` utility class. A resolution will require re-writing the tokens in app.css -->
 <DialogPrimitive.Overlay
 	{transition}
 	{transitionConfig}
-	class={cn('bg-background/80 fixed inset-0 z-50 backdrop-blur-sm', className)}
+	class={cn('fixed inset-0 z-50 bg-background-200 opacity-80 backdrop-blur-sm', className)}
 	{...$$restProps}
 />
