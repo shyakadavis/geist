@@ -22,7 +22,7 @@
 
 <div
 	class={cn(
-		'focus-within:shadow-shadow-input flex w-fit items-center rounded-md  shadow-shadow-border transition-[border-color,box-shadow]',
+		'flex w-fit items-center rounded-md shadow-shadow-border  transition-[border-color,box-shadow] focus-within:shadow-shadow-input',
 		{
 			'h-8': size === 'sm',
 			'h-10': size === 'md',
@@ -78,9 +78,6 @@
 		spellcheck="false"
 	/>
 	{#if suffix}
-		<!-- <span
-			class="flex h-full items-center rounded-[inherit] rounded-l-none border-l bg-background-200 p-3 text-gray-700"
-		> -->
 		<span
 			class={cn('flex h-full items-center rounded-[inherit] rounded-l-none p-3 text-gray-700', {
 				'border-l bg-background-200': suffix_styling
