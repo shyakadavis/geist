@@ -15,6 +15,7 @@ import ClockDashed from './clock-dashed.svg?component';
 import CodeBracket from './code-bracket.svg?component';
 import Command from './command.svg?component';
 import Copy from './copy.svg?component';
+import Cross from './cross.svg?component';
 import Database from './database.svg?component';
 import ErrorStates from './error-states.svg?component';
 import ExternalSmall from './external-small.svg?component';
@@ -52,7 +53,6 @@ import Tabs from './tabs.svg?component';
 import ThemeSwitchDark from './theme-switch-dark.svg?component';
 import ThemeSwitchLight from './theme-switch-light.svg?component';
 import ThemeSwitchSystem from './theme-switch-system.svg?component';
-import X from './x.svg?component';
 
 export const Icons = {
 	ArrowLeft,
@@ -72,6 +72,7 @@ export const Icons = {
 	CodeBracket,
 	Command,
 	Copy,
+	Cross,
 	Database,
 	ErrorStates,
 	ExternalSmall,
@@ -108,6 +109,5 @@ export const Icons = {
 	Tabs,
 	ThemeSwitchDark,
 	ThemeSwitchLight,
-	ThemeSwitchSystem,
-	X
+	ThemeSwitchSystem
 };

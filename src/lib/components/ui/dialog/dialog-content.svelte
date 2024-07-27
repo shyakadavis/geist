@@ -49,7 +49,7 @@
 					variant="secondary"
 					class="absolute right-4 top-3 px-1.5"
 				>
-					<Icons.X aria-hidden="true" class="size-5" />
+					<Icons.Cross aria-hidden="true" class="size-5" />
 				</Button>
 			{/if}
 		</DialogPrimitive.Close>
