@@ -9,7 +9,9 @@
 	import { SearchInput } from '$lib/components/ui/input';
 	import { cn } from '$lib/utils';
 	import { onMount } from 'svelte';
+	import { flip } from 'svelte/animate';
 	import { derived, writable } from 'svelte/store';
+	import { receive, send } from './transition';
 
 	const icons_to_exclude = ['BrandAssets', 'ErrorStates'];
 	const preview_icons = writable(
@@ -72,13 +74,22 @@
 	<SearchInput placeholder="Search icons..." class="w-full" bind:value={$search_term} />
 </section>
 
-<section class="grid grid-cols-2 sm:grid-cols-4">
-	{#each $filtered_icons as [name, icon], i}
-		<ContextMenu>
-			<ContextMenuTrigger
-				class={cn(
-					'flex h-28 w-full cursor-pointer flex-col items-center justify-center gap-1.5 px-4 text-gray-900 hover:bg-background-100',
-					/* 
+{#if $filtered_icons.length === 0}
+	<p class="p-10 text-gray-900">No icons found.</p>
+{:else}
+	<ul class="grid grid-cols-2 sm:grid-cols-4">
+		{#each $filtered_icons as [name, icon], i (icon.name)}
+			<!-- TODO: Improve the shuffle/filter animation -->
+			<li
+				in:receive={{ key: icon.name }}
+				out:send={{ key: icon.name }}
+				animate:flip={{ duration: 200 }}
+			>
+				<ContextMenu>
+					<ContextMenuTrigger
+						class={cn(
+							'flex h-28 w-full cursor-pointer flex-col items-center justify-center gap-1.5 px-4 text-gray-900 hover:bg-background-100',
+							/* 
 						This code applies border styles to elements based on their position and screen size:
 						- Adds bottom and right borders to all elements.
 						- Removes the right border for every second element.
@@ -87,24 +98,28 @@
 							- Removes the right border for every fourth element.
 						- Removes the bottom border for elements in the last row.
 					*/
-					'border-b border-r [&:nth-child(2n)]:border-r-0 sm:[&:nth-child(2n)]:border-r sm:[&:nth-child(4n)]:border-r-0',
-					{
-						'border-b-0':
-							i >= $filtered_icons.length - $last_row_count || $filtered_icons.length <= 4
-					}
-				)}
-			>
-				<svelte:component this={icon} aria-hidden="true" height="16" width="16" />
-				<span class="text-sm">{format_name(name)}</span>
-			</ContextMenuTrigger>
-			<ContextMenuContent>
-				<ContextMenuItem on:click={() => copy_import(name)}>Copy Import</ContextMenuItem>
-				<ContextMenuItem on:click={() => copy_name(format_name(name))}>Copy Name</ContextMenuItem>
-				<ContextMenuItem on:click={() => copy_svelte_component(name)}>
-					Copy Svelte Component
-				</ContextMenuItem>
-				<ContextMenuItem on:click={() => copy_svg(name)}>Copy SVG</ContextMenuItem>
-			</ContextMenuContent>
-		</ContextMenu>
-	{/each}
-</section>
+							'border-b border-r [&:nth-child(2n)]:border-r-0 sm:[&:nth-child(2n)]:border-r sm:[&:nth-child(4n)]:border-r-0',
+							{
+								'border-b-0':
+									i >= $filtered_icons.length - $last_row_count || $filtered_icons.length <= 4
+							}
+						)}
+					>
+						<svelte:component this={icon} aria-hidden="true" height="16" width="16" />
+						<span class="text-sm">{format_name(name)}</span>
+					</ContextMenuTrigger>
+					<ContextMenuContent>
+						<ContextMenuItem on:click={() => copy_import(name)}>Copy Import</ContextMenuItem>
+						<ContextMenuItem on:click={() => copy_name(format_name(name))}>
+							Copy Name
+						</ContextMenuItem>
+						<ContextMenuItem on:click={() => copy_svelte_component(name)}>
+							Copy Svelte Component
+						</ContextMenuItem>
+						<ContextMenuItem on:click={() => copy_svg(name)}>Copy SVG</ContextMenuItem>
+					</ContextMenuContent>
+				</ContextMenu>
+			</li>
+		{/each}
+	</ul>
+{/if}
