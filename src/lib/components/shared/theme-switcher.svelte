@@ -8,7 +8,7 @@
 	}
 </script>
 
-<fieldset class="flex h-8 w-fit items-center rounded-full border-y shadow-shadow-border">
+<fieldset class="flex h-8 w-fit items-center rounded-full shadow-shadow-border">
 	<legend class="sr-only">Select a display theme:</legend>
 	<!-- TODO: If/when you do upgrade to Svelte 5, this entire span can abstracted into a `snippet`. No boilerplate. -->
 	<span class="relative">
@@ -24,7 +24,7 @@
 			aria-label="system theme"
 			for="theme-switch-system"
 			title="system theme"
-			class="relative flex size-8 cursor-pointer items-center justify-center rounded-full bg-transparent text-gray-700 hover:text-gray-1000 peer-checked:border-x peer-checked:bg-background-100 peer-checked:text-gray-1000 peer-checked:[box-shadow:0_0_0_1px_var(--gray-400)]"
+			class="relative flex size-8 cursor-pointer items-center justify-center rounded-full bg-transparent text-gray-700 hover:text-gray-1000 peer-checked:bg-background-100 peer-checked:text-gray-1000 peer-checked:shadow-shadow-border"
 		>
 			<Icons.ThemeSwitchSystem aria-hidden="true" height="16" width="16" />
 		</label>
@@ -42,7 +42,7 @@
 			aria-label="light theme"
 			for="theme-switch-light"
 			title="light theme"
-			class="relative flex size-8 cursor-pointer items-center justify-center rounded-full bg-transparent text-gray-700 hover:text-gray-1000 peer-checked:border-x peer-checked:bg-background-100 peer-checked:text-gray-1000 peer-checked:[box-shadow:0_0_0_1px_var(--gray-400)]"
+			class="relative flex size-8 cursor-pointer items-center justify-center rounded-full bg-transparent text-gray-700 hover:text-gray-1000 peer-checked:bg-background-100 peer-checked:text-gray-1000 peer-checked:shadow-shadow-border"
 		>
 			<Icons.ThemeSwitchLight aria-hidden="true" height="16" width="16" />
 		</label>
@@ -60,7 +60,7 @@
 			aria-label="dark theme"
 			for="theme-switch-dark"
 			title="dark theme"
-			class="relative flex size-8 cursor-pointer items-center justify-center rounded-full bg-transparent text-gray-700 hover:text-gray-1000 peer-checked:border-x peer-checked:bg-background-100 peer-checked:text-gray-1000 peer-checked:[box-shadow:0_0_0_1px_var(--gray-400)]"
+			class="relative flex size-8 cursor-pointer items-center justify-center rounded-full bg-transparent text-gray-700 hover:text-gray-1000 peer-checked:bg-background-100 peer-checked:text-gray-1000 peer-checked:shadow-shadow-border"
 		>
 			<Icons.ThemeSwitchDark aria-hidden="true" height="16" width="16" />
 		</label>

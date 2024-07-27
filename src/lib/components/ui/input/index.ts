@@ -26,6 +26,7 @@ export type Props = Omit<HTMLInputAttributes, 'size'> & {
 	affix_styling?: boolean;
 	suffix_styling?: boolean;
 	label?: string;
+	el?: HTMLInputElement;
 };
 
 export type FormInputEvent<T extends Event = Event> = T & {

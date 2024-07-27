@@ -16,6 +16,7 @@
 	export let affix_styling: $$Props['affix_styling'] = true;
 	export let suffix_styling: $$Props['suffix_styling'] = true;
 	export let label: $$Props['label'] = undefined;
+	export let el: $$Props['el'] = undefined;
 
 	// Workaround for https://github.com/sveltejs/svelte/issues/9305
 	// Fixed in Svelte 5, but not backported to 4.x.
@@ -83,6 +84,7 @@
 		autocomplete="off"
 		autocorrect="off"
 		spellcheck="false"
+		bind:this={el}
 	/>
 	{#if suffix}
 		<span
