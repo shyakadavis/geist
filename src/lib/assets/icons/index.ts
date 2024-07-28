@@ -1,3 +1,4 @@
+import Accessibility from './accessibility.svg?component';
 import ArrowCircleUp from './arrow-circle-up.svg?component';
 import ArrowLeft from './arrow-left.svg?component';
 import ArrowRight from './arrow-right.svg?component';
@@ -42,6 +43,7 @@ import LogoVercelCircle from './logo-vercel-circle.svg?component';
 import LogoVercel from './logo-vercel.svg?component';
 import MagnifyingGlass from './magnifying-glass.svg?component';
 import Minus from './minus.svg?component';
+import MoreHorizontal from './more-horizontal.svg?component';
 import Notification from './notification.svg?component';
 import Paperclip from './paperclip.svg?component';
 import PencilEdit from './pencil-edit.svg?component';
@@ -56,6 +58,7 @@ import ThemeSwitchLight from './theme-switch-light.svg?component';
 import ThemeSwitchSystem from './theme-switch-system.svg?component';
 
 export const Icons = {
+	Accessibility,
 	ArrowCircleUp,
 	ArrowLeft,
 	ArrowRight,
@@ -100,6 +103,7 @@ export const Icons = {
 	LogoVercel,
 	MagnifyingGlass,
 	Minus,
+	MoreHorizontal,
 	Notification,
 	Paperclip,
 	PencilEdit,
