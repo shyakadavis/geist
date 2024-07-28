@@ -3,6 +3,8 @@
 	import PageWrapper from '$lib/components/shared/page-wrapper.svelte';
 	import Default from './default.svelte';
 	import default_code from './default.svelte?raw';
+	import SingleButton from './single-button.svelte';
+	import single_button_code from './single-button.svelte?raw';
 	import Sticky from './sticky.svelte';
 	import sticky_code from './sticky.svelte?raw';
 
@@ -16,5 +18,9 @@
 
 	<Demo id="sticky" code={sticky_code}>
 		<Sticky />
+	</Demo>
+
+	<Demo id="single-button" code={single_button_code}>
+		<SingleButton />
 	</Demo>
 </PageWrapper>

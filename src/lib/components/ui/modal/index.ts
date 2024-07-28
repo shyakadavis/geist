@@ -11,6 +11,7 @@ import Modal from './modal.svelte';
 export const is_desktop = mediaQuery('(min-width: 640px)');
 
 export const is_overflowing = writable(false);
+export const is_single_button = writable(false);
 
 export {
 	ModalContent as Content,
