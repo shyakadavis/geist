@@ -24,6 +24,7 @@
 
 {#if $is_desktop}
 	<Dialog.Content
+		transitionConfig={{ y: -15 }}
 		bind:el
 		class="max-h-[80vh] overflow-y-auto bg-background-100 p-0 dark:bg-background-200 sm:rounded-xl"
 		hide_close_button
