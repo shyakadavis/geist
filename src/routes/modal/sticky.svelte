@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Icons } from '$lib/assets/icons';
 	import { Button } from '$lib/components/ui/button';
 	import * as Modal from '$lib/components/ui/modal';
 </script>
@@ -49,7 +50,7 @@
 		</div>
 
 		<Modal.Footer>
-			<p slot="cancel">Cancel</p>
+			<Button affix={Icons.ArrowLeft} variant="secondary">Previous</Button>
 			<Button>Submit</Button>
 		</Modal.Footer>
 	</Modal.Content>

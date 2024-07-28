@@ -21,8 +21,6 @@
 		<p class="px-6 py-3 text-sm">Some content contained within the modal.</p>
 
 		<Modal.Footer>
-			<p slot="cancel">Cancel</p>
-
 			<Button>Submit</Button>
 		</Modal.Footer>
 	</Modal.Content>
