@@ -160,7 +160,7 @@ export const aside_items: Aside = {
 		{
 			title: 'Menu',
 			href: '/menu',
-			status: 'soon'
+			status: 'new'
 		},
 		{
 			title: 'Modal',

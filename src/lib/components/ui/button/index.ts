@@ -8,8 +8,7 @@ const button_variants = tv({
 	variants: {
 		variant: {
 			default: 'bg-gray-1000 text-background-100',
-			secondary:
-				'border border-gray-alpha-400 bg-background-100 text-gray-1000 hover:bg-gray-alpha-100',
+			secondary: 'bg-background-100 text-gray-1000 shadow-shadow-border hover:bg-gray-alpha-100',
 			tertiary: 'bg-transparent hover:bg-gray-alpha-200',
 			error: 'bg-red-800 text-contrast-fg hover:bg-red-900',
 			warning: 'active:bg-[#a35200; bg-amber-800 text-[#0a0a0a] hover:bg-[#d27504]'

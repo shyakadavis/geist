@@ -63,7 +63,7 @@
 	</a>
 	{#if subtitle}
 		<p
-			class="prose prose-neutral mt-2 max-w-none text-gray-900 dark:prose-invert marker:content-['-'] prose-strong:font-normal prose-strong:text-gray-1000 xl:mt-4"
+			class="prose prose-neutral mt-2 max-w-none text-gray-900 transition-colors dark:prose-invert marker:content-['-'] prose-a:text-gray-900 prose-a:hover:text-gray-1000 prose-strong:font-normal prose-strong:text-gray-1000 xl:mt-4"
 		>
 			<Markdown md={subtitle} />
 			<slot name="image"></slot>
