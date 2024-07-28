@@ -165,7 +165,7 @@ export const aside_items: Aside = {
 		{
 			title: 'Modal',
 			href: '/modal',
-			status: 'soon'
+			status: 'draft'
 		},
 		{
 			title: 'Note',

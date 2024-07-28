@@ -7,6 +7,8 @@
 
 	type $$Props = DialogPrimitive.ContentProps & {
 		close_button?: 'esc' | 'x';
+		hide_close_button?: boolean;
+		overlay_classes?: string;
 	};
 
 	let className: $$Props['class'] = undefined;
@@ -16,11 +18,15 @@
 	};
 	export { className as class };
 	export let close_button: $$Props['close_button'] = 'x';
+	export let hide_close_button: $$Props['hide_close_button'] = false;
+	export let overlay_classes: $$Props['overlay_classes'] = undefined;
+	export let el: $$Props['el'] = undefined;
 </script>
 
 <Dialog.Portal>
-	<Dialog.Overlay />
+	<Dialog.Overlay class={overlay_classes} />
 	<DialogPrimitive.Content
+		bind:el
 		{transition}
 		{transitionConfig}
 		class={cn(
@@ -30,28 +36,30 @@
 		{...$$restProps}
 	>
 		<slot />
-		<DialogPrimitive.Close asChild let:builder>
-			{#if close_button === 'esc'}
-				<Button
-					builders={[builder]}
-					size="sm"
-					variant="secondary"
-					class="absolute right-4 top-3 h-5 px-1.5 text-xs "
-				>
-					Esc
-				</Button>
-			{:else if close_button === 'x'}
-				<Button
-					svg_only
-					aria-label="Close"
-					shape="square"
-					size="tiny"
-					variant="secondary"
-					class="absolute right-4 top-3 px-1.5"
-				>
-					<Icons.Cross aria-hidden="true" class="size-5" />
-				</Button>
-			{/if}
-		</DialogPrimitive.Close>
+		{#if !hide_close_button}
+			<DialogPrimitive.Close asChild let:builder>
+				{#if close_button === 'esc'}
+					<Button
+						builders={[builder]}
+						size="sm"
+						variant="secondary"
+						class="absolute right-4 top-3 h-5 px-1.5 text-xs "
+					>
+						Esc
+					</Button>
+				{:else if close_button === 'x'}
+					<Button
+						svg_only
+						aria-label="Close"
+						shape="square"
+						size="tiny"
+						variant="secondary"
+						class="absolute right-4 top-3 px-1.5"
+					>
+						<Icons.Cross aria-hidden="true" class="size-5" />
+					</Button>
+				{/if}
+			</DialogPrimitive.Close>
+		{/if}
 	</DialogPrimitive.Content>
 </Dialog.Portal>
