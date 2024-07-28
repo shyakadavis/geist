@@ -2,9 +2,13 @@
 	import { Icons } from '$lib/assets/icons';
 	import { Button } from '$lib/components/ui/button';
 	import * as Modal from '$lib/components/ui/modal';
+
+	let open = false;
+
+	const close = () => (open = !open);
 </script>
 
-<Modal.Root>
+<Modal.Root bind:open>
 	<Modal.Trigger let:builder>
 		<Button size="sm" builders={[builder]}>Open Modal</Button>
 	</Modal.Trigger>
@@ -50,8 +54,10 @@
 		</div>
 
 		<Modal.Footer>
-			<Button affix={Icons.ArrowLeft} variant="secondary">Previous</Button>
-			<Button>Submit</Button>
+			<div class="flex w-full justify-between">
+				<Button affix={Icons.ArrowLeft} variant="secondary" on:click={close}>Previous</Button>
+				<Button on:click={close}>Submit</Button>
+			</div>
 		</Modal.Footer>
 	</Modal.Content>
 </Modal.Root>
