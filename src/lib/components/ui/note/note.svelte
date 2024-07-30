@@ -21,7 +21,7 @@
 >
 	<div class="flex items-center gap-2">
 		{#if label}
-			<span class="font-semibold">{label}</span>
+			<span class="font-semibold">{label}:</span>
 		{:else if label !== false}
 			<span class="h-4">
 				{#if variant === 'secondary' || variant === 'violet' || variant === 'cyan'}
