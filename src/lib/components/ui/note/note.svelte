@@ -32,5 +32,5 @@
 		</span>
 		<slot />
 	</div>
-	<slot name="action"></slot>
+	<slot name="action" {disabled}></slot>
 </div>
