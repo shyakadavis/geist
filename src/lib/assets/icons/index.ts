@@ -9,6 +9,7 @@ import BrandAssets from './brand-assets.svg?component';
 import ChartBarMiddle from './chart-bar-middle.svg?component';
 import ChartBarPeak from './chart-bar-peak.svg?component';
 import ChartTrendingDown from './chart-trending-down.svg?component';
+import CheckCircle from './check-circle.svg?component';
 import Check from './check.svg?component';
 import ChevronLeft from './chevron-left.svg?component';
 import ChevronRightSmall from './chevron-right-small.svg?component';
@@ -29,6 +30,7 @@ import GitBranch from './git-branch.svg?component';
 import Globe from './globe.svg?component';
 import GridSquare from './grid-square.svg?component';
 import Inbox from './inbox.svg?component';
+import Information from './information.svg?component';
 import Key from './key.svg?component';
 import Link from './link.svg?component';
 import LoaderCircle from './loader-circle.svg?component';
@@ -56,6 +58,7 @@ import Tabs from './tabs.svg?component';
 import ThemeSwitchDark from './theme-switch-dark.svg?component';
 import ThemeSwitchLight from './theme-switch-light.svg?component';
 import ThemeSwitchSystem from './theme-switch-system.svg?component';
+import Warning from './warning.svg?component';
 
 export const Icons = {
 	Accessibility,
@@ -69,6 +72,7 @@ export const Icons = {
 	ChartBarMiddle,
 	ChartBarPeak,
 	ChartTrendingDown,
+	CheckCircle,
 	Check,
 	ChevronLeft,
 	ChevronRightSmall,
@@ -89,6 +93,7 @@ export const Icons = {
 	Globe,
 	GridSquare,
 	Inbox,
+	Information,
 	Key,
 	Link,
 	LoaderCircle,
@@ -115,5 +120,6 @@ export const Icons = {
 	Tabs,
 	ThemeSwitchDark,
 	ThemeSwitchLight,
-	ThemeSwitchSystem
+	ThemeSwitchSystem,
+	Warning
 };
