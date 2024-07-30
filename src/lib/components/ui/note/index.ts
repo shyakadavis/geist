@@ -3,16 +3,17 @@ import { type VariantProps, tv } from 'tailwind-variants';
 export { default as Note } from './note.svelte';
 
 export const note_variants = tv({
-	base: 'flex grow items-center justify-between gap-3 text-pretty rounded-md border data-[disabled=true]:border-gray-alpha-200 data-[disabled=true]:bg-transparent data-[disabled=true]:text-gray-700 hover:[&>div>a]:underline [&>div>a]:data-[disabled=true]:text-gray-900',
+	base: 'flex grow flex-wrap items-center justify-between gap-3 text-pretty rounded-md border data-[disabled=true]:border-gray-alpha-200 data-[disabled=true]:bg-transparent data-[disabled=true]:text-gray-700 hover:[&>div>div>a]:underline [&>div>div>a]:data-[disabled=true]:text-gray-900',
 	variants: {
 		variant: {
-			secondary: 'bg-transparent text-gray-900 selection:bg-gray-700 [&>div>a]:text-gray-1000',
-			success: 'border-blue-400 text-blue-900 selection:bg-blue-700 [&>div>a]:text-blue-1000',
-			error: 'border-red-400 text-red-900 selection:bg-red-700 [&>div>a]:text-red-1000',
-			warning: 'border-amber-400 text-amber-900 selection:bg-amber-700 [&>div>a]:text-amber-1000',
+			secondary: 'bg-transparent text-gray-900 selection:bg-gray-700 [&>div>div>a]:text-gray-1000',
+			success: 'border-blue-400 text-blue-900 selection:bg-blue-700 [&>div>div>a]:text-blue-1000',
+			error: 'border-red-400 text-red-900 selection:bg-red-700 [&>div>div>a]:text-red-1000',
+			warning:
+				'border-amber-400 text-amber-900 selection:bg-amber-700 [&>div>div>a]:text-amber-1000',
 			violet:
-				'border-purple-400 text-purple-900 selection:bg-purple-700 [&>div>a]:text-purple-1000',
-			cyan: 'border-teal-400 text-teal-900 selection:bg-teal-700 [&>div>a]:text-teal-1000'
+				'border-purple-400 text-purple-900 selection:bg-purple-700 [&>div>div>a]:text-purple-1000',
+			cyan: 'border-teal-400 text-teal-900 selection:bg-teal-700 [&>div>div>a]:text-teal-1000'
 		},
 		size: {
 			sm: 'min-h-[34px] px-2 py-1.5 text-[13px] leading-6',
@@ -45,4 +46,5 @@ export type Props = {
 	size?: Size;
 	fill?: Fill;
 	disabled?: boolean;
+	label?: string | boolean;
 };
