@@ -135,7 +135,7 @@ export const aside_items: Aside = {
 		{
 			title: 'Gauge',
 			href: '/gauge',
-			status: 'soon'
+			status: 'draft'
 		},
 		{
 			title: 'Grid',

@@ -283,5 +283,5 @@ html.dark .shiki span {
 The styles for ``
  */
 .prose code:not(pre > code) {
-	@apply rounded-md border border-gray-300 bg-gray-100 px-[3.6px] py-0.5 font-mono text-sm before:content-[''] after:content-[''];
+	@apply rounded-md border border-gray-300 bg-gray-100 px-[3.6px] py-0.5 font-mono text-sm font-normal text-gray-900 before:content-[''] after:content-[''];
 }
