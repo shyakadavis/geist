@@ -35,19 +35,21 @@
 	}
 	const radius = get_radius();
 	const circumference = 2 * Math.PI * radius;
-
+	// onMount, set the progress from 0 to th actual value with a spring effect
 	$: progress.set((value / total) * 100);
-
+	// the main arc
 	$: arc_offset =
 		arc_priority === 'equal' ? circumference * 0.5 : circumference * ((100 - $progress) / 100);
-
+	// the secondary arc
 	$: secondary_arc_offset =
 		arc_priority === 'equal' ? circumference * ((50 - $progress / 2) / 100) : 0;
-
+	// the main arc stroke color
 	function get_stroke_fill() {
+		// if colors is an object with primary key, use only that
 		if (colors && 'primary' in colors) {
 			return colors.primary;
 		} else if (colors) {
+			// if colors is an object with a range of percentages, use those
 			const percentages = Object.keys(colors)
 				.map(Number)
 				.sort((a, b) => a - b);
@@ -57,7 +59,7 @@
 				}
 			}
 		}
-
+		// if no colors are provided, use the default color scale
 		if (value < 33) {
 			return 'stroke-red-700';
 		} else if (value < 66) {
@@ -66,11 +68,13 @@
 			return 'stroke-green-700';
 		}
 	}
-
+	// the secondary arc stroke color
 	function get_stroke_background() {
+		// if colors is an object with secondary key, use only that
 		if (colors && 'secondary' in colors) {
 			return colors.secondary;
 		}
+		// if no colors are provided, use the default color scale
 		return 'stroke-gray-400';
 	}
 
