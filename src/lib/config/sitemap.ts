@@ -175,7 +175,7 @@ export const aside_items: Aside = {
 		{
 			title: 'Pagination',
 			href: '/pagination',
-			status: 'soon'
+			status: 'new'
 		},
 		{
 			title: 'Progress',
