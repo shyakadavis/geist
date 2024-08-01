@@ -185,7 +185,7 @@ export const aside_items: Aside = {
 		{
 			title: 'Radio',
 			href: '/radio',
-			status: 'soon'
+			status: 'draft'
 		},
 		{
 			title: 'Scroller',
