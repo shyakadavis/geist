@@ -180,7 +180,7 @@ export const aside_items: Aside = {
 		{
 			title: 'Progress',
 			href: '/progress',
-			status: 'soon'
+			status: 'new'
 		},
 		{
 			title: 'Radio',
