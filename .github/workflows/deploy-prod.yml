@@ -26,7 +26,7 @@ jobs:
         run: pnpm build
 
       - name: Deploy to Cloudflare Pages
-        uses: AdrianGonz97/refined-cf-pages-action@fix/workflow_run
+        uses: AdrianGonz97/refined-cf-pages-action@v1
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
