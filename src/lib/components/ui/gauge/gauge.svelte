@@ -36,8 +36,7 @@
 	const radius = get_radius();
 	const circumference = 2 * Math.PI * radius;
 	// onMount, set the progress from 0 to th actual value with a spring effect
-	$: _v = (value / total) * 100;
-	$: progress.set(_v);
+	$: progress.set((value / total) * 100);
 	// the main arc
 	$: arc_offset =
 		arc_priority === 'equal' ? circumference * 0.5 : circumference * ((100 - $progress) / 100);
@@ -95,7 +94,7 @@
 			stroke-dashoffset={-circumference + arc_offset}
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			class={get_secondary_arc_stroke_fill()}
+			class={cn(get_secondary_arc_stroke_fill())}
 		/>
 
 		<circle
@@ -107,7 +106,7 @@
 			stroke-dashoffset={arc_offset}
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			class={get_primary_arc_stroke_fill()}
+			class={cn(get_primary_arc_stroke_fill())}
 		/>
 	</svg>
 
