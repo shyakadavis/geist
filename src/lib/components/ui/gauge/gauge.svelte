@@ -21,7 +21,7 @@
 
 	const arc_size = sizes_map[size].size;
 	const stroke_width = sizes_map[size].stroke_width;
-
+	// Store to track the length of the arc
 	const progress = tweened(0, { duration: 1000 });
 	function get_radius() {
 		switch (size) {
@@ -35,12 +35,12 @@
 	}
 	const radius = get_radius();
 	const circumference = 2 * Math.PI * radius;
-	// onMount, set the progress from 0 to th actual value with a spring effect
+	// onMount, set the progress from 0 to the actual value with a spring effect
 	$: progress.set((value / total) * 100);
-	// the main arc
 	$: arc_offset =
 		arc_priority === 'equal' ? circumference * 0.5 : circumference * ((100 - $progress) / 100);
-	// the main arc stroke color
+
+	// Colors
 	function get_primary_arc_stroke_fill() {
 		// if colors is an object with primary key, use only that
 		if (colors && 'primary' in colors) {
@@ -65,7 +65,6 @@
 			return 'stroke-green-700';
 		}
 	}
-	// the secondary arc stroke color
 	function get_secondary_arc_stroke_fill() {
 		// if colors is an object with secondary key, use only that
 		if (colors && 'secondary' in colors) {
