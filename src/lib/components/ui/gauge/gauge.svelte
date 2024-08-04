@@ -36,15 +36,18 @@
 	const radius = get_radius();
 	const circumference = 2 * Math.PI * radius;
 	// onMount, set the progress from 0 to th actual value with a spring effect
-	$: progress.set((value / total) * 100);
+	$: _v = (value / total) * 100;
+	$: progress.set(_v);
 	// the main arc
 	$: arc_offset =
 		arc_priority === 'equal' ? circumference * 0.5 : circumference * ((100 - $progress) / 100);
 	// the secondary arc
 	$: secondary_arc_offset =
-		arc_priority === 'equal' ? circumference * ((50 - $progress / 2) / 100) : 0;
+		arc_priority === 'equal'
+			? circumference * ((50 - $progress / 2) / 100)
+			: circumference * (-$progress / 100);
 	// the main arc stroke color
-	function get_stroke_fill() {
+	function get_primary_arc_stroke_fill() {
 		// if colors is an object with primary key, use only that
 		if (colors && 'primary' in colors) {
 			return colors.primary;
@@ -69,7 +72,7 @@
 		}
 	}
 	// the secondary arc stroke color
-	function get_stroke_background() {
+	function get_secondary_arc_stroke_fill() {
 		// if colors is an object with secondary key, use only that
 		if (colors && 'secondary' in colors) {
 			return colors.secondary;
@@ -78,6 +81,9 @@
 		return 'stroke-gray-400';
 	}
 
+	function get_background_arc_stroke_fill() {
+		return arc_priority === 'equal' ? get_secondary_arc_stroke_fill() : 'stroke-transparent';
+	}
 	// TODO: 1. Clean-up on destroy
 	// TODO: 2. How to pass a reactive var, in this case, progress, to the parent.
 	// TODO: 3. Make this component better. 🤷‍♂️
@@ -97,11 +103,25 @@
 			cy={50}
 			r={radius}
 			stroke-width={stroke_width}
-			stroke-dashoffset={secondary_arc_offset}
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			class={get_stroke_background()}
+			class={get_background_arc_stroke_fill()}
 		/>
+
+		{#if arc_priority !== 'equal'}
+			<circle
+				cx={50}
+				cy={50}
+				r={radius}
+				stroke-width={stroke_width}
+				stroke-dasharray={circumference}
+				stroke-dashoffset={secondary_arc_offset}
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class={get_secondary_arc_stroke_fill()}
+			/>
+		{/if}
+
 		<circle
 			cx={50}
 			cy={50}
@@ -111,7 +131,7 @@
 			stroke-dashoffset={arc_offset}
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			class={get_stroke_fill()}
+			class={get_primary_arc_stroke_fill()}
 		/>
 	</svg>
 
