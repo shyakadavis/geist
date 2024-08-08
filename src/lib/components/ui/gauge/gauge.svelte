@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { cn } from '$lib/utils';
-	import { cubicInOut } from 'svelte/easing';
 	import { tweened } from 'svelte/motion';
 
 	let class_name: string | undefined = undefined;
@@ -37,12 +36,7 @@
 	const circumference = 2 * Math.PI * radius;
 	let percent_px = circumference / 100;
 	let circle_size = 100;
-	const progress = tweened(0, {
-		duration: 1000,
-		easing: cubicInOut,
-		delay: 200
-	});
-
+	const progress = tweened(0, { duration: 1000 });
 	$: $progress = (value / total) * 100;
 
 	// Colors
