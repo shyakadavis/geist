@@ -36,6 +36,7 @@
 	const radius = get_radius();
 	const circumference = 2 * Math.PI * radius;
 	let percent_px = circumference / 100;
+	let circle_size = 100;
 	const progress = tweened(0, {
 		duration: 1000,
 		easing: cubicInOut,
@@ -81,7 +82,7 @@
 
 <div
 	class="relative grid place-items-center"
-	style:--circle-size="100"
+	style:--circle-size={circle_size}
 	style:--circumference={circumference}
 	style:--percent-to-px="{percent_px}px"
 	style:--gap-percent={value === 0 ? 0 : 5}
@@ -97,7 +98,7 @@
 		height={arc_size}
 		width={arc_size}
 		stroke-width="2"
-		viewBox="0 0 100 100"
+		viewBox="0 0 {circle_size} {circle_size}"
 		class={cn(class_name)}
 	>
 		<circle
@@ -124,13 +125,12 @@
 				cy={50}
 				r={radius}
 				stroke-width={stroke_width}
-				stroke-dasharray={circumference}
 				stroke-dashoffset="0"
 				stroke-linecap="round"
 				stroke-linejoin="round"
 				class={cn(get_primary_arc_stroke_fill())}
 				style="
-        stroke-dasharray:calc(var(--stroke-percent) * var(--percent-to-px)) var(--circumference);
+			stroke-dasharray:calc(var(--stroke-percent) * var(--percent-to-px)) var(--circumference);
         transition:var(--transition-length) ease var(--delay),stroke var(--transition-length) ease var(--delay);
         transition-property: stroke-dasharray,transform;
         transform:rotate(calc(-90deg + var(--gap-percent) * var(--offset-factor) * var(--percent-to-deg)));
