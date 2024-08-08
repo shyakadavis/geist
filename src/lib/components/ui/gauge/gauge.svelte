@@ -84,7 +84,7 @@
 	style:--circle-size="100"
 	style:--circumference={circumference}
 	style:--percent-to-px="{percent_px}px"
-	style:--gap-percent="5"
+	style:--gap-percent={value === 0 ? 0 : 5}
 	style:--offset-factor="0"
 	style:--transition-length="1s"
 	style:--transition-step="200ms"
@@ -115,7 +115,7 @@
         transition: all var(--transition-length) ease var(--delay);
         transform-origin:calc(var(--circle-size) / 2) calc(var(--circle-size) / 2);
         "
-			style:--stroke-percent={90 - $progress}
+			style:--stroke-percent={value === 0 ? 100 - $progress : 90 - $progress}
 			style:--offset-factor-secondary="calc(1 - var(--offset-factor))"
 		/>
 		{#if value > 0}
