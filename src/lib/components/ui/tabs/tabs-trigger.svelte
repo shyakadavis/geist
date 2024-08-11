@@ -32,6 +32,7 @@
 	<slot></slot>
 	<!-- TODO: Animate with cross-fade -->
 	<div
+		aria-hidden="true"
 		class="absolute -bottom-1 h-0.5 w-full group-data-[variant=secondary]:hidden group-data-[state=active]:bg-gray-1000"
 	></div>
 </TabsPrimitive.Trigger>
