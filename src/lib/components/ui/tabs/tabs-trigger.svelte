@@ -20,7 +20,7 @@
 <!-- TODO: Instead of `group`, wouldn't it be cleaner to use `has selector` on the parent to remove the shadow and have normal variants on this child? -->
 
 <!-- TODO: Wouldn't it be cool if `TabsPrimitive.Trigger` could accept an array of builders like how button do, and thus not resort to this `tabindex` hack? -->
-<Tooltip.Root>
+<Tooltip.Root openDelay={300}>
 	<Tooltip.Trigger tabindex={-1} class="first:pl-0">
 		<TabsPrimitive.Trigger
 			class={cn(
