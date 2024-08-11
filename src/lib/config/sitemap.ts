@@ -270,7 +270,7 @@ export const aside_items: Aside = {
 		{
 			title: 'Tooltip',
 			href: '/tooltip',
-			status: 'soon'
+			status: 'new'
 		},
 		{
 			title: 'Window',
