@@ -2,20 +2,20 @@
 	import * as Tabs from '$lib/components/ui/tabs';
 
 	const tabs = [
-		{ title: 'Apple', value: 'apple' },
-		{ title: 'Orange', value: 'orange' },
-		{ title: 'Mango', value: 'mango' }
+		{ content: '🍎', value: 'apple' },
+		{ content: '🍊', value: 'orange' },
+		{ content: '🥭', value: 'mango' }
 	];
 </script>
 
 <Tabs.Root value="apple">
 	<Tabs.List>
-		{#each tabs as { title, value }}
-			<Tabs.Trigger {value}>{title}</Tabs.Trigger>
+		{#each tabs as { value }}
+			<Tabs.Trigger {value}>{value}</Tabs.Trigger>
 		{/each}
 	</Tabs.List>
 
-	{#each tabs as { title, value }}
-		<Tabs.Content {value}>{title}.</Tabs.Content>
+	{#each tabs as { content, value }}
+		<Tabs.Content {value}>{content}</Tabs.Content>
 	{/each}
 </Tabs.Root>
