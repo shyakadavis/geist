@@ -22,14 +22,14 @@
 	{transitionConfig}
 	{sideOffset}
 	class={cn(
-		'z-50 max-w-xs text-balance rounded-md border bg-gray-1000 px-3 py-2 text-center text-sm text-background-200 shadow-md',
+		'z-50 max-w-xs text-balance rounded-md bg-gray-1000 px-3 py-2 text-center text-sm text-background-200 shadow-md',
 		className
 	)}
 	{...$$restProps}
 >
 	{#if tip}
 		<div aria-hidden="true" class="bg-gray-1000">
-			<TooltipPrimitive.Arrow class="rounded-sm" />
+			<TooltipPrimitive.Arrow class="rounded-[2.5px]" size={9} />
 		</div>
 	{/if}
 	<slot></slot>
