@@ -10,8 +10,8 @@
 
 <Tabs.Root value="apple">
 	<Tabs.List>
-		{#each tabs as { title, value, disabled }}
-			<Tabs.Trigger {disabled} {value}>{title}</Tabs.Trigger>
+		{#each tabs as { title, value, disabled, tooltip }}
+			<Tabs.Trigger {disabled} {value} {tooltip}>{title}</Tabs.Trigger>
 		{/each}
 	</Tabs.List>
 </Tabs.Root>
