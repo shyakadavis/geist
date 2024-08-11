@@ -240,7 +240,7 @@ export const aside_items: Aside = {
 		{
 			title: 'Tabs',
 			href: '/tabs',
-			status: 'soon'
+			status: 'draft'
 		},
 		{
 			title: 'Text',
