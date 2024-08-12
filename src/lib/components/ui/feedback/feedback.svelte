@@ -22,6 +22,7 @@
 	let height = spring(48, { stiffness: 0.2, damping: 1.2 });
 	let radius = spring(30, { stiffness: 0.2, damping: 1.2 });
 	let current_reaction: number | undefined = undefined;
+	let inline_feedback_el: HTMLTextAreaElement | undefined = undefined;
 
 	function toggle_inline_feedback(i: number) {
 		if (current_reaction === i) {
@@ -34,6 +35,7 @@
 	}
 
 	function open_inline_feedback(i: number) {
+		inline_feedback_el?.focus();
 		current_reaction = i;
 		width.set(336);
 		height.set(271);
@@ -137,7 +139,7 @@
 
 			<form class="flex grow flex-col">
 				<main class="grid grow gap-3 p-2">
-					<Textarea placeholder="Your feedback..." />
+					<Textarea bind:el={inline_feedback_el} placeholder="Your feedback..." />
 					<div class="flex w-full items-center justify-end gap-1 text-xs text-gray-900">
 						<Icons.Markdown aria-hidden class="h-[14px] w-[22px]" />
 						<span class="sr-only">Markdown</span>
