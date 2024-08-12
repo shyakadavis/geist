@@ -130,7 +130,7 @@ export const aside_items: Aside = {
 		{
 			title: 'Feedback',
 			href: '/feedback',
-			status: 'soon'
+			status: 'draft'
 		},
 		{
 			title: 'Gauge',
@@ -250,7 +250,7 @@ export const aside_items: Aside = {
 		{
 			title: 'Textarea',
 			href: '/textarea',
-			status: 'soon'
+			status: 'draft'
 		},
 		{
 			title: 'Theme Switcher',

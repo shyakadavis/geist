@@ -23,6 +23,10 @@ import Database from './database.svg?component';
 import ErrorStates from './error-states.svg?component';
 import ExternalSmall from './external-small.svg?component';
 import External from './external.svg?component';
+import FaceHappy from './face-happy.svg?component';
+import FaceSad from './face-sad.svg?component';
+import FaceSmile from './face-smile.svg?component';
+import FaceUnhappy from './face-unhappy.svg?component';
 import FileText from './file-text.svg?component';
 import Flag from './flag.svg?component';
 import FloppyDisk from './floppy-disk.svg?component';
@@ -44,6 +48,7 @@ import LogoV0 from './logo-v0.svg?component';
 import LogoVercelCircle from './logo-vercel-circle.svg?component';
 import LogoVercel from './logo-vercel.svg?component';
 import MagnifyingGlass from './magnifying-glass.svg?component';
+import Markdown from './markdown.svg?component';
 import Minus from './minus.svg?component';
 import MoreHorizontal from './more-horizontal.svg?component';
 import Notification from './notification.svg?component';
@@ -86,6 +91,10 @@ export const Icons = {
 	ErrorStates,
 	ExternalSmall,
 	External,
+	FaceHappy,
+	FaceSad,
+	FaceSmile,
+	FaceUnhappy,
 	FileText,
 	Flag,
 	FloppyDisk,
@@ -107,6 +116,7 @@ export const Icons = {
 	LogoVercelCircle,
 	LogoVercel,
 	MagnifyingGlass,
+	Markdown,
 	Minus,
 	MoreHorizontal,
 	Notification,
