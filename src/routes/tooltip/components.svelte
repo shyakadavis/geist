@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { Icons } from '$lib/assets/icons';
 	import { Badge } from '$lib/components/ui/badge';
 	import { Button } from '$lib/components/ui/button';
+	import { Spinner } from '$lib/components/ui/spinner';
 	import * as Tooltip from '$lib/components/ui/tooltip';
 </script>
 
@@ -22,7 +22,7 @@
 
 	<Tooltip.Root>
 		<Tooltip.Trigger>
-			<Icons.LoaderCircle class="size-4 animate-spin" />
+			<Spinner />
 		</Tooltip.Trigger>
 		<Tooltip.Content side="right">The Evil Rabbit Jumped over the Fence.</Tooltip.Content>
 	</Tooltip.Root>
