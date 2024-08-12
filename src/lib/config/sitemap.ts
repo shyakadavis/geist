@@ -200,7 +200,7 @@ export const aside_items: Aside = {
 		{
 			title: 'Show more',
 			href: '/show-more',
-			status: 'soon'
+			status: 'new'
 		},
 		{
 			title: 'Skeleton',
