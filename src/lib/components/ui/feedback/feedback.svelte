@@ -5,6 +5,7 @@
 	import { Textarea } from '$lib/components/ui/textarea';
 	import { cn } from '$lib/utils';
 	import Markdown from 'svelte-exmarkdown';
+	import { clickOutsideAction } from 'svelte-legos';
 	import { spring } from 'svelte/motion';
 	import { slide } from 'svelte/transition';
 
@@ -24,9 +25,9 @@
 	let current_reaction: number | undefined = undefined;
 	let inline_feedback_el: HTMLTextAreaElement | undefined = undefined;
 
-	function toggle_inline_feedback(i: number) {
-		if (current_reaction === i) {
-			// Close if clicking the same reaction
+	function toggle_inline_feedback(i: number | undefined) {
+		if (current_reaction === i || i === undefined) {
+			// Close if clicking the same reaction or clicking outside
 			close_inline_feedback();
 		} else {
 			// Open or switch to new reaction
@@ -100,7 +101,11 @@
 		</Popover.Content>
 	</Popover.Root>
 {:else if variant === 'inline'}
-	<div class="flex justify-center">
+	<div
+		class="flex justify-center"
+		use:clickOutsideAction
+		on:clickoutside={() => toggle_inline_feedback(undefined)}
+	>
 		<div
 			style="
     width: {$width}px;
