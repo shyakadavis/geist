@@ -3,17 +3,13 @@
 	import { Button } from '$lib/components/ui/button';
 	import * as Popover from '$lib/components/ui/popover';
 	import { Textarea } from '$lib/components/ui/textarea';
-	import { cn } from '$lib/utils.js';
+	import { cn } from '$lib/utils';
 	import Markdown from 'svelte-exmarkdown';
+	import { spring } from 'svelte/motion';
 	import { slide } from 'svelte/transition';
-	import { type Props, feedback_variants } from './index.js';
 
-	type $$Props = Props;
-
-	let class_name: string | undefined | null = undefined;
-	export let variant: $$Props['variant'] = 'default';
-	export let label: $$Props['label'];
-	export { class_name as class };
+	export let variant: 'default' | 'inline' | undefined = 'default';
+	export let label = 'Was this helpful?';
 
 	let md = '';
 	const reactions = [
@@ -22,6 +18,34 @@
 		{ emoji: Icons.FaceUnhappy, label: 'Select Not great emoji' },
 		{ emoji: Icons.FaceSad, label: 'Select Hate it emoji' }
 	];
+	let width = spring(274.883, { stiffness: 0.2, damping: 1.2 });
+	let height = spring(48, { stiffness: 0.2, damping: 1.2 });
+	let radius = spring(30, { stiffness: 0.2, damping: 1.2 });
+	let current_reaction: number | undefined = undefined;
+
+	function toggle_inline_feedback(i: number) {
+		if (current_reaction === i) {
+			// Close if clicking the same reaction
+			close_inline_feedback();
+		} else {
+			// Open or switch to new reaction
+			open_inline_feedback(i);
+		}
+	}
+
+	function open_inline_feedback(i: number) {
+		current_reaction = i;
+		width.set(336);
+		height.set(271);
+		radius.set(12);
+	}
+
+	function close_inline_feedback() {
+		current_reaction = undefined;
+		width.set(274.883);
+		height.set(48);
+		radius.set(30);
+	}
 </script>
 
 {#if variant === 'default'}
@@ -63,9 +87,7 @@
 								<svelte:component
 									this={emoji}
 									aria-hidden="true"
-									class={cn('text-gray-900 group-hover:text-blue-900', {
-										'[&>path]:group-hover:fill-blue-900': true
-									})}
+									class="text-gray-900 group-hover:text-blue-900 [&>path]:group-hover:fill-blue-900"
 								/>
 							</Button>
 						{/each}
@@ -76,7 +98,58 @@
 		</Popover.Content>
 	</Popover.Root>
 {:else if variant === 'inline'}
-	<div class={cn(feedback_variants({ variant, className: class_name }))} {...$$restProps}>
-		<slot></slot>
+	<div class="flex justify-center">
+		<div
+			style="
+    width: {$width}px;
+    height: {$height}px;
+    border-radius: {$radius}px;
+    "
+			class="flex flex-col justify-between gap-2 overflow-hidden bg-background-100 shadow-shadow-border-small transition-colors"
+		>
+			<div class="flex items-center justify-center p-2">
+				<p class="mr-1 text-sm text-gray-900">{label}</p>
+				{#each reactions as { emoji, label }, i}
+					<Button
+						variant="tertiary"
+						svg_only
+						aria-label={label}
+						size="sm"
+						shape="circle"
+						class={cn('group/inline hover:bg-blue-300', {
+							'bg-blue-300': i === current_reaction
+						})}
+						on:click={() => toggle_inline_feedback(i)}
+					>
+						<svelte:component
+							this={emoji}
+							aria-hidden="true"
+							class={cn(
+								'text-gray-900 group-hover/inline:text-blue-900 [&>path]:group-hover/inline:fill-blue-900',
+								{
+									'text-blue-900 [&>path]:fill-blue-900': i === current_reaction
+								}
+							)}
+						/>
+					</Button>
+				{/each}
+			</div>
+
+			<form class="flex grow flex-col">
+				<main class="grid grow gap-3 p-2">
+					<Textarea placeholder="Your feedback..." />
+					<div class="flex w-full items-center justify-end gap-1 text-xs text-gray-900">
+						<Icons.Markdown aria-hidden class="h-[14px] w-[22px]" />
+						<span class="sr-only">Markdown</span>
+						supported.
+					</div>
+				</main>
+				<footer
+					class="flex items-center justify-end rounded-b-xl border-t border-accents-2 bg-accents-1 p-3"
+				>
+					<Button type="submit" size="sm">Send</Button>
+				</footer>
+			</form>
+		</div>
 	</div>
 {/if}
