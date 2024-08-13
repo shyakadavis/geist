@@ -17,7 +17,7 @@
 	let postBlur = false;
 
 	// When the tabs are scrolled it will determine whether or not to show the blur at the end
-	const scroll = () => {
+	const handle_blur = () => {
 		if (el.offsetWidth + el.scrollLeft < el.scrollWidth) {
 			postBlur = true;
 		} else {
@@ -32,14 +32,11 @@
 	};
 
 	onMount(() => {
-		scroll(); // initially determine blur state
-		el.addEventListener('scroll', scroll); // on:scroll listener doesn't work on TabsPrimitive
-
-		return () => {
-			el.removeEventListener('scroll', scroll);
-		};
+		handle_blur(); // initially determine blur state
 	});
 </script>
+
+<svelte:window on:scroll={handle_blur} on:resize={handle_blur}/>
 
 <!-- Make sure you have the `no-scrollbar` class in your tailwind.config file -->
 
