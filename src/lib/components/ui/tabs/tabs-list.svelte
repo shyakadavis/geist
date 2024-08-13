@@ -45,7 +45,7 @@
 	});
 </script>
 
-<svelte:window on:resize={handle_blur} on:scroll={handle_blur} />
+<svelte:window on:resize={handle_blur} />
 
 <!-- Make sure you have the `no-scrollbar` class in your tailwind.config file -->
 
