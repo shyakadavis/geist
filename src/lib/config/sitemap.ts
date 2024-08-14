@@ -235,7 +235,7 @@ export const aside_items: Aside = {
 		{
 			title: 'Table',
 			href: '/table',
-			status: 'soon'
+			status: 'new'
 		},
 		{
 			title: 'Tabs',
