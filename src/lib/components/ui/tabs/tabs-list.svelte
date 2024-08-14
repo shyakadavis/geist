@@ -13,7 +13,7 @@
 	let class_name: $$Props['class'] = undefined;
 	export let variant: $$Props['variant'] = 'default';
 	export { class_name as class };
-	export let blur_overflow: $$Props['blur_overflow'] = false;
+	export let blur_overflow: $$Props['blur_overflow'] = true;
 
 	let el: HTMLDivElement;
 
