@@ -5,6 +5,8 @@
 	import default_code from './default.svelte?raw';
 	import DisableSpecificTabs from './disable-specific-tabs.svelte';
 	import disable_specific_tabs_code from './disable-specific-tabs.svelte?raw';
+	import Overflow from './overflow-tabs.svelte';
+	import overflow_code from './overflow-tabs.svelte?raw';
 	import Secondary from './secondary.svelte';
 	import secondary_code from './secondary.svelte?raw';
 	import WithIcons from './with-icons.svelte';
@@ -28,5 +30,9 @@
 
 	<Demo id="secondary" code={secondary_code}>
 		<Secondary />
+	</Demo>
+
+	<Demo id="overflow" code={overflow_code}>
+		<Overflow />
 	</Demo>
 </PageWrapper>

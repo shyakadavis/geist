@@ -70,7 +70,7 @@
 		</p>
 	{/if}
 	<div
-		class="group relative mt-4 w-full overflow-x-auto rounded-xl border border-gray-alpha-400 bg-background-100 md:overflow-visible xl:mt-7"
+		class="group relative mt-4 overflow-x-auto rounded-xl border border-gray-alpha-400 bg-background-100 xl:mt-7"
 	>
 		<section id="component-demo" class={cn('w-full p-6', class_name)}>
 			<slot></slot>
