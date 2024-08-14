@@ -38,6 +38,8 @@ import Information from './information.svg?component';
 import Key from './key.svg?component';
 import Link from './link.svg?component';
 import LoaderCircle from './loader-circle.svg?component';
+import LockClosedSmall from './lock-closed-small.svg?component';
+import LockOpenSmall from './lock-open-small.svg?component';
 import LogoBitbucketColor from './logo-bitbucket-color.svg?component';
 import LogoGeist from './logo-geist.svg?component';
 import LogoGithub from './logo-github.svg?component';
@@ -106,6 +108,8 @@ export const Icons = {
 	Key,
 	Link,
 	LoaderCircle,
+	LockClosedSmall,
+	LockOpenSmall,
 	LogoBitbucketColor,
 	LogoGeist,
 	LogoGithub,
