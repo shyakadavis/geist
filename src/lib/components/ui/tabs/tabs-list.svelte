@@ -2,78 +2,65 @@
 	import { cn } from '$lib/utils.js';
 	import { Tabs as TabsPrimitive } from 'bits-ui';
 	import { onMount } from 'svelte';
-	import { fade } from 'svelte/transition';
 
 	type $$Props = TabsPrimitive.ListProps & {
 		variant?: 'default' | 'secondary';
-		/** When true blurs either edge of the scrollable content to indicate there is more content to the user @default true */
-		blur_overflow?: boolean;
+		/** When `true`, masks either edge of the scrollable content to indicate there is more content to the user @default true */
+		mask_overflow?: boolean;
 	};
 
 	let class_name: $$Props['class'] = undefined;
 	export let variant: $$Props['variant'] = 'default';
 	export { class_name as class };
-	export let blur_overflow: $$Props['blur_overflow'] = true;
+	export let mask_overflow: $$Props['mask_overflow'] = true;
 
 	let el: HTMLDivElement;
 
-	let preBlur = false;
-	let postBlur = false;
+	let pre_mask = false;
+	let post_mask = false;
 
-	// When the tabs are scrolled it will determine whether or not to show the blur at the end
-	const handle_blur = () => {
+	// When the tabs are scrolled it will determine whether or not to show the mask at the end
+	function handle_mask() {
 		if (el.offsetWidth + el.scrollLeft < el.scrollWidth - 10) {
-			postBlur = true;
+			post_mask = true;
 		} else {
-			postBlur = false;
+			post_mask = false;
 		}
 
 		if (el.scrollLeft == 0) {
-			preBlur = false;
+			pre_mask = false;
 		} else {
-			preBlur = true;
+			pre_mask = true;
 		}
-	};
+	}
 
 	onMount(() => {
-		handle_blur(); // initially determine blur state
-		el.addEventListener('scroll', handle_blur);
+		handle_mask(); // initially determine mask state
+		el.addEventListener('scroll', handle_mask);
 
 		return () => {
-			el.removeEventListener('scroll', handle_blur);
+			el.removeEventListener('scroll', handle_mask);
 		};
 	});
 </script>
 
-<svelte:window on:resize={handle_blur} />
+<svelte:window on:resize={handle_mask} />
 
 <!-- Make sure you have the `no-scrollbar` class in your tailwind.config file -->
-
-<div class="relative">
-	<TabsPrimitive.List
-		data-variant={variant}
-		bind:el
-		class={cn(
-			'group flex w-full items-baseline gap-3 overflow-hidden overflow-x-auto p-1 text-gray-900 no-scrollbar data-[variant=default]:[box-shadow:_0_-1px_0_var(--accents-2)_inset;]',
-			class_name
-		)}
-		{...$$restProps}
-	>
-		{#if preBlur && blur_overflow}
-			<span
-				in:fade={{ duration: 50 }}
-				out:fade={{ duration: 50 }}
-				class="pointer-events-none absolute left-0 top-0 z-[1] h-full w-8 bg-gray-100 bg-opacity-80 blur-lg dark:bg-gray-200"
-			></span>
-		{/if}
-		<slot />
-		<!-- This indicates to the user that there is more content -->
-		{#if postBlur && blur_overflow}
-			<span
-				in:fade={{ duration: 50 }}
-				out:fade={{ duration: 50 }}
-				class="pointer-events-none absolute right-0 top-0 z-[1] h-full w-8 bg-gray-100 bg-opacity-80 blur-lg dark:bg-gray-200"
-			></span>
-		{/if}
-	</TabsPrimitive.List>
-</div>
+<TabsPrimitive.List
+	data-variant={variant}
+	bind:el
+	class={cn(
+		'group flex w-full items-baseline gap-3 overflow-hidden overflow-x-auto p-1 text-gray-900 no-scrollbar data-[variant=default]:[box-shadow:_0_-1px_0_var(--accents-2)_inset;]',
+		{
+			'mask-linear mask-dir-to-r mask-from-0 mask-to-100 mask-point-to-[15%]':
+				mask_overflow && pre_mask,
+			'mask-linear mask-dir-to-l mask-from-0 mask-to-100 mask-point-to-[15%]':
+				mask_overflow && post_mask
+		},
+		class_name
+	)}
+	{...$$restProps}
+>
+	<slot></slot>
+</TabsPrimitive.List>
