@@ -5,10 +5,7 @@
 	const start = today(getLocalTimeZone());
 	const end = start.add({ days: 7 });
 
-	let value = {
-		start,
-		end
-	};
+	let value = { start, end };
 </script>
 
 <div class="grid place-items-center py-6">

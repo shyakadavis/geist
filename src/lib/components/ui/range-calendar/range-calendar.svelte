@@ -3,14 +3,17 @@
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { Input } from '$lib/components/ui/input/index.js';
 	import { Label } from '$lib/components/ui/label/index.js';
+	import * as Menu from '$lib/components/ui/menu';
 	import * as Popover from '$lib/components/ui/popover/index.js';
 	import { cn } from '$lib/utils.js';
-	import { DateFormatter, getLocalTimeZone, now } from '@internationalized/date';
+	import { CalendarDate, DateFormatter, getLocalTimeZone, now } from '@internationalized/date';
 	import { RangeCalendar as RangeCalendarPrimitive } from 'bits-ui';
 	import * as RangeCalendar from './index.js';
 
+	// type Value
 	type $$Props = RangeCalendarPrimitive.Props & {
 		trigger_class?: string;
+		presets?: Record<string, { text: string; start: CalendarDate; end: CalendarDate }>;
 	};
 	type $$Events = RangeCalendarPrimitive.Events;
 
@@ -18,6 +21,7 @@
 	export let placeholder: $$Props['placeholder'] = undefined;
 	export let weekdayFormat: $$Props['weekdayFormat'] = 'narrow';
 	export let startValue: $$Props['startValue'] = undefined;
+	export let presets: $$Props['presets'] = undefined;
 
 	let class_name: $$Props['class'] = undefined;
 	let trigger_class_name: $$Props['trigger_class'] = undefined;
@@ -41,7 +45,35 @@
 	let start_time = tf.format(value?.start?.toDate(getLocalTimeZone()) ?? _now);
 	let end_date = df.format(value?.end?.toDate(getLocalTimeZone()) ?? _now);
 	let end_time = tf.format(value?.end?.toDate(getLocalTimeZone()) ?? _now);
+
+	$: preset_entries = presets
+		? (Object.entries(presets) as [
+				string,
+				{ text: string; start: CalendarDate; end: CalendarDate }
+			][])
+		: [];
 </script>
+
+{#if presets}
+	<Menu.Root>
+		<Menu.Trigger asChild let:builder>
+			<Button builders={[builder]}>Presets</Button>
+		</Menu.Trigger>
+		<Menu.Content class="w-[200px]">
+			<Menu.Group>
+				{#each preset_entries as [text, range]}
+					<Menu.Item
+						on:click={() => {
+							value = { start: range.start, end: range.end };
+						}}
+					>
+						{text}
+					</Menu.Item>
+				{/each}
+			</Menu.Group>
+		</Menu.Content>
+	</Menu.Root>
+{/if}
 
 <Popover.Root disableFocusTrap>
 	<Popover.Trigger asChild let:builder>
