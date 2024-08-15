@@ -15,7 +15,7 @@
 
 	export let value: $$Props['value'] = undefined;
 	export let placeholder: $$Props['placeholder'] = undefined;
-	export let weekdayFormat: $$Props['weekdayFormat'] = 'short';
+	export let weekdayFormat: $$Props['weekdayFormat'] = 'narrow';
 
 	let class_name: $$Props['class'] = undefined;
 	let trigger_class_name: $$Props['trigger_class'] = undefined;
