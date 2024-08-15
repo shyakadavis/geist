@@ -34,6 +34,8 @@
 		timeZoneName: 'short'
 	});
 
+	// TODO: These formatted values are just for show. Updating their inputs won't update the calendar.
+	// Still need to figure out a way to parse natural language date strings, as these seen in the inputs, and actually have them update the calendar.
 	$: start_date = df.format(value?.start?.toDate(getLocalTimeZone()) ?? new Date());
 	$: start_time = tf.format(value?.start?.toDate(getLocalTimeZone()) ?? new Date());
 	$: end_date = df.format(value?.end?.toDate(getLocalTimeZone()) ?? new Date());
