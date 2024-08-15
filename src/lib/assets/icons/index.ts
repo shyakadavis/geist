@@ -6,11 +6,13 @@ import ArrowUp from './arrow-up.svg?component';
 import Bell from './bell.svg?component';
 import Box from './box.svg?component';
 import BrandAssets from './brand-assets.svg?component';
+import Calendar from './calendar.svg?component';
 import ChartBarMiddle from './chart-bar-middle.svg?component';
 import ChartBarPeak from './chart-bar-peak.svg?component';
 import ChartTrendingDown from './chart-trending-down.svg?component';
 import CheckCircle from './check-circle.svg?component';
 import Check from './check.svg?component';
+import ChevronLeftSmall from './chevron-left-small.svg?component';
 import ChevronLeft from './chevron-left.svg?component';
 import ChevronRightSmall from './chevron-right-small.svg?component';
 import ChevronRight from './chevron-right.svg?component';
@@ -76,11 +78,13 @@ export const Icons = {
 	Bell,
 	Box,
 	BrandAssets,
+	Calendar,
 	ChartBarMiddle,
 	ChartBarPeak,
 	ChartTrendingDown,
 	CheckCircle,
 	Check,
+	ChevronLeftSmall,
 	ChevronLeft,
 	ChevronRightSmall,
 	ChevronRight,

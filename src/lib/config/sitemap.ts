@@ -75,7 +75,7 @@ export const aside_items: Aside = {
 		{
 			title: 'Calendar',
 			href: '/calendar',
-			status: 'soon'
+			status: 'draft'
 		},
 		{
 			title: 'Checkbox',
