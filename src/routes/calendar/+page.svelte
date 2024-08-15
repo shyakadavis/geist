@@ -3,6 +3,8 @@
 	import PageWrapper from '$lib/components/shared/page-wrapper.svelte';
 	import Default from './default.svelte';
 	import default_code from './default.svelte?raw';
+	import RangeCalendar from './range-calendar.svelte';
+	import range_calendar_code from './range-calendar.svelte?raw';
 
 	export let data;
 </script>
@@ -10,5 +12,9 @@
 <PageWrapper title={data.title} description={data.description}>
 	<Demo id="default" class="space-y-2" code={default_code}>
 		<Default />
+	</Demo>
+
+	<Demo id="range-calendar" class="space-y-2" code={range_calendar_code}>
+		<RangeCalendar />
 	</Demo>
 </PageWrapper>
