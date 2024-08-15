@@ -5,18 +5,15 @@
 	const end = today(getLocalTimeZone());
 
 	const presets = {
-		'last-3-days': {
-			text: 'Last 3 Days',
+		'Last 3 Days': {
 			start: end.subtract({ days: 3 }),
 			end: end
 		},
-		'last-7-days': {
-			text: 'Last 7 Days',
+		'Last 7 Days': {
 			start: end.subtract({ days: 7 }),
 			end: end
 		},
-		'last-14-days': {
-			text: 'Last 14 Days',
+		'Last 14 Days': {
 			start: end.subtract({ days: 14 }),
 			end: end
 		}

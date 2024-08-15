@@ -13,7 +13,7 @@
 	// type Value
 	type $$Props = RangeCalendarPrimitive.Props & {
 		trigger_class?: string;
-		presets?: Record<string, { text: string; start: CalendarDate; end: CalendarDate }>;
+		presets?: Record<string, { start: CalendarDate; end: CalendarDate }>;
 	};
 	type $$Events = RangeCalendarPrimitive.Events;
 
@@ -47,10 +47,7 @@
 	let end_time = tf.format(value?.end?.toDate(getLocalTimeZone()) ?? _now);
 
 	$: preset_entries = presets
-		? (Object.entries(presets) as [
-				string,
-				{ text: string; start: CalendarDate; end: CalendarDate }
-			][])
+		? (Object.entries(presets) as [string, { start: CalendarDate; end: CalendarDate }][])
 		: [];
 </script>
 
