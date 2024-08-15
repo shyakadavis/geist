@@ -5,7 +5,7 @@
 	import { Label } from '$lib/components/ui/label/index.js';
 	import * as Popover from '$lib/components/ui/popover/index.js';
 	import { cn } from '$lib/utils.js';
-	import { DateFormatter, getLocalTimeZone } from '@internationalized/date';
+	import { DateFormatter, getLocalTimeZone, now } from '@internationalized/date';
 	import { RangeCalendar as RangeCalendarPrimitive } from 'bits-ui';
 	import * as RangeCalendar from './index.js';
 
@@ -34,12 +34,13 @@
 		timeZoneName: 'short'
 	});
 
+	const _now = now(getLocalTimeZone()).toDate();
 	// TODO: These formatted values are just for show. Updating their inputs won't update the calendar.
 	// Still need to figure out a way to parse natural language date strings, as these seen in the inputs, and actually have them update the calendar.
-	$: start_date = df.format(value?.start?.toDate(getLocalTimeZone()) ?? new Date());
-	$: start_time = tf.format(value?.start?.toDate(getLocalTimeZone()) ?? new Date());
-	$: end_date = df.format(value?.end?.toDate(getLocalTimeZone()) ?? new Date());
-	$: end_time = tf.format(value?.end?.toDate(getLocalTimeZone()) ?? new Date());
+	let start_date = df.format(value?.start?.toDate(getLocalTimeZone()) ?? _now);
+	let start_time = tf.format(value?.start?.toDate(getLocalTimeZone()) ?? _now);
+	let end_date = df.format(value?.end?.toDate(getLocalTimeZone()) ?? _now);
+	let end_time = tf.format(value?.end?.toDate(getLocalTimeZone()) ?? _now);
 </script>
 
 <Popover.Root disableFocusTrap>

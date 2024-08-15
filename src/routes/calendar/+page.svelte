@@ -20,7 +20,7 @@
 		<RangeCalendar />
 	</Demo>
 
-	<Demo id="presets" code={presets_code}>
+	<Demo id="presets" subtitle="Provide common date ranges." code={presets_code}>
 		<Presets />
 	</Demo>
 </PageWrapper>

@@ -18,7 +18,7 @@
 	{month}
 	class={cn(
 		button_variants({ variant: 'tertiary' }),
-		'size-9 p-0 font-normal data-[selected]:opacity-100',
+		'size-9 p-0 font-normal hover:bg-transparent hover:shadow-shadow-border data-[selected]:opacity-100',
 		'[&[data-today]:not([data-selected])]:bg-blue-900 [&[data-today]:not([data-selected])]:text-background-100',
 		// Selection Start
 		'data-[selection-start]:bg-gray-1000 data-[selection-start]:text-background-100',
