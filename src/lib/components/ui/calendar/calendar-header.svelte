@@ -9,7 +9,7 @@
 </script>
 
 <CalendarPrimitive.Header
-	class={cn('relative flex w-full items-center justify-between pt-1', class_name)}
+	class={cn('relative flex w-full items-center justify-between gap-2 pt-1', class_name)}
 	{...$$restProps}
 >
 	<slot />

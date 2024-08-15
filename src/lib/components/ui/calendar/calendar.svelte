@@ -53,8 +53,9 @@
 			let:weekdays
 		>
 			<Calendar.Header>
-				<Calendar.PrevButton />
 				<Calendar.Heading />
+				<div class="grow" aria-hidden="true"></div>
+				<Calendar.PrevButton />
 				<Calendar.NextButton />
 			</Calendar.Header>
 			<Calendar.Months>
