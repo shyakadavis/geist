@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { Combobox } from '$lib/components/ui/combobox';
 
-	const options = [
-		{ label: 'One', value: '1' },
-		{ label: 'Two', value: '2' },
-		{ label: 'Three', value: '3' }
+	const items = [
+		{ label: 'One', value: 'one' },
+		{ label: 'Two', value: 'two' },
+		{ label: 'Three', value: 'three' }
 	];
 </script>
 
-<Combobox placeholder="Search..." {options} />
+<Combobox placeholder="Search..." {items} />

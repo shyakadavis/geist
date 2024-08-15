@@ -1,80 +1,86 @@
 <script lang="ts">
 	import { Icons } from '$lib/assets/icons';
-	import { Button } from '$lib/components/ui/button/index.js';
-	import * as Command from '$lib/components/ui/command/index.js';
-	import * as Popover from '$lib/components/ui/popover/index.js';
-	import { cn } from '$lib/utils.js';
-	import type { PopoverProps } from 'bits-ui';
-	import { tick } from 'svelte';
+	import { cn, flyAndScale } from '$lib/utils';
+	import { Combobox } from 'bits-ui';
+	import { Button } from '../button';
+	import { input_variants } from '../input';
 
-	type $$Props = PopoverProps & {
+	type $$Props = {
+		items: { value: string; label: string }[];
 		placeholder?: string;
-		options?: { value: string; label: string }[];
 		empty_message?: string;
-		trigger_class?: string;
-		content_class?: string;
 	};
 
-	export let placeholder: $$Props['placeholder'] = '';
-	export let options: $$Props['options'] = [];
-	export let empty_message: $$Props['empty_message'] = 'No items found.';
-	let trigger_class_name: $$Props['trigger_class'] = undefined;
-	let content_class_name: $$Props['content_class'] = undefined;
-	export { trigger_class_name as trigger_class, content_class_name as content_class };
+	export let items: $$Props['items'] = [];
+	export let placeholder: $$Props['placeholder'] = 'Search...';
+	export let empty_message: $$Props['empty_message'] = 'No results found';
 
-	let open = false;
-	let value = '';
+	let inputValue = '';
+	let touchedInput = false;
 
-	$: selected_value = options?.find((f) => f.value === value)?.label ?? placeholder;
+	$: filtered_items =
+		inputValue && touchedInput
+			? items?.filter((item) => item.value.includes(inputValue.toLowerCase()))
+			: items;
 
-	// We want to refocus the trigger button when the user selects
-	// an item from the list so users can continue navigating the
-	// rest of the form with the keyboard.
-	function close_and_focus_trigger(triggerId: string) {
-		open = false;
-		tick().then(() => {
-			document.getElementById(triggerId)?.focus();
-		});
-	}
+	// $: selected = filtered_items.find((item) => item.label === inputValue) ?? undefined;
+	// TODO: How to clear a selection when clicking on the clear/x button?
 </script>
 
-<Popover.Root bind:open let:ids>
-	<Popover.Trigger asChild let:builder>
-		<Button
-			builders={[builder]}
-			variant="secondary"
-			role="combobox"
-			aria-expanded={open}
-			class={cn('w-full justify-between', trigger_class_name)}
+<Combobox.Root items={filtered_items} bind:inputValue bind:touchedInput>
+	<Combobox.Input let:builder asChild>
+		<div
+			class={cn(
+				'relative flex max-w-full items-center rounded-md shadow-shadow-border transition-[border-color,box-shadow] delay-0 focus-within:shadow-shadow-input'
+			)}
 		>
-			{selected_value}
-			<Icons.ChevronDown class="ml-auto size-4 shrink-0 opacity-50" />
-		</Button>
-	</Popover.Trigger>
-	<Popover.Content class={cn('p-0', content_class_name)} sideOffset={8} sameWidth>
-		<Command.Root>
-			<Command.Input {placeholder} />
-			<Command.Empty>{empty_message}</Command.Empty>
-			<Command.Group>
-				{#if !options}
-					<Command.Item disabled>
-						{empty_message}
-					</Command.Item>
-				{:else}
-					{#each options as { label, value } (value)}
-						<Command.Item
-							{value}
-							onSelect={(currentValue) => {
-								value = currentValue;
-								close_and_focus_trigger(ids.trigger);
-							}}
-						>
-							<Icons.Check class={cn('mr-2 size-3', value !== value && 'text-transparent')} />
-							{label}
-						</Command.Item>
-					{/each}
-				{/if}
-			</Command.Group>
-		</Command.Root>
-	</Popover.Content>
-</Popover.Root>
+			<Icons.MagnifyingGlass class="pointer-events-none absolute left-3 size-3.5 text-gray-700" />
+			<input
+				use:builder.action
+				{...builder}
+				{placeholder}
+				class={cn(input_variants({ size: 'md' }), 'peer pl-9')}
+			/>
+			{#if inputValue}
+				<Button
+					svg_only
+					aria-label="Clear"
+					shape="square"
+					size="tiny"
+					variant="tertiary"
+					class="absolute right-3 size-3 hover:bg-transparent"
+					on:click={() => (inputValue = '')}
+				>
+					<Icons.Cross aria-hidden="true" class="size-full text-gray-700 hover:text-gray-1000" />
+				</Button>
+			{:else}
+				<Icons.ChevronDown
+					aria-hidden="true"
+					class="pointer-events-none absolute right-3 size-3.5 text-gray-700 transition-transform peer-aria-expanded:rotate-180"
+				/>
+			{/if}
+		</div>
+	</Combobox.Input>
+
+	<Combobox.Content
+		class="w-full rounded-md border bg-background-100 px-1 py-3 shadow-md outline-none"
+		transition={flyAndScale}
+		sideOffset={8}
+		sameWidth
+	>
+		{#each filtered_items as item (item.value)}
+			<Combobox.Item
+				class="flex h-10 w-full select-none items-center rounded-md py-3 pl-5 pr-1.5 text-sm capitalize outline-none transition-colors data-[highlighted]:bg-gray-200"
+				value={item.value}
+				label={item.label}
+			>
+				{item.label}
+				<Combobox.ItemIndicator class="ml-auto">
+					<Icons.Check class="size-3.5 text-gray-700" />
+				</Combobox.ItemIndicator>
+			</Combobox.Item>
+		{:else}
+			<span class="block px-5 py-2 text-sm text-gray-700">{empty_message}</span>
+		{/each}
+	</Combobox.Content>
+</Combobox.Root>
