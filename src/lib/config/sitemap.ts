@@ -100,7 +100,7 @@ export const aside_items: Aside = {
 		{
 			title: 'Combobox',
 			href: '/combobox',
-			status: 'soon'
+			status: 'draft'
 		},
 		{
 			title: 'Context Menu',

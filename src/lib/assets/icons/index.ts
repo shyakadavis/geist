@@ -12,10 +12,14 @@ import ChartBarPeak from './chart-bar-peak.svg?component';
 import ChartTrendingDown from './chart-trending-down.svg?component';
 import CheckCircle from './check-circle.svg?component';
 import Check from './check.svg?component';
+import ChevronDownSmall from './chevron-down-small.svg?component';
+import ChevronDown from './chevron-down.svg?component';
 import ChevronLeftSmall from './chevron-left-small.svg?component';
 import ChevronLeft from './chevron-left.svg?component';
 import ChevronRightSmall from './chevron-right-small.svg?component';
 import ChevronRight from './chevron-right.svg?component';
+import ChevronUpSmall from './chevron-up-small.svg?component';
+import ChevronUp from './chevron-up.svg?component';
 import ClockDashed from './clock-dashed.svg?component';
 import CodeBracket from './code-bracket.svg?component';
 import Command from './command.svg?component';
@@ -84,10 +88,14 @@ export const Icons = {
 	ChartTrendingDown,
 	CheckCircle,
 	Check,
+	ChevronDownSmall,
+	ChevronDown,
 	ChevronLeftSmall,
 	ChevronLeft,
 	ChevronRightSmall,
 	ChevronRight,
+	ChevronUpSmall,
+	ChevronUp,
 	ClockDashed,
 	CodeBracket,
 	Command,
