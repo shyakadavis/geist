@@ -36,7 +36,7 @@
 				{...getAttrs([builder])}
 				{...$$restProps}
 				class={cn(
-					'grid w-full max-w-lg gap-4 border bg-background-100 p-6 shadow-lg sm:rounded-lg md:w-full',
+					'relative grid w-full max-w-lg gap-4 border bg-background-100 p-6 shadow-lg sm:rounded-lg md:w-full',
 					className
 				)}
 				{...$$restProps}

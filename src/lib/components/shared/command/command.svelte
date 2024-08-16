@@ -23,7 +23,7 @@
 {#if $is_desktop}
 	<Command.Dialog
 		bind:open={$command_open_state}
-		class="top-[43%] max-w-[640px] sm:rounded-xl"
+		class="max-w-[640px] sm:rounded-xl"
 		close_button="esc"
 	>
 		<Command.Input
