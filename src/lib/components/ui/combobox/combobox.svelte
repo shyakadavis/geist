@@ -93,7 +93,7 @@
 
 	<Combobox.Content
 		class={cn(
-			'w-full rounded-xl border bg-background-100 px-1 py-3 shadow-md outline-none',
+			'z-[60] w-full rounded-xl border bg-background-100 px-1 py-3 shadow-md outline-none',
 			list_class_name
 		)}
 		transition={flyAndScale}
