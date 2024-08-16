@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { Icons } from '$lib/assets/icons';
 	import { Button } from '$lib/components/ui/button/index.js';
+	import { Combobox } from '$lib/components/ui/combobox';
 	import { Input } from '$lib/components/ui/input/index.js';
 	import { Label } from '$lib/components/ui/label/index.js';
-	import * as Menu from '$lib/components/ui/menu';
 	import * as Popover from '$lib/components/ui/popover/index.js';
 	import { cn } from '$lib/utils.js';
 	import { CalendarDate, DateFormatter, getLocalTimeZone, now } from '@internationalized/date';
@@ -46,32 +46,35 @@
 	let end_date = df.format(value?.end?.toDate(getLocalTimeZone()) ?? _now);
 	let end_time = tf.format(value?.end?.toDate(getLocalTimeZone()) ?? _now);
 
-	$: preset_entries = presets
-		? (Object.entries(presets) as [string, { start: CalendarDate; end: CalendarDate }][])
+	const presets_array = presets
+		? Object.entries(presets).map(([label, { start, end }]) => ({
+				value: label,
+				label,
+				start,
+				end
+			}))
 		: [];
+
+	// TODO: Fix this; 😠 Hacks within hacks
+	function handle_selected_change(selected_preset: unknown) {
+		if (!selected_preset) return;
+		const _s = selected_preset as { value: string; label: string; disabled: boolean };
+		const preset = presets_array.find((preset) => preset.value === _s.value);
+		if (!preset) return;
+		value = { start: preset.start, end: preset.end };
+	}
 </script>
 
 {#if presets}
-	<Menu.Root>
-		<Menu.Trigger asChild let:builder>
-			<Button builders={[builder]}>Presets</Button>
-		</Menu.Trigger>
-		<Menu.Content class="w-[200px]">
-			<Menu.Group>
-				{#each preset_entries as [text, range]}
-					<Menu.Item
-						on:click={() => {
-							value = { start: range.start, end: range.end };
-						}}
-					>
-						{text}
-					</Menu.Item>
-				{/each}
-			</Menu.Group>
-		</Menu.Content>
-	</Menu.Root>
+	<!-- TODO: Applying styles like `hover:bg-gray-alpha-100` do nothing-->
+	<Combobox
+		placeholder="Select Period"
+		items={presets_array}
+		onSelectedChange={handle_selected_change}
+		class={cn('hover:bg-gray-alpha-100', { 'rounded-r-none': presets })}
+		icon={Icons.Clock}
+	/>
 {/if}
-
 <Popover.Root disableFocusTrap>
 	<Popover.Trigger asChild let:builder>
 		<Button
@@ -79,6 +82,7 @@
 			class={cn(
 				'justify-start text-left font-normal',
 				!value && 'text-gray-700',
+				{ 'shrink-0 rounded-l-none': presets },
 				trigger_class_name
 			)}
 			builders={[builder]}

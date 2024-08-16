@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { Icons } from '$lib/assets/icons';
 	import { cn, flyAndScale } from '$lib/utils';
-	import { Combobox } from 'bits-ui';
-	import { fade } from 'svelte/transition';
+	import { Combobox, type ComboboxPropsWithoutHTML } from 'bits-ui';
 	import { Button } from '../button';
 	import { input_variants } from '../input';
 
-	type $$Props = {
-		items: { value: string; label: string }[];
+	type Item = { value: string; label: string };
+	type $$Props = ComboboxPropsWithoutHTML & {
+		items: Item[];
 		placeholder?: string;
 		empty_message?: string;
 		disabled?: boolean;
@@ -15,6 +15,7 @@
 		class?: string;
 		list_class?: string;
 		size?: 'sm' | 'md' | 'lg';
+		icon?: typeof Icons.Accessibility;
 	};
 
 	let class_name: $$Props['class'] = undefined;
@@ -27,13 +28,15 @@
 	export let disabled: $$Props['disabled'] = false;
 	export let errored: $$Props['errored'] = false;
 	export let size: $$Props['size'] = 'md';
+	export let selected: $$Props['selected'] = undefined;
+	export let icon: $$Props['icon'] = undefined;
 
 	let inputValue = '';
 	let touchedInput = false;
 
 	$: filtered_items =
 		inputValue && touchedInput
-			? items?.filter((item) => item.value.includes(inputValue.toLowerCase()))
+			? items?.filter((item: Item) => item.value.includes(inputValue.toLowerCase()))
 			: items;
 
 	// $: selected = filtered_items.find((item) => item.label === inputValue) ?? undefined;
@@ -42,7 +45,14 @@
 	// TODO: When also within a modal, on mobile, the content should stretch in height for a better UX. See the original for reference.
 </script>
 
-<Combobox.Root {disabled} items={filtered_items} bind:inputValue bind:touchedInput>
+<Combobox.Root
+	{disabled}
+	items={filtered_items}
+	bind:selected
+	bind:inputValue
+	bind:touchedInput
+	{...$$restProps}
+>
 	<Combobox.Input let:builder asChild>
 		<div
 			class={cn(
@@ -50,7 +60,14 @@
 				class_name
 			)}
 		>
-			<Icons.MagnifyingGlass class="pointer-events-none absolute left-3 size-3.5 text-gray-700" />
+			{#if icon}
+				<svelte:component
+					this={icon}
+					class="pointer-events-none absolute left-3 size-3.5 text-gray-700"
+				/>
+			{:else}
+				<Icons.MagnifyingGlass class="pointer-events-none absolute left-3 size-3.5 text-gray-700" />
+			{/if}
 			<input
 				use:builder.action
 				{...builder}
@@ -67,26 +84,22 @@
 				data-errored={errored}
 			/>
 			{#if inputValue}
-				<span in:fade class="absolute right-3 top-2">
-					<Button
-						svg_only
-						aria-label="Clear"
-						shape="square"
-						size="tiny"
-						variant="tertiary"
-						class="size-3 hover:bg-transparent"
-						on:click={() => (inputValue = '')}
-					>
-						<Icons.Cross aria-hidden="true" class="size-full text-gray-700 hover:text-gray-1000" />
-					</Button>
-				</span>
+				<Button
+					svg_only
+					aria-label="Clear"
+					shape="square"
+					size="tiny"
+					variant="tertiary"
+					class="absolute right-3 size-3 hover:bg-transparent"
+					on:click={() => (inputValue = '')}
+				>
+					<Icons.Cross aria-hidden="true" class="size-full text-gray-700 hover:text-gray-1000" />
+				</Button>
 			{:else}
-				<span in:fade class="pointer-events-none absolute right-3">
-					<Icons.ChevronDown
-						aria-hidden="true"
-						class="size-3.5 text-gray-700 transition-transform peer-aria-expanded:rotate-180"
-					/>
-				</span>
+				<Icons.ChevronDown
+					aria-hidden="true"
+					class="pointer-events-none absolute right-3 size-3.5 text-gray-700 transition-transform peer-aria-expanded:rotate-180"
+				/>
 			{/if}
 		</div>
 	</Combobox.Input>

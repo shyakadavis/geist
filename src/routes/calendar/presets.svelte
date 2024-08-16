@@ -16,15 +16,15 @@
 		'Last 14 Days': {
 			start: end.subtract({ days: 14 }),
 			end: end
+		},
+		'Last Month': {
+			text: '',
+			start: end.subtract({ months: 1 }),
+			end: end
 		}
-		//   'last-month': {
-		//     text: 'Last Month',
-		//     start: startOfDay(subMonths(new Date(), 1)),
-		//     end: end,
-		//   },
 	};
 </script>
 
-<div class="grid place-items-center py-6">
+<div class="mx-auto grid w-[500px] grid-cols-2 py-6">
 	<RangeCalendar {presets} />
 </div>
