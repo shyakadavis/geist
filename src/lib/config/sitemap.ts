@@ -155,7 +155,7 @@ export const aside_items: Aside = {
 		{
 			title: 'Loading Dots',
 			href: '/loading-dots',
-			status: 'soon'
+			status: 'new'
 		},
 		{
 			title: 'Menu',
