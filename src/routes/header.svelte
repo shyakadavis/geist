@@ -46,8 +46,9 @@
 				href="https://github.com/shyakadavis/geist"
 				target="_blank"
 				rel="noopener"
+				title="GitHub Repository"
 			>
-				<Icons.LogoGithub width="20" height="20" aria-hidden="true" />
+				<Icons.LogoGithub width="24" height="24" aria-hidden="true" />
 			</Button>
 
 			<div class="hidden xl:block">
