@@ -42,7 +42,7 @@
 			'rounded-full': pill,
 			'rounded-[50%]': rounded,
 			'rounded-none': squared,
-			'animate-none': !animated
+			'!animate-none [&>*]:after:!animate-none': !animated
 		},
 		class_name
 	)}
