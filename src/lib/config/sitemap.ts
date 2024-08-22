@@ -95,7 +95,7 @@ export const aside_items: Aside = {
 		{
 			title: 'Collapse',
 			href: '/collapse',
-			status: 'soon'
+			status: 'new'
 		},
 		{
 			title: 'Combobox',
