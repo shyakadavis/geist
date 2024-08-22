@@ -163,17 +163,6 @@ const config: Config = {
 					'0%': { backgroundPosition: '200% 0;' },
 					to: { backgroundPosition: '-200% 0;' }
 				}
-				// skeleton_loading: {
-				// 	'0%': {
-				// 		backgroundColor: 'var(--skeleton-color-1)'
-				// 	},
-				// 	'50%': {
-				// 		backgroundColor: 'var(--skeleton-color-2)'
-				// 	},
-				// 	'100%': {
-				// 		backgroundColor: 'var(--skeleton-color-1)'
-				// 	}
-				// }
 			}
 		}
 	},
