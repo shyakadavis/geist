@@ -154,6 +154,15 @@ const config: Config = {
 			fontFamily: {
 				sans: ['Geist Sans, sans-serif', ...fontFamily.sans],
 				mono: ['Geist Mono, monospace', ...fontFamily.mono]
+			},
+			animation: {
+				'skeleton-loading': 'skeleton_loading 8s ease-in-out infinite'
+			},
+			keyframes: {
+				skeleton_loading: {
+					'0%': { backgroundPosition: '200% 0;' },
+					to: { backgroundPosition: '-200% 0;' }
+				}
 			}
 		}
 	},
