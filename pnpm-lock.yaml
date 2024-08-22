@@ -17,6 +17,9 @@ importers:
       cmdk-sv:
         specifier: ^0.0.18
         version: 0.0.18(svelte@4.2.18)
+      lucide-svelte:
+        specifier: ^0.429.0
+        version: 0.429.0(svelte@4.2.18)
       svelte-legos:
         specifier: ^0.2.3
         version: 0.2.3(svelte@4.2.18)
@@ -889,6 +892,11 @@ packages:
 
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
+
+  lucide-svelte@0.429.0:
+    resolution: {integrity: sha512-3LwbxQn5i9/zQwMg0ZWT875djOEQoR3eM8ytOGqk0eRk4wkoqqgZX0Gr+aQjkd+RSDEVMXkIEoyW/1zLyXr/6g==}
+    peerDependencies:
+      svelte: ^3 || ^4 || ^5.0.0-next.42
 
   magic-string@0.30.10:
     resolution: {integrity: sha512-iIRwTIf0QKV3UAnYK4PU8uiEc4SRh5jX0mwpIwETPpHdhVM4f53RSwS/vXvN1JhGX+Cs7B8qIq3d6AH49O5fAQ==}
@@ -2284,6 +2292,10 @@ snapshots:
   longest-streak@3.1.0: {}
 
   lru-cache@10.4.3: {}
+
+  lucide-svelte@0.429.0(svelte@4.2.18):
+    dependencies:
+      svelte: 4.2.18
 
   magic-string@0.30.10:
     dependencies:
