@@ -2,4 +2,4 @@
 	import { Snippet } from '$lib/components/ui/snippet';
 </script>
 
-<Snippet text={['cd project', 'now']} class="w-[300px]" />
+<Snippet text={['cd project', 'now']} class="w-full" />

@@ -5,13 +5,13 @@
 	import { tv } from 'tailwind-variants';
 
 	const style = tv({
-		base: 'border-border relative flex w-fit min-h-[42px] place-items-center gap-2 rounded-md border py-2.5 pl-2.5 pr-12',
+		base: 'border-border relative flex min-h-[42px] w-fit place-items-center gap-2 rounded-md border py-2.5 pl-2.5 pr-12',
 		variants: {
 			variant: {
 				default: 'border-border text-foreground',
-				success: 'border-blue-600 bg-blue-600 bg-opacity-15 text-blue-600 border-opacity-35',
-				error: 'border-red-600 bg-red-600 bg-opacity-15 text-red-600 border-opacity-35',
-				warning: 'border-amber-600 bg-amber-600 bg-opacity-15 text-amber-600 border-opacity-35'
+				success: 'border-blue-600 border-opacity-35 bg-blue-600 bg-opacity-15 text-blue-600',
+				error: 'border-red-600 border-opacity-35 bg-red-600 bg-opacity-15 text-red-600',
+				warning: 'border-amber-600 border-opacity-35 bg-amber-600 bg-opacity-15 text-amber-600'
 			}
 		}
 	});
