@@ -33,7 +33,7 @@
 		class?: string;
 		prompt?: boolean;
 		variant?: 'default' | 'success' | 'error' | 'warning';
-		onCopy?: () => void;
+		on_copy?: () => void;
 		// TODO: Add dark variant (really not sure what expected behavior)
 	};
 
@@ -42,7 +42,7 @@
 	export let text: $$Props['text'];
 	export let prompt: $$Props['prompt'] = true;
 	export let variant: $$Props['variant'] = 'default';
-	export let onCopy: $$Props['onCopy'] = undefined;
+	export let on_copy: $$Props['on_copy'] = undefined;
 	let class_name: $$Props['class'] = undefined;
 	export { class_name as class };
 
@@ -57,8 +57,8 @@
 
 		copied = true;
 
-		if (onCopy) {
-			onCopy();
+		if (on_copy) {
+			on_copy();
 		}
 
 		setTimeout(() => (copied = false), 750);
