@@ -68,20 +68,20 @@
 <div class={cn(style({ variant }), class_name)}>
 	<code class="flex flex-col text-nowrap text-[13px]">
 		{#if typeof text == 'string'}
-			<span>
+			<div class="flex place-items-center gap-2">
 				{#if prompt}
-					<span>$</span>
+					<span class="select-none">$</span>
 				{/if}
 				{text}
-			</span>
+			</div>
 		{:else}
 			{#each text as line}
-				<span>
+				<div class="flex place-items-center gap-2">
 					{#if prompt}
-						<span>$</span>
+						<span class="select-none">$</span>
 					{/if}
 					{line}
-				</span>
+				</div>
 			{/each}
 		{/if}
 	</code>
