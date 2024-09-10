@@ -1,41 +1,8 @@
 <script lang="ts">
-	import { cn } from '$lib/utils';
 	import { Icons } from '$lib/assets/icons';
+	import { cn } from '$lib/utils';
 	import { scale } from 'svelte/transition';
-	import { tv } from 'tailwind-variants';
-
-	const style = tv({
-		base: 'border-border relative flex min-h-[42px] w-fit place-items-center gap-2 rounded-md border py-2.5 pl-2.5 pr-12',
-		variants: {
-			variant: {
-				default: 'border-border text-foreground',
-				success: 'border-blue-600 border-opacity-35 bg-blue-600 bg-opacity-15 text-blue-600',
-				error: 'border-red-600 border-opacity-35 bg-red-600 bg-opacity-15 text-red-600',
-				warning: 'border-amber-600 border-opacity-35 bg-amber-600 bg-opacity-15 text-amber-600'
-			}
-		}
-	});
-
-	const button_style = tv({
-		base: 'text-muted-foreground hover:text-foreground absolute right-3 top-1/2 -translate-y-1/2 transition-colors',
-		variants: {
-			variant: {
-				default: 'text-foreground',
-				success: 'text-blue-700',
-				error: 'text-red-600',
-				warning: 'text-amber-600'
-			}
-		}
-	});
-
-	type Props = {
-		text: string | string[];
-		class?: string;
-		prompt?: boolean;
-		variant?: 'default' | 'success' | 'error' | 'warning';
-		on_copy?: () => void;
-		// TODO: Add dark variant (really not sure what expected behavior)
-	};
+	import { copy_button_variants, snippet_variants, type Props } from '.';
 
 	type $$Props = Props;
 
@@ -43,12 +10,13 @@
 	export let prompt: $$Props['prompt'] = true;
 	export let variant: $$Props['variant'] = 'default';
 	export let on_copy: $$Props['on_copy'] = undefined;
+	export let inverted: $$Props['inverted'] = false;
 	let class_name: $$Props['class'] = undefined;
 	export { class_name as class };
 
 	let copied = false;
 
-	const copy = async () => {
+	async function copy_snippet() {
 		if (typeof text == 'string') {
 			await navigator.clipboard.writeText(text);
 		} else {
@@ -62,37 +30,48 @@
 		}
 
 		setTimeout(() => (copied = false), 750);
-	};
+	}
 </script>
 
-<div class={cn(style({ variant }), class_name)}>
-	<code class="flex flex-col text-nowrap text-[13px]">
-		{#if typeof text == 'string'}
-			<div class="flex place-items-center gap-2">
-				{#if prompt}
-					<span class="select-none">$</span>
-				{/if}
-				{text}
-			</div>
-		{:else}
-			{#each text as line}
-				<div class="flex place-items-center gap-2">
-					{#if prompt}
-						<span class="select-none">$</span>
-					{/if}
-					{line}
-				</div>
-			{/each}
-		{/if}
-	</code>
-	<button on:click={copy} type="button" class={cn(button_style({ variant }))}>
+<div
+	class={cn(snippet_variants({ variant, className: class_name }), {
+		'bg-gray-1000 text-gray-100': inverted
+	})}
+>
+	{#if typeof text == 'string'}
+		<pre
+			class={cn('overflow-y-auto whitespace-nowrap text-left font-mono text-[13px] leading-5', {
+				"before:content-['$']": prompt
+			})}>
+			{text}
+		</pre>
+	{:else}
+		{#each text as line}
+			<pre
+				class={cn('overflow-y-auto whitespace-nowrap text-left font-mono text-[13px] leading-5', {
+					"before:content-['$']": prompt
+				})}>
+			{line}
+		</pre>
+		{/each}
+	{/if}
+
+	<button
+		on:click={copy_snippet}
+		type="button"
+		class={cn(copy_button_variants({ variant }), {
+			'bg-gray-1000 text-gray-100': inverted
+		})}
+	>
 		{#if copied}
 			<div in:scale={{ start: 0.75, duration: 250 }}>
 				<Icons.Check class="size-4" />
+				<span class="sr-only">Copied</span>
 			</div>
 		{:else}
 			<div in:scale={{ start: 0.75, duration: 250 }}>
 				<Icons.Copy class="size-4" />
+				<span class="sr-only">Copy</span>
 			</div>
 		{/if}
 	</button>
