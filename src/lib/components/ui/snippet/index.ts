@@ -6,9 +6,9 @@ export const snippet_variants = tv({
 	variants: {
 		variant: {
 			default: 'border-gray-alpha-400',
-			success: 'border-blue-600 border-opacity-35 bg-blue-600 bg-opacity-15 text-blue-600',
-			error: 'border-red-600 border-opacity-35 bg-red-600 bg-opacity-15 text-red-600',
-			warning: 'border-amber-600 border-opacity-35 bg-amber-600 bg-opacity-15 text-amber-600'
+			success: 'bg-blue-100 text-blue-900',
+			error: 'bg-red-100 text-red-900',
+			warning: 'bg-amber-100 text-amber-900'
 		}
 	}
 });
@@ -18,9 +18,9 @@ export const copy_button_variants = tv({
 	variants: {
 		variant: {
 			default: 'text-gray-1000',
-			success: 'text-blue-700',
-			error: 'text-red-600',
-			warning: 'text-amber-600'
+			success: 'text-blue-900',
+			error: 'text-red-900',
+			warning: 'text-amber-900'
 		}
 	}
 });
