@@ -31,19 +31,19 @@
 	];
 
 	const preview_colors = [
-		'--gray-800',
-		'--blue-800',
-		'--purple-700',
-		'--pink-800',
-		'--red-800',
-		'--amber-800',
-		'--green-800',
-		'--teal-800'
+		'bg-gray-800',
+		'bg-blue-800',
+		'bg-purple-700',
+		'bg-pink-800',
+		'bg-red-800',
+		'bg-amber-800',
+		'bg-green-800',
+		'bg-teal-800'
 	];
 </script>
 
 <PageWrapper
-	title="Geist Design System"
+	title="[Svelte] Geist Design System"
 	description="Vercel design system for building consistent web experiences."
 >
 	<section class="grid auto-rows-fr sm:grid-cols-2">
@@ -56,7 +56,7 @@
 			<div class="relative mx-auto w-fit">
 				<Icons.BrandAssets aria-hidden="true" height="96" width="322" />
 				<div
-					class="absolute inset-0 transition-[box-shadow] delay-0 [box-shadow:_0_0_8px_8px_var(--background-200)_inset] group-hover:[box-shadow:_0_0_8px_8px_var(--background-100)_inset]"
+					class="absolute inset-0 transition-[box-shadow] delay-0 [box-shadow:_0_0_8px_8px_hsl(var(--background-200))_inset] group-hover:[box-shadow:_0_0_8px_8px_hsl(var(--background-100))_inset]"
 				></div>
 			</div>
 		</IntroductionLink>
@@ -92,7 +92,7 @@
 					<div
 						class="flex h-[96px] w-[32px] items-center justify-center overflow-hidden rounded-full border border-gray-alpha-400 bg-background-200"
 					>
-						<div class="h-[72px] w-2 rounded-full" style="background: var({color});"></div>
+						<div class="h-[72px] w-2 rounded-full {color}"></div>
 					</div>
 				{/each}
 			</div>
