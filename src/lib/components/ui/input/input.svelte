@@ -7,7 +7,7 @@
 		affix_styling?: boolean;
 		suffix_styling?: boolean;
 		label?: string;
-		ref?: HTMLInputElement | null;
+		ref?: HTMLInputElement;
 	};
 
 	export type InputProps = CustomInputProps & Without<HTMLInputAttributes, CustomInputProps>;
@@ -23,7 +23,7 @@
 	let {
 		class: class_name = undefined,
 		value = $bindable(undefined),
-		ref = $bindable(null),
+		ref = $bindable(undefined),
 		size = 'md',
 		affix: Affix = undefined,
 		suffix: Suffix = undefined,
