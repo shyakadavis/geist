@@ -1,4 +1,4 @@
-<!-- <script lang="ts">
+<script lang="ts">
 	import Demo from '$lib/components/shared/demo.svelte';
 	import PageWrapper from '$lib/components/shared/page-wrapper.svelte';
 	import AffixAndSuffix from './affix-and-suffix.svelte';
@@ -53,4 +53,4 @@
 	>
 		<MenuPosition />
 	</Demo>
-</PageWrapper> -->
+</PageWrapper>

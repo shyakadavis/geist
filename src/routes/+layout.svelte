@@ -13,6 +13,8 @@
 </script>
 
 <MetaTags {...metaTags} />
+<!-- TODO: [svelte] hydration_html_changed
+The value of an `{@html ...}` block in node_modules/​.pnpm/​mode-watcher@0.4.0_svelte@5.0.0-next.260/​node_modules/​mode-watcher/​dist/​mode-watcher.svelte changed between server and client renders. The client value will be ignored in favour of the server value -->
 <ModeWatcher />
 <div>
 	<Header />

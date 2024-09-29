@@ -12,7 +12,7 @@
 	// TODO: Find a way to define this prop in one place.
 	type Props = WithoutChildrenOrChild<DialogPrimitive.RootProps> &
 		WithoutChildrenOrChild<CommandPrimitive.RootProps> & {
-			children: Snippet;
+			children?: Snippet;
 			close_button?: 'esc' | 'x';
 		};
 
@@ -24,6 +24,10 @@
 		children,
 		...rest
 	}: Props = $props();
+
+	// TODO:
+	// 	[svelte] ownership_invalid_mutation
+	// src/lib/components/shared/command/command.svelte mutated a value owned by node_modules/.pnpm/bits-ui@1.0.0-next.1_svelte@5.0.0-next.260/node_modules/bits-ui/dist/bits/utilities/scroll-lock/scroll-lock.svelte. This is strongly discouraged. Consider passing values to child components with `bind:`, or use a callback instead
 </script>
 
 <Dialog.Root bind:open {...rest}>

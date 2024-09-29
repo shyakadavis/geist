@@ -1,36 +1,32 @@
 <script lang="ts">
-	import { afterUpdate, onMount } from 'svelte';
+	import * as Dialog from '$lib/components/ui/dialog/index.js';
+	import * as Drawer from '$lib/components/ui/drawer/index.js';
+	import { type Snippet } from 'svelte';
 	import { is_desktop, is_overflowing } from '.';
-	import * as Dialog from '../dialog';
-	import * as Drawer from '../drawer';
-	interface Props {
-		children?: import('svelte').Snippet;
-	}
+
+	type Props = {
+		children?: Snippet;
+	};
 
 	let { children }: Props = $props();
 
-	let el: HTMLDivElement = $state();
+	let ref: HTMLDivElement | undefined = $state(undefined);
 
 	function check_overflow(element: HTMLDivElement) {
 		return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
 	}
 
-	function update_overflow() {
-		if (el) {
-			const overflow = check_overflow(el);
+	$effect(() => {
+		if (ref) {
+			const overflow = check_overflow(ref);
 			is_overflowing.set(overflow);
 		}
-	}
-
-	onMount(update_overflow);
-
-	afterUpdate(update_overflow);
+	});
 </script>
 
-{#if $is_desktop}
+{#if is_desktop.matches}
 	<Dialog.Content
-		transitionConfig={{ y: -15 }}
-		bind:el
+		bind:ref
 		class="max-h-[80vh] overflow-y-auto bg-background-100 p-0 dark:bg-background-200 sm:rounded-xl"
 		hide_close_button
 		overlay_classes="bg-[#000] opacity-25 dark:opacity-75"

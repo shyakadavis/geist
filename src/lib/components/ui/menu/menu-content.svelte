@@ -18,7 +18,6 @@
 		class_name
 	)}
 	{...rest}
-	on:keydown
 >
 	{@render children?.()}
 </MenuPrimitive.Content>

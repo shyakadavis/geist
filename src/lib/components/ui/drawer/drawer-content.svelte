@@ -3,14 +3,16 @@
 	import { Drawer as DrawerPrimitive } from 'vaul-svelte';
 	import DrawerOverlay from './drawer-overlay.svelte';
 
-	type $$Props = DrawerPrimitive.ContentProps & {
+	type Props = DrawerPrimitive.ContentProps & {
 		hide_dismiss_bar?: boolean;
 	};
 
-	
-	interface Props { [key: string]: any }
-
-	let { class: className = undefined, hide_dismiss_bar = false, children, ...rest }: Props = $props();
+	let {
+		class: class_name = undefined,
+		hide_dismiss_bar = false,
+		children,
+		...rest
+	}: Props = $props();
 </script>
 
 <DrawerPrimitive.Portal>
@@ -18,7 +20,7 @@
 	<DrawerPrimitive.Content
 		class={cn(
 			'fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border bg-background-100',
-			className
+			class_name
 		)}
 		{...rest}
 	>

@@ -1,8 +1,8 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	import { Drawer as DrawerPrimitive } from 'vaul-svelte';
 
-	type $$Props = DrawerPrimitive.Props;
-	interface Props { [key: string]: any }
+	type Props = DrawerPrimitive.Props & { children?: Snippet };
 
 	let {
 		shouldScaleBackground = true,

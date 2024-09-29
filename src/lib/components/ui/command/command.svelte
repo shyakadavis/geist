@@ -4,12 +4,7 @@
 
 	type Props = CommandPrimitive.RootProps;
 
-	let {
-		value = $bindable(undefined),
-		class: className = undefined,
-		children,
-		...rest
-	}: Props = $props();
+	let { value = $bindable(''), class: className = undefined, children, ...rest }: Props = $props();
 </script>
 
 <CommandPrimitive.Root

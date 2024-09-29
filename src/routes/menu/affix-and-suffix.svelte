@@ -6,17 +6,12 @@
 
 <div class="flex gap-6">
 	<Menu.Root>
-		<Menu.Trigger asChild let:builder>
-			<Button
-				builders={[builder]}
-				aria-label="Menu"
-				shape="square"
-				size="sm"
-				svg_only
-				variant="secondary"
-			>
-				<Icons.MoreHorizontal aria-hidden="true" />
-			</Button>
+		<Menu.Trigger>
+			{#snippet child({ props })}
+				<Button aria-label="Menu" shape="square" size="sm" svg_only variant="secondary" {...props}>
+					<Icons.MoreHorizontal aria-hidden="true" />
+				</Button>
+			{/snippet}
 		</Menu.Trigger>
 		<Menu.Content>
 			<Menu.Group>
@@ -28,17 +23,12 @@
 	</Menu.Root>
 
 	<Menu.Root>
-		<Menu.Trigger asChild let:builder>
-			<Button
-				builders={[builder]}
-				aria-label="Menu"
-				shape="square"
-				size="sm"
-				svg_only
-				variant="secondary"
-			>
-				<Icons.MoreHorizontal aria-hidden="true" />
-			</Button>
+		<Menu.Trigger>
+			{#snippet child({ props })}
+				<Button {...props} aria-label="Menu" shape="square" size="sm" svg_only variant="secondary">
+					<Icons.MoreHorizontal aria-hidden="true" />
+				</Button>
+			{/snippet}
 		</Menu.Trigger>
 		<Menu.Content>
 			<Menu.Group>

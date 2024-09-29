@@ -4,8 +4,10 @@
 </script>
 
 <Menu.Root>
-	<Menu.Trigger asChild let:builder>
-		<Button builders={[builder]}>Actions</Button>
+	<Menu.Trigger>
+		{#snippet child({ props })}
+			<Button {...props}>Actions</Button>
+		{/snippet}
 	</Menu.Trigger>
 	<Menu.Content class="w-[200px]">
 		<Menu.Group>

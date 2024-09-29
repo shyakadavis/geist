@@ -2,6 +2,7 @@ import { Command as CommandPrimitive } from 'bits-ui';
 
 import Dialog from './command-dialog.svelte';
 import Empty from './command-empty.svelte';
+import GroupHeading from './command-group-heading.svelte';
 import Group from './command-group.svelte';
 import Input from './command-input.svelte';
 import Item from './command-item.svelte';
@@ -17,6 +18,7 @@ export {
 	Dialog as CommandDialog,
 	Empty as CommandEmpty,
 	Group as CommandGroup,
+	GroupHeading as CommandGroupHeading,
 	Input as CommandInput,
 	Item as CommandItem,
 	List as CommandList,
@@ -26,6 +28,7 @@ export {
 	Dialog,
 	Empty,
 	Group,
+	GroupHeading,
 	Input,
 	Item,
 	List,

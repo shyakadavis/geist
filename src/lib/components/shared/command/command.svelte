@@ -1,5 +1,7 @@
 <script lang="ts">
+	import { Button } from '$lib/components/ui/button';
 	import * as Command from '$lib/components/ui/command';
+	import * as Drawer from '$lib/components/ui/drawer';
 	import { command_open_state } from '$lib/stores';
 	import { MediaQuery } from 'runed';
 	import CommandList from './command-list.svelte';
@@ -18,20 +20,22 @@
 
 <svelte:document onkeydown={doc_keydown} />
 
-<Command.Dialog
-	bind:open={$command_open_state}
-	class="max-w-[640px] sm:rounded-xl"
-	close_button="esc"
->
-	<Command.Input
-		placeholder="Search..."
-		hide_search_icon
-		bind:value={search}
-		class="h-[53px] p-0 px-1 text-lg"
-	/>
-	<CommandList {search} class="h-[436px] max-h-none" />
-</Command.Dialog>
-<!-- <Drawer.Root bind:open={$command_open_state}>
+{#if is_desktop.matches}
+	<Command.Dialog
+		bind:open={$command_open_state}
+		class="max-w-[640px] sm:rounded-xl"
+		close_button="esc"
+	>
+		<Command.Input
+			placeholder="Search..."
+			hide_search_icon
+			bind:value={search}
+			class="h-[53px] p-0 px-1 text-lg"
+		/>
+		<CommandList {search} class="h-[436px] max-h-none" />
+	</Command.Dialog>
+{:else}
+	<Drawer.Root bind:open={$command_open_state}>
 		<Drawer.Content class="h-3/4" hide_dismiss_bar>
 			<Command.Root>
 				<Drawer.Header class="flex h-[53px] items-center justify-between border-b px-2">
@@ -54,4 +58,5 @@
 				<CommandList {search} class="max-h-full" />
 			</Command.Root>
 		</Drawer.Content>
-	</Drawer.Root> -->
+	</Drawer.Root>
+{/if}

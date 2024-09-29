@@ -1,15 +1,12 @@
 <script lang="ts">
 	import { Icons } from '$lib/assets/icons';
 	import { cn } from '$lib/utils.js';
-	import { DropdownMenu as MenuPrimitive, type WithoutChildrenOrChild } from 'bits-ui';
-	import type { Snippet } from 'svelte';
+	import { DropdownMenu as MenuPrimitive, type WithoutChild } from 'bits-ui';
 
 	// TODO: Is it WithoutChildrenOrChild or WithoutChild
-	type Props = WithoutChildrenOrChild<MenuPrimitive.RadioItemProps> & {
-		children?: Snippet;
-	};
+	type Props = WithoutChild<MenuPrimitive.RadioItemProps>;
 
-	let { class: class_name = undefined, value, children, ...rest }: Props = $props();
+	let { class: class_name = undefined, value, children: children_prop, ...rest }: Props = $props();
 </script>
 
 <MenuPrimitive.RadioItem
@@ -20,10 +17,12 @@
 	{value}
 	{...rest}
 >
-	<span class="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
-		<MenuPrimitive.RadioIndicator>
-			<Icons.Status class="size-3 fill-current" />
-		</MenuPrimitive.RadioIndicator>
-	</span>
-	{@render children?.()}
+	{#snippet children({ checked })}
+		<span class="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+			{#if checked === true}
+				<Icons.Status class="size-3 fill-current" />
+			{/if}
+		</span>
+		{@render children_prop?.({ checked })}
+	{/snippet}
 </MenuPrimitive.RadioItem>
