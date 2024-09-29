@@ -13,16 +13,22 @@
 		animated?: boolean;
 	};
 
-	let class_name: $$Props['class'] = undefined;
-	export { class_name as class };
-	export let width: $$Props['width'] = undefined;
-	export let height: $$Props['height'] = 24;
-	export let box_height: $$Props['box_height'] = undefined;
-	export let show: $$Props['show'] = true;
-	export let pill: $$Props['pill'] = false;
-	export let rounded: $$Props['rounded'] = false;
-	export let squared: $$Props['squared'] = false;
-	export let animated: $$Props['animated'] = true;
+	
+	interface Props { [key: string]: any }
+
+	let {
+		class: class_name = undefined,
+		width = undefined,
+		height = 24,
+		box_height = undefined,
+		show = true,
+		pill = false,
+		rounded = false,
+		squared = false,
+		animated = true,
+		children,
+		...rest
+	}: Props = $props();
 </script>
 
 <span
@@ -46,7 +52,7 @@
 		},
 		class_name
 	)}
-	{...$$restProps}
+	{...rest}
 >
-	<slot></slot>
+	{@render children?.()}
 </span>

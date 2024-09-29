@@ -1,73 +1,65 @@
 <script lang="ts">
 	import { Icons } from '$lib/assets/icons/index.js';
-	import { cn, flyAndScale } from '$lib/utils.js';
-	import { builderActions, Dialog as DialogPrimitive, getAttrs } from 'bits-ui';
+	import { cn } from '$lib/utils.js';
+	import { Dialog as DialogPrimitive, type WithoutChildrenOrChild } from 'bits-ui';
+	import type { Snippet } from 'svelte';
 	import { Button } from '../button/index.js';
 	import * as Dialog from './index.js';
 
-	type $$Props = DialogPrimitive.ContentProps & {
+	type Props = WithoutChildrenOrChild<DialogPrimitive.ContentProps> & {
+		children: Snippet;
 		close_button?: 'esc' | 'x';
 		hide_close_button?: boolean;
 		overlay_classes?: string;
 	};
 
-	let className: $$Props['class'] = undefined;
-	export let transition: $$Props['transition'] = flyAndScale;
-	export let transitionConfig: $$Props['transitionConfig'] = {
-		duration: 200
-	};
-	export { className as class };
-	export let close_button: $$Props['close_button'] = 'x';
-	export let hide_close_button: $$Props['hide_close_button'] = false;
-	export let overlay_classes: $$Props['overlay_classes'] = undefined;
-	export let el: $$Props['el'] = undefined;
-
-	$: _transition = transition || flyAndScale;
+	let {
+		class: class_name = undefined,
+		close_button = 'x',
+		hide_close_button = false,
+		overlay_classes = undefined,
+		children,
+		...rest
+	}: Props = $props();
 </script>
 
 <Dialog.Portal>
 	<Dialog.Overlay class={overlay_classes} />
-	<DialogPrimitive.Content asChild let:builder>
-		<div class="fixed inset-0 z-50 grid place-items-center">
-			<div
-				bind:this={el}
-				transition:_transition={transitionConfig}
-				use:builderActions={{ builders: [builder] }}
-				{...getAttrs([builder])}
-				{...$$restProps}
-				class={cn(
-					'relative grid w-full max-w-lg gap-4 border bg-background-100 p-6 shadow-lg sm:rounded-lg md:w-full',
-					className
-				)}
-				{...$$restProps}
-			>
-				<slot></slot>
-				{#if !hide_close_button}
-					<DialogPrimitive.Close asChild let:builder>
-						{#if close_button === 'esc'}
-							<Button
-								builders={[builder]}
-								size="sm"
-								variant="secondary"
-								class="absolute right-4 top-3 h-5 px-1.5 text-xs "
-							>
-								Esc
-							</Button>
-						{:else if close_button === 'x'}
-							<Button
-								svg_only
-								aria-label="Close"
-								shape="square"
-								size="tiny"
-								variant="secondary"
-								class="absolute right-4 top-3 px-1.5"
-							>
-								<Icons.Cross aria-hidden="true" class="size-5" />
-							</Button>
-						{/if}
-					</DialogPrimitive.Close>
-				{/if}
-			</div>
-		</div>
+	<DialogPrimitive.Content
+		class={cn(
+			'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background-100 p-6 shadow-lg duration-200 sm:rounded-lg',
+			class_name
+		)}
+		{...rest}
+	>
+		{@render children?.()}
+		{#if !hide_close_button}
+			<DialogPrimitive.Close>
+				{#snippet child({ props })}
+					{#if close_button === 'esc'}
+						<Button
+							{...props}
+							size="sm"
+							variant="secondary"
+							class="absolute right-4 top-3 h-5 px-1.5 text-xs "
+						>
+							Esc
+						</Button>
+					{:else if close_button === 'x'}
+						<Button
+							{...props}
+							svg_only
+							aria-label="Close"
+							shape="square"
+							size="tiny"
+							variant="secondary"
+							class="absolute right-4 top-3 px-1.5"
+						>
+							<Icons.Cross aria-hidden="true" class="size-5" />
+						</Button>
+					{/if}
+				{/snippet}
+			</DialogPrimitive.Close>
+		{/if}
 	</DialogPrimitive.Content>
 </Dialog.Portal>

@@ -6,25 +6,31 @@
 	type $$Props = Props;
 	type $$Events = SwitchPrimitive.Events;
 
-	let class_name: $$Props['class'] = undefined;
-	export let checked: $$Props['checked'] = undefined;
-	export let variant: $$Props['variant'] = 'default';
-	export let size: $$Props['size'] = 'md';
-	export let icon: $$Props['icon'] = undefined;
-	export let direction: $$Props['direction'] = 'switch-last';
-	export { class_name as class };
+	interface Props_1 { [key: string]: any }
+
+	let {
+		class: class_name = undefined,
+		checked = $bindable(undefined),
+		variant = 'default',
+		size = 'md',
+		icon = undefined,
+		direction = 'switch-last',
+		children,
+		...rest
+	}: Props_1 = $props();
+	
 </script>
 
 <label class="flex items-center gap-2">
 	{#if direction === 'switch-last'}
 		<span class="whitespace-nowrap text-xs font-medium text-accents-5">
-			<slot></slot>
+			{@render children?.()}
 		</span>
 	{/if}
 	<SwitchPrimitive.Root
 		bind:checked
 		class={cn(switch_variants({ variant, size, className: class_name }), class_name)}
-		{...$$restProps}
+		{...rest}
 		on:click
 		on:keydown
 	>
@@ -69,7 +75,7 @@
 	</SwitchPrimitive.Root>
 	{#if direction === 'switch-first'}
 		<span class="whitespace-nowrap text-xs font-medium text-accents-5">
-			<slot></slot>
+			{@render children?.()}
 		</span>
 	{/if}
 </label>

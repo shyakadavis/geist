@@ -1,19 +1,33 @@
 <script lang="ts">
 	import { Icons } from '$lib/assets/icons/index.js';
 	import { cn } from '$lib/utils.js';
+	import type { Snippet } from 'svelte';
 	import { Link } from '../link/index.js';
-	import { type Props, error_variants } from './index.js';
+	import { error_variants, type Size } from './index.js';
 
-	type $$Props = Props;
+	type Props = {
+		class?: string;
+		size?: Size;
+		label?: string;
+		error?: {
+			message: string;
+			action: string;
+			link: string;
+		};
+		children?: Snippet;
+	};
 
-	let class_name: string | undefined | null = undefined;
-	export let size: $$Props['size'] = 'md';
-	export let label: $$Props['label'] = undefined;
-	export let error: $$Props['error'] = undefined;
-	export { class_name as class };
+	let {
+		class: class_name = undefined,
+		size = 'md',
+		label = undefined,
+		error = undefined,
+		children,
+		...rest
+	}: Props = $props();
 </script>
 
-<p class={cn(error_variants({ size, className: class_name }))} {...$$restProps}>
+<p class={cn(error_variants({ size, className: class_name }))} {...rest}>
 	<Icons.Stop aria-hidden="true" class="size-4" />
 	{#if error}
 		<span>{error.message}</span>
@@ -30,6 +44,6 @@
 		{#if label}
 			<b>{label}:</b>
 		{/if}
-		<slot></slot>
+		{@render children?.()}
 	{/if}
 </p>

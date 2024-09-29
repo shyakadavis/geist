@@ -1,4 +1,4 @@
-<script lang="ts">
+<!-- <script lang="ts">
 	import Demo from '$lib/components/shared/demo.svelte';
 	import PageWrapper from '$lib/components/shared/page-wrapper.svelte';
 	import Default from './default.svelte';
@@ -12,7 +12,7 @@
 	import WithIcons from './with-icons.svelte';
 	import with_icons_code from './with-icons.svelte?raw';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <PageWrapper title={data.title} description={data.description}>
@@ -35,4 +35,4 @@
 	<Demo id="overflow" code={overflow_code}>
 		<Overflow />
 	</Demo>
-</PageWrapper>
+</PageWrapper> -->

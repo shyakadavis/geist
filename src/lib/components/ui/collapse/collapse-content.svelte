@@ -1,25 +1,23 @@
 <script lang="ts">
 	import { cn } from '$lib/utils.js';
-	import { Accordion as CollapsePrimitive } from 'bits-ui';
-	import { slide } from 'svelte/transition';
+	import { Accordion as CollapsePrimitive, type WithoutChildrenOrChild } from 'bits-ui';
+	import type { Snippet } from 'svelte';
 
-	type $$Props = CollapsePrimitive.ContentProps;
-
-	let class_name: $$Props['class'] = undefined;
-	export let transition: $$Props['transition'] = slide;
-	export let transitionConfig: $$Props['transitionConfig'] = {
-		duration: 200
+	type Props = WithoutChildrenOrChild<CollapsePrimitive.ContentProps> & {
+		children: Snippet;
 	};
-	export { class_name as class };
+
+	let { class: class_name = undefined, children, ...rest }: Props = $props();
 </script>
 
 <CollapsePrimitive.Content
-	class={cn('overflow-hidden text-base transition-all', class_name)}
-	{transition}
-	{transitionConfig}
-	{...$$restProps}
+	class={cn(
+		'data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-base transition-all',
+		class_name
+	)}
+	{...rest}
 >
 	<div class="pb-4 pt-0">
-		<slot />
+		{@render children?.()}
 	</div>
 </CollapsePrimitive.Content>

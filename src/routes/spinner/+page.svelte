@@ -1,4 +1,4 @@
-<script lang="ts">
+<!-- <script lang="ts">
 	import Demo from '$lib/components/shared/demo.svelte';
 	import PageWrapper from '$lib/components/shared/page-wrapper.svelte';
 	import CustomSize from './custom-size.svelte';
@@ -6,7 +6,7 @@
 	import DefaultSize from './default-size.svelte';
 	import default_size_code from './default-size.svelte?raw';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <PageWrapper title={data.title} description={data.description}>
@@ -17,4 +17,4 @@
 	<Demo id="custom-size" code={custom_size_code}>
 		<CustomSize />
 	</Demo>
-</PageWrapper>
+</PageWrapper> -->

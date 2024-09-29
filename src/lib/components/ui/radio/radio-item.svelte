@@ -6,9 +6,10 @@
 	type $$Props = RadioPrimitive.ItemProps;
 	type $$Events = RadioPrimitive.ItemEvents;
 
-	let className: $$Props['class'] = undefined;
-	export let value: $$Props['value'];
-	export { className as class };
+	interface Props { [key: string]: any }
+
+	let { class: className = undefined, value, children, ...rest }: Props = $props();
+	
 </script>
 
 <div class="flex items-center gap-2">
@@ -19,7 +20,7 @@
 			'peer aspect-square size-4 cursor-pointer rounded-full border border-gray-1000 text-gray-1000 ring-offset-background-200 transition-[color,background-color] ease-in-out hover:bg-gray-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-focus-color focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:border-gray-500 disabled:text-gray-500 disabled:hover:bg-transparent',
 			className
 		)}
-		{...$$restProps}
+		{...rest}
 		on:click
 	>
 		<div class="flex items-center justify-center">
@@ -41,6 +42,6 @@
 		</div>
 	</RadioPrimitive.Item>
 	<Label for={value} class="cursor-pointer text-xs peer-disabled:cursor-not-allowed">
-		<slot></slot>
+		{@render children?.()}
 	</Label>
 </div>

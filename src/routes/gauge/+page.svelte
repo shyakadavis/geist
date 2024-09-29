@@ -14,7 +14,7 @@
 	import Label from './label.svelte';
 	import label_code from './label.svelte?raw';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <PageWrapper title={data.title} description={data.description}>

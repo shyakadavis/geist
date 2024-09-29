@@ -6,15 +6,26 @@
 
 	type $$Props = Props;
 
-	export let text: $$Props['text'];
-	export let prompt: $$Props['prompt'] = true;
-	export let variant: $$Props['variant'] = 'default';
-	export let on_copy: $$Props['on_copy'] = undefined;
-	export let inverted: $$Props['inverted'] = false;
-	let class_name: $$Props['class'] = undefined;
-	export { class_name as class };
+	interface Props_1 {
+		text: $$Props['text'];
+		prompt?: $$Props['prompt'];
+		variant?: $$Props['variant'];
+		on_copy?: $$Props['on_copy'];
+		inverted?: $$Props['inverted'];
+		class?: $$Props['class'];
+	}
 
-	let copied = false;
+	let {
+		text,
+		prompt = true,
+		variant = 'default',
+		on_copy = undefined,
+		inverted = false,
+		class: class_name = undefined
+	}: Props_1 = $props();
+	
+
+	let copied = $state(false);
 
 	async function copy_snippet() {
 		if (typeof text == 'string') {
@@ -57,7 +68,7 @@
 	{/if}
 
 	<button
-		on:click={copy_snippet}
+		onclick={copy_snippet}
 		type="button"
 		class={cn(copy_button_variants({ variant }), {
 			'bg-gray-1000 text-gray-100': inverted

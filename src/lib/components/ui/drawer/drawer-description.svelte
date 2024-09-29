@@ -4,15 +4,16 @@
 
 	type $$Props = DrawerPrimitive.DescriptionProps;
 
-	export let el: $$Props['el'] = undefined;
-	let className: $$Props['class'] = undefined;
-	export { className as class };
+	interface Props { [key: string]: any }
+
+	let { el = $bindable(undefined), class: className = undefined, children, ...rest }: Props = $props();
+	
 </script>
 
 <DrawerPrimitive.Description
 	bind:el
 	class={cn('text-sm text-gray-700', className)}
-	{...$$restProps}
+	{...rest}
 >
-	<slot />
+	{@render children?.()}
 </DrawerPrimitive.Description>

@@ -2,15 +2,25 @@
 	import { cn } from '$lib/utils';
 	import { tweened } from 'svelte/motion';
 
-	let class_name: string | undefined = undefined;
-	export { class_name as class };
-	export let value: number;
-	export let total = 100;
-	export let size: 'tiny' | 'sm' | 'md' | 'lg' = 'md';
-	export let show_value = false;
-	export let colors: Record<number, string> | { primary: string; secondary: string } | undefined =
-		undefined;
-	export let arc_priority: 'equal' | 'progress' = 'progress';
+	type Props = {
+		class?: string | undefined;
+		value: number;
+		total?: number;
+		size?: 'tiny' | 'sm' | 'md' | 'lg';
+		show_value?: boolean;
+		colors?: Record<number, string> | { primary: string; secondary: string } | undefined;
+		arc_priority?: 'equal' | 'progress';
+	};
+
+	let {
+		class: class_name = undefined,
+		value,
+		total = 100,
+		size = 'md',
+		show_value = false,
+		colors = undefined,
+		arc_priority = 'progress'
+	}: Props = $props();
 
 	const sizes_map = {
 		tiny: { size: 20, stroke_width: 15 },
@@ -36,9 +46,11 @@
 	const radius = get_radius();
 	const circumference = 2 * Math.PI * radius;
 	// onMount, set the progress from 0 to the actual value with a spring effect
-	$: progress.set((value / total) * 100);
-	$: arc_offset =
-		arc_priority === 'equal' ? circumference * 0.5 : circumference * ((100 - $progress) / 100);
+	progress.set((value / total) * 100);
+
+	let arc_offset = $derived(
+		arc_priority === 'equal' ? circumference * 0.5 : circumference * ((100 - $progress) / 100)
+	);
 
 	// Colors
 	function get_primary_arc_stroke_fill() {

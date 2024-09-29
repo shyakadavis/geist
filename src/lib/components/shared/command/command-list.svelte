@@ -7,11 +7,12 @@
 	import { command_open_state } from '$lib/stores';
 	import { cn } from '$lib/utils';
 
-	export let search: string;
 
-	let className = '';
+	interface Props { [key: string]: any }
 
-	export { className as class };
+	let { search, class: className = '', ...rest }: Props = $props();
+
+	
 
 	const navigate = (link: string) => {
 		goto(link);
@@ -19,7 +20,7 @@
 	};
 </script>
 
-<Command.List class={cn('px-1 pb-1', className)} {...$$restProps}>
+<Command.List class={cn('px-1 pb-1', className)} {...rest}>
 	<Command.Empty class="text-gray-600">
 		No results found for
 		<span class="font-semibold text-gray-1000">

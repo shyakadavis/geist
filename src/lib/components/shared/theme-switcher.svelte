@@ -17,7 +17,7 @@
 			type="radio"
 			value="system"
 			bind:group={$userPrefersMode}
-			on:change={handle_theme_change}
+			onchange={handle_theme_change}
 			class="peer absolute size-full appearance-none rounded-full outline-none focus-visible:shadow-focus-ring"
 		/>
 		<label
@@ -35,7 +35,7 @@
 			type="radio"
 			value="light"
 			bind:group={$userPrefersMode}
-			on:change={handle_theme_change}
+			onchange={handle_theme_change}
 			class="peer absolute size-full appearance-none rounded-full outline-none focus-visible:shadow-focus-ring"
 		/>
 		<label
@@ -53,7 +53,7 @@
 			type="radio"
 			value="dark"
 			bind:group={$userPrefersMode}
-			on:change={handle_theme_change}
+			onchange={handle_theme_change}
 			class="peer absolute size-full appearance-none rounded-full outline-none focus-visible:shadow-focus-ring"
 		/>
 		<label

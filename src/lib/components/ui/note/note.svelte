@@ -5,19 +5,26 @@
 
 	type $$Props = Props;
 
-	let class_name: string | undefined | null = undefined;
-	export let variant: $$Props['variant'] = 'secondary';
-	export let size: $$Props['size'] = 'md';
-	export let fill: $$Props['fill'] = false;
-	export let disabled: $$Props['disabled'] = false;
-	export let label: $$Props['label'] = undefined;
-	export { class_name as class };
+	interface Props_1 { [key: string]: any }
+
+	let {
+		class: class_name = undefined,
+		variant = 'secondary',
+		size = 'md',
+		fill = false,
+		disabled = false,
+		label = undefined,
+		children,
+		action,
+		...rest
+	}: Props_1 = $props();
+	
 </script>
 
 <div
 	data-disabled={disabled}
 	class={cn(note_variants({ variant, size, className: class_name, fill }))}
-	{...$$restProps}
+	{...rest}
 >
 	<div class="flex items-center gap-2">
 		{#if label}
@@ -36,8 +43,8 @@
 			</span>
 		{/if}
 		<div>
-			<slot />
+			{@render children?.()}
 		</div>
 	</div>
-	<slot name="action" {disabled}></slot>
+	{@render action?.({ disabled, })}
 </div>

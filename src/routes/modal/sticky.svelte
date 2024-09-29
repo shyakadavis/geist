@@ -3,7 +3,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import * as Modal from '$lib/components/ui/modal';
 
-	let open = false;
+	let open = $state(false);
 
 	const close = () => (open = !open);
 </script>

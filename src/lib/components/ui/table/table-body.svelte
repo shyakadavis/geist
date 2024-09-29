@@ -7,10 +7,16 @@
 		interactive?: boolean;
 	};
 
-	let class_name: $$Props['class'] = undefined;
-	export { class_name as class };
-	export let striped: $$Props['striped'] = false;
-	export let interactive: $$Props['interactive'] = false;
+	
+	interface Props { [key: string]: any }
+
+	let {
+		class: class_name = undefined,
+		striped = false,
+		interactive = false,
+		children,
+		...rest
+	}: Props = $props();
 </script>
 
 <div aria-hidden="true" class="h-3"></div>
@@ -18,7 +24,7 @@
 	data-striped={striped}
 	data-interactive={interactive}
 	class={cn('group', class_name)}
-	{...$$restProps}
+	{...rest}
 >
-	<slot />
+	{@render children?.()}
 </tbody>

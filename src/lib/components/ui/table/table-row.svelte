@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { createBubbler } from 'svelte/legacy';
+	const bubble = createBubbler();
+
 	import { cn } from '$lib/utils.js';
 	import type { HTMLAttributes } from 'svelte/elements';
 
@@ -6,8 +9,10 @@
 		'data-state'?: unknown;
 	};
 
-	let class_name: $$Props['class'] = undefined;
-	export { class_name as class };
+	interface Props { [key: string]: any }
+
+	let { class: class_name = undefined, children, ...rest }: Props = $props();
+	
 </script>
 
 <tr
@@ -15,9 +20,9 @@
 		'transition-colors data-[state=selected]:bg-background-200 odd:group-data-[striped=true]:bg-background-200 group-data-[interactive=true]:hover:bg-gray-100',
 		class_name
 	)}
-	{...$$restProps}
-	on:click
-	on:keydown
+	{...rest}
+	onclick={bubble('click')}
+	onkeydown={bubble('keydown')}
 >
-	<slot />
+	{@render children?.()}
 </tr>

@@ -2,14 +2,11 @@
 	import { cn } from '$lib/utils.js';
 	import { Label as LabelPrimitive } from 'bits-ui';
 
-	type $$Props = LabelPrimitive.Props & {
+	type Props = LabelPrimitive.RootProps & {
 		value?: string;
 	};
-	type $$Events = LabelPrimitive.Events;
 
-	let class_name: $$Props['class'] = undefined;
-	export let value: $$Props['value'] = undefined;
-	export { class_name as class };
+	let { class: class_name = undefined, value = undefined, children, ...rest }: Props = $props();
 </script>
 
 <LabelPrimitive.Root
@@ -17,11 +14,10 @@
 		'text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:text-gray-600',
 		class_name
 	)}
-	{...$$restProps}
-	on:mousedown
+	{...rest}
 >
 	{#if value}
 		<p class="mb-2 text-xs text-gray-900">{value}</p>
 	{/if}
-	<slot></slot>
+	{@render children?.()}
 </LabelPrimitive.Root>

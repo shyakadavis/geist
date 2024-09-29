@@ -8,9 +8,10 @@
 	};
 	type $$Events = MenuPrimitive.SubTriggerEvents;
 
-	let className: $$Props['class'] = undefined;
-	export let inset: $$Props['inset'] = undefined;
-	export { className as class };
+	interface Props { [key: string]: any }
+
+	let { class: className = undefined, inset = undefined, children, ...rest }: Props = $props();
+	
 </script>
 
 <MenuPrimitive.SubTrigger
@@ -19,7 +20,7 @@
 		inset && 'pl-8',
 		className
 	)}
-	{...$$restProps}
+	{...rest}
 	on:click
 	on:keydown
 	on:focusin
@@ -27,6 +28,6 @@
 	on:pointerleave
 	on:pointermove
 >
-	<slot />
+	{@render children?.()}
 	<Icons.ChevronRight class="ml-auto size-4" />
 </MenuPrimitive.SubTrigger>

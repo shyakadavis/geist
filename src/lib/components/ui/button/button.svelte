@@ -1,67 +1,47 @@
-<!--
-SVelte 4 doesn't do TypeScript Discriminating unions - at least in a way that easily makes sense. Consider this a hack.
-See: https://github.com/sveltejs/svelte/issues/9130
-
-Svelte 5 will fix this through the $props() rune: https://github.com/sveltejs/svelte/issues/9130#issuecomment-1812133175
-
-Right now, the typing is a bit of a mess.
-
-But basically, here is the goal; if a user provides `svg_only`, then the button should be an icon-only button, with a required `aria-label` prop.
-If `svg_only` is not provided, then the button should be a normal button, but the `tiny` size should not be available.
- -->
 <script lang="ts">
-	import { Spinner } from '$lib/components/ui/spinner';
+	import { Spinner } from '$lib/components/ui/spinner/index.js';
 	import { cn } from '$lib/utils.js';
-	import { Button as ButtonPrimitive } from 'bits-ui';
-	import { type Events, type Props, button_variants } from './index.js';
+	import { Button as ButtonPrimitive, type ButtonProps } from 'bits-ui';
+	import { button_variants, type NormalButton, type SVGButton } from './index.js';
 
-	type $$Props = Props;
-	type $$Events = Events;
-	$: props = $$props as $$Props;
+	type Props = ButtonProps & (NormalButton | SVGButton);
 
-	// Common props
-	let class_name: $$Props['class'] = undefined;
-	export let builders: $$Props['builders'] = [];
-	export let variant: $$Props['variant'] = 'default';
-	export { class_name as class };
+	let { children, ...rest }: Props = $props();
 </script>
 
-{#if props.svg_only}
+<!-- If a user provides `svg_only` prop, then the button should be an icon-only button -->
+{#if rest.svg_only}
 	<ButtonPrimitive.Root
-		aria-label={props['aria-label']}
-		{builders}
-		class={cn(button_variants({ variant, svg_size: props.size, className: class_name }), {
-			'rounded-full': props.shape === 'circle'
-		})}
-		type="button"
-		{...$$restProps}
-		on:click
-		on:keydown
+		class={cn(
+			button_variants({ variant: rest.variant, svg_size: rest.size, className: rest.class }),
+			{
+				'rounded-full': rest.shape === 'circle'
+			}
+		)}
+		{...rest}
 	>
-		<slot></slot>
+		{@render children?.()}
 	</ButtonPrimitive.Root>
 {:else}
 	<ButtonPrimitive.Root
-		{builders}
-		class={cn(button_variants({ variant, size: props.size, className: class_name }), {
-			'rounded-full': props.shape === 'rounded',
-			'shadow-shadow-border-small': props.shadow
+		disabled={rest.loading || rest.disabled}
+		class={cn(button_variants({ variant: rest.variant, size: rest.size, className: rest.class }), {
+			'rounded-full': rest.shape === 'rounded',
+			'shadow-shadow-border-small': rest.shadow
 		})}
-		type="button"
-		{...$$restProps}
-		on:click
-		on:keydown
-		disabled={props.loading || props.disabled}
+		{...rest}
 	>
-		{#if props.loading}
-			<Spinner size={props.size === 'lg' ? 24 : 16} />
+		{#if rest.loading}
+			<Spinner size={rest.size === 'lg' ? 24 : 16} />
 		{/if}
-		{#if props.affix}
-			<svelte:component this={props.affix} aria-hidden="true" />
+		{#if rest.affix}
+			{@const Icon = rest.affix}
+			<Icon aria-hidden="true" />
 		{/if}
-		<slot />
-		{#if props.suffix}
-			<svelte:component this={props.suffix} aria-hidden="true" />
+		{@render children?.()}
+		{#if rest.suffix}
+			{@const Icon = rest.suffix}
+			<Icon aria-hidden="true" />
 		{/if}
 	</ButtonPrimitive.Root>
 {/if}

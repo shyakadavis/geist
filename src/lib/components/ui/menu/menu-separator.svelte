@@ -4,8 +4,10 @@
 
 	type $$Props = MenuPrimitive.SeparatorProps;
 
-	let className: $$Props['class'] = undefined;
-	export { className as class };
+	interface Props { [key: string]: any }
+
+	let { class: className = undefined, ...rest }: Props = $props();
+	
 </script>
 
-<MenuPrimitive.Separator class={cn('-mx-1 my-1 h-px bg-gray-400', className)} {...$$restProps} />
+<MenuPrimitive.Separator class={cn('-mx-1 my-1 h-px bg-gray-400', className)} {...rest} />

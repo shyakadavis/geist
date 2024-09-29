@@ -5,14 +5,17 @@
 	import { Textarea } from '$lib/components/ui/textarea';
 	import { cn } from '$lib/utils';
 	import Markdown from 'svelte-exmarkdown';
-	import { clickOutsideAction } from 'svelte-legos';
 	import { spring } from 'svelte/motion';
 	import { slide } from 'svelte/transition';
 
-	export let variant: 'default' | 'inline' | undefined = 'default';
-	export let label = 'Was this helpful?';
+	type Props = {
+		variant?: 'default' | 'inline' | undefined;
+		label?: string;
+	};
 
-	let md = '';
+	let { variant = 'default', label = 'Was this helpful?' }: Props = $props();
+
+	let md = $state('');
 	const reactions = [
 		{ emoji: Icons.FaceSmile, label: 'Select Love it! emoji' },
 		{ emoji: Icons.FaceHappy, label: "Select It's okay emoji" },
@@ -22,8 +25,8 @@
 	let width = spring(274.883, { stiffness: 0.2, damping: 1.2 });
 	let height = spring(48, { stiffness: 0.2, damping: 1.2 });
 	let radius = spring(30, { stiffness: 0.2, damping: 1.2 });
-	let current_reaction: number | undefined = undefined;
-	let inline_feedback_el: HTMLTextAreaElement | undefined = undefined;
+	let current_reaction: number | undefined = $state(undefined);
+	let inline_feedback_el: HTMLTextAreaElement | undefined = $state(undefined);
 
 	function toggle_inline_feedback(i: number | undefined) {
 		if (current_reaction === i || i === undefined) {
@@ -53,10 +56,10 @@
 
 {#if variant === 'default'}
 	<Popover.Root>
-		<Popover.Trigger asChild let:builder>
-			<Button builders={[builder]} variant="secondary" size="sm" class="text-gray-900">
-				Feedback
-			</Button>
+		<Popover.Trigger>
+			{#snippet child({ props })}
+				<Button {...props} variant="secondary" size="sm" class="text-gray-900">Feedback</Button>
+			{/snippet}
 		</Popover.Trigger>
 		<Popover.Content sideOffset={8} class="w-[340px] rounded-xl p-0">
 			<form>
@@ -78,7 +81,7 @@
 					class="flex items-center justify-between rounded-b-xl border-t border-accents-2 bg-accents-1 p-3"
 				>
 					<span class="flex items-center gap-1">
-						{#each reactions as { emoji, label }}
+						{#each reactions as { emoji: Emoji, label }}
 							<Button
 								variant="tertiary"
 								svg_only
@@ -87,8 +90,7 @@
 								shape="circle"
 								class="group hover:bg-blue-300"
 							>
-								<svelte:component
-									this={emoji}
+								<Emoji
 									aria-hidden="true"
 									class="text-gray-900 group-hover:text-blue-900 [&>path]:group-hover:fill-blue-900"
 								/>
@@ -101,11 +103,8 @@
 		</Popover.Content>
 	</Popover.Root>
 {:else if variant === 'inline'}
-	<div
-		class="flex justify-center"
-		use:clickOutsideAction
-		on:clickoutside={() => toggle_inline_feedback(undefined)}
-	>
+	<!-- TODO: Toggle on click outside: https://github.com/svecosystem/runed/pull/46 -->
+	<div class="flex justify-center">
 		<div
 			style="
     width: {$width}px;
@@ -116,7 +115,7 @@
 		>
 			<div class="flex items-center justify-center p-2">
 				<p class="mr-1 text-sm text-gray-900">{label}</p>
-				{#each reactions as { emoji, label }, i}
+				{#each reactions as { emoji: Emoji, label }, i}
 					<Button
 						variant="tertiary"
 						svg_only
@@ -126,10 +125,9 @@
 						class={cn('group/inline hover:bg-blue-300', {
 							'bg-blue-300': i === current_reaction
 						})}
-						on:click={() => toggle_inline_feedback(i)}
+						onclick={() => toggle_inline_feedback(i)}
 					>
-						<svelte:component
-							this={emoji}
+						<Emoji
 							aria-hidden="true"
 							class={cn(
 								'text-gray-900 group-hover/inline:text-blue-900 [&>path]:group-hover/inline:fill-blue-900',
@@ -144,7 +142,7 @@
 
 			<form class="flex grow flex-col">
 				<main class="grid grow gap-3 p-2">
-					<Textarea bind:el={inline_feedback_el} placeholder="Your feedback..." />
+					<Textarea bind:ref={inline_feedback_el} placeholder="Your feedback..." />
 					<div class="flex w-full items-center justify-end gap-1 text-xs text-gray-900">
 						<Icons.Markdown aria-hidden class="h-[14px] w-[22px]" />
 						<span class="sr-only">Markdown</span>

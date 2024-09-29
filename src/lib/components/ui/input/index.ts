@@ -1,5 +1,3 @@
-import type { Icons } from '$lib/assets/icons';
-import type { HTMLInputAttributes } from 'svelte/elements';
 import { tv } from 'tailwind-variants';
 import Root from './input.svelte';
 import Search from './search.svelte';
@@ -17,39 +15,5 @@ export const input_variants = tv({
 		size: 'md'
 	}
 });
-
-export type Props = Omit<HTMLInputAttributes, 'size'> & {
-	size?: 'sm' | 'md' | 'lg';
-	'aria-labelledby': string;
-	affix?: typeof Icons.ArrowCircleUp | string;
-	suffix?: typeof Icons.ArrowCircleUp | string;
-	affix_styling?: boolean;
-	suffix_styling?: boolean;
-	label?: string;
-	el?: HTMLInputElement;
-};
-
-export type FormInputEvent<T extends Event = Event> = T & {
-	currentTarget: EventTarget & HTMLInputElement;
-};
-
-export type InputEvents = {
-	blur: FormInputEvent<FocusEvent>;
-	change: FormInputEvent<Event>;
-	click: FormInputEvent<MouseEvent>;
-	focus: FormInputEvent<FocusEvent>;
-	focusin: FormInputEvent<FocusEvent>;
-	focusout: FormInputEvent<FocusEvent>;
-	keydown: FormInputEvent<KeyboardEvent>;
-	keypress: FormInputEvent<KeyboardEvent>;
-	keyup: FormInputEvent<KeyboardEvent>;
-	mouseover: FormInputEvent<MouseEvent>;
-	mouseenter: FormInputEvent<MouseEvent>;
-	mouseleave: FormInputEvent<MouseEvent>;
-	mousemove: FormInputEvent<MouseEvent>;
-	paste: FormInputEvent<ClipboardEvent>;
-	input: FormInputEvent<InputEvent>;
-	wheel: FormInputEvent<WheelEvent>;
-};
 
 export { Root as Input, Root, Search, Search as SearchInput };

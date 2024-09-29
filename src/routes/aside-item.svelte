@@ -3,9 +3,13 @@
 	import type { Link } from '$lib/config/sitemap';
 	import { cn } from '$lib/utils';
 
-	export let link: Link;
-	export let active: boolean;
-	export let disabled: boolean | undefined = undefined;
+	type Props = {
+		link: Link;
+		active: boolean;
+		disabled?: boolean | undefined;
+	};
+
+	let { link, active, disabled = undefined }: Props = $props();
 </script>
 
 <li>
@@ -26,8 +30,9 @@
 			)}
 		>
 			{#if link.icon}
+				{@const Icon = link.icon}
 				<span class="text-gray-1000">
-					<svelte:component this={link.icon} aria-hidden="true" width="16" height="16" />
+					<Icon aria-hidden="true" width="16" height="16" />
 				</span>
 			{/if}
 			<span>{link.title}</span>

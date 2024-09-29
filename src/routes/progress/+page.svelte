@@ -1,4 +1,4 @@
-<script lang="ts">
+<!-- <script lang="ts">
 	import Demo from '$lib/components/shared/demo.svelte';
 	import PageWrapper from '$lib/components/shared/page-wrapper.svelte';
 	import CustomMax from './custom-max.svelte';
@@ -10,7 +10,7 @@
 	import Themed from './themed.svelte';
 	import themed_code from './themed.svelte?raw';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <PageWrapper title={data.title} description={data.description}>
@@ -29,4 +29,4 @@
 	<Demo id="themed" code={themed_code}>
 		<Themed />
 	</Demo>
-</PageWrapper>
+</PageWrapper> -->

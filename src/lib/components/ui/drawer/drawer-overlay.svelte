@@ -4,15 +4,16 @@
 
 	type $$Props = DrawerPrimitive.OverlayProps;
 
-	export let el: $$Props['el'] = undefined;
-	let className: $$Props['class'] = undefined;
-	export { className as class };
+	interface Props { [key: string]: any }
+
+	let { el = $bindable(undefined), class: className = undefined, children, ...rest }: Props = $props();
+	
 </script>
 
 <DrawerPrimitive.Overlay
 	bind:el
 	class={cn('fixed inset-0 z-50 bg-[#000]/80', className)}
-	{...$$restProps}
+	{...rest}
 >
-	<slot />
+	{@render children?.()}
 </DrawerPrimitive.Overlay>

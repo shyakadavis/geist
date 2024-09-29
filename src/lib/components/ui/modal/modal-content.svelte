@@ -3,8 +3,13 @@
 	import { is_desktop, is_overflowing } from '.';
 	import * as Dialog from '../dialog';
 	import * as Drawer from '../drawer';
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
 
-	let el: HTMLDivElement;
+	let { children }: Props = $props();
+
+	let el: HTMLDivElement = $state();
 
 	function check_overflow(element: HTMLDivElement) {
 		return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
@@ -30,11 +35,11 @@
 		hide_close_button
 		overlay_classes="bg-[#000] opacity-25 dark:opacity-75"
 	>
-		<slot></slot>
+		{@render children?.()}
 	</Dialog.Content>
 {:else}
 	<!-- TODO: Handle overflowing content on small screens. Right, it needs to be specified consumer-side. -->
 	<Drawer.Content hide_dismiss_bar class="bg-background-100 dark:bg-background-200">
-		<slot></slot>
+		{@render children?.()}
 	</Drawer.Content>
 {/if}

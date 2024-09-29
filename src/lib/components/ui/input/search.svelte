@@ -4,14 +4,22 @@
 	import type { HTMLInputAttributes } from 'svelte/elements';
 	import Input from './input.svelte';
 
-	type $$Props = HTMLInputAttributes & {
-		el?: HTMLInputElement;
+	type Props = HTMLInputAttributes & {
+		ref?: HTMLInputElement;
 	};
 
-	let class_name: string | undefined | null = undefined;
-	export { class_name as class };
-	export let value: string = '';
-	export let el: $$Props['el'] = undefined;
+	// type Props = {
+	// 	class?: string;
+	// 	value?: string;
+	// 	ref?: HTMLInputElement;
+	// };
+
+	let {
+		class: class_name = undefined,
+		value = $bindable(''),
+		ref = $bindable(undefined),
+		...rest
+	}: Props = $props();
 
 	// Automatically clear the input if escape is pressed.
 	function key_down_handler(event: KeyboardEvent) {
@@ -21,7 +29,7 @@
 	}
 </script>
 
-<svelte:window on:keydown={key_down_handler} />
+<svelte:window onkeydown={key_down_handler} />
 
 <div class={cn('bg-background-100', class_name)}>
 	<Input
@@ -30,7 +38,7 @@
 		affix_styling={false}
 		aria-labelledby="Search"
 		bind:value
-		bind:el
-		{...$$restProps}
+		bind:ref
+		{...rest}
 	/>
 </div>

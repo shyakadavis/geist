@@ -25,7 +25,7 @@
 			<button
 				class="hidden h-8 w-[220px] cursor-pointer items-center justify-between rounded-md border border-gray-400 bg-transparent pl-2 pr-1.5 font-sans text-sm text-gray-700 outline-none hover:bg-background-200 focus-visible:shadow-focus-ring xl:flex"
 				type="button"
-				on:click={command_open_state.toggle}
+				onclick={command_open_state.toggle}
 			>
 				Search Geist
 				<kbd
@@ -63,7 +63,7 @@
 					shape="circle"
 					size="sm"
 					class="text-gray-1000 xl:hidden"
-					on:click={command_open_state.toggle}
+					onclick={command_open_state.toggle}
 				>
 					<Icons.MagnifyingGlass width="20" height="20" aria-hidden="true" />
 				</Button>

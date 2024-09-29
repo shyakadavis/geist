@@ -5,13 +5,19 @@
 	type $$Props = MenuPrimitive.SubContentProps;
 	type $$Events = MenuPrimitive.SubContentEvents;
 
-	let className: $$Props['class'] = undefined;
-	export let transition: $$Props['transition'] = flyAndScale;
-	export let transitionConfig: $$Props['transitionConfig'] = {
+	interface Props { [key: string]: any }
+
+	let {
+		class: className = undefined,
+		transition = flyAndScale,
+		transitionConfig = {
 		x: -10,
 		y: 0
-	};
-	export { className as class };
+	},
+		children,
+		...rest
+	}: Props = $props();
+	
 </script>
 
 <MenuPrimitive.SubContent
@@ -21,10 +27,10 @@
 		'z-50 min-w-[10rem] overflow-hidden rounded-xl bg-background-100 p-2 text-sm text-gray-1000 shadow-shadow-menu focus:outline-none',
 		className
 	)}
-	{...$$restProps}
+	{...rest}
 	on:keydown
 	on:focusout
 	on:pointermove
 >
-	<slot />
+	{@render children?.()}
 </MenuPrimitive.SubContent>

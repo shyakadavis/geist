@@ -7,9 +7,10 @@
 		hide_dismiss_bar?: boolean;
 	};
 
-	let className: $$Props['class'] = undefined;
-	export { className as class };
-	export let hide_dismiss_bar: $$Props['hide_dismiss_bar'] = false;
+	
+	interface Props { [key: string]: any }
+
+	let { class: className = undefined, hide_dismiss_bar = false, children, ...rest }: Props = $props();
 </script>
 
 <DrawerPrimitive.Portal>
@@ -19,11 +20,11 @@
 			'fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border bg-background-100',
 			className
 		)}
-		{...$$restProps}
+		{...rest}
 	>
 		{#if !hide_dismiss_bar}
 			<div class="mx-auto mt-4 h-2 w-[100px] rounded-full bg-gray-400"></div>
 		{/if}
-		<slot />
+		{@render children?.()}
 	</DrawerPrimitive.Content>
 </DrawerPrimitive.Portal>

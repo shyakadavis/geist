@@ -4,7 +4,7 @@
 	import { aside_items } from '$lib/config/sitemap';
 	import AsideItem from './aside-item.svelte';
 
-	$: is_active = (href: string) => {
+	let is_active = $derived((href: string) => {
 		if (href.includes('#')) {
 			// For URLs with hash fragments like 'brands#vercel'
 			const [path, hash] = href.split('#');
@@ -13,7 +13,7 @@
 
 		// For simple URLs like '/icons'
 		return $page.url.pathname === href;
-	};
+	});
 </script>
 
 <aside

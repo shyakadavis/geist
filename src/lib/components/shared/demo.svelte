@@ -7,11 +7,23 @@
 	import Accordion from './accordion-animation';
 	import { get_highlighted_code } from './shiki';
 
-	let class_name: string | undefined = undefined;
-	export let id: string;
-	export let code: string;
-	export let subtitle: string | undefined = undefined;
-	export { class_name as class };
+	type Props = {
+		class?: string | undefined;
+		id: string;
+		code: string;
+		subtitle?: string | undefined;
+		image?: import('svelte').Snippet;
+		children?: import('svelte').Snippet;
+	};
+
+	let {
+		class: class_name = undefined,
+		id,
+		code,
+		subtitle = undefined,
+		image,
+		children
+	}: Props = $props();
 
 	// e.g. "with-icons" -> "With Icons"
 	function format_string(str: string) {
@@ -32,12 +44,12 @@
 	});
 
 	// Code highlighting
-	let highlighted_code = '';
+	let highlighted_code = $state('');
 	onMount(async () => {
 		highlighted_code = await get_highlighted_code(code);
 	});
 
-	let copied = false;
+	let copied = $state(false);
 	function copy_code() {
 		navigator.clipboard.writeText(code);
 		copied = true;
@@ -66,14 +78,14 @@
 			class="prose prose-neutral mt-2 max-w-none text-gray-900 transition-colors dark:prose-invert marker:content-['-'] prose-a:text-gray-900 prose-a:hover:text-gray-1000 prose-strong:font-normal prose-strong:text-gray-1000 xl:mt-4"
 		>
 			<Markdown md={subtitle} />
-			<slot name="image"></slot>
+			{@render image?.()}
 		</p>
 	{/if}
 	<div
 		class="group relative mt-4 overflow-x-auto rounded-xl border border-gray-alpha-400 bg-background-100 xl:mt-7"
 	>
 		<section id="component-demo" class={cn('w-full p-6', class_name)}>
-			<slot></slot>
+			{@render children?.()}
 		</section>
 		<details class="group">
 			<summary
@@ -102,7 +114,7 @@
 				<button
 					type="button"
 					class="absolute right-10 top-10 hidden items-center justify-center rounded-md border-gray-alpha-400 bg-background-100 p-2 transition-colors hover:bg-gray-alpha-200 md:flex"
-					on:click={copy_code}
+					onclick={copy_code}
 				>
 					{#if copied}
 						<div in:scale={{ duration: 200 }}>

@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { Accordion as CollapsePrimitive } from 'bits-ui';
 
-	type $$Props = CollapsePrimitive.Props<false> & {
+	type Props = CollapsePrimitive.RootProps & {
 		size?: 'sm' | 'md';
 	};
 
-	export let size: $$Props['size'] = 'md';
+	let { size = 'md', children, ...rest }: Props = $props();
 </script>
 
-<CollapsePrimitive.Root data-size={size} class="group" {...$$restProps}>
-	<slot></slot>
+<CollapsePrimitive.Root data-size={size} class="group" {...rest}>
+	{@render children?.()}
 </CollapsePrimitive.Root>

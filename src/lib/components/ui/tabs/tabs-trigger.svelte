@@ -10,11 +10,17 @@
 	};
 	type $$Events = TabsPrimitive.TriggerEvents;
 
-	let class_name: $$Props['class'] = undefined;
-	export let value: $$Props['value'];
-	export let icon: $$Props['icon'] = undefined;
-	export let tooltip: $$Props['tooltip'] = undefined;
-	export { class_name as class };
+	interface Props { [key: string]: any }
+
+	let {
+		class: class_name = undefined,
+		value,
+		icon = undefined,
+		tooltip = undefined,
+		children,
+		...rest
+	}: Props = $props();
+	
 </script>
 
 <!-- TODO: Instead of `group`, wouldn't it be cleaner to use `has selector` on the parent to remove the shadow and have normal variants on this child? -->
@@ -30,11 +36,11 @@
 				class_name
 			)}
 			{value}
-			{...$$restProps}
+			{...rest}
 			on:click
 		>
 			<svelte:component this={icon} aria-hidden="true" class="size-4" />
-			<slot></slot>
+			{@render children?.()}
 			<!-- TODO: Animate with cross-fade -->
 			<div
 				aria-hidden="true"

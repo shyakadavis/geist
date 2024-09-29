@@ -1,4 +1,3 @@
-import type { Button as LinkPrimitive } from 'bits-ui';
 import { type VariantProps, tv } from 'tailwind-variants';
 import Link from './link.svelte';
 
@@ -18,21 +17,6 @@ const link_variants = tv({
 	}
 });
 
-type Variant = VariantProps<typeof link_variants>['variant'];
+export type Variant = VariantProps<typeof link_variants>['variant'];
 
-type Props = LinkPrimitive.Props & {
-	variant?: Variant;
-	external?: boolean;
-	href: string;
-};
-
-type Events = LinkPrimitive.Events;
-
-export {
-	Link,
-	link_variants,
-	type Events as ButtonEvents,
-	type Props as ButtonProps,
-	type Events,
-	type Props
-};
+export { Link, link_variants };

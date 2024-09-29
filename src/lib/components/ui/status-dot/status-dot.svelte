@@ -4,8 +4,12 @@
 
 	type $$Props = Props;
 
-	export let state: $$Props['state'];
-	export let label: $$Props['label'] = false;
+	interface Props_1 {
+		state: $$Props['state'];
+		label?: $$Props['label'];
+	}
+
+	let { state, label = false }: Props_1 = $props();
 </script>
 
 <span

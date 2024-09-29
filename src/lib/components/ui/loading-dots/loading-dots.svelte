@@ -1,9 +1,16 @@
 <script lang="ts">
-	export let size = 2;
+	import type { Snippet } from 'svelte';
+
+	type Props = {
+		size?: number;
+		children?: Snippet;
+	};
+
+	let { size = 2, children }: Props = $props();
 </script>
 
 <div style:--loading-dots-size="{size}px" class="inline-flex items-center gap-1">
-	<slot></slot>
+	{@render children?.()}
 	{#each { length: 3 } as _}
 		<span class="inline-block size-[var(--loading-dots-size)] rounded-full bg-gray-900"></span>
 	{/each}

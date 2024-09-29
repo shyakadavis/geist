@@ -16,7 +16,7 @@ export const kbd_variants = tv({
 	}
 });
 
-type Size = VariantProps<typeof kbd_variants>['size'];
+export type Size = VariantProps<typeof kbd_variants>['size'];
 
 export function is_mac_os() {
 	if (!browser) return false;
@@ -83,8 +83,3 @@ export const keys_map = {
 	'/': '/',
 	'\\': '\\'
 } as const;
-
-export type Props = {
-	size?: Size;
-	keys: (keyof typeof keys_map)[];
-};

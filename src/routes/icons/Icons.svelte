@@ -65,7 +65,7 @@
 		});
 	}
 
-	let search_field: HTMLInputElement;
+	let search_field: HTMLInputElement = $state();
 
 	onMount(() => {
 		search_field.focus();
@@ -73,7 +73,7 @@
 	});
 </script>
 
-<svelte:window on:resize={update_last_row_count} />
+<svelte:window onresize={update_last_row_count} />
 
 <section id="search" class="grid w-full place-items-center border-b p-10">
 	<SearchInput

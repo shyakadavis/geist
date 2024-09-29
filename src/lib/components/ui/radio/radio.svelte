@@ -7,16 +7,22 @@
 		checked?: boolean;
 	};
 
-	let className: $$Props['class'] = undefined;
-	export let value: $$Props['value'] = undefined;
-	export { className as class };
-	export let checked: $$Props['checked'] = false;
+	
+	interface Props { [key: string]: any }
+
+	let {
+		class: className = undefined,
+		value = $bindable(undefined),
+		checked = false,
+		children,
+		...rest
+	}: Props = $props();
 </script>
 
-<RadioGroupPrimitive.Root bind:value class={cn('grid gap-2', className)} {...$$restProps}>
+<RadioGroupPrimitive.Root bind:value class={cn('grid gap-2', className)} {...rest}>
 	{#if checked && value}
 		<RadioItem {value} />
 	{:else}
-		<slot></slot>
+		{@render children?.()}
 	{/if}
 </RadioGroupPrimitive.Root>

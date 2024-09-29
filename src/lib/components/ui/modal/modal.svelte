@@ -3,15 +3,20 @@
 	import * as Dialog from '../dialog';
 	import * as Drawer from '../drawer';
 
-	export let open = false;
+	interface Props {
+		open?: boolean;
+		children?: import('svelte').Snippet;
+	}
+
+	let { open = $bindable(false), children }: Props = $props();
 </script>
 
 {#if $is_desktop}
 	<Dialog.Root bind:open>
-		<slot></slot>
+		{@render children?.()}
 	</Dialog.Root>
 {:else}
 	<Drawer.Root bind:open>
-		<slot></slot>
+		{@render children?.()}
 	</Drawer.Root>
 {/if}

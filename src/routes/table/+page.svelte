@@ -1,4 +1,4 @@
-<script lang="ts">
+<!-- <script lang="ts">
 	import Demo from '$lib/components/shared/demo.svelte';
 	import PageWrapper from '$lib/components/shared/page-wrapper.svelte';
 	import BasicTable from './basic-table.svelte';
@@ -10,7 +10,7 @@
 	import StripedTable from './striped-table.svelte';
 	import striped_table_code from './striped-table.svelte?raw';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <PageWrapper title={data.title} description={data.description}>
@@ -29,4 +29,4 @@
 	<Demo id="full-featured-table" code={full_featured_table_code}>
 		<FullFeaturedTable />
 	</Demo>
-</PageWrapper>
+</PageWrapper> -->

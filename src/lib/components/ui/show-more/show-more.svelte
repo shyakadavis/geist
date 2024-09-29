@@ -3,7 +3,11 @@
 	import { Button } from '$lib/components/ui/button';
 	import { cn } from '$lib/utils';
 
-	export let expanded: boolean;
+	interface Props {
+		expanded: boolean;
+	}
+
+	let { expanded }: Props = $props();
 </script>
 
 <div class="relative flex min-h-[30px] w-[calc(100%-40px)] items-center p-5">

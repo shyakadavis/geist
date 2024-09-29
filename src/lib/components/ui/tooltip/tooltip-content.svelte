@@ -6,15 +6,21 @@
 		tip?: boolean;
 	};
 
-	let className: $$Props['class'] = undefined;
-	export let sideOffset: $$Props['sideOffset'] = 4;
-	export let transition: $$Props['transition'] = flyAndScale;
-	export let transitionConfig: $$Props['transitionConfig'] = {
+	interface Props { [key: string]: any }
+
+	let {
+		class: className = undefined,
+		sideOffset = 4,
+		transition = flyAndScale,
+		transitionConfig = {
 		y: 8,
 		duration: 150
-	};
-	export let tip: $$Props['tip'] = true;
-	export { className as class };
+	},
+		tip = true,
+		children,
+		...rest
+	}: Props = $props();
+	
 </script>
 
 <TooltipPrimitive.Content
@@ -25,12 +31,12 @@
 		'z-50 max-w-xs text-balance rounded-md bg-gray-1000 px-3 py-2 text-center text-sm text-background-200 shadow-md',
 		className
 	)}
-	{...$$restProps}
+	{...rest}
 >
 	{#if tip}
 		<div aria-hidden="true" class="bg-gray-1000">
 			<TooltipPrimitive.Arrow class="rounded-[2.5px]" size={9} />
 		</div>
 	{/if}
-	<slot></slot>
+	{@render children?.()}
 </TooltipPrimitive.Content>

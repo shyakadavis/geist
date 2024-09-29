@@ -2,7 +2,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import { Progress } from '$lib/components/ui/progress';
 
-	let value = 0;
+	let value = $state(0);
 
 	function increase() {
 		if (value < 100) value += 10;
