@@ -3,12 +3,13 @@
 	import { cn } from '$lib/utils';
 	import Input, { type InputProps } from './input.svelte';
 
-	type Props = Omit<InputProps, 'type' | 'aria-labelledby' | 'affix' | 'affix_styling'>;
+	type Props = Omit<InputProps, 'type' | 'affix' | 'affix_styling'>;
 
 	let {
 		class: class_name = undefined,
 		value = $bindable(''),
 		ref = $bindable(undefined),
+		'aria-labelledby': aria_labelledby = 'Search',
 		...rest
 	}: Props = $props();
 
@@ -27,7 +28,6 @@
 		type="search"
 		affix={Icons.MagnifyingGlass}
 		affix_styling={false}
-		aria-labelledby="Search"
 		bind:value
 		bind:ref
 		{...rest}
