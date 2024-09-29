@@ -1,4 +1,4 @@
-<!-- <script lang="ts">
+<script lang="ts">
 	import Demo from '$lib/components/shared/demo.svelte';
 	import PageWrapper from '$lib/components/shared/page-wrapper.svelte';
 	import Default from './default.svelte';
@@ -20,14 +20,13 @@
 		<RadioDisabled />
 	</Demo>
 
-	
-    TODO: Why isn't native browser validation kicking in? Is it because underneath it all, there's no hidden input associated with the radio button?
-    <Demo id="radio-required" code={radio_required_code}>
+	<!-- TODO: Why isn't native browser validation kicking in? Is it because underneath it all, there's no hidden input associated with the radio button? -->
+	<!-- <Demo id="radio-required" code={radio_required_code}>
 		<RadioRequired />
 	</Demo>
-   
+    -->
 
-	TODO: Radio Headless
+	<!-- TODO: Radio Headless -->
 
 	<Demo
 		id="radio-standalone"
@@ -36,4 +35,4 @@
 	>
 		<RadioStandalone />
 	</Demo>
-</PageWrapper> -->
+</PageWrapper>

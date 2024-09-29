@@ -25,15 +25,6 @@ export const copy_button_variants = tv({
 	}
 });
 
-type Variant = VariantProps<typeof snippet_variants>['variant'];
-
-export type Props = {
-	variant?: Variant;
-	text: string | string[];
-	class?: string;
-	prompt?: boolean;
-	on_copy?: () => void;
-	inverted?: boolean;
-};
+export type Variant = VariantProps<typeof snippet_variants>['variant'];
 
 export { Snippet };

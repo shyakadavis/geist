@@ -8,4 +8,4 @@
 	}
 </script>
 
-<ShowMore {expanded} on:click={toggle} />
+<ShowMore {expanded} onclick={toggle} />

@@ -26,7 +26,7 @@
 	/>
 
 	<div class="flex gap-4">
-		<Button on:click={increase} size="sm">Increase</Button>
-		<Button on:click={decrease} size="sm" variant="secondary">Decrease</Button>
+		<Button onclick={increase} size="sm">Increase</Button>
+		<Button onclick={decrease} size="sm" variant="secondary">Decrease</Button>
 	</div>
 </div>

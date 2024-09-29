@@ -1,7 +1,5 @@
 import { type VariantProps, tv } from 'tailwind-variants';
 
-export { default as Note } from './note.svelte';
-
 export const note_variants = tv({
 	base: 'flex grow flex-wrap items-center justify-between gap-3 text-pretty rounded-md border data-[disabled=true]:border-gray-alpha-200 data-[disabled=true]:bg-transparent data-[disabled=true]:text-gray-700 sm:flex-nowrap hover:[&>div>div>a]:underline [&>div>div>a]:data-[disabled=true]:text-gray-900',
 	variants: {
@@ -37,14 +35,8 @@ export const note_variants = tv({
 	}
 });
 
-type Variant = VariantProps<typeof note_variants>['variant'];
-type Size = VariantProps<typeof note_variants>['size'];
-type Fill = VariantProps<typeof note_variants>['fill'];
+export type Variant = VariantProps<typeof note_variants>['variant'];
+export type Size = VariantProps<typeof note_variants>['size'];
+export type Fill = VariantProps<typeof note_variants>['fill'];
 
-export type Props = {
-	variant?: Variant;
-	size?: Size;
-	fill?: Fill;
-	disabled?: boolean;
-	label?: string | boolean;
-};
+export { default as Note } from './note.svelte';

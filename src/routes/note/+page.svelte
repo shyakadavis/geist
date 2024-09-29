@@ -1,4 +1,4 @@
-<!-- <script lang="ts">
+<script lang="ts">
 	import Demo from '$lib/components/shared/demo.svelte';
 	import PageWrapper from '$lib/components/shared/page-wrapper.svelte';
 	import Action from './action.svelte';
@@ -65,4 +65,4 @@
 	<Demo id="labels" code={labels_code}>
 		<Labels />
 	</Demo>
-</PageWrapper> -->
+</PageWrapper>

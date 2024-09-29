@@ -1,11 +1,12 @@
 <script lang="ts">
 	import { cn } from '$lib/utils.js';
 	import { Progress as ProgressPrimitive } from 'bits-ui';
-	import { progress_bar_variants, type Props } from '.';
+	import { progress_bar_variants, type Variant } from '.';
 
-	type $$Props = ProgressPrimitive.Props & Props;
-
-	interface Props_1 { [key: string]: any }
+	type Props = ProgressPrimitive.RootProps & {
+		variant?: Variant;
+		colors?: Record<number, string>;
+	};
 
 	let {
 		class: class_name = undefined,
@@ -14,23 +15,22 @@
 		variant = 'default',
 		colors = undefined,
 		...rest
-	}: Props_1 = $props();
-	
+	}: Props = $props();
 
-
-	function get_bg_color(colors: $$Props['colors'], value: $$Props['value']) {
-		if (colors && typeof value === 'number') {
-			const percentages = Object.keys(colors)
+	function get_bg_color(c: typeof colors, v: typeof value) {
+		if (c && typeof v === 'number') {
+			const percentages = Object.keys(c)
 				.map(Number)
 				.sort((a, b) => a - b);
 			for (let i = percentages.length - 1; i >= 0; i--) {
-				if (value >= percentages[i]) {
-					return colors[percentages[i]];
+				if (v >= percentages[i]) {
+					return c[percentages[i]];
 				}
 			}
 		}
 		return undefined;
 	}
+
 	let bar_bg_color = $derived(get_bg_color(colors, value));
 </script>
 

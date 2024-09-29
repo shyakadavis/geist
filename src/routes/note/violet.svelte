@@ -8,21 +8,29 @@
 	<Note variant="violet">This note details some violet information.</Note>
 	<Note variant="violet">
 		This note details some violet information.
-		<Button slot="action" size="sm">Upgrade</Button>
+		{#snippet action()}
+			<Button size="sm">Upgrade</Button>
+		{/snippet}
 	</Note>
 	<Note variant="violet">
 		This note details some violet information. Check <Link href="/#">the documentation</Link> to learn
 		more.
-		<Button slot="action" size="sm">Upgrade</Button>
+		{#snippet action()}
+			<Button size="sm">Upgrade</Button>
+		{/snippet}
 	</Note>
 	<Note fill variant="violet">This filled note details some violet information.</Note>
 	<Note fill variant="violet">
 		This filled note details some violet information.
-		<Button slot="action" size="sm">Upgrade</Button>
+		{#snippet action()}
+			<Button size="sm">Upgrade</Button>
+		{/snippet}
 	</Note>
 	<Note fill variant="violet">
 		This filled note details some violet information. Check
 		<Link href="/#">the documentation</Link> to learn more.
-		<Button slot="action" size="sm">Upgrade</Button>
+		{#snippet action()}
+			<Button size="sm">Upgrade</Button>
+		{/snippet}
 	</Note>
 </div>

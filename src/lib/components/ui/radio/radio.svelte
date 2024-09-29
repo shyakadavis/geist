@@ -3,23 +3,20 @@
 	import { RadioGroup as RadioGroupPrimitive } from 'bits-ui';
 	import RadioItem from './radio-item.svelte';
 
-	type $$Props = RadioGroupPrimitive.Props & {
+	type Props = RadioGroupPrimitive.RootProps & {
 		checked?: boolean;
 	};
 
-	
-	interface Props { [key: string]: any }
-
 	let {
-		class: className = undefined,
+		class: class_name = undefined,
 		value = $bindable(undefined),
-		checked = false,
+		checked = undefined,
 		children,
 		...rest
 	}: Props = $props();
 </script>
 
-<RadioGroupPrimitive.Root bind:value class={cn('grid gap-2', className)} {...rest}>
+<RadioGroupPrimitive.Root bind:value class={cn('grid gap-2', class_name)} {...rest}>
 	{#if checked && value}
 		<RadioItem {value} />
 	{:else}

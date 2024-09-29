@@ -6,10 +6,10 @@
 		href: string;
 	};
 
-	interface Props {
+	type Props = {
 		next?: Link | undefined;
 		previous?: Link | undefined;
-	}
+	};
 
 	let { next = undefined, previous = undefined }: Props = $props();
 </script>

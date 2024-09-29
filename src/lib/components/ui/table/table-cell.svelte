@@ -1,23 +1,15 @@
 <script lang="ts">
-	import { createBubbler } from 'svelte/legacy';
-	const bubble = createBubbler();
+	import { cn, type PrimitiveTdAttributes } from '$lib/utils.js';
 
-	import { cn } from '$lib/utils.js';
-	import type { HTMLTdAttributes } from 'svelte/elements';
+	type Props = PrimitiveTdAttributes;
 
-	type $$Props = HTMLTdAttributes;
-
-	interface Props { [key: string]: any }
-
-	let { class: class_name = undefined, children, ...rest }: Props = $props();
-	
+	let { class: class_name = undefined, ref = $bindable(null), children, ...rest }: Props = $props();
 </script>
 
 <td
+	bind:this={ref}
 	class={cn('px-2 py-2.5 align-middle last:text-right [&:has([role=checkbox])]:pr-0', class_name)}
 	{...rest}
-	onclick={bubble('click')}
-	onkeydown={bubble('keydown')}
 >
 	{@render children?.()}
 </td>

@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { Note, type Props } from '$lib/components/ui/note';
+	import { Note } from '$lib/components/ui/note';
+	import type { Props } from '$lib/components/ui/note/note.svelte';
 
 	const variants: Props['variant'][] = [
 		'secondary',

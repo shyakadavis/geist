@@ -3,16 +3,17 @@
 	import { Button } from '$lib/components/ui/button';
 	import { cn } from '$lib/utils';
 
-	interface Props {
+	type Props = {
 		expanded: boolean;
-	}
+		onclick: () => void;
+	};
 
-	let { expanded }: Props = $props();
+	let { expanded, onclick }: Props = $props();
 </script>
 
 <div class="relative flex min-h-[30px] w-[calc(100%-40px)] items-center p-5">
 	<div aria-hidden="true" class="h-px w-full -translate-x-px bg-gray-alpha-400"></div>
-	<Button variant="secondary" size="sm" shape="rounded" aria-label="Show less" on:click>
+	<Button variant="secondary" size="sm" shape="rounded" aria-label="Show less" {onclick}>
 		Show less
 		<Icons.ChevronLeft
 			class={cn('size-4 -rotate-90 transition-transform duration-200 ease-in-out', {

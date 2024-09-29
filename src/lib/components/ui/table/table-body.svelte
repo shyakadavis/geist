@@ -1,26 +1,25 @@
 <script lang="ts">
-	import { cn } from '$lib/utils.js';
-	import type { HTMLAttributes } from 'svelte/elements';
+	import { cn, type PrimitiveTableSectionAttributes } from '$lib/utils.js';
 
-	type $$Props = HTMLAttributes<HTMLTableSectionElement> & {
+	type Props = PrimitiveTableSectionAttributes & {
 		striped?: boolean;
 		interactive?: boolean;
 	};
-
-	
-	interface Props { [key: string]: any }
 
 	let {
 		class: class_name = undefined,
 		striped = false,
 		interactive = false,
+		ref = $bindable(null),
 		children,
 		...rest
 	}: Props = $props();
 </script>
 
-<div aria-hidden="true" class="h-3"></div>
+<!-- TODO: Find a way to add space to the top of the because this `div` breaks the app. -->
+<!-- <div aria-hidden="true" class="h-3"></div> -->
 <tbody
+	bind:this={ref}
 	data-striped={striped}
 	data-interactive={interactive}
 	class={cn('group', class_name)}

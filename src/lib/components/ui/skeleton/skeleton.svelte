@@ -2,7 +2,7 @@
 	import { cn } from '$lib/utils.js';
 	import type { HTMLAttributes } from 'svelte/elements';
 
-	type $$Props = HTMLAttributes<HTMLDivElement> & {
+	type Props = HTMLAttributes<HTMLSpanElement> & {
 		width?: number | string;
 		height?: number | string;
 		box_height?: number;
@@ -12,9 +12,6 @@
 		squared?: boolean;
 		animated?: boolean;
 	};
-
-	
-	interface Props { [key: string]: any }
 
 	let {
 		class: class_name = undefined,

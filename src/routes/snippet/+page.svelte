@@ -1,4 +1,4 @@
-<!-- <script lang="ts">
+<script lang="ts">
 	import Demo from '$lib/components/shared/demo.svelte';
 	import PageWrapper from '$lib/components/shared/page-wrapper.svelte';
 	import Callback from './callback.svelte';
@@ -41,4 +41,4 @@
 	<Demo id="variants" code={variants_code}>
 		<Variants />
 	</Demo>
-</PageWrapper> -->
+</PageWrapper>

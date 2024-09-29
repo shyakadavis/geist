@@ -1,11 +1,22 @@
+<script lang="ts" module>
+	import type { Snippet } from 'svelte';
+	import { note_variants, type Fill, type Size, type Variant } from './index.js';
+
+	export type Props = {
+		class?: string;
+		variant?: Variant;
+		size?: Size;
+		fill?: Fill;
+		disabled?: boolean;
+		label?: string | boolean;
+		children: Snippet;
+		action?: Snippet;
+	};
+</script>
+
 <script lang="ts">
 	import { Icons } from '$lib/assets/icons/index.js';
 	import { cn } from '$lib/utils.js';
-	import { type Props, note_variants } from './index.js';
-
-	type $$Props = Props;
-
-	interface Props_1 { [key: string]: any }
 
 	let {
 		class: class_name = undefined,
@@ -17,8 +28,7 @@
 		children,
 		action,
 		...rest
-	}: Props_1 = $props();
-	
+	}: Props = $props();
 </script>
 
 <div
@@ -46,5 +56,5 @@
 			{@render children?.()}
 		</div>
 	</div>
-	{@render action?.({ disabled, })}
+	{@render action?.()}
 </div>

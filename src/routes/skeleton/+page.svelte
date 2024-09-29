@@ -1,4 +1,4 @@
-<!-- <script lang="ts">
+<script lang="ts">
 	import Demo from '$lib/components/shared/demo.svelte';
 	import PageWrapper from '$lib/components/shared/page-wrapper.svelte';
 	import DefaultWithBoxHeight from './default-with-box-height.svelte';
@@ -61,4 +61,4 @@
 	<Demo id="no-animation" code={no_animation_code}>
 		<NoAnimation />
 	</Demo>
-</PageWrapper> -->
+</PageWrapper>

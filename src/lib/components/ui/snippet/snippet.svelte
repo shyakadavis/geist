@@ -2,18 +2,16 @@
 	import { Icons } from '$lib/assets/icons';
 	import { cn } from '$lib/utils';
 	import { scale } from 'svelte/transition';
-	import { copy_button_variants, snippet_variants, type Props } from '.';
+	import { copy_button_variants, snippet_variants, type Variant } from '.';
 
-	type $$Props = Props;
-
-	interface Props_1 {
-		text: $$Props['text'];
-		prompt?: $$Props['prompt'];
-		variant?: $$Props['variant'];
-		on_copy?: $$Props['on_copy'];
-		inverted?: $$Props['inverted'];
-		class?: $$Props['class'];
-	}
+	type Props = {
+		variant?: Variant;
+		text: string | string[];
+		class?: string;
+		prompt?: boolean;
+		on_copy?: () => void;
+		inverted?: boolean;
+	};
 
 	let {
 		text,
@@ -22,8 +20,7 @@
 		on_copy = undefined,
 		inverted = false,
 		class: class_name = undefined
-	}: Props_1 = $props();
-	
+	}: Props = $props();
 
 	let copied = $state(false);
 

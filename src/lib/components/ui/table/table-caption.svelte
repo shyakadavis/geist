@@ -1,15 +1,11 @@
 <script lang="ts">
-	import { cn } from '$lib/utils.js';
-	import type { HTMLAttributes } from 'svelte/elements';
+	import { cn, type PrimitiveElementAttributes } from '$lib/utils.js';
 
-	type $$Props = HTMLAttributes<HTMLTableCaptionElement>;
+	type Props = PrimitiveElementAttributes;
 
-	interface Props { [key: string]: any }
-
-	let { class: class_name = undefined, children, ...rest }: Props = $props();
-	
+	let { class: class_name = undefined, ref = $bindable(null), children, ...rest }: Props = $props();
 </script>
 
-<caption class={cn('mt-4 text-sm', class_name)} {...rest}>
+<caption bind:this={ref} class={cn('mt-4 text-sm', class_name)} {...rest}>
 	{@render children?.()}
 </caption>

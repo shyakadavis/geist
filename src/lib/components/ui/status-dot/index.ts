@@ -15,9 +15,4 @@ export const status_dot_variants = tv({
 	}
 });
 
-type Variant = VariantProps<typeof status_dot_variants>['variant'];
-
-export type Props = {
-	state: Exclude<Variant, undefined>;
-	label?: boolean;
-};
+export type Variant = VariantProps<typeof status_dot_variants>['variant'];
