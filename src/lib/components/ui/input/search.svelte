@@ -28,6 +28,7 @@
 		type="search"
 		affix={Icons.MagnifyingGlass}
 		affix_styling={false}
+		aria-labelledby={aria_labelledby}
 		bind:value
 		bind:ref
 		{...rest}
