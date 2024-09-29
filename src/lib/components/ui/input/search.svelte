@@ -1,18 +1,9 @@
 <script lang="ts">
 	import { Icons } from '$lib/assets/icons';
 	import { cn } from '$lib/utils';
-	import type { HTMLInputAttributes } from 'svelte/elements';
-	import Input from './input.svelte';
+	import Input, { type InputProps } from './input.svelte';
 
-	type Props = HTMLInputAttributes & {
-		ref?: HTMLInputElement;
-	};
-
-	// type Props = {
-	// 	class?: string;
-	// 	value?: string;
-	// 	ref?: HTMLInputElement;
-	// };
+	type Props = Omit<InputProps, 'type' | 'aria-labelledby' | 'affix' | 'affix_styling'>;
 
 	let {
 		class: class_name = undefined,

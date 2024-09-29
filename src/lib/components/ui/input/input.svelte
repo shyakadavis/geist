@@ -1,11 +1,5 @@
-<script lang="ts">
-	import type { Icons } from '$lib/assets/icons/index.js';
-	import { cn } from '$lib/utils.js';
-	import type { HTMLInputAttributes } from 'svelte/elements';
-	import { Label } from '../label/index.js';
-	import { input_variants } from './index.js';
-
-	type Props = Omit<HTMLInputAttributes, 'size'> & {
+<script lang="ts" module>
+	type CustomInputProps = {
 		size?: 'sm' | 'md' | 'lg';
 		'aria-labelledby': string;
 		affix?: typeof Icons.ArrowCircleUp | string;
@@ -13,21 +7,31 @@
 		affix_styling?: boolean;
 		suffix_styling?: boolean;
 		label?: string;
-		ref?: HTMLInputElement;
+		ref?: HTMLInputElement | null;
 	};
+
+	export type InputProps = CustomInputProps & Without<HTMLInputAttributes, CustomInputProps>;
+</script>
+
+<script lang="ts">
+	import type { Icons } from '$lib/assets/icons/index.js';
+	import { cn } from '$lib/utils.js';
+	import type { HTMLInputAttributes } from 'svelte/elements';
+	import { Label } from '../label/index.js';
+	import { input_variants, type Without } from './index.js';
 
 	let {
 		class: class_name = undefined,
 		value = $bindable(undefined),
+		ref = $bindable(null),
 		size = 'md',
 		affix: Affix = undefined,
 		suffix: Suffix = undefined,
 		affix_styling = true,
 		suffix_styling = true,
 		label = undefined,
-		ref = $bindable(undefined),
 		...rest
-	}: Props = $props();
+	}: InputProps = $props();
 </script>
 
 {#if label}
