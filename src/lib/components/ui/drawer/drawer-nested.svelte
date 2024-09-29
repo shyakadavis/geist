@@ -1,10 +1,7 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
 	import { Drawer as DrawerPrimitive } from 'vaul-svelte';
 
-	type Props = DrawerPrimitive.Props & {
-		children?: Snippet;
-	};
+	type Props = DrawerPrimitive.NestedRootProps;
 
 	let {
 		shouldScaleBackground = true,

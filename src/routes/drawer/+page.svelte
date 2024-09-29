@@ -1,4 +1,4 @@
-<!-- <script lang="ts">
+<script lang="ts">
 	import Demo from '$lib/components/shared/demo.svelte';
 	import PageWrapper from '$lib/components/shared/page-wrapper.svelte';
 	import CustomHeight from './custom-height.svelte';
@@ -21,4 +21,4 @@
 	<Demo id="custom-height" code={custom_height_code}>
 		<CustomHeight />
 	</Demo>
-</PageWrapper> -->
+</PageWrapper>

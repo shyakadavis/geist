@@ -4,8 +4,8 @@
 </script>
 
 <Drawer.Root>
-	<Drawer.Trigger asChild let:builder>
-		<Button builders={[builder]}>Open</Button>
+	<Drawer.Trigger>
+		<Button>Open</Button>
 	</Drawer.Trigger>
 	<Drawer.Content hide_dismiss_bar class="items-center p-12">
 		<Drawer.Header>

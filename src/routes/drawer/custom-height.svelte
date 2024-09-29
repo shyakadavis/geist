@@ -4,8 +4,8 @@
 </script>
 
 <Drawer.Root>
-	<Drawer.Trigger asChild let:builder>
-		<Button builders={[builder]}>Open</Button>
+	<Drawer.Trigger>
+		<Button>Open</Button>
 	</Drawer.Trigger>
 	<Drawer.Content class="h-[400px] items-center">
 		<Drawer.Header>

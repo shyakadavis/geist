@@ -10,7 +10,7 @@
 
 	let { children }: Props = $props();
 
-	let ref: HTMLDivElement | undefined = $state(undefined);
+	let ref: HTMLDivElement | null = $state(null);
 
 	function check_overflow(element: HTMLDivElement) {
 		return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
@@ -34,7 +34,7 @@
 		{@render children?.()}
 	</Dialog.Content>
 {:else}
-	<!-- TODO: Handle overflowing content on small screens. Right, it needs to be specified consumer-side. -->
+	<!-- TODO: Handle overflowing content on small screens. Right now, it needs to be specified consumer-side. -->
 	<Drawer.Content hide_dismiss_bar class="bg-background-100 dark:bg-background-200">
 		{@render children?.()}
 	</Drawer.Content>

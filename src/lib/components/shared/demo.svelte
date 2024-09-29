@@ -74,12 +74,12 @@
 		</h2>
 	</a>
 	{#if subtitle}
-		<p
+		<div
 			class="prose prose-neutral mt-2 max-w-none text-gray-900 transition-colors dark:prose-invert marker:content-['-'] prose-a:text-gray-900 prose-a:hover:text-gray-1000 prose-strong:font-normal prose-strong:text-gray-1000 xl:mt-4"
 		>
 			<Markdown md={subtitle} />
 			{@render image?.()}
-		</p>
+		</div>
 	{/if}
 	<div
 		class="group relative mt-4 overflow-x-auto rounded-xl border border-gray-alpha-400 bg-background-100 xl:mt-7"

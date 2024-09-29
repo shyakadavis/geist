@@ -46,7 +46,7 @@
 		"runed": "^0.15.3",
 		"tailwind-merge": "^2.4.0",
 		"tailwind-variants": "^0.2.1",
-		"vaul-svelte": "^0.3.2"
+		"vaul-svelte": "https://pkg.pr.new/vaul-svelte@ed3195e"
 	},
 	"packageManager": "pnpm@9.5.0"
 }

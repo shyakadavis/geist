@@ -4,16 +4,11 @@
 
 	type Props = DrawerPrimitive.TitleProps;
 
-	let {
-		el = $bindable(undefined),
-		class: class_name = undefined,
-		children,
-		...rest
-	}: Props = $props();
+	let { ref = $bindable(null), class: class_name = undefined, children, ...rest }: Props = $props();
 </script>
 
 <DrawerPrimitive.Title
-	bind:el
+	bind:ref
 	class={cn('text-lg font-semibold leading-none tracking-tight', class_name)}
 	{...rest}
 >

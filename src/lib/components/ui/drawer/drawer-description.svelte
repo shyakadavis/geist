@@ -4,14 +4,9 @@
 
 	type Props = DrawerPrimitive.DescriptionProps;
 
-	let {
-		el = $bindable(undefined),
-		class: class_name = undefined,
-		children,
-		...rest
-	}: Props = $props();
+	let { ref = $bindable(null), class: class_name = undefined, children, ...rest }: Props = $props();
 </script>
 
-<DrawerPrimitive.Description bind:el class={cn('text-sm text-gray-700', class_name)} {...rest}>
+<DrawerPrimitive.Description bind:ref class={cn('text-sm text-gray-700', class_name)} {...rest}>
 	{@render children?.()}
 </DrawerPrimitive.Description>

@@ -4,16 +4,11 @@
 
 	type Props = DrawerPrimitive.OverlayProps;
 
-	let {
-		el = $bindable(undefined),
-		class: class_name = undefined,
-		children,
-		...rest
-	}: Props = $props();
+	let { ref = $bindable(null), class: class_name = undefined, children, ...rest }: Props = $props();
 </script>
 
 <DrawerPrimitive.Overlay
-	bind:el
+	bind:ref
 	class={cn('fixed inset-0 z-50 bg-[#000]/80', class_name)}
 	{...rest}
 >

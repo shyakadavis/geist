@@ -10,8 +10,8 @@
 </script>
 
 <Modal.Root bind:open>
-	<Modal.Trigger let:builder>
-		<Button size="sm" builders={[builder]}>Open Modal</Button>
+	<Modal.Trigger>
+		<Button size="sm">Open Modal</Button>
 	</Modal.Trigger>
 
 	<Modal.Content>
@@ -29,7 +29,7 @@
 		<p class="px-6 py-3 text-sm">Content outside the inset.</p>
 
 		<Modal.Footer>
-			<Button on:click={toggle}>Submit</Button>
+			<Button onclick={toggle}>Submit</Button>
 		</Modal.Footer>
 	</Modal.Content>
 </Modal.Root>
