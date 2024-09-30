@@ -1,4 +1,4 @@
-<!-- <script lang="ts">
+<script lang="ts">
 	import { Icons } from '$lib/assets/icons';
 	import PageWrapper from '$lib/components/shared/page-wrapper.svelte';
 	import IntroductionLink from './introduction-link.svelte';
@@ -119,4 +119,4 @@
 			</div>
 		</IntroductionLink>
 	</section>
-</PageWrapper> -->
+</PageWrapper>
