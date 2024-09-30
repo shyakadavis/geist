@@ -13,6 +13,7 @@ const Sub = ContextMenuPrimitive.Sub;
 const Root = ContextMenuPrimitive.Root;
 const Trigger = ContextMenuPrimitive.Trigger;
 const Group = ContextMenuPrimitive.Group;
+const Portal = ContextMenuPrimitive.Portal;
 
 export {
 	CheckboxItem,
@@ -22,6 +23,7 @@ export {
 	Content as ContextMenuContent,
 	Group as ContextMenuGroup,
 	Item as ContextMenuItem,
+	Portal as ContextMenuPortal,
 	RadioItem as ContextMenuRadioItem,
 	Separator as ContextMenuSeparator,
 	Shortcut as ContextMenuShortcut,
@@ -31,6 +33,7 @@ export {
 	Trigger as ContextMenuTrigger,
 	Group,
 	Item,
+	Portal,
 	RadioItem,
 	Root,
 	Separator,

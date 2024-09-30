@@ -1,16 +1,12 @@
 <script lang="ts">
 	import { Icons } from '$lib/assets/icons';
-	import {
-		ContextMenu,
-		ContextMenuContent,
-		ContextMenuItem,
-		ContextMenuTrigger
-	} from '$lib/components/ui/context-menu';
+	import * as ContextMenu from '$lib/components/ui/context-menu';
 	import { SearchInput } from '$lib/components/ui/input';
 	import { cn } from '$lib/utils';
 	import { flip } from 'svelte/animate';
 	import { derived, writable } from 'svelte/store';
 	import { receive, send } from './transition';
+	import { copy_import, copy_name, copy_svelte_component, copy_svg, format_name } from './utils';
 
 	const icons_to_exclude = ['BrandAssets', 'ErrorStates'];
 	const preview_icons = writable(
@@ -23,37 +19,6 @@
 		const term = $search_term.toLowerCase();
 		return $preview_icons.filter(([name]) => name.toLowerCase().includes(term));
 	});
-
-	// e.g. "ArrowUp" -> "arrow-up"
-	function format_name(str: string) {
-		return str.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
-	}
-
-	// e.g. import ArrowLeft from '$lib/assets/icons/arrow-left.svg?component';
-	function copy_import(name: string) {
-		const value = `import ${name} from '$lib/assets/icons/${format_name(name)}.svg?component';`;
-		navigator.clipboard.writeText(value);
-	}
-
-	function copy_name(name: string) {
-		navigator.clipboard.writeText(name);
-	}
-
-	// e.g. <ArrowLeft aria-hidden="true" height="16" width="16" />
-	function copy_svelte_component(name: string) {
-		const value = `<${name} aria-hidden="true" height="16" width="16" />`;
-		navigator.clipboard.writeText(value);
-	}
-
-	async function copy_svg(name: string) {
-		const value = await import(`$lib/assets/icons/${format_name(name)}.svg?raw`)
-			.then((res) => res.default)
-			.catch((err) => {
-				console.error(err);
-				return 'Error loading SVG';
-			});
-		navigator.clipboard.writeText(value);
-	}
 
 	const last_row_count = writable(0);
 
@@ -92,11 +57,19 @@
 		{#each $filtered_icons as [name, Icon], i (name)}
 			<!-- TODO: Improve the shuffle/filter animation -->
 			<li in:receive={{ key: name }} out:send={{ key: name }} animate:flip={{ duration: 200 }}>
-				<ContextMenu>
-					<ContextMenuTrigger
-						class={cn(
-							'flex h-28 w-full cursor-pointer flex-col items-center justify-center gap-1.5 px-4 text-gray-900 hover:bg-background-100',
-							/* 
+				{@render icon_item({ name, Icon, i })}
+			</li>
+		{/each}
+	</ul>
+{/if}
+
+{#snippet icon_item({ name, Icon, i }: { name: string; Icon: typeof Icons.LogoV0; i: number })}
+	<ContextMenu.Root>
+		<!-- TODO: How to trigger onclick? -->
+		<ContextMenu.Trigger
+			class={cn(
+				'flex h-28 w-full cursor-pointer flex-col items-center justify-center gap-1.5 px-4 text-gray-900 hover:bg-background-100',
+				/* 
 						This code applies border styles to elements based on their position and screen size:
 						- Adds bottom and right borders to all elements.
 						- Removes the right border for every second element.
@@ -105,28 +78,24 @@
 							- Removes the right border for every fourth element.
 						- Removes the bottom border for elements in the last row.
 					*/
-							'border-b border-r [&:nth-child(2n)]:border-r-0 sm:[&:nth-child(2n)]:border-r sm:[&:nth-child(4n)]:border-r-0',
-							{
-								'border-b-0':
-									i >= $filtered_icons.length - $last_row_count || $filtered_icons.length <= 4
-							}
-						)}
-					>
-						<Icon aria-hidden="true" height="16" width="16" />
-						<span class="text-sm">{format_name(name)}</span>
-					</ContextMenuTrigger>
-					<ContextMenuContent>
-						<ContextMenuItem onclick={() => copy_import(name)}>Copy Import</ContextMenuItem>
-						<ContextMenuItem onclick={() => copy_name(format_name(name))}>
-							Copy Name
-						</ContextMenuItem>
-						<ContextMenuItem onclick={() => copy_svelte_component(name)}>
-							Copy Svelte Component
-						</ContextMenuItem>
-						<ContextMenuItem onclick={() => copy_svg(name)}>Copy SVG</ContextMenuItem>
-					</ContextMenuContent>
-				</ContextMenu>
-			</li>
-		{/each}
-	</ul>
-{/if}
+				'border-b border-r [&:nth-child(2n)]:border-r-0 sm:[&:nth-child(2n)]:border-r sm:[&:nth-child(4n)]:border-r-0',
+				{
+					'border-b-0': i >= $filtered_icons.length - $last_row_count || $filtered_icons.length <= 4
+				}
+			)}
+		>
+			<Icon aria-hidden="true" height="16" width="16" />
+			<span class="text-sm">{format_name(name)}</span>
+		</ContextMenu.Trigger>
+		<ContextMenu.Portal>
+			<ContextMenu.Content>
+				<ContextMenu.Item onclick={() => copy_import(name)}>Copy Import</ContextMenu.Item>
+				<ContextMenu.Item onclick={() => copy_name(format_name(name))}>Copy Name</ContextMenu.Item>
+				<ContextMenu.Item onclick={() => copy_svelte_component(name)}>
+					Copy Svelte Component
+				</ContextMenu.Item>
+				<ContextMenu.Item onclick={() => copy_svg(name)}>Copy SVG</ContextMenu.Item>
+			</ContextMenu.Content>
+		</ContextMenu.Portal>
+	</ContextMenu.Root>
+{/snippet}

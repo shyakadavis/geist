@@ -42,7 +42,7 @@
 		if (!o) search_value = '';
 	}}
 >
-	<div class="relative">
+	<Combobox.Trigger class={cn('relative w-full', class_name)}>
 		<Icons.MagnifyingGlass
 			class="pointer-events-none absolute start-3 top-1/2 size-3.5 -translate-y-1/2 text-gray-700"
 		/>
@@ -50,29 +50,29 @@
 			oninput={(e) => (search_value = e.currentTarget.value)}
 			class={cn(
 				input_variants(),
-				'peer rounded-md px-9 shadow-shadow-border transition-[border-color,box-shadow] delay-0 focus-within:shadow-shadow-input disabled:bg-gray-100 data-[errored=true]:[box-shadow:_0_0_0_1px_var(--red-900),0_0_0_4px_var(--red-300);]',
+				'peer rounded-md px-9 shadow-shadow-border transition-[border-color,box-shadow] delay-0 focus-within:shadow-shadow-input disabled:bg-gray-100',
+				// TODO: Why isn't this "red" box shadow being applied? It previously was.
+				'data-[errored=true]:text-red-800 data-[errored=true]:[box-shadow:_0_0_0_1px_var(--red-900),0_0_0_4px_var(--red-300);]',
 				{
 					'h-8 text-sm': size === 'sm',
 					'h-10': size === 'md',
 					'h-12 text-base': size === 'lg'
-				},
-				class_name
+				}
 			)}
 			{placeholder}
 			aria-label={placeholder}
 			data-errored={errored}
 		/>
-		<Combobox.Trigger class="absolute end-3 top-1/2 size-6 -translate-y-1/2">
-			<Icons.ChevronDown
-				aria-hidden="true"
-				class="size-3.5 text-gray-700 transition-transform peer-aria-expanded:rotate-180"
-			/>
-		</Combobox.Trigger>
-	</div>
+		<Icons.ChevronDown
+			aria-hidden="true"
+			class="absolute end-3 top-1/2 size-3.5 -translate-y-1/2 text-gray-700 transition-transform peer-aria-expanded:rotate-180"
+		/>
+	</Combobox.Trigger>
 	<Combobox.Portal>
 		<Combobox.Content
 			class={cn(
 				'z-[60] w-[var(--bits-combobox-anchor-width)] min-w-[var(--bits-combobox-anchor-width)] rounded-xl border bg-background-100 px-1 py-3 shadow-md outline-none',
+				// Why are custom list classes not being applied? A thing to not, when hovering over list_class prop, intellisense does not kick in. Perhaps anything other than "class" is not being recognized as a style-able prop?
 				list_class_name
 			)}
 			sideOffset={10}
@@ -81,7 +81,7 @@
 				<Icons.ChevronUpSmall class="size-3" />
 			</Combobox.ScrollUpButton>
 			<Combobox.Viewport class="p-1">
-				{#each filtered_items as fruit, i (i + fruit.value)}
+				{#each filtered_items as item, i (i + item.value)}
 					<Combobox.Item
 						class={cn(
 							'flex min-h-10 w-full select-none items-center rounded-md pl-5 pr-1.5 text-sm capitalize outline-none transition-colors data-[highlighted]:bg-gray-200',
@@ -89,11 +89,11 @@
 								'text-base': size === 'lg'
 							}
 						)}
-						value={fruit.value}
-						label={fruit.label}
+						value={item.value}
+						label={item.label}
 					>
 						{#snippet children({ selected })}
-							{fruit.label}
+							{item.label}
 							{#if selected}
 								<div class="ml-auto">
 									<Icons.Check class="size-3.5 text-gray-700" aria-hidden />

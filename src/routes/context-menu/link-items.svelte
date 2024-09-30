@@ -15,13 +15,15 @@
 	>
 		Right click
 	</ContextMenu.Trigger>
-	<ContextMenu.Content>
-		{#each items as { href, label }}
-			<ContextMenu.Item>
-				{#snippet child({ props })}
-					<a {...props} {href} target="_blank" rel="noopener noreferrer">{label}</a>
-				{/snippet}
-			</ContextMenu.Item>
-		{/each}
-	</ContextMenu.Content>
+	<ContextMenu.Portal>
+		<ContextMenu.Content>
+			{#each items as { href, label }}
+				<ContextMenu.Item>
+					{#snippet child({ props })}
+						<a {...props} {href} target="_blank" rel="noopener noreferrer">{label}</a>
+					{/snippet}
+				</ContextMenu.Item>
+			{/each}
+		</ContextMenu.Content>
+	</ContextMenu.Portal>
 </ContextMenu.Root>
