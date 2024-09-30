@@ -6,17 +6,18 @@
 
 	type Props = ButtonProps & (NormalButton | SVGButton);
 
-	let { children, ...rest }: Props = $props();
+	let { children, class: class_name = undefined, ...rest }: Props = $props();
 </script>
 
 <!-- If a user provides `svg_only` prop, then the button should be an icon-only button -->
 {#if rest.svg_only}
 	<ButtonPrimitive.Root
 		class={cn(
-			button_variants({ variant: rest.variant, svg_size: rest.size, className: rest.class }),
+			button_variants({ variant: rest.variant, svg_size: rest.size }),
 			{
 				'rounded-full': rest.shape === 'circle'
-			}
+			},
+			class_name
 		)}
 		{...rest}
 	>
@@ -25,10 +26,14 @@
 {:else}
 	<ButtonPrimitive.Root
 		disabled={rest.loading || rest.disabled}
-		class={cn(button_variants({ variant: rest.variant, size: rest.size, className: rest.class }), {
-			'rounded-full': rest.shape === 'rounded',
-			'shadow-shadow-border-small': rest.shadow
-		})}
+		class={cn(
+			button_variants({ variant: rest.variant, size: rest.size }),
+			{
+				'rounded-full': rest.shape === 'rounded',
+				'shadow-shadow-border-small': rest.shadow
+			},
+			class_name
+		)}
 		{...rest}
 	>
 		{#if rest.loading}

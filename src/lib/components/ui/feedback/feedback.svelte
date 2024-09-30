@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Icons } from '$lib/assets/icons/index.js';
-	import { Button } from '$lib/components/ui/button';
+	import { Button, button_variants } from '$lib/components/ui/button';
 	import * as Popover from '$lib/components/ui/popover';
 	import { Textarea } from '$lib/components/ui/textarea';
 	import { cn } from '$lib/utils';
@@ -26,7 +26,7 @@
 	let height = spring(48, { stiffness: 0.2, damping: 1.2 });
 	let radius = spring(30, { stiffness: 0.2, damping: 1.2 });
 	let current_reaction: number | undefined = $state(undefined);
-	let inline_feedback_el: HTMLTextAreaElement | undefined = $state(undefined);
+	let inline_feedback_el: HTMLTextAreaElement | null = $state(null);
 
 	function toggle_inline_feedback(i: number | undefined) {
 		if (current_reaction === i || i === undefined) {
@@ -56,51 +56,53 @@
 
 {#if variant === 'default'}
 	<Popover.Root>
-		<Popover.Trigger>
-			{#snippet child({ props })}
-				<Button {...props} variant="secondary" size="sm" class="text-gray-900">Feedback</Button>
-			{/snippet}
+		<Popover.Trigger
+			class={cn(button_variants({ size: 'sm', variant: 'secondary' }), 'text-gray-900')}
+		>
+			Feedback
 		</Popover.Trigger>
-		<Popover.Content sideOffset={8} class="w-[340px] rounded-xl p-0">
-			<form>
-				<main class="grid gap-3 p-2">
-					<Textarea placeholder="Your feedback..." bind:value={md} />
-					{#if md}
-						<div transition:slide class="grid gap-2 text-sm">
-							<h2 class="text-xs text-gray-900">Preview</h2>
-							<Markdown {md} />
+		<Popover.Portal>
+			<Popover.Content sideOffset={8} class="w-[340px] rounded-xl p-0">
+				<form>
+					<main class="grid gap-3 p-2">
+						<Textarea placeholder="Your feedback..." bind:value={md} />
+						{#if md}
+							<div transition:slide class="grid gap-2 text-sm">
+								<h2 class="text-xs text-gray-900">Preview</h2>
+								<Markdown {md} />
+							</div>
+						{/if}
+						<div class="flex w-full items-center justify-end gap-1 text-xs text-gray-900">
+							<Icons.Markdown aria-hidden class="h-[14px] w-[22px]" />
+							<span class="sr-only">Markdown</span>
+							supported.
 						</div>
-					{/if}
-					<div class="flex w-full items-center justify-end gap-1 text-xs text-gray-900">
-						<Icons.Markdown aria-hidden class="h-[14px] w-[22px]" />
-						<span class="sr-only">Markdown</span>
-						supported.
-					</div>
-				</main>
-				<footer
-					class="flex items-center justify-between rounded-b-xl border-t border-accents-2 bg-accents-1 p-3"
-				>
-					<span class="flex items-center gap-1">
-						{#each reactions as { emoji: Emoji, label }}
-							<Button
-								variant="tertiary"
-								svg_only
-								aria-label={label}
-								size="sm"
-								shape="circle"
-								class="group hover:bg-blue-300"
-							>
-								<Emoji
-									aria-hidden="true"
-									class="text-gray-900 group-hover:text-blue-900 [&>path]:group-hover:fill-blue-900"
-								/>
-							</Button>
-						{/each}
-					</span>
-					<Button type="submit" size="sm">Send</Button>
-				</footer>
-			</form>
-		</Popover.Content>
+					</main>
+					<footer
+						class="flex items-center justify-between rounded-b-xl border-t border-accents-2 bg-accents-1 p-3"
+					>
+						<span class="flex items-center gap-1">
+							{#each reactions as { emoji: Emoji, label }}
+								<Button
+									variant="tertiary"
+									svg_only
+									aria-label={label}
+									size="sm"
+									shape="circle"
+									class="group hover:bg-blue-300"
+								>
+									<Emoji
+										aria-hidden="true"
+										class="text-gray-900 group-hover:text-blue-900 [&>path]:group-hover:fill-blue-900"
+									/>
+								</Button>
+							{/each}
+						</span>
+						<Button type="submit" size="sm">Send</Button>
+					</footer>
+				</form>
+			</Popover.Content>
+		</Popover.Portal>
 	</Popover.Root>
 {:else if variant === 'inline'}
 	<!-- TODO: Toggle on click outside: https://github.com/svecosystem/runed/pull/46 -->
