@@ -1,4 +1,4 @@
-<!-- <script lang="ts">
+<script lang="ts">
 	import Demo from '$lib/components/shared/demo.svelte';
 	import PageWrapper from '$lib/components/shared/page-wrapper.svelte';
 	import BoxAlign from './box-align.svelte';
@@ -41,4 +41,4 @@
 	<Demo id="other" code={other_code}>
 		<Other />
 	</Demo>
-</PageWrapper> -->
+</PageWrapper>

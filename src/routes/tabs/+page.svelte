@@ -1,4 +1,4 @@
-<!-- <script lang="ts">
+<script lang="ts">
 	import Demo from '$lib/components/shared/demo.svelte';
 	import PageWrapper from '$lib/components/shared/page-wrapper.svelte';
 	import Default from './default.svelte';
@@ -35,4 +35,4 @@
 	<Demo id="overflow" code={overflow_code}>
 		<Overflow />
 	</Demo>
-</PageWrapper> -->
+</PageWrapper>

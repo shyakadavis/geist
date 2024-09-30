@@ -1,16 +1,12 @@
 <script lang="ts">
 	import { cn } from '$lib/utils.js';
 	import { Tabs as TabsPrimitive } from 'bits-ui';
-	import { onMount } from 'svelte';
 
-	type $$Props = TabsPrimitive.ListProps & {
+	type Props = TabsPrimitive.ListProps & {
 		variant?: 'default' | 'secondary';
 		/** When `true`, masks either edge of the scrollable content to indicate there is more content to the user @default true */
 		mask_overflow?: boolean;
 	};
-
-	
-	interface Props { [key: string]: any }
 
 	let {
 		class: class_name = undefined,
@@ -20,32 +16,34 @@
 		...rest
 	}: Props = $props();
 
-	let el: HTMLDivElement = $state();
+	let ref: HTMLDivElement | null = $state(null);
 
 	let pre_mask = $state(false);
 	let post_mask = $state(false);
 
 	// When the tabs are scrolled it will determine whether or not to show the mask at the end
 	function handle_mask() {
-		if (el.offsetWidth + el.scrollLeft < el.scrollWidth - 10) {
+		if (!ref) return;
+		if (ref.offsetWidth + ref.scrollLeft < ref.scrollWidth - 10) {
 			post_mask = true;
 		} else {
 			post_mask = false;
 		}
 
-		if (el.scrollLeft == 0) {
+		if (ref.scrollLeft == 0) {
 			pre_mask = false;
 		} else {
 			pre_mask = true;
 		}
 	}
 
-	onMount(() => {
+	$effect(() => {
+		if (!ref) return;
 		handle_mask(); // initially determine mask state
-		el.addEventListener('scroll', handle_mask);
+		ref.addEventListener('scroll', handle_mask);
 
 		return () => {
-			el.removeEventListener('scroll', handle_mask);
+			ref?.removeEventListener('scroll', handle_mask);
 		};
 	});
 </script>
@@ -55,7 +53,7 @@
 <!-- Make sure you have the `no-scrollbar` class in your tailwind.config file -->
 <TabsPrimitive.List
 	data-variant={variant}
-	bind:el
+	bind:ref
 	class={cn(
 		'group flex w-full items-baseline gap-3 overflow-hidden overflow-x-auto p-1 text-gray-900 no-scrollbar data-[variant=default]:[box-shadow:_0_-1px_0_var(--accents-2)_inset;]',
 		{
