@@ -7,7 +7,7 @@
 		children: Snippet;
 	};
 
-	let { class: className = undefined, children, ...rest }: Props = $props();
+	let { class: className = undefined, children, preventScroll = true, ...rest }: Props = $props();
 </script>
 
 <ContextMenuPrimitive.Content
@@ -15,6 +15,7 @@
 		'z-50 min-w-[10rem] rounded-xl bg-background-100 p-2 text-sm text-gray-1000 shadow-shadow-menu focus:outline-none',
 		className
 	)}
+	{preventScroll}
 	{...rest}
 >
 	{@render children?.()}

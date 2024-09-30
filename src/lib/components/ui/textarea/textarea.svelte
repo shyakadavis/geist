@@ -3,13 +3,13 @@
 	import type { HTMLTextareaAttributes } from 'svelte/elements';
 
 	type Props = HTMLTextareaAttributes & {
-		ref?: HTMLTextAreaElement;
+		ref?: HTMLTextAreaElement | null;
 	};
 
 	let {
 		class: class_name = undefined,
 		value = $bindable(undefined),
-		ref = $bindable(undefined),
+		ref = $bindable(null),
 		readonly = undefined,
 		...rest
 	}: Props = $props();

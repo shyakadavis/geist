@@ -34,7 +34,6 @@
 				)}
 				{value}
 				{...rest}
-				on:click
 			>
 				{#if Icon}
 					<Icon aria-hidden="true" class="size-4" />
