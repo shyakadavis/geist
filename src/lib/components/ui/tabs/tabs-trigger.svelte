@@ -36,7 +36,9 @@
 				{...rest}
 				on:click
 			>
-				<Icon aria-hidden="true" class="size-4" />
+				{#if Icon}
+					<Icon aria-hidden="true" class="size-4" />
+				{/if}
 				{@render children?.()}
 				<!-- TODO: Animate with cross-fade -->
 				<div
