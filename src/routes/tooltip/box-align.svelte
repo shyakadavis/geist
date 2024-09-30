@@ -33,9 +33,11 @@
 				{#each tooltips as { side, content }}
 					<Tooltip.Root>
 						<Tooltip.Trigger class="capitalize">{side}/{align}</Tooltip.Trigger>
-						<Tooltip.Content {side} {align}>
-							<p>{content}</p>
-						</Tooltip.Content>
+						<Tooltip.Portal>
+							<Tooltip.Content {side} {align}>
+								<p>{content}</p>
+							</Tooltip.Content>
+						</Tooltip.Portal>
 					</Tooltip.Root>
 				{/each}
 			</div>

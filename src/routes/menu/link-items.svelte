@@ -15,15 +15,17 @@
 			<Button {...props}>Actions</Button>
 		{/snippet}
 	</Menu.Trigger>
-	<Menu.Content class="w-[200px]">
-		<Menu.Group>
-			{#each links as { href, label }}
-				<Menu.Item>
-					{#snippet child({ props })}
-						<a {...props} {href} target="_blank" rel="noopener noreferrer">{label}</a>
-					{/snippet}
-				</Menu.Item>
-			{/each}
-		</Menu.Group>
-	</Menu.Content>
+	<Menu.Portal>
+		<Menu.Content class="w-[200px]">
+			<Menu.Group>
+				{#each links as { href, label }}
+					<Menu.Item>
+						{#snippet child({ props })}
+							<a {...props} {href} target="_blank" rel="noopener noreferrer">{label}</a>
+						{/snippet}
+					</Menu.Item>
+				{/each}
+			</Menu.Group>
+		</Menu.Content>
+	</Menu.Portal>
 </Menu.Root>

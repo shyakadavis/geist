@@ -9,7 +9,7 @@
 	};
 
 	let {
-		class: className = undefined,
+		class: class_name = undefined,
 		sideOffset = 4,
 		tip = true,
 		children,
@@ -21,15 +21,13 @@
 	{sideOffset}
 	class={cn(
 		'z-50 max-w-xs text-balance rounded-md bg-gray-1000 px-3 py-2 text-center text-sm text-background-200 shadow-md',
-		className
+		class_name
 	)}
 	{...rest}
 >
 	{#if tip}
-		<!-- TODO: Why isn't the tooltip arrow rendering -->
-		<div aria-hidden="true" class="bg-gray-1000">
-			<TooltipPrimitive.Arrow class="rounded-[2.5px]" width={9} height={9} />
-		</div>
+		<!-- TODO: Polish and bring in a rounded tip -->
+		<TooltipPrimitive.Arrow class="text-gray-1000" width={12} height={6} />
 	{/if}
 	{@render children?.()}
 </TooltipPrimitive.Content>

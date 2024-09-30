@@ -12,6 +12,7 @@ const Sub = MenuPrimitive.Sub;
 const Root = MenuPrimitive.Root;
 const Trigger = MenuPrimitive.Trigger;
 const Group = MenuPrimitive.Group;
+const Portal = MenuPrimitive.Portal;
 
 export {
 	CheckboxItem,
@@ -23,6 +24,7 @@ export {
 	Content as MenuContent,
 	Group as MenuGroup,
 	Item as MenuItem,
+	Portal as MenuPortal,
 	RadioItem as MenuRadioItem,
 	Separator as MenuSeparator,
 	Shortcut as MenuShortcut,
@@ -30,6 +32,7 @@ export {
 	SubContent as MenuSubContent,
 	SubTrigger as MenuSubTrigger,
 	Trigger as MenuTrigger,
+	Portal,
 	RadioItem,
 	Root,
 	Separator,

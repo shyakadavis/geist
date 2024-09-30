@@ -13,13 +13,15 @@
 				</Button>
 			{/snippet}
 		</Menu.Trigger>
-		<Menu.Content>
-			<Menu.Group>
-				<Menu.Item affix={Icons.Accessibility}>Left</Menu.Item>
-				<Menu.Item affix={Icons.Accessibility}>Center</Menu.Item>
-				<Menu.Item affix={Icons.Accessibility}>Right</Menu.Item>
-			</Menu.Group>
-		</Menu.Content>
+		<Menu.Portal>
+			<Menu.Content>
+				<Menu.Group>
+					<Menu.Item affix={Icons.Accessibility}>Left</Menu.Item>
+					<Menu.Item affix={Icons.Accessibility}>Center</Menu.Item>
+					<Menu.Item affix={Icons.Accessibility}>Right</Menu.Item>
+				</Menu.Group>
+			</Menu.Content>
+		</Menu.Portal>
 	</Menu.Root>
 
 	<Menu.Root>
@@ -30,12 +32,14 @@
 				</Button>
 			{/snippet}
 		</Menu.Trigger>
-		<Menu.Content>
-			<Menu.Group>
-				<Menu.Item suffix={Icons.Accessibility}>Left</Menu.Item>
-				<Menu.Item suffix={Icons.Accessibility}>Center</Menu.Item>
-				<Menu.Item suffix={Icons.Accessibility}>Right</Menu.Item>
-			</Menu.Group>
-		</Menu.Content>
+		<Menu.Portal>
+			<Menu.Content>
+				<Menu.Group>
+					<Menu.Item suffix={Icons.Accessibility}>Left</Menu.Item>
+					<Menu.Item suffix={Icons.Accessibility}>Center</Menu.Item>
+					<Menu.Item suffix={Icons.Accessibility}>Right</Menu.Item>
+				</Menu.Group>
+			</Menu.Content>
+		</Menu.Portal>
 	</Menu.Root>
 </div>
