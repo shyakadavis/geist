@@ -12,7 +12,7 @@
 
 <CollapsePrimitive.Content
 	class={cn(
-		'data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-base transition-all',
+		'overflow-hidden text-base transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down',
 		class_name
 	)}
 	{...rest}
