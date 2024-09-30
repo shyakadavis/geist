@@ -7,6 +7,7 @@
 
 	type Props = WithoutChildrenOrChild<CheckboxPrimitive.RootProps> & {
 		children: Snippet;
+		'aria-labelledby'?: string;
 	};
 
 	let {

@@ -15,6 +15,8 @@
 	import errored_code from './errored.svelte?raw';
 	import Sizes from './sizes.svelte';
 	import sizes_code from './sizes.svelte?raw';
+	import UsedInsideAModal from './used-inside-a-modal.svelte';
+	import used_inside_a_modal_code from './used-inside-a-modal.svelte?raw';
 
 	let { data } = $props();
 </script>
@@ -48,7 +50,7 @@
 		<Sizes />
 	</Demo>
 
-	<!-- <Demo id="used-inside-a-modal" code={used_inside_a_modal_code}>
+	<Demo id="used-inside-a-modal" code={used_inside_a_modal_code}>
 		<UsedInsideAModal />
-	</Demo> -->
+	</Demo>
 </PageWrapper>

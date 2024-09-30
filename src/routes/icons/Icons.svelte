@@ -8,7 +8,6 @@
 	} from '$lib/components/ui/context-menu';
 	import { SearchInput } from '$lib/components/ui/input';
 	import { cn } from '$lib/utils';
-	import { onMount } from 'svelte';
 	import { flip } from 'svelte/animate';
 	import { derived, writable } from 'svelte/store';
 	import { receive, send } from './transition';
@@ -65,10 +64,11 @@
 		});
 	}
 
-	let search_field: HTMLInputElement = $state();
+	let search_field_ref: HTMLInputElement | null = $state(null);
 
-	onMount(() => {
-		search_field.focus();
+	$effect(() => {
+		if (!search_field_ref) return;
+		search_field_ref.focus();
 		update_last_row_count();
 	});
 </script>
@@ -77,7 +77,8 @@
 
 <section id="search" class="grid w-full place-items-center border-b p-10">
 	<SearchInput
-		bind:el={search_field}
+		bind:ref={search_field_ref}
+		aria-labelledby="Search icons"
 		placeholder="Search icons..."
 		class="w-full"
 		bind:value={$search_term}
@@ -88,13 +89,9 @@
 	<p class="p-10 text-gray-900">No icons found.</p>
 {:else}
 	<ul class="grid grid-cols-2 sm:grid-cols-4">
-		{#each $filtered_icons as [name, icon], i (icon.name)}
+		{#each $filtered_icons as [name, Icon], i (name)}
 			<!-- TODO: Improve the shuffle/filter animation -->
-			<li
-				in:receive={{ key: icon.name }}
-				out:send={{ key: icon.name }}
-				animate:flip={{ duration: 200 }}
-			>
+			<li in:receive={{ key: name }} out:send={{ key: name }} animate:flip={{ duration: 200 }}>
 				<ContextMenu>
 					<ContextMenuTrigger
 						class={cn(
@@ -115,18 +112,18 @@
 							}
 						)}
 					>
-						<svelte:component this={icon} aria-hidden="true" height="16" width="16" />
+						<Icon aria-hidden="true" height="16" width="16" />
 						<span class="text-sm">{format_name(name)}</span>
 					</ContextMenuTrigger>
 					<ContextMenuContent>
-						<ContextMenuItem on:click={() => copy_import(name)}>Copy Import</ContextMenuItem>
-						<ContextMenuItem on:click={() => copy_name(format_name(name))}>
+						<ContextMenuItem onclick={() => copy_import(name)}>Copy Import</ContextMenuItem>
+						<ContextMenuItem onclick={() => copy_name(format_name(name))}>
 							Copy Name
 						</ContextMenuItem>
-						<ContextMenuItem on:click={() => copy_svelte_component(name)}>
+						<ContextMenuItem onclick={() => copy_svelte_component(name)}>
 							Copy Svelte Component
 						</ContextMenuItem>
-						<ContextMenuItem on:click={() => copy_svg(name)}>Copy SVG</ContextMenuItem>
+						<ContextMenuItem onclick={() => copy_svg(name)}>Copy SVG</ContextMenuItem>
 					</ContextMenuContent>
 				</ContextMenu>
 			</li>

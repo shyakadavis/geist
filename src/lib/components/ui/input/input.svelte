@@ -7,7 +7,7 @@
 		affix_styling?: boolean;
 		suffix_styling?: boolean;
 		label?: string;
-		ref?: HTMLInputElement;
+		ref?: HTMLInputElement | null;
 	};
 
 	export type InputProps = CustomInputProps & Without<HTMLInputAttributes, CustomInputProps>;

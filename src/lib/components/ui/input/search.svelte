@@ -8,7 +8,7 @@
 	let {
 		class: class_name = undefined,
 		value = $bindable(''),
-		ref = $bindable(undefined),
+		ref = $bindable(null),
 		'aria-labelledby': aria_labelledby = 'Search',
 		...rest
 	}: Props = $props();
