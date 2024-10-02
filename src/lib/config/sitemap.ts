@@ -16,8 +16,7 @@ export const aside_items: Aside = {
 		},
 		{
 			title: 'Colors',
-			href: '/colors',
-			status: 'soon'
+			href: '/colors'
 		},
 		{
 			title: 'Icons',

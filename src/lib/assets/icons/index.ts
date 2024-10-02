@@ -23,6 +23,7 @@ import CodeBracket from './code-bracket.svg?component';
 import Command from './command.svg?component';
 import Copy from './copy.svg?component';
 import Cross from './cross.svg?component';
+import CursorClick from './cursor-click.svg?component';
 import Database from './database.svg?component';
 import ErrorStates from './error-states.svg?component';
 import ExternalSmall from './external-small.svg?component';
@@ -97,6 +98,7 @@ export const Icons = {
 	Command,
 	Copy,
 	Cross,
+	CursorClick,
 	Database,
 	ErrorStates,
 	ExternalSmall,

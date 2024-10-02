@@ -70,6 +70,11 @@ export const flyAndScale = (
 	};
 };
 
+// e.g. "with-icons" -> "With Icons"
+export function format_string(str: string) {
+	return str.replace(/-/g, ' ').replace(/\b\w/g, (char) => char.toUpperCase());
+}
+
 // Wrappers around svelte's `HTMLAttributes` types to add a `ref` prop can be bound to
 // to get a reference to the underlying DOM element the component is rendering.
 export type PrimitiveDivAttributes = WithElementRef<HTMLAttributes<HTMLDivElement>>;
