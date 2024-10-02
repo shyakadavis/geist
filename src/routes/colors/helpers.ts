@@ -1,13 +1,18 @@
+import { browser } from '$app/environment';
+
 // function to convert hsl to hex where the input is a string like 'hsl(var(--background-200))'
 export function hsl_to_hex(hsl_string: string): string {
 	// Extract the CSS variable name
 	const var_name = hsl_string.match(/var\((.*?)\)/)?.[1];
 	if (!var_name) {
-		throw new Error('Invalid HSL string format');
+		// throw new Error('Invalid HSL string format');
+		return '#000000';
 	}
 
 	// Get the computed style value
-	const hsl_value = getComputedStyle(document.documentElement).getPropertyValue(var_name).trim();
+	const hsl_value = browser
+		? getComputedStyle(document.documentElement).getPropertyValue(var_name).trim()
+		: '0, 0%, 0%';
 
 	// Parse the HSL values
 	const [h, s, l] = hsl_value.split(/[,\s]+/).map((val, index) => {

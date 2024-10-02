@@ -2,7 +2,6 @@
 	import PageSection from '$lib/components/shared/page-section.svelte';
 	import PageWrapper from '$lib/components/shared/page-wrapper.svelte';
 	import ColorMenu from './color-menu.svelte';
-
 	import { scales } from './data.js';
 
 	let { data } = $props();
