@@ -71,6 +71,7 @@
 										{#each links as link}
 											{@const disabled = link.status == 'soon'}
 											<Command.Item
+												onSelect={command_open_state.toggle}
 												{disabled}
 												value={link.title}
 												class={cn(
