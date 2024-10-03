@@ -66,6 +66,7 @@ import Paperclip from './paperclip.svg?component';
 import PencilEdit from './pencil-edit.svg?component';
 import Router from './router.svg?component';
 import SettingsSliders from './settings-sliders.svg?component';
+import ShieldGlobe from './shield-globe.svg?component';
 import Shield from './shield.svg?component';
 import Star from './star.svg?component';
 import Status from './status.svg?component';
@@ -74,6 +75,7 @@ import Tabs from './tabs.svg?component';
 import ThemeSwitchDark from './theme-switch-dark.svg?component';
 import ThemeSwitchLight from './theme-switch-light.svg?component';
 import ThemeSwitchSystem from './theme-switch-system.svg?component';
+import UserPlus from './user-plus.svg?component';
 import Warning from './warning.svg?component';
 
 export const Icons = {
@@ -145,6 +147,7 @@ export const Icons = {
 	PencilEdit,
 	Router,
 	SettingsSliders,
+	ShieldGlobe,
 	Shield,
 	Star,
 	Status,
@@ -153,5 +156,6 @@ export const Icons = {
 	ThemeSwitchDark,
 	ThemeSwitchLight,
 	ThemeSwitchSystem,
+	UserPlus,
 	Warning
 };

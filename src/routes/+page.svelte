@@ -1,6 +1,9 @@
 <script lang="ts">
 	import { Icons } from '$lib/assets/icons';
 	import PageWrapper from '$lib/components/shared/page-wrapper.svelte';
+	import { Button } from '$lib/components/ui/button';
+	import { Input } from '$lib/components/ui/input';
+	import { Snippet } from '$lib/components/ui/snippet';
 	import IntroductionLink from './introduction-link.svelte';
 
 	const preview_icons = [
@@ -81,7 +84,34 @@
 			title="Components"
 			description="Building blocks for Svelte applications."
 			href="/avatar"
-		></IntroductionLink>
+		>
+			<div class="pointer-events-none flex flex-wrap gap-4">
+				<Snippet
+					text="pnpm create svelte@latest"
+					class="md:[246px] w-[214px] text-gray-900 [&_button]:text-gray-900"
+				/>
+				<Button affix={Icons.UserPlus} variant="secondary" class="text-gray-900">
+					Collaborate
+				</Button>
+				<Button
+					svg_only
+					aria-label="Shield"
+					variant="secondary"
+					shape="square"
+					size="md"
+					class="text-gray-900"
+				>
+					<Icons.ShieldGlobe />
+				</Button>
+				<!-- TODO: Add a switch (not really a switch) here. -->
+				<Input
+					aria-labelledby="Not a real input!"
+					placeholder="Value"
+					affix="Label"
+					suffix_styling={false}
+				/>
+			</div>
+		</IntroductionLink>
 		<IntroductionLink
 			title="Colors"
 			description="A high contrast, accessible color system."
