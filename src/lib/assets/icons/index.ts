@@ -8,6 +8,7 @@ import Box from './box.svg?component';
 import BrandAssets from './brand-assets.svg?component';
 import ChartBarMiddle from './chart-bar-middle.svg?component';
 import ChartBarPeak from './chart-bar-peak.svg?component';
+import ChartPie from './chart-pie.svg?component';
 import ChartTrendingDown from './chart-trending-down.svg?component';
 import CheckCircle from './check-circle.svg?component';
 import Check from './check.svg?component';
@@ -25,6 +26,7 @@ import Copy from './copy.svg?component';
 import Cross from './cross.svg?component';
 import CursorClick from './cursor-click.svg?component';
 import Database from './database.svg?component';
+import Dollar from './dollar.svg?component';
 import ErrorStates from './error-states.svg?component';
 import ExternalSmall from './external-small.svg?component';
 import External from './external.svg?component';
@@ -50,6 +52,7 @@ import LogoGeist from './logo-geist.svg?component';
 import LogoGithub from './logo-github.svg?component';
 import LogoGitlab from './logo-gitlab.svg?component';
 import LogoNext from './logo-next.svg?component';
+import LogoSvelte from './logo-svelte.svg?component';
 import LogoTurborepo from './logo-turborepo.svg?component';
 import LogoV0 from './logo-v0.svg?component';
 import LogoVercelCircle from './logo-vercel-circle.svg?component';
@@ -64,6 +67,7 @@ import PencilEdit from './pencil-edit.svg?component';
 import Router from './router.svg?component';
 import SettingsSliders from './settings-sliders.svg?component';
 import Shield from './shield.svg?component';
+import Star from './star.svg?component';
 import Status from './status.svg?component';
 import Stop from './stop.svg?component';
 import Tabs from './tabs.svg?component';
@@ -83,6 +87,7 @@ export const Icons = {
 	BrandAssets,
 	ChartBarMiddle,
 	ChartBarPeak,
+	ChartPie,
 	ChartTrendingDown,
 	CheckCircle,
 	Check,
@@ -100,6 +105,7 @@ export const Icons = {
 	Cross,
 	CursorClick,
 	Database,
+	Dollar,
 	ErrorStates,
 	ExternalSmall,
 	External,
@@ -125,6 +131,7 @@ export const Icons = {
 	LogoGithub,
 	LogoGitlab,
 	LogoNext,
+	LogoSvelte,
 	LogoTurborepo,
 	LogoV0,
 	LogoVercelCircle,
@@ -139,6 +146,7 @@ export const Icons = {
 	Router,
 	SettingsSliders,
 	Shield,
+	Star,
 	Status,
 	Stop,
 	Tabs,

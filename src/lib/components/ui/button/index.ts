@@ -9,8 +9,9 @@ const button_variants = tv({
 			default: 'bg-gray-1000 text-background-100',
 			secondary: 'bg-background-100 text-gray-1000 shadow-shadow-border hover:bg-gray-alpha-100',
 			tertiary: 'bg-transparent hover:bg-gray-alpha-200',
-			error: 'bg-red-800 text-contrast-fg hover:bg-red-900',
-			warning: 'active:bg-[#a35200; bg-amber-800 text-[#0a0a0a] hover:bg-[#d27504]'
+			error: 'bg-red-700 text-contrast-fg hover:bg-red-800',
+			warning: 'active:bg-[#a35200; bg-amber-800 text-[#0a0a0a] hover:bg-[#d27504]',
+			success: 'bg-blue-700 text-contrast-fg hover:bg-blue-800'
 		},
 		size: {
 			sm: 'h-8 px-3',

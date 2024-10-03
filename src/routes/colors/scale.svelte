@@ -26,7 +26,6 @@
 </script>
 
 <ContextMenu.Root>
-	<!-- TODO: Add accent borders for better clarity on light mode -->
 	<ContextMenu.Trigger
 		onclick={() => copy(token)}
 		class="pointer-events-none flex aspect-square w-full grow cursor-pointer items-center justify-center rounded bg-[var(--bg-color)] shadow-border-inset md:pointer-events-auto md:h-10"

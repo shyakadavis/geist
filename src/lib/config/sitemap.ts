@@ -31,9 +31,9 @@ export const aside_items: Aside = {
 			status: 'soon'
 		},
 		{
-			title: 'Next.js',
-			href: 'brands#next.js',
-			icon: Icons.LogoNext,
+			title: 'Svelte',
+			href: 'brands#svelte',
+			icon: Icons.LogoSvelte,
 			status: 'soon'
 		},
 		{

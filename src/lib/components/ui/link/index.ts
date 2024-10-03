@@ -9,7 +9,8 @@ const link_variants = tv({
 			secondary: 'text-accents-5 hover:text-gray-1000',
 			tertiary: '',
 			error: '',
-			warning: ''
+			warning: '',
+			success: 'text-blue-900'
 		}
 	},
 	defaultVariants: {
