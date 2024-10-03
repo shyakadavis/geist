@@ -46,13 +46,13 @@
 				)}
 			>
 				<Command.Root
-					class="flex h-full w-full flex-col divide-y divide-gray-400 self-start overflow-hidden rounded-xl border bg-background-100"
+					class="flex h-full w-full flex-col self-start overflow-hidden rounded-xl border bg-background-100"
 				>
 					<Command.Input
 						class="inline-flex h-[53px] w-full truncate rounded-[inherit] bg-transparent px-4 text-lg transition-colors placeholder:text-gray-700 focus:outline-none focus:ring-0"
 						placeholder="Search..."
 					/>
-					<Command.List class="h-[436px] overflow-y-auto overflow-x-hidden px-2 pb-2">
+					<Command.List class="h-[436px] overflow-y-auto overflow-x-hidden border-t px-2 pb-2">
 						<Command.Viewport>
 							<Command.Empty
 								class="flex w-full items-center justify-center pb-6 pt-8 text-sm text-gray-700"
