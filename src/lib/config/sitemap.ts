@@ -174,7 +174,7 @@ export const aside_items: Aside = {
 		{
 			title: 'Select',
 			href: '/select',
-			status: 'soon'
+			status: 'draft'
 		},
 		{
 			title: 'Show more',
