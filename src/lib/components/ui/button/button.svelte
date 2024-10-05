@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { Spinner } from '$lib/components/ui/spinner/index.js';
 	import { cn } from '$lib/utils.js';
-	import { Button as ButtonPrimitive, type ButtonProps } from 'bits-ui';
+	import { Button as ButtonPrimitive } from 'bits-ui';
 	import { button_variants, type NormalButton, type SVGButton } from './index.js';
 
-	type Props = ButtonProps & (NormalButton | SVGButton);
+	type Props = ButtonPrimitive.RootProps & (NormalButton | SVGButton);
 
 	let { children, class: class_name = undefined, ...rest }: Props = $props();
 </script>
