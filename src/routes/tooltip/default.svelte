@@ -14,11 +14,9 @@
 		{#each tooltips as { side, content }}
 			<Tooltip.Root>
 				<Tooltip.Trigger class="capitalize">{side}</Tooltip.Trigger>
-				<Tooltip.Portal>
-					<Tooltip.Content {side}>
-						<p>{content}</p>
-					</Tooltip.Content>
-				</Tooltip.Portal>
+				<Tooltip.Content {side}>
+					<p>{content}</p>
+				</Tooltip.Content>
 			</Tooltip.Root>
 		{/each}
 	</div>

@@ -10,13 +10,11 @@
 			<Avatar.AvatarFallback>M</Avatar.AvatarFallback>
 		</Avatar.Root>
 	</Menu.Trigger>
-	<Menu.Portal>
-		<Menu.Content class="w-[200px]">
-			<Menu.Group>
-				<Menu.Item>One</Menu.Item>
-				<Menu.Item>Two</Menu.Item>
-				<Menu.Item>Three</Menu.Item>
-			</Menu.Group>
-		</Menu.Content>
-	</Menu.Portal>
+	<Menu.Content class="w-[200px]">
+		<Menu.Group>
+			<Menu.Item>One</Menu.Item>
+			<Menu.Item>Two</Menu.Item>
+			<Menu.Item>Three</Menu.Item>
+		</Menu.Group>
+	</Menu.Content>
 </Menu.Root>

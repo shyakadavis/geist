@@ -9,11 +9,9 @@
 		{#each sides as side}
 			<Tooltip.Root>
 				<Tooltip.Trigger class="capitalize">{side}</Tooltip.Trigger>
-				<Tooltip.Portal>
-					<Tooltip.Content {side}>
-						The <b>Evil Rabbit</b> Jumped over the <i>Fence</i>.
-					</Tooltip.Content>
-				</Tooltip.Portal>
+				<Tooltip.Content {side}>
+					The <b>Evil Rabbit</b> Jumped over the <i>Fence</i>.
+				</Tooltip.Content>
 			</Tooltip.Root>
 		{/each}
 	</div>

@@ -29,11 +29,9 @@
 				<Tooltip.Trigger class="cursor-auto">
 					<Icons.InformationFillSmall />
 				</Tooltip.Trigger>
-				<Tooltip.Portal>
-					<Tooltip.Content>
-						<p>{tooltip}</p>
-					</Tooltip.Content>
-				</Tooltip.Portal>
+				<Tooltip.Content>
+					<p>{tooltip}</p>
+				</Tooltip.Content>
 			</Tooltip.Root>
 		</Tooltip.Provider>
 	</dt>

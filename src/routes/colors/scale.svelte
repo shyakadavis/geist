@@ -38,22 +38,20 @@
 			</div>
 		{/if}
 	</ContextMenu.Trigger>
-	<ContextMenu.Portal>
-		<ContextMenu.Content>
-			<ContextMenu.Item onclick={() => copy(hex_color)}>
-				Copy HEX
-				<span class="ml-auto flex items-center gap-1 text-[13px] text-gray-900">
-					{hsl_to_hex(bg_color)}
-					<div class="size-2 rounded-lg bg-[var(--bg-color)]" style="--bg-color: {bg_color}"></div>
-				</span>
-			</ContextMenu.Item>
-			<ContextMenu.Item onclick={() => copy(token)}>
-				Copy token
-				<span class="ml-auto flex items-center gap-1 text-[13px] text-gray-900">
-					Left click
-					<Icons.CursorClick aria-hidden class="size-[14px]" />
-				</span>
-			</ContextMenu.Item>
-		</ContextMenu.Content>
-	</ContextMenu.Portal>
+	<ContextMenu.Content>
+		<ContextMenu.Item onclick={() => copy(hex_color)}>
+			Copy HEX
+			<span class="ml-auto flex items-center gap-1 text-[13px] text-gray-900">
+				{hsl_to_hex(bg_color)}
+				<div class="size-2 rounded-lg bg-[var(--bg-color)]" style="--bg-color: {bg_color}"></div>
+			</span>
+		</ContextMenu.Item>
+		<ContextMenu.Item onclick={() => copy(token)}>
+			Copy token
+			<span class="ml-auto flex items-center gap-1 text-[13px] text-gray-900">
+				Left click
+				<Icons.CursorClick aria-hidden class="size-[14px]" />
+			</span>
+		</ContextMenu.Item>
+	</ContextMenu.Content>
 </ContextMenu.Root>

@@ -87,15 +87,13 @@
 			<Icon aria-hidden="true" height="16" width="16" />
 			<span class="text-sm">{format_name(name)}</span>
 		</ContextMenu.Trigger>
-		<ContextMenu.Portal>
-			<ContextMenu.Content>
-				<ContextMenu.Item onclick={() => copy_import(name)}>Copy Import</ContextMenu.Item>
-				<ContextMenu.Item onclick={() => copy_name(format_name(name))}>Copy Name</ContextMenu.Item>
-				<ContextMenu.Item onclick={() => copy_svelte_component(name)}>
-					Copy Svelte Component
-				</ContextMenu.Item>
-				<ContextMenu.Item onclick={() => copy_svg(name)}>Copy SVG</ContextMenu.Item>
-			</ContextMenu.Content>
-		</ContextMenu.Portal>
+		<ContextMenu.Content>
+			<ContextMenu.Item onclick={() => copy_import(name)}>Copy Import</ContextMenu.Item>
+			<ContextMenu.Item onclick={() => copy_name(format_name(name))}>Copy Name</ContextMenu.Item>
+			<ContextMenu.Item onclick={() => copy_svelte_component(name)}>
+				Copy Svelte Component
+			</ContextMenu.Item>
+			<ContextMenu.Item onclick={() => copy_svg(name)}>Copy SVG</ContextMenu.Item>
+		</ContextMenu.Content>
 	</ContextMenu.Root>
 {/snippet}

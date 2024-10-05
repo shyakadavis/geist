@@ -11,14 +11,12 @@
 		>
 			Right click
 		</ContextMenu.Trigger>
-		<ContextMenu.Portal>
-			<ContextMenu.Content>
-				<ContextMenu.Item affix={Icons.LogoVercelCircle}>Item one</ContextMenu.Item>
-				<ContextMenu.Item affix={Icons.LogoVercelCircle}>Item two</ContextMenu.Item>
-				<ContextMenu.Item affix={Icons.LogoVercelCircle}>Item three</ContextMenu.Item>
-				<ContextMenu.Item affix={Icons.LogoVercelCircle}>Item four</ContextMenu.Item>
-			</ContextMenu.Content>
-		</ContextMenu.Portal>
+		<ContextMenu.Content>
+			<ContextMenu.Item affix={Icons.LogoVercelCircle}>Item one</ContextMenu.Item>
+			<ContextMenu.Item affix={Icons.LogoVercelCircle}>Item two</ContextMenu.Item>
+			<ContextMenu.Item affix={Icons.LogoVercelCircle}>Item three</ContextMenu.Item>
+			<ContextMenu.Item affix={Icons.LogoVercelCircle}>Item four</ContextMenu.Item>
+		</ContextMenu.Content>
 	</ContextMenu.Root>
 
 	<ContextMenu.Root>
@@ -27,13 +25,11 @@
 		>
 			Right click
 		</ContextMenu.Trigger>
-		<ContextMenu.Portal>
-			<ContextMenu.Content>
-				<ContextMenu.Item suffix={Icons.LogoVercelCircle}>Item one</ContextMenu.Item>
-				<ContextMenu.Item suffix={Icons.LogoVercelCircle}>Item two</ContextMenu.Item>
-				<ContextMenu.Item suffix={Icons.LogoVercelCircle}>Item three</ContextMenu.Item>
-				<ContextMenu.Item suffix={Icons.LogoVercelCircle}>Item four</ContextMenu.Item>
-			</ContextMenu.Content>
-		</ContextMenu.Portal>
+		<ContextMenu.Content>
+			<ContextMenu.Item suffix={Icons.LogoVercelCircle}>Item one</ContextMenu.Item>
+			<ContextMenu.Item suffix={Icons.LogoVercelCircle}>Item two</ContextMenu.Item>
+			<ContextMenu.Item suffix={Icons.LogoVercelCircle}>Item three</ContextMenu.Item>
+			<ContextMenu.Item suffix={Icons.LogoVercelCircle}>Item four</ContextMenu.Item>
+		</ContextMenu.Content>
 	</ContextMenu.Root>
 </div>

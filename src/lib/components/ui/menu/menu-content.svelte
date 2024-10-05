@@ -11,13 +11,15 @@
 	let { class: class_name = undefined, sideOffset = 4, children, ...rest }: Props = $props();
 </script>
 
-<MenuPrimitive.Content
-	{sideOffset}
-	class={cn(
-		'z-50 min-w-[10rem] rounded-xl bg-background-100 p-2 text-gray-1000 shadow-shadow-menu focus:outline-none',
-		class_name
-	)}
-	{...rest}
->
-	{@render children?.()}
-</MenuPrimitive.Content>
+<MenuPrimitive.Portal>
+	<MenuPrimitive.Content
+		{sideOffset}
+		class={cn(
+			'z-50 min-w-[10rem] rounded-xl bg-background-100 p-2 text-gray-1000 shadow-shadow-menu focus:outline-none',
+			class_name
+		)}
+		{...rest}
+	>
+		{@render children?.()}
+	</MenuPrimitive.Content>
+</MenuPrimitive.Portal>

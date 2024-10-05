@@ -8,12 +8,10 @@
 	>
 		Right click
 	</ContextMenu.Trigger>
-	<ContextMenu.Portal>
-		<ContextMenu.Content>
-			<ContextMenu.Item>Item one</ContextMenu.Item>
-			<ContextMenu.Item disabled>Item two</ContextMenu.Item>
-			<ContextMenu.Item disabled>Item three</ContextMenu.Item>
-			<ContextMenu.Item>Item four</ContextMenu.Item>
-		</ContextMenu.Content>
-	</ContextMenu.Portal>
+	<ContextMenu.Content>
+		<ContextMenu.Item>Item one</ContextMenu.Item>
+		<ContextMenu.Item disabled>Item two</ContextMenu.Item>
+		<ContextMenu.Item disabled>Item three</ContextMenu.Item>
+		<ContextMenu.Item>Item four</ContextMenu.Item>
+	</ContextMenu.Content>
 </ContextMenu.Root>
