@@ -79,7 +79,7 @@ export const aside_items: Aside = {
 		{
 			title: 'Choicebox',
 			href: '/choicebox',
-			status: 'soon'
+			status: 'draft'
 		},
 		{
 			title: 'Code Block',

@@ -20,7 +20,6 @@
 			class_name
 		)}
 		{...rest}
-		on:click
 	>
 		{#snippet children({ checked })}
 			<div class="flex items-center justify-center">
