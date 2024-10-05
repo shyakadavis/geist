@@ -101,8 +101,7 @@ export const aside_items: Aside = {
 		},
 		{
 			title: 'Description',
-			href: '/description',
-			status: 'soon'
+			href: '/description'
 		},
 		{
 			title: 'Drawer',

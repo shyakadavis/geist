@@ -41,6 +41,7 @@ import GitBranch from './git-branch.svg?component';
 import Globe from './globe.svg?component';
 import GridSquare from './grid-square.svg?component';
 import Inbox from './inbox.svg?component';
+import InformationFillSmall from './information-fill-small.svg?component';
 import Information from './information.svg?component';
 import Key from './key.svg?component';
 import Link from './link.svg?component';
@@ -122,6 +123,7 @@ export const Icons = {
 	Globe,
 	GridSquare,
 	Inbox,
+	InformationFillSmall,
 	Information,
 	Key,
 	Link,
