@@ -1,13 +1,11 @@
 <script lang="ts">
-	import { Icons } from '$lib/assets/icons';
-	import { Badge } from '$lib/components/ui/badge';
 	import { Button } from '$lib/components/ui/button';
 	import * as Drawer from '$lib/components/ui/drawer';
-	import { aside_items } from '$lib/config/sitemap';
 	import { command_open_state } from '$lib/stores';
 	import { cn } from '$lib/utils';
 	import { Command, Dialog } from 'bits-ui';
 	import { MediaQuery } from 'runed';
+	import CommandInput from './command-input.svelte';
 	import CommandList from './command-list.svelte';
 
 	const is_desktop = new MediaQuery('(min-width: 640px)');
@@ -18,8 +16,6 @@
 			command_open_state.toggle();
 		}
 	}
-
-	let search = $state('');
 </script>
 
 <svelte:document onkeydown={doc_keydown} />
@@ -48,90 +44,18 @@
 				<Command.Root
 					class="flex h-full w-full flex-col self-start overflow-hidden rounded-xl border bg-background-100"
 				>
-					<Command.Input
-						class="inline-flex h-[53px] w-full truncate rounded-[inherit] bg-transparent px-4 text-lg transition-colors placeholder:text-gray-700 focus:outline-none focus:ring-0"
-						placeholder="Search..."
-					/>
-					<Command.List class="h-[436px] overflow-y-auto overflow-x-hidden border-t px-2 pb-2">
-						<Command.Viewport>
-							<Command.Empty
-								class="flex w-full items-center justify-center pb-6 pt-8 text-sm text-gray-700"
-							>
-								No results found.
-							</Command.Empty>
-							{#each Object.entries(aside_items) as item}
-								{@const [group, links] = item}
-								<Command.Group>
-									<Command.GroupHeading
-										class="px-3 pb-2 pt-4 text-xs font-medium capitalize text-gray-700"
-									>
-										{group}
-									</Command.GroupHeading>
-									<Command.GroupItems>
-										{#each links as link}
-											{@const disabled = link.status == 'soon'}
-											<Command.Item
-												onSelect={command_open_state.toggle}
-												{disabled}
-												value={link.title}
-												class={cn(
-													'flex h-10 cursor-pointer select-none items-center gap-2 px-3 py-2.5 text-sm outline-none data-[selected]:rounded-lg data-[selected]:bg-gray-alpha-100',
-													// disabled
-													'data-[disabled]:pointer-events-none data-[disabled]:opacity-50'
-												)}
-											>
-												{#snippet child({ props })}
-													<a href={disabled ? undefined : link.href} {...props}>
-														{#if link.icon}
-															{@const Icon = link.icon}
-															<span class="text-gray-1000">
-																<Icon aria-hidden="true" width="16" height="16" />
-															</span>
-														{:else}
-															<span class="text-gray-1000">
-																<Icons.ArrowRight
-																	width="16"
-																	height="16"
-																	class="text-gray-600"
-																	aria-hidden="true"
-																/>
-															</span>
-														{/if}
-														<span>{link.title}</span>
-														{#if link.status === 'new'}
-															<Badge variant="blue" size="sm">New</Badge>
-														{/if}
-														{#if link.status === 'soon'}
-															<Badge variant="gray-subtle" size="sm">Soon</Badge>
-														{/if}
-														{#if link.status === 'draft'}
-															<Badge variant="purple-subtle" size="sm">Draft</Badge>
-														{/if}
-													</a>
-												{/snippet}
-											</Command.Item>
-										{/each}
-									</Command.GroupItems>
-								</Command.Group>
-							{/each}
-						</Command.Viewport>
-					</Command.List>
+					<CommandInput class="h-[53px]" />
+					<CommandList class="h-[436px]" />
 				</Command.Root>
 			</Dialog.Content>
 		</Dialog.Portal>
 	</Dialog.Root>
 {:else}
 	<Drawer.Root bind:open={$command_open_state}>
-		<Drawer.Content class="h-3/4" hide_dismiss_bar>
+		<Drawer.Content preventScroll class="h-3/4" hide_dismiss_bar>
 			<Command.Root>
-				<Drawer.Header class="flex h-[53px] items-center justify-between border-b px-2">
-					<!-- <Command.Input
-						hide_search_icon
-						placeholder="Search..."
-						class="h-7 flex-grow border-none text-lg"
-						bind:value={search}
-						wrapper_class="border-none w-full flex items-center"
-					/> -->
+				<Drawer.Header class="flex h-[53px] items-center justify-between px-2">
+					<CommandInput class="h-7" />
 					<Button
 						onclick={command_open_state.toggle}
 						size="sm"
@@ -141,7 +65,7 @@
 						Esc
 					</Button>
 				</Drawer.Header>
-				<CommandList {search} class="max-h-full" />
+				<CommandList class="h-[70dvh]" />
 			</Command.Root>
 		</Drawer.Content>
 	</Drawer.Root>
