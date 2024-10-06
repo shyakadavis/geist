@@ -1,3 +1,5 @@
+<!-- TODO: When the value is 50, the primary is slightly bigger than the secondary arc -->
+<!-- TODO: Figure out how arc_priority fits in, now. -->
 <script lang="ts">
 	import { cn } from '$lib/utils';
 	import { tweened } from 'svelte/motion';
@@ -32,7 +34,6 @@
 	const arc_size = sizes_map[size].size;
 	const stroke_width = sizes_map[size].stroke_width;
 	// Store to track the length of the arc
-	const progress = tweened(0, { duration: 1000 });
 	function get_radius() {
 		switch (size) {
 			case 'tiny':
@@ -45,12 +46,13 @@
 	}
 	const radius = get_radius();
 	const circumference = 2 * Math.PI * radius;
-	// onMount, set the progress from 0 to the actual value with a spring effect
-	progress.set((value / total) * 100);
+	let percent_px = circumference / 100;
+	let circle_size = 100;
+	const progress = tweened(0, { duration: 1000 });
 
-	let arc_offset = $derived(
-		arc_priority === 'equal' ? circumference * 0.5 : circumference * ((100 - $progress) / 100)
-	);
+	$effect(() => {
+		$progress = (value / total) * 100;
+	});
 
 	// Colors
 	function get_primary_arc_stroke_fill() {
@@ -87,47 +89,78 @@
 	}
 </script>
 
-<div class="relative grid place-items-center">
+<div
+	class="relative grid place-items-center"
+	style:--circle-size={circle_size}
+	style:--circumference={circumference}
+	style:--percent-to-px="{percent_px}px"
+	style:--gap-percent={value === 0 ? 0 : 5}
+	style:--offset-factor="0"
+	style:--transition-length="1s"
+	style:--transition-step="200ms"
+	style:--delay="0s"
+	style:--percent-to-deg="3.6deg"
+	style="transform: translateZ(0);"
+>
 	<svg
 		fill="none"
 		height={arc_size}
 		width={arc_size}
 		stroke-width="2"
-		viewBox="0 0 100 100"
-		class={cn('-rotate-90', class_name)}
+		viewBox="0 0 {circle_size} {circle_size}"
+		class={cn(class_name)}
 	>
 		<circle
 			cx={50}
 			cy={50}
 			r={radius}
 			stroke-width={stroke_width}
-			stroke-dasharray={circumference}
-			stroke-dashoffset={-circumference + arc_offset}
+			stroke-dashoffset="0"
 			stroke-linecap="round"
 			stroke-linejoin="round"
 			class={cn(get_secondary_arc_stroke_fill())}
+			style="
+        			stroke-dasharray: calc(var(--stroke-percent) * var(--percent-to-px)) var(--circumference);
+        			transform: rotate(calc(1turn - 90deg - (var(--gap-percent) * var(--percent-to-deg) * var(--offset-factor-secondary)))) scaleY(-1);
+        			transition: all var(--transition-length) ease var(--delay);
+        			transform-origin:calc(var(--circle-size) / 2) calc(var(--circle-size) / 2);
+        		"
+			style:--stroke-percent={value === 0 ? 100 - $progress : 90 - $progress}
+			style:--offset-factor-secondary="calc(1 - var(--offset-factor))"
 		/>
-
-		<circle
-			cx={50}
-			cy={50}
-			r={radius}
-			stroke-width={stroke_width}
-			stroke-dasharray={circumference}
-			stroke-dashoffset={arc_offset}
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			class={cn(get_primary_arc_stroke_fill())}
-		/>
+		{#if value > 0}
+			<circle
+				cx={50}
+				cy={50}
+				r={radius}
+				stroke-width={stroke_width}
+				stroke-dashoffset="0"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class={cn(get_primary_arc_stroke_fill())}
+				style="
+						stroke-dasharray:calc(var(--stroke-percent) * var(--percent-to-px)) var(--circumference);
+        				transition:var(--transition-length) ease var(--delay),stroke var(--transition-length) ease var(--delay);
+        				transition-property: stroke-dasharray,transform;
+        				transform:rotate(calc(-90deg + var(--gap-percent) * var(--offset-factor) * var(--percent-to-deg)));
+        				transform-origin:calc(var(--circle-size) / 2) calc(var(--circle-size) / 2);
+					"
+				style:--stroke-percent={$progress}
+			/>
+		{/if}
 	</svg>
 
 	{#if show_value && size !== 'tiny'}
 		<p
-			class={cn('absolute tabular-nums', {
-				'text-[0.6875rem] font-medium': size === 'sm',
-				'text-lg font-medium leading-6': size === 'md',
-				'text-[2rem] font-semibold leading-10': size === 'lg'
-			})}
+			data-current-value={$progress}
+			class={cn(
+				'delay-[var(--delay)] duration-[var(--transition-length)] absolute tabular-nums ease-linear',
+				{
+					'text-[0.6875rem] font-medium': size === 'sm',
+					'text-lg font-medium leading-6': size === 'md',
+					'text-[2rem] font-semibold leading-10': size === 'lg'
+				}
+			)}
 		>
 			{Math.round($progress)}
 		</p>
