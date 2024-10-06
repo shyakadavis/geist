@@ -87,8 +87,8 @@
 		>
 			<div class="pointer-events-none flex flex-wrap gap-4">
 				<Snippet
-					text="pnpm create svelte@latest"
-					class="md:[246px] w-[214px] text-gray-900 [&_button]:text-gray-900"
+					text="pnpm create svelte"
+					class="w-[220px] text-gray-900 [&_button]:text-gray-900"
 				/>
 				<Button affix={Icons.UserPlus} variant="secondary" class="text-gray-900">
 					Collaborate
