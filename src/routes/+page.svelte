@@ -47,7 +47,7 @@
 
 <PageWrapper
 	title="[Svelte] Geist Design System"
-	description="Vercel design system for building consistent web experiences."
+	description="Svelte implementation of Vercel's design system for building consistent web experiences."
 >
 	<section class="grid auto-rows-fr sm:grid-cols-2">
 		<IntroductionLink
