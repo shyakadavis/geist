@@ -1,7 +1,9 @@
 <script lang="ts">
-	import { cn, type PrimitiveElementAttributes } from '$lib/utils.js';
+	import { cn } from '$lib/utils.js';
+	import type { WithElementRef } from 'bits-ui';
+	import type { HTMLAttributes } from 'svelte/elements';
 
-	type Props = PrimitiveElementAttributes;
+	type Props = WithElementRef<HTMLAttributes<HTMLElement>>;
 
 	let { class: class_name = undefined, ref = $bindable(null), children, ...rest }: Props = $props();
 </script>

@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { cn } from '$lib/utils.js';
+	import type { WithElementRef } from 'bits-ui';
 	import type { HTMLAttributes } from 'svelte/elements';
 
-	type Props = HTMLAttributes<HTMLSpanElement>;
+	type Props = WithElementRef<HTMLAttributes<HTMLSpanElement>>;
 
 	let { class: class_name = undefined, children, ...rest }: Props = $props();
 </script>

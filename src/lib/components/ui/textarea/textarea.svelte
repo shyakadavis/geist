@@ -1,10 +1,9 @@
 <script lang="ts">
 	import { cn } from '$lib/utils.js';
+	import type { WithElementRef, WithoutChildren } from 'bits-ui';
 	import type { HTMLTextareaAttributes } from 'svelte/elements';
 
-	type Props = HTMLTextareaAttributes & {
-		ref?: HTMLTextAreaElement | null;
-	};
+	type Props = WithoutChildren<WithElementRef<HTMLTextareaAttributes>>;
 
 	let {
 		class: class_name = undefined,
@@ -22,7 +21,6 @@
 	)}
 	bind:this={ref}
 	bind:value
-	{readonly}
 	autocapitalize="none"
 	autocomplete="off"
 	autocorrect="off"

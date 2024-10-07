@@ -1,7 +1,9 @@
 <script lang="ts">
-	import { cn, type PrimitiveTableAttributes } from '$lib/utils.js';
+	import { cn } from '$lib/utils.js';
+	import type { WithElementRef } from 'bits-ui';
+	import type { HTMLTableAttributes } from 'svelte/elements';
 
-	type Props = PrimitiveTableAttributes;
+	type Props = WithElementRef<HTMLTableAttributes>;
 
 	let { class: class_name = undefined, ref = $bindable(null), children, ...rest }: Props = $props();
 </script>

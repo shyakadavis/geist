@@ -1,7 +1,9 @@
 <script lang="ts">
-	import { cn, type PrimitiveTrAttributes } from '$lib/utils.js';
+	import { cn } from '$lib/utils.js';
+	import type { WithElementRef } from 'bits-ui';
+	import type { HTMLAttributes } from 'svelte/elements';
 
-	type Props = PrimitiveTrAttributes & {
+	type Props = WithElementRef<HTMLAttributes<HTMLTableRowElement>> & {
 		'data-state'?: unknown;
 	};
 

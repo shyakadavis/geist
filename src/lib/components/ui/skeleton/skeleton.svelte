@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { cn } from '$lib/utils.js';
+	import type { WithElementRef } from 'bits-ui';
 	import type { HTMLAttributes } from 'svelte/elements';
 
-	type Props = HTMLAttributes<HTMLSpanElement> & {
+	type Props = WithElementRef<HTMLAttributes<HTMLSpanElement>> & {
 		width?: number | string;
 		height?: number | string;
 		box_height?: number;
@@ -14,6 +15,7 @@
 	};
 
 	let {
+		ref = $bindable(null),
 		class: class_name = undefined,
 		width = undefined,
 		height = 24,
@@ -29,6 +31,7 @@
 </script>
 
 <span
+	bind:this={ref}
 	style:--width={typeof width === 'number' ? `${width}px` : width}
 	style:--height={typeof height === 'number' ? `${height}px` : height}
 	style:--box-height="{box_height}px"
