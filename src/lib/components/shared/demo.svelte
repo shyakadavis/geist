@@ -1,22 +1,29 @@
 <script lang="ts">
 	import { Icons } from '$lib/assets/icons';
 	import { cn } from '$lib/utils';
-	import { onMount } from 'svelte';
-	import Markdown from 'svelte-exmarkdown';
+	import { onMount, type Snippet } from 'svelte';
 	import { scale } from 'svelte/transition';
 	import Accordion from './accordion-animation';
+	import PageSection from './page-section.svelte';
 	import { get_highlighted_code } from './shiki';
 
-	let class_name: string | undefined = undefined;
-	export let id: string;
-	export let code: string;
-	export let subtitle: string | undefined = undefined;
-	export { class_name as class };
+	type Props = {
+		class?: string | undefined;
+		id: string;
+		code: string;
+		subtitle?: string | undefined;
+		image?: Snippet;
+		children?: Snippet;
+	};
 
-	// e.g. "with-icons" -> "With Icons"
-	function format_string(str: string) {
-		return str.replace(/-/g, ' ').replace(/\b\w/g, (char) => char.toUpperCase());
-	}
+	let {
+		class: class_name = undefined,
+		id,
+		code,
+		subtitle = undefined,
+		image,
+		children
+	}: Props = $props();
 
 	// Show/hide code details animation
 	const accordions: Accordion[] = [];
@@ -32,12 +39,12 @@
 	});
 
 	// Code highlighting
-	let highlighted_code = '';
+	let highlighted_code = $state('');
 	onMount(async () => {
 		highlighted_code = await get_highlighted_code(code);
 	});
 
-	let copied = false;
+	let copied = $state(false);
 	function copy_code() {
 		navigator.clipboard.writeText(code);
 		copied = true;
@@ -47,33 +54,12 @@
 	}
 </script>
 
-<div class="grid p-12 [&:not(:last-child)]:border-b">
-	<a
-		class="group relative -ml-5 inline-block w-fit scroll-mt-20 pl-5 no-underline outline-none focus-visible:shadow-focus-ring"
-		href="#{id}"
-		{id}
-	>
-		<h2 class="text-2xl font-semibold tracking-tighter">
-			<Icons.Link
-				aria-hidden="true"
-				class="absolute left-0 top-[8px] size-4 opacity-0 outline-none group-hover:opacity-100 group-focus:opacity-100"
-			/>
-			{format_string(id)}
-		</h2>
-	</a>
-	{#if subtitle}
-		<p
-			class="prose prose-neutral mt-2 max-w-none text-gray-900 transition-colors dark:prose-invert marker:content-['-'] prose-a:text-gray-900 prose-a:hover:text-gray-1000 prose-strong:font-normal prose-strong:text-gray-1000 xl:mt-4"
-		>
-			<Markdown md={subtitle} />
-			<slot name="image"></slot>
-		</p>
-	{/if}
+<PageSection {id} {subtitle} {image}>
 	<div
 		class="group relative mt-4 overflow-x-auto rounded-xl border border-gray-alpha-400 bg-background-100 xl:mt-7"
 	>
 		<section id="component-demo" class={cn('w-full p-6', class_name)}>
-			<slot></slot>
+			{@render children?.()}
 		</section>
 		<details class="group">
 			<summary
@@ -102,7 +88,7 @@
 				<button
 					type="button"
 					class="absolute right-10 top-10 hidden items-center justify-center rounded-md border-gray-alpha-400 bg-background-100 p-2 transition-colors hover:bg-gray-alpha-200 md:flex"
-					on:click={copy_code}
+					onclick={copy_code}
 				>
 					{#if copied}
 						<div in:scale={{ duration: 200 }}>
@@ -122,7 +108,7 @@
 			</div>
 		</details>
 	</div>
-</div>
+</PageSection>
 
 <style>
 	summary::-webkit-details-marker {

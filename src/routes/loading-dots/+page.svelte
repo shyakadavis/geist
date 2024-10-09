@@ -6,7 +6,7 @@
 	import WithText from './with-text.svelte';
 	import with_text_code from './with-text.svelte?raw';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <PageWrapper title={data.title} description={data.description}>

@@ -1,6 +1,7 @@
 import mask from '@pyncz/tailwind-mask-image';
 import typography from '@tailwindcss/typography';
 import type { Config } from 'tailwindcss';
+import animate from 'tailwindcss-animate';
 import { fontFamily } from 'tailwindcss/defaultTheme';
 
 const config: Config = {
@@ -155,20 +156,31 @@ const config: Config = {
 				sans: ['Geist Sans, sans-serif', ...fontFamily.sans],
 				mono: ['Geist Mono, monospace', ...fontFamily.mono]
 			},
-			animation: {
-				'skeleton-loading': 'skeleton_loading 8s ease-in-out infinite'
-			},
 			keyframes: {
-				skeleton_loading: {
+				'accordion-down': {
+					from: { height: '0' },
+					to: { height: 'var(--bits-accordion-content-height)' }
+				},
+				'accordion-up': {
+					from: { height: 'var(--bits-accordion-content-height)' },
+					to: { height: '0' }
+				},
+				'skeleton-loading': {
 					'0%': { backgroundPosition: '200% 0;' },
 					to: { backgroundPosition: '-200% 0;' }
 				}
+			},
+			animation: {
+				'accordion-down': 'accordion-down 0.2s ease-out',
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'skeleton-loading': 'skeleton-loading 8s ease-in-out infinite'
 			}
 		}
 	},
 	plugins: [
-		typography,
+		animate,
 		mask,
+		typography,
 		function ({ addUtilities }) {
 			const newUtilities = {
 				'.no-scrollbar': {

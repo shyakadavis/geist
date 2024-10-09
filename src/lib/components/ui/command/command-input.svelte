@@ -1,18 +1,20 @@
 <script lang="ts">
 	import { Icons } from '$lib/assets/icons';
 	import { cn } from '$lib/utils.js';
-	import { Command as CommandPrimitive } from 'cmdk-sv';
+	import { Command as CommandPrimitive } from 'bits-ui';
 
-	type $$Props = CommandPrimitive.InputProps & {
+	type Props = CommandPrimitive.InputProps & {
 		wrapper_class?: string | undefined;
 		hide_search_icon?: boolean;
 	};
 
-	let className: string | undefined | null = undefined;
-	export { className as class };
-	export let value: string = '';
-	export let wrapper_class: $$Props['wrapper_class'] = undefined;
-	export let hide_search_icon: $$Props['hide_search_icon'] = false;
+	let {
+		class: class_name = undefined,
+		value = $bindable(''),
+		wrapper_class = undefined,
+		hide_search_icon = false,
+		...rest
+	}: Props = $props();
 </script>
 
 <div class={cn('flex items-center border-b px-2', wrapper_class)} data-cmdk-input-wrapper="">
@@ -22,9 +24,9 @@
 	<CommandPrimitive.Input
 		class={cn(
 			'flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-gray-700 disabled:cursor-not-allowed disabled:opacity-50',
-			className
+			class_name
 		)}
-		{...$$restProps}
+		{...rest}
 		bind:value
 	/>
 </div>

@@ -8,7 +8,7 @@
 	import Indeterminate from './indeterminate.svelte';
 	import indeterminate_code from './indeterminate.svelte?raw';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <PageWrapper title={data.title} description={data.description}>

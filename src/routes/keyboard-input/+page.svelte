@@ -8,7 +8,7 @@
 	import Small from './small.svelte';
 	import small_code from './small.svelte?raw';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <PageWrapper title={data.title} description={data.description}>

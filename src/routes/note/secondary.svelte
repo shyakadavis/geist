@@ -8,21 +8,29 @@
 	<Note variant="secondary">This note details some secondary information.</Note>
 	<Note variant="secondary">
 		This note details some secondary information.
-		<Button slot="action" size="sm">Upgrade</Button>
+		{#snippet action()}
+			<Button size="sm">Upgrade</Button>
+		{/snippet}
 	</Note>
 	<Note variant="secondary">
 		This note details some secondary information. Check <Link href="/#">the documentation</Link> to learn
 		more.
-		<Button slot="action" size="sm">Upgrade</Button>
+		{#snippet action()}
+			<Button size="sm">Upgrade</Button>
+		{/snippet}
 	</Note>
 	<Note fill variant="secondary">This filled note details some secondary information.</Note>
 	<Note fill variant="secondary">
 		This filled note details some secondary information.
-		<Button slot="action" size="sm">Upgrade</Button>
+		{#snippet action()}
+			<Button size="sm">Upgrade</Button>
+		{/snippet}
 	</Note>
 	<Note fill variant="secondary">
 		This filled note details some secondary information. Check
 		<Link href="/#">the documentation</Link> to learn more.
-		<Button slot="action" size="sm">Upgrade</Button>
+		{#snippet action()}
+			<Button size="sm">Upgrade</Button>
+		{/snippet}
 	</Note>
 </div>

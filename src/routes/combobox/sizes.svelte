@@ -8,7 +8,7 @@
 	];
 </script>
 
-<div class="flex flex-col gap-4 sm:flex-row">
+<div class="flex flex-col gap-4 sm:flex-row sm:items-start">
 	<Combobox placeholder="Search..." {items} size="sm" />
 	<Combobox placeholder="Search..." {items} />
 	<Combobox placeholder="Search..." {items} size="lg" />

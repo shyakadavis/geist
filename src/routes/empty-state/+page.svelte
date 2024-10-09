@@ -9,7 +9,7 @@
 	import Informational from './informational.svelte';
 	import informational_code from './informational.svelte?raw';
 
-	export let data;
+	let { data } = $props();
 
 	const empty_state_design_framework_subtitle =
 		'When designed thoughtfully, empty states become an essential part of a smooth user experience, providing enough context to keep users working in a productive way. There are several approaches to explore that will match the needs a developer in different situations:\n- __Blank Slate__ - Basic empty state for first run experience\n- __Informational__ - Alternative for first use empty state, including in-line CTAs and supplemental documentation links\n- __Educational__ - Launch a contextual onboarding flow to gain deeper understanding about that area of the app\n- __Guide__ - Starter content that allows users to interact with data and learn the system by tinkering or setting up their environment';
@@ -24,7 +24,9 @@
 		subtitle={empty_state_design_framework_subtitle}
 		code={empty_state_design_framework_code}
 	>
-		<Icons.ErrorStates aria-hidden="true" slot="image" />
+		{#snippet image()}
+			<Icons.ErrorStates aria-hidden="true" />
+		{/snippet}
 		<EmptyStateDesignFramework />
 	</Demo>
 

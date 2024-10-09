@@ -10,7 +10,7 @@
 	import StripedTable from './striped-table.svelte';
 	import striped_table_code from './striped-table.svelte?raw';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <PageWrapper title={data.title} description={data.description}>

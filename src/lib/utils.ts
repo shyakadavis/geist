@@ -1,5 +1,20 @@
+import type { WithElementRef } from 'bits-ui';
 import { type ClassValue, clsx } from 'clsx';
 import { cubicOut } from 'svelte/easing';
+import type {
+	HTMLAnchorAttributes,
+	HTMLAttributes,
+	HTMLButtonAttributes,
+	HTMLImgAttributes,
+	HTMLInputAttributes,
+	HTMLLabelAttributes,
+	HTMLLiAttributes,
+	HTMLOlAttributes,
+	HTMLTableAttributes,
+	HTMLTdAttributes,
+	HTMLTextareaAttributes,
+	HTMLThAttributes
+} from 'svelte/elements';
 import type { TransitionConfig } from 'svelte/transition';
 import { twMerge } from 'tailwind-merge';
 
@@ -54,3 +69,57 @@ export const flyAndScale = (
 		easing: cubicOut
 	};
 };
+
+/**
+ * Formats a string to be more human-readable.
+ * @param str The string to format.
+ * @example
+ * format_string('with-icons') // 'With Icons'
+ * format_string('colors-1\\-3:-component-backgrounds') // 'Colors 1-3: Component Backgrounds'
+ */
+export function format_string(str: string) {
+	// Replace escaped hyphens with a temporary placeholder
+	let processedString = str.replace(/\\-/g, '{{HYPHEN}}');
+
+	// Split the string by unescaped hyphens
+	const parts = processedString.split('-');
+
+	// Process each part
+	const formattedParts = parts.map((part) => {
+		// Capitalize the first letter of each word
+		return (
+			part
+				.replace(/\b\w/g, (c) => c.toUpperCase())
+				// Replace the placeholder back with a hyphen
+				.replace(/{{HYPHEN}}/g, '-')
+		);
+	});
+
+	// Join the parts and fix spacing around colons
+	let result = formattedParts.join(' ').replace(/ : /g, ': ');
+
+	return result;
+}
+
+// Wrappers around svelte's `HTMLAttributes` types to add a `ref` prop can be bound to
+// to get a reference to the underlying DOM element the component is rendering.
+export type PrimitiveDivAttributes = WithElementRef<HTMLAttributes<HTMLDivElement>>;
+export type PrimitiveElementAttributes = WithElementRef<HTMLAttributes<HTMLElement>>;
+export type PrimitiveAnchorAttributes = WithElementRef<HTMLAnchorAttributes>;
+export type PrimitiveButtonAttributes = WithElementRef<HTMLButtonAttributes>;
+export type PrimitiveInputAttributes = WithElementRef<HTMLInputAttributes>;
+export type PrimitiveSpanAttributes = WithElementRef<HTMLAttributes<HTMLSpanElement>>;
+export type PrimitiveTextareaAttributes = WithElementRef<HTMLTextareaAttributes>;
+export type PrimitiveHeadingAttributes = WithElementRef<HTMLAttributes<HTMLHeadingElement>>;
+export type PrimitiveLiAttributes = WithElementRef<HTMLLiAttributes>;
+export type PrimitiveOlAttributes = WithElementRef<HTMLOlAttributes>;
+export type PrimitiveLabelAttributes = WithElementRef<HTMLLabelAttributes>;
+export type PrimitiveUlAttributes = WithElementRef<HTMLAttributes<HTMLUListElement>>;
+export type PrimitiveTableAttributes = WithElementRef<HTMLTableAttributes>;
+export type PrimitiveTdAttributes = WithElementRef<HTMLTdAttributes>;
+export type PrimitiveTrAttributes = WithElementRef<HTMLAttributes<HTMLTableRowElement>>;
+export type PrimitiveThAttributes = WithElementRef<HTMLThAttributes>;
+export type PrimitiveTableSectionAttributes = WithElementRef<
+	HTMLAttributes<HTMLTableSectionElement>
+>;
+export type PrimitiveImgAttributes = WithElementRef<HTMLImgAttributes>;

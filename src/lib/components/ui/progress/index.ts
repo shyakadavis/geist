@@ -17,11 +17,6 @@ export const progress_bar_variants = tv({
 	}
 });
 
-type Variant = VariantProps<typeof progress_bar_variants>['variant'];
-
-export type Props = {
-	variant?: Variant;
-	colors?: Record<number, string>;
-};
+export type Variant = VariantProps<typeof progress_bar_variants>['variant'];
 
 export { Root as Progress, Root };

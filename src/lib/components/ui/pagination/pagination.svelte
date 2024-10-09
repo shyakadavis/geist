@@ -6,8 +6,12 @@
 		href: string;
 	};
 
-	export let next: Link | undefined = undefined;
-	export let previous: Link | undefined = undefined;
+	type Props = {
+		next?: Link | undefined;
+		previous?: Link | undefined;
+	};
+
+	let { next = undefined, previous = undefined }: Props = $props();
 </script>
 
 <nav class="flex w-full flex-wrap items-center justify-between">

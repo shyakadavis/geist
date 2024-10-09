@@ -18,7 +18,7 @@
 	import UsedInsideAModal from './used-inside-a-modal.svelte';
 	import used_inside_a_modal_code from './used-inside-a-modal.svelte?raw';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <PageWrapper title={data.title} description={data.description}>

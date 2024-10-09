@@ -1,15 +1,22 @@
 <script lang="ts">
+	import * as Dialog from '$lib/components/ui/dialog/index.js';
+	import * as Drawer from '$lib/components/ui/drawer/index.js';
+	import type { Snippet } from 'svelte';
 	import { is_desktop } from '.';
-	import * as Dialog from '../dialog';
-	import * as Drawer from '../drawer';
+
+	type Props = {
+		children?: Snippet;
+	};
+
+	let { children }: Props = $props();
 </script>
 
-{#if $is_desktop}
+{#if is_desktop.matches}
 	<Dialog.Title class="text-2xl">
-		<slot></slot>
+		{@render children?.()}
 	</Dialog.Title>
 {:else}
 	<Drawer.Title class="text-2xl">
-		<slot></slot>
+		{@render children?.()}
 	</Drawer.Title>
 {/if}

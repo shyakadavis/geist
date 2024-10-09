@@ -2,7 +2,7 @@
 	import * as Collapse from '$lib/components/ui/collapse';
 </script>
 
-<Collapse.Root value="item-2">
+<Collapse.Root type="multiple" value={['item-2']}>
 	<Collapse.Item value="item-1">
 		<Collapse.Trigger>Question A</Collapse.Trigger>
 		<Collapse.Content>

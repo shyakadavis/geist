@@ -22,7 +22,7 @@
 	import Warning from './warning.svelte';
 	import warning_code from './warning.svelte?raw';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <PageWrapper title={data.title} description={data.description}>

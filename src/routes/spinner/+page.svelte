@@ -6,7 +6,7 @@
 	import DefaultSize from './default-size.svelte';
 	import default_size_code from './default-size.svelte?raw';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <PageWrapper title={data.title} description={data.description}>

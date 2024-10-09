@@ -1,26 +1,37 @@
+<script lang="ts" module>
+	type CustomInputProps = {
+		size?: 'sm' | 'md' | 'lg';
+		'aria-labelledby': string;
+		affix?: typeof Icons.ArrowCircleUp | string;
+		suffix?: typeof Icons.ArrowCircleUp | string;
+		affix_styling?: boolean;
+		suffix_styling?: boolean;
+		label?: string;
+		ref?: HTMLInputElement | null;
+	};
+
+	export type InputProps = CustomInputProps & Without<HTMLInputAttributes, CustomInputProps>;
+</script>
+
 <script lang="ts">
+	import type { Icons } from '$lib/assets/icons/index.js';
 	import { cn } from '$lib/utils.js';
+	import type { HTMLInputAttributes } from 'svelte/elements';
 	import { Label } from '../label/index.js';
-	import { input_variants, type InputEvents, type Props } from './index.js';
+	import { input_variants, type Without } from './index.js';
 
-	type $$Props = Props;
-
-	type $$Events = InputEvents;
-
-	let class_name: $$Props['class'] = undefined;
-	export let value: $$Props['value'] = undefined;
-	export { class_name as class };
-	export let size: $$Props['size'] = 'md';
-	export let affix: $$Props['affix'] = undefined;
-	export let suffix: $$Props['suffix'] = undefined;
-	export let affix_styling: $$Props['affix_styling'] = true;
-	export let suffix_styling: $$Props['suffix_styling'] = true;
-	export let label: $$Props['label'] = undefined;
-	export let el: $$Props['el'] = undefined;
-
-	// Workaround for https://github.com/sveltejs/svelte/issues/9305
-	// Fixed in Svelte 5, but not backported to 4.x.
-	export let readonly: $$Props['readonly'] = undefined;
+	let {
+		class: class_name = undefined,
+		value = $bindable(undefined),
+		ref = $bindable(undefined),
+		size = 'md',
+		affix: Affix = undefined,
+		suffix: Suffix = undefined,
+		affix_styling = true,
+		suffix_styling = true,
+		label = undefined,
+		...rest
+	}: InputProps = $props();
 </script>
 
 {#if label}
@@ -36,18 +47,17 @@
 		}
 	)}
 >
-	{#if affix}
+	{#if Affix}
 		<span
 			class={cn('flex h-full items-center rounded-[inherit] rounded-r-none text-gray-700', {
 				'border-r bg-background-200 p-3': affix_styling,
 				'pl-3': !affix_styling
 			})}
 		>
-			{#if typeof affix === 'string'}
-				{affix}
+			{#if typeof Affix === 'string'}
+				{Affix}
 			{:else}
-				<svelte:component
-					this={affix}
+				<Affix
 					aria-hidden="true"
 					class={cn({
 						'size-3': size === 'sm',
@@ -62,42 +72,24 @@
 		id={label}
 		class={cn(input_variants({ size, className: class_name }))}
 		bind:value
-		{readonly}
-		on:blur
-		on:change
-		on:click
-		on:focus
-		on:focusin
-		on:focusout
-		on:keydown
-		on:keypress
-		on:keyup
-		on:mouseover
-		on:mouseenter
-		on:mouseleave
-		on:mousemove
-		on:paste
-		on:input
-		on:wheel|passive
-		{...$$restProps}
+		bind:this={ref}
 		autocapitalize="none"
 		autocomplete="off"
 		autocorrect="off"
 		spellcheck="false"
-		bind:this={el}
+		{...rest}
 	/>
-	{#if suffix}
+	{#if Suffix}
 		<span
 			class={cn('flex h-full items-center rounded-[inherit] rounded-l-none text-gray-700', {
 				'border-l bg-background-200 p-3': suffix_styling,
 				'pr-3': !suffix_styling
 			})}
 		>
-			{#if typeof suffix === 'string'}
-				{suffix}
+			{#if typeof Suffix === 'string'}
+				{Suffix}
 			{:else}
-				<svelte:component
-					this={suffix}
+				<Suffix
 					aria-hidden="true"
 					class={cn({
 						'size-3': size === 'sm',

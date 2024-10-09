@@ -1,4 +1,4 @@
-import { mediaQuery } from 'svelte-legos';
+import { MediaQuery } from 'runed';
 import { writable } from 'svelte/store';
 import ModalContent from './modal-content.svelte';
 import ModalDescription from './modal-description.svelte';
@@ -9,8 +9,7 @@ import ModalTitle from './modal-title.svelte';
 import ModalTrigger from './modal-trigger.svelte';
 import Modal from './modal.svelte';
 
-export const is_desktop = mediaQuery('(min-width: 640px)');
-
+export const is_desktop = new MediaQuery('(min-width: 640px)');
 export const is_overflowing = writable(false);
 export const is_single_button = writable(false);
 

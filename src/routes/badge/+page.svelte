@@ -8,7 +8,7 @@
 	import WithIcons from './with-icons.svelte';
 	import with_icons_code from './with-icons.svelte?raw';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <PageWrapper title={data.title} description={data.description}>

@@ -16,14 +16,4 @@ export const error_variants = tv({
 	}
 });
 
-type Size = VariantProps<typeof error_variants>['size'];
-
-export type Props = {
-	size?: Size;
-	label?: string;
-	error?: {
-		message: string;
-		action: string;
-		link: string;
-	};
-};
+export type Size = VariantProps<typeof error_variants>['size'];
