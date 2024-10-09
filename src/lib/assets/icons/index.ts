@@ -6,6 +6,7 @@ import ArrowUp from './arrow-up.svg?component';
 import Bell from './bell.svg?component';
 import Box from './box.svg?component';
 import BrandAssets from './brand-assets.svg?component';
+import Calendar from './calendar.svg?component';
 import ChartBarMiddle from './chart-bar-middle.svg?component';
 import ChartBarPeak from './chart-bar-peak.svg?component';
 import ChartPie from './chart-pie.svg?component';
@@ -88,6 +89,7 @@ export const Icons = {
 	Bell,
 	Box,
 	BrandAssets,
+	Calendar,
 	ChartBarMiddle,
 	ChartBarPeak,
 	ChartPie,
