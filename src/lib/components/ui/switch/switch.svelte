@@ -40,7 +40,11 @@
 					<span
 						{...props}
 						class={cn(
-							'pointer-events-none grid place-items-center rounded-full bg-gray-700 text-background-100 ring-0 transition-transform [box-shadow:_0_0_4px_rgba(0,0,0,.12),0_1px_1px_rgba(0,0,0,.16)] data-[state=unchecked]:translate-x-0 data-[state=checked]:bg-gray-1000 group-data-[disabled=true]:bg-gray-200 group-data-[disabled=true]:text-gray-700',
+							'pointer-events-none grid place-items-center rounded-full bg-background-200 text-background-100 ring-0 transition-transform [box-shadow:_0_0_4px_rgba(0,0,0,.12),0_1px_1px_rgba(0,0,0,.16)] dark:bg-gray-1000',
+							// checked
+							'data-[state=checked]:bg-background-1000 data-[state=unchecked]:translate-x-0',
+							// disabled
+							'group-data-[disabled=true]:bg-gray-200 group-data-[disabled=true]:text-gray-700',
 							{
 								'size-3 data-[state=checked]:translate-x-[13.5px]': size === 'md',
 								'size-[22px] data-[state=checked]:translate-x-[15.5px]': size === 'lg'
@@ -49,10 +53,16 @@
 					>
 						{#if checked}
 							{@const Checked = icon.checked}
-							<Checked aria-hidden="true" class="size-full max-h-4 max-w-4" />
+							<Checked
+								aria-hidden="true"
+								class="size-full max-h-4 max-w-4 text-gray-900 dark:text-gray-200"
+							/>
 						{:else}
 							{@const Unchecked = icon.unchecked}
-							<Unchecked aria-hidden="true" class="size-full max-h-4 max-w-4" />
+							<Unchecked
+								aria-hidden="true"
+								class="size-full max-h-4 max-w-4 text-gray-900 dark:text-gray-200"
+							/>
 						{/if}
 					</span>
 				{/snippet}
@@ -60,7 +70,11 @@
 		{:else}
 			<SwitchPrimitive.Thumb
 				class={cn(
-					'pointer-events-none block rounded-full bg-gray-700 ring-0 transition-transform [box-shadow:_0_0_4px_rgba(0,0,0,.12),0_1px_1px_rgba(0,0,0,.16)] data-[state=unchecked]:translate-x-0 data-[state=checked]:bg-gray-1000 group-data-[disabled=true]:bg-gray-200',
+					'pointer-events-none block rounded-full bg-background-200 ring-0 transition-transform [box-shadow:_0_0_4px_rgba(0,0,0,.12),0_1px_1px_rgba(0,0,0,.16)] dark:bg-gray-1000',
+					// checked
+					'data-[state=unchecked]:translate-x-0',
+					// disabled
+					'group-data-[disabled=true]:bg-gray-200',
 					{
 						'size-3 data-[state=checked]:translate-x-[13.5px]': size === 'md',
 						'size-[22px] data-[state=checked]:translate-x-[15.5px]': size === 'lg'
