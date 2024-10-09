@@ -7,12 +7,16 @@
 	import { button_variants } from '../button/index.js';
 	import * as Calendar from './index.js';
 
-	type Props = WithoutChildrenOrChild<CalendarPrimitive.RootProps>;
+	type Props = WithoutChildrenOrChild<CalendarPrimitive.RootProps> & {
+		trigger_class?: string;
+	};
+
 	let {
 		ref = $bindable(null),
 		value = $bindable(),
 		placeholder = $bindable(),
 		class: class_name,
+		trigger_class = undefined,
 		weekdayFormat = 'short',
 		...restProps
 	}: Props = $props();
@@ -27,9 +31,10 @@
 		class={cn(
 			button_variants({
 				variant: 'secondary',
-				class: 'w-[280px] justify-start text-left font-normal'
+				class: 'justify-start text-left font-normal'
 			}),
-			!value && 'text-muted-foreground'
+			!value && 'text-muted-foreground',
+			trigger_class
 		)}
 	>
 		<Icons.Calendar class="mr-2 size-4" />

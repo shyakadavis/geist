@@ -3,5 +3,5 @@
 </script>
 
 <div class="grid place-items-center py-6">
-	<Calendar type="single" />
+	<Calendar type="single" trigger_class="w-[280px]" />
 </div>
