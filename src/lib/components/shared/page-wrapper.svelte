@@ -1,11 +1,16 @@
 <script lang="ts">
 	import { cn } from '$lib/utils';
+	import type { Snippet } from 'svelte';
 	import Footer from './footer.svelte';
 
-	let class_name: string | undefined = undefined;
-	export { class_name as class };
-	export let title: string;
-	export let description: string;
+	type Props = {
+		class?: string | undefined;
+		title: string;
+		description: string;
+		children?: Snippet;
+	};
+
+	let { class: class_name = undefined, title, description, children }: Props = $props();
 </script>
 
 <section
@@ -25,7 +30,7 @@
 				{description}
 			</p>
 		</section>
-		<slot></slot>
+		{@render children?.()}
 	</div>
 	<Footer />
 </section>

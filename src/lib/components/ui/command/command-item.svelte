@@ -1,24 +1,19 @@
 <script lang="ts">
 	import { cn } from '$lib/utils.js';
-	import { Command as CommandPrimitive } from 'cmdk-sv';
+	import { Command as CommandPrimitive } from 'bits-ui';
 
-	type $$Props = CommandPrimitive.ItemProps;
+	type Props = CommandPrimitive.ItemProps;
 
-	export let asChild = false;
-
-	let className: string | undefined | null = undefined;
-	export { className as class };
+	// TODO: Figure out how `asChild` should be replaced
+	let { class: class_name = undefined, children, ...rest }: Props = $props();
 </script>
 
 <CommandPrimitive.Item
-	{asChild}
 	class={cn(
 		'relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none aria-selected:bg-gray-alpha-100 aria-selected:text-gray-1000 data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
-		className
+		class_name
 	)}
-	{...$$restProps}
-	let:action
-	let:attrs
+	{...rest}
 >
-	<slot {action} {attrs} />
+	{@render children?.()}
 </CommandPrimitive.Item>

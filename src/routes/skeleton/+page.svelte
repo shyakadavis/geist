@@ -18,7 +18,7 @@
 	import WrappingChildren from './wrapping-children.svelte';
 	import wrapping_children_code from './wrapping-children.svelte?raw';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <PageWrapper title={data.title} description={data.description}>

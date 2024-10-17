@@ -20,4 +20,4 @@
 	];
 </script>
 
-<Combobox placeholder="Search..." {items} list_class="max-w-[500px]" />
+<Combobox type="single" placeholder="Search..." {items} list_class="max-w-[500px]" />

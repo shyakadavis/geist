@@ -2,7 +2,7 @@
 	import { Icons } from '$lib/assets/icons';
 	import { Switch } from '$lib/components/ui/switch';
 
-	let checked = false;
+	let checked = $state(false);
 </script>
 
 <div class="grid gap-6">

@@ -1,20 +1,27 @@
 <script lang="ts">
+	import * as Dialog from '$lib/components/ui/dialog/index.js';
+	import * as Drawer from '$lib/components/ui/drawer/index.js';
 	import { cn } from '$lib/utils';
+	import type { Snippet } from 'svelte';
 	import { is_desktop, is_overflowing, is_single_button } from '.';
-	import * as Dialog from '../dialog';
-	import * as Drawer from '../drawer';
+
+	type Props = {
+		children?: Snippet;
+	};
+
+	let { children }: Props = $props();
 </script>
 
-{#if $is_desktop}
+{#if is_desktop.matches}
 	<Dialog.Header
 		class={cn('sticky top-0 px-6 pt-6', {
 			'border-b bg-background-100 pb-3 pt-3': $is_overflowing || $is_single_button
 		})}
 	>
-		<slot></slot>
+		{@render children?.()}
 	</Dialog.Header>
 {:else}
 	<Drawer.Header class="text-left">
-		<slot></slot>
+		{@render children?.()}
 	</Drawer.Header>
 {/if}

@@ -3,8 +3,8 @@
 </script>
 
 <Combobox
+	type="single"
 	placeholder="Search..."
-	items={[]}
 	empty_message="Nothing to see here..."
 	class="w-[256px]"
 />

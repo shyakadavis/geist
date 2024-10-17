@@ -12,8 +12,8 @@
 </script>
 
 <Modal.Root>
-	<Modal.Trigger let:builder>
-		<Button size="sm" builders={[builder]}>Open Modal</Button>
+	<Modal.Trigger>
+		<Button size="sm">Open Modal</Button>
 	</Modal.Trigger>
 
 	<Modal.Content>
@@ -28,7 +28,7 @@
 
 		<Modal.Inset>
 			<Label value="Region">
-				<Combobox placeholder="Search..." {items} size="sm" />
+				<Combobox type="single" placeholder="Search..." {items} size="sm" />
 			</Label>
 			<p class="text-xs text-gray-900">
 				This is the region where your database reads and writes will take place.

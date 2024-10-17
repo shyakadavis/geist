@@ -1,0 +1,111 @@
+export const scales = {
+	Backgrounds: ['background-100', 'background-200'],
+	Gray: [
+		'gray-100',
+		'gray-200',
+		'gray-300',
+		'gray-400',
+		'gray-500',
+		'gray-600',
+		'gray-700',
+		'gray-800',
+		'gray-900',
+		'gray-1000'
+	],
+	'Gray alpha': [
+		'gray-alpha-100',
+		'gray-alpha-200',
+		'gray-alpha-300',
+		'gray-alpha-400',
+		'gray-alpha-500',
+		'gray-alpha-600',
+		'gray-alpha-700',
+		'gray-alpha-800',
+		'gray-alpha-900',
+		'gray-alpha-1000'
+	],
+	Blue: [
+		'blue-100',
+		'blue-200',
+		'blue-300',
+		'blue-400',
+		'blue-500',
+		'blue-600',
+		'blue-700',
+		'blue-800',
+		'blue-900',
+		'blue-1000'
+	],
+	Red: [
+		'red-100',
+		'red-200',
+		'red-300',
+		'red-400',
+		'red-500',
+		'red-600',
+		'red-700',
+		'red-800',
+		'red-900',
+		'red-1000'
+	],
+	Amber: [
+		'amber-100',
+		'amber-200',
+		'amber-300',
+		'amber-400',
+		'amber-500',
+		'amber-600',
+		'amber-700',
+		'amber-800',
+		'amber-900',
+		'amber-1000'
+	],
+	Green: [
+		'green-100',
+		'green-200',
+		'green-300',
+		'green-400',
+		'green-500',
+		'green-600',
+		'green-700',
+		'green-800',
+		'green-900',
+		'green-1000'
+	],
+	Teal: [
+		'teal-100',
+		'teal-200',
+		'teal-300',
+		'teal-400',
+		'teal-500',
+		'teal-600',
+		'teal-700',
+		'teal-800',
+		'teal-900',
+		'teal-1000'
+	],
+	Purple: [
+		'purple-100',
+		'purple-200',
+		'purple-300',
+		'purple-400',
+		'purple-500',
+		'purple-600',
+		'purple-700',
+		'purple-800',
+		'purple-900',
+		'purple-1000'
+	],
+	Pink: [
+		'pink-100',
+		'pink-200',
+		'pink-300',
+		'pink-400',
+		'pink-500',
+		'pink-600',
+		'pink-700',
+		'pink-800',
+		'pink-900',
+		'pink-1000'
+	]
+};

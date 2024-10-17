@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Switch } from '$lib/components/ui/switch';
 
-	let checked = false;
+	let checked = $state(false);
 </script>
 
 <div class="grid grid-cols-2">

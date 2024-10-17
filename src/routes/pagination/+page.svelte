@@ -4,7 +4,7 @@
 	import Default from './default.svelte';
 	import default_code from './default.svelte?raw';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <PageWrapper title={data.title} description={data.description}>

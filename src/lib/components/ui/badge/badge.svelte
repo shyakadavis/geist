@@ -1,25 +1,37 @@
 <script lang="ts">
+	import { Icons } from '$lib/assets/icons/index.js';
 	import { cn } from '$lib/utils.js';
-	import { type Props, badge_variants } from './index.js';
+	import type { Snippet } from 'svelte';
+	import { badge_variants, type Size, type Variant } from './index.js';
 
-	type $$Props = Props;
+	type Props = {
+		variant: Variant;
+		size?: Size;
+		icon?: typeof Icons.Shield;
+		class?: string;
+		href?: string;
+		children?: Snippet;
+	};
 
-	let class_name: string | undefined | null = undefined;
-	export let href: string | undefined = undefined;
-	export let variant: $$Props['variant'];
-	export let size: $$Props['size'] = 'md';
-	export { class_name as class };
-	export let icon: $$Props['icon'] = undefined;
+	let {
+		class: class_name = undefined,
+		href = undefined,
+		variant,
+		size = 'md',
+		icon: Icon = undefined,
+		children,
+		...rest
+	}: Props = $props();
 </script>
 
 <svelte:element
 	this={href ? 'a' : 'span'}
 	{href}
 	class={cn(badge_variants({ variant, size, className: class_name }))}
-	{...$$restProps}
+	{...rest}
 >
-	{#if icon}
-		<svelte:component this={icon} aria-hidden="true" class="size-4" />
+	{#if Icon}
+		<Icon aria-hidden="true" class="size-4" />
 	{/if}
-	<slot />
+	{@render children?.()}
 </svelte:element>

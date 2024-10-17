@@ -1,11 +1,13 @@
 <script lang="ts">
 	import { cn } from '$lib/utils';
-	import { status_dot_variants, type Props } from '.';
+	import { status_dot_variants, type Variant } from '.';
 
-	type $$Props = Props;
+	type Props = {
+		state: Exclude<Variant, undefined>;
+		label?: boolean;
+	};
 
-	export let state: $$Props['state'];
-	export let label: $$Props['label'] = false;
+	let { state, label = false }: Props = $props();
 </script>
 
 <span

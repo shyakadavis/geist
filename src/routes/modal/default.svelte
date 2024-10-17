@@ -4,8 +4,8 @@
 </script>
 
 <Modal.Root>
-	<Modal.Trigger let:builder>
-		<Button size="sm" builders={[builder]}>Open Modal</Button>
+	<Modal.Trigger>
+		<Button size="sm">Open Modal</Button>
 	</Modal.Trigger>
 
 	<Modal.Content>

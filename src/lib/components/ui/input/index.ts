@@ -1,5 +1,3 @@
-import type { Icons } from '$lib/assets/icons';
-import type { HTMLInputAttributes } from 'svelte/elements';
 import { tv } from 'tailwind-variants';
 import Root from './input.svelte';
 import Search from './search.svelte';
@@ -18,38 +16,16 @@ export const input_variants = tv({
 	}
 });
 
-export type Props = Omit<HTMLInputAttributes, 'size'> & {
-	size?: 'sm' | 'md' | 'lg';
-	'aria-labelledby': string;
-	affix?: typeof Icons.ArrowCircleUp | string;
-	suffix?: typeof Icons.ArrowCircleUp | string;
-	affix_styling?: boolean;
-	suffix_styling?: boolean;
-	label?: string;
-	el?: HTMLInputElement;
-};
-
-export type FormInputEvent<T extends Event = Event> = T & {
-	currentTarget: EventTarget & HTMLInputElement;
-};
-
-export type InputEvents = {
-	blur: FormInputEvent<FocusEvent>;
-	change: FormInputEvent<Event>;
-	click: FormInputEvent<MouseEvent>;
-	focus: FormInputEvent<FocusEvent>;
-	focusin: FormInputEvent<FocusEvent>;
-	focusout: FormInputEvent<FocusEvent>;
-	keydown: FormInputEvent<KeyboardEvent>;
-	keypress: FormInputEvent<KeyboardEvent>;
-	keyup: FormInputEvent<KeyboardEvent>;
-	mouseover: FormInputEvent<MouseEvent>;
-	mouseenter: FormInputEvent<MouseEvent>;
-	mouseleave: FormInputEvent<MouseEvent>;
-	mousemove: FormInputEvent<MouseEvent>;
-	paste: FormInputEvent<ClipboardEvent>;
-	input: FormInputEvent<InputEvent>;
-	wheel: FormInputEvent<WheelEvent>;
-};
+/**
+ * Constructs a new type by omitting properties from type
+ * 'T' that exist in type 'U'.
+ *
+ * @template T - The base object type from which properties will be omitted.
+ * @template U - The object type whose properties will be omitted from 'T'.
+ * @example
+ * type Result = Without<{ a: number; b: string; }, { b: string; }>;
+ * // Result type will be { a: number; }
+ */
+export type Without<T extends object, U extends object> = Omit<T, keyof U>;
 
 export { Root as Input, Root, Search, Search as SearchInput };

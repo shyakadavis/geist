@@ -16,7 +16,7 @@
 	import Variants from './variants.svelte';
 	import variants_code from './variants.svelte?raw';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <PageWrapper title={data.title} description={data.description}>

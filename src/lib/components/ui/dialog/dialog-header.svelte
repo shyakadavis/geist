@@ -1,13 +1,17 @@
 <script lang="ts">
-	import type { HTMLAttributes } from 'svelte/elements';
 	import { cn } from '$lib/utils.js';
+	import type { WithElementRef } from 'bits-ui';
+	import type { HTMLAttributes } from 'svelte/elements';
 
-	type $$Props = HTMLAttributes<HTMLDivElement>;
+	type Props = WithElementRef<HTMLAttributes<HTMLDivElement>>;
 
-	let className: $$Props['class'] = undefined;
-	export { className as class };
+	let { ref = $bindable(null), class: class_name = undefined, children, ...rest }: Props = $props();
 </script>
 
-<div class={cn('flex flex-col space-y-1.5 text-center sm:text-left', className)} {...$$restProps}>
-	<slot />
+<div
+	bind:this={ref}
+	class={cn('flex flex-col space-y-1.5 text-center sm:text-left', class_name)}
+	{...rest}
+>
+	{@render children?.()}
 </div>

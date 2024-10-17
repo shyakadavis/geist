@@ -8,8 +8,8 @@
 	];
 </script>
 
-<div class="flex flex-col gap-4 sm:flex-row">
-	<Combobox placeholder="Search..." {items} size="sm" />
-	<Combobox placeholder="Search..." {items} />
-	<Combobox placeholder="Search..." {items} size="lg" />
+<div class="flex flex-col gap-4 sm:flex-row sm:items-start">
+	<Combobox type="single" placeholder="Search..." {items} size="sm" />
+	<Combobox type="single" placeholder="Search..." {items} />
+	<Combobox type="single" placeholder="Search..." {items} size="lg" />
 </div>

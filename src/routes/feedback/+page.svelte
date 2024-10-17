@@ -6,7 +6,7 @@
 	import Inline from './inline.svelte';
 	import inline_code from './inline.svelte?raw';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <PageWrapper title={data.title} description={data.description}>
