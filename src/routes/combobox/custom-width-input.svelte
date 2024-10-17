@@ -8,4 +8,4 @@
 	];
 </script>
 
-<Combobox placeholder="Search..." {items} class="w-[256px]" />
+<Combobox type="single" placeholder="Search..." {items} class="w-[256px]" />

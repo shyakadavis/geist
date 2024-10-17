@@ -21,6 +21,7 @@ import ChevronRight from './chevron-right.svg?component';
 import ChevronUpSmall from './chevron-up-small.svg?component';
 import ChevronUp from './chevron-up.svg?component';
 import ClockDashed from './clock-dashed.svg?component';
+import Clock from './clock.svg?component';
 import CodeBracket from './code-bracket.svg?component';
 import Command from './command.svg?component';
 import Copy from './copy.svg?component';
@@ -104,6 +105,7 @@ export const Icons = {
 	ChevronUpSmall,
 	ChevronUp,
 	ClockDashed,
+	Clock,
 	CodeBracket,
 	Command,
 	Copy,

@@ -4,7 +4,7 @@
 	import { Combobox } from 'bits-ui';
 	import { input_variants } from '../input';
 
-	type Props = {
+	type Props = Combobox.RootProps & {
 		items?: { value: string; label: string }[];
 		placeholder?: string;
 		empty_message?: string;
@@ -13,6 +13,7 @@
 		class?: string;
 		list_class?: string;
 		size?: 'sm' | 'md' | 'lg';
+		icon?: typeof Icons.Accessibility;
 	};
 
 	let {
@@ -23,7 +24,9 @@
 		errored = false,
 		class: class_name = undefined,
 		list_class: list_class_name = undefined,
-		size = 'md'
+		size = 'md',
+		icon: Icon = undefined,
+		...rest
 	}: Props = $props();
 
 	let search_value = $state('');
@@ -35,17 +38,25 @@
 	);
 </script>
 
+<!-- TODO: Fix combobox search. Currently can't use "space" when searching. Maybe because space closes Combobox.Content -->
 <Combobox.Root
-	type="single"
 	{disabled}
 	onOpenChange={(o) => {
 		if (!o) search_value = '';
 	}}
+	{...rest}
 >
-	<Combobox.Trigger class={cn('relative w-full', class_name)}>
-		<Icons.MagnifyingGlass
-			class="pointer-events-none absolute start-3 top-1/2 size-3.5 -translate-y-1/2 text-gray-700"
-		/>
+	<!-- TODO: Bring back a full width (moved the `class_name` down to the input as that's what's mostly targeted.) -->
+	<Combobox.Trigger class={cn('relative w-fit')}>
+		{#if Icon}
+			<Icon
+				class="pointer-events-none absolute start-3 top-1/2 size-3.5 -translate-y-1/2 text-gray-700"
+			/>
+		{:else}
+			<Icons.MagnifyingGlass
+				class="pointer-events-none absolute start-3 top-1/2 size-3.5 -translate-y-1/2 text-gray-700"
+			/>
+		{/if}
 		<Combobox.Input
 			oninput={(e) => (search_value = e.currentTarget.value)}
 			class={cn(
@@ -57,7 +68,8 @@
 					'h-8 text-sm': size === 'sm',
 					'h-10': size === 'md',
 					'h-12 text-base': size === 'lg'
-				}
+				},
+				class_name
 			)}
 			{placeholder}
 			aria-label={placeholder}
