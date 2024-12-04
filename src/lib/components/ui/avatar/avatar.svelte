@@ -1,16 +1,21 @@
 <script lang="ts">
 	import type { Icons } from '$lib/assets/icons';
 	import { cn } from '$lib/utils.js';
-	import { Avatar as AvatarPrimitive } from 'bits-ui';
+	import { Avatar as AvatarPrimitive, type Without } from 'bits-ui';
+	import { Skeleton } from '../skeleton';
 
-	type Props = AvatarPrimitive.RootProps & {
+	type CustomAvatarProps = {
 		icon?: typeof Icons.Bell;
+		placeholder?: boolean;
 	};
+
+	type Props = CustomAvatarProps & Without<AvatarPrimitive.RootProps, CustomAvatarProps>;
 
 	let {
 		class: class_name = undefined,
 		icon: Icon = undefined,
 		children,
+		placeholder = undefined,
 		...rest
 	}: Props = $props();
 </script>
@@ -20,7 +25,11 @@
 	{...rest}
 >
 	<div class="flex size-full shrink-0 overflow-hidden rounded-[inherit]">
-		{@render children?.()}
+		{#if placeholder}
+			<Skeleton width="100%" />
+		{:else}
+			{@render children?.()}
+		{/if}
 	</div>
 	{#if Icon}
 		<Icon
