@@ -55,7 +55,7 @@
 	data-variant={variant}
 	bind:ref
 	class={cn(
-		'group flex w-full items-baseline gap-3 overflow-hidden overflow-x-auto p-1 text-gray-900 no-scrollbar data-[variant=default]:[box-shadow:_0_-1px_0_var(--accents-2)_inset;]',
+		'group flex w-full items-baseline gap-3 overflow-hidden overflow-x-auto p-1 text-gray-900 no-scrollbar data-[variant=default]:border-b data-[variant=default]:[box-shadow:_0_-1px_0_var(--accents-2)_inset;]',
 		{
 			'mask-linear mask-dir-to-r mask-from-0 mask-to-100 mask-point-to-[15%]':
 				mask_overflow && pre_mask,
