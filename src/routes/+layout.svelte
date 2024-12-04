@@ -1,15 +1,14 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import extend from 'just-extend';
 	import { ModeWatcher } from 'mode-watcher';
-	import { MetaTags } from 'svelte-meta-tags';
+	import { MetaTags, deepMerge } from 'svelte-meta-tags';
 	import '../app.css';
 	import Aside from './aside.svelte';
 	import Header from './header.svelte';
 
 	let { data, children } = $props();
 
-	let metaTags = $derived(extend(true, {}, data.baseMetaTags, $page.data.pageMetaTags));
+	let metaTags = $derived(deepMerge(data.baseMetaTags, $page.data.pageMetaTags));
 </script>
 
 <MetaTags {...metaTags} />

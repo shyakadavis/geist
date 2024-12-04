@@ -153,14 +153,11 @@
 	{#if show_value && size !== 'tiny'}
 		<p
 			data-current-value={$progress}
-			class={cn(
-				'delay-[var(--delay)] duration-[var(--transition-length)] absolute tabular-nums ease-linear',
-				{
-					'text-[0.6875rem] font-medium': size === 'sm',
-					'text-lg font-medium leading-6': size === 'md',
-					'text-[2rem] font-semibold leading-10': size === 'lg'
-				}
-			)}
+			class={cn('absolute tabular-nums ease-linear', {
+				'text-[0.6875rem] font-medium': size === 'sm',
+				'text-lg font-medium leading-6': size === 'md',
+				'text-[2rem] font-semibold leading-10': size === 'lg'
+			})}
 		>
 			{Math.round($progress)}
 		</p>

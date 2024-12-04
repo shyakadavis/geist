@@ -1,8 +1,9 @@
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button';
+	import { Button, button_variants } from '$lib/components/ui/button';
 	import { Combobox } from '$lib/components/ui/combobox';
 	import { Label } from '$lib/components/ui/label';
 	import * as Modal from '$lib/components/ui/modal';
+	import { cn } from '$lib/utils';
 
 	const items = [
 		{ label: 'One', value: 'one' },
@@ -12,9 +13,7 @@
 </script>
 
 <Modal.Root>
-	<Modal.Trigger>
-		<Button size="sm">Open Modal</Button>
-	</Modal.Trigger>
+	<Modal.Trigger class={cn(button_variants({ size: 'sm' }))}>Open Modal</Modal.Trigger>
 
 	<Modal.Content>
 		<Modal.Header>
