@@ -21,12 +21,12 @@ export const note_variants = tv({
 		fill: { true: true, false: false }
 	},
 	compoundVariants: [
-		{ variant: 'secondary', fill: true, class: 'bg-gray-200' },
-		{ variant: 'success', fill: true, class: 'bg-blue-200' },
-		{ variant: 'error', fill: true, class: 'bg-red-200' },
-		{ variant: 'warning', fill: true, class: 'bg-amber-200' },
-		{ variant: 'violet', fill: true, class: 'bg-purple-200' },
-		{ variant: 'cyan', fill: true, class: 'bg-teal-200' }
+		{ variant: 'secondary', fill: true, class: 'border-gray-200 bg-gray-200' },
+		{ variant: 'success', fill: true, class: 'border-blue-200 bg-blue-200' },
+		{ variant: 'error', fill: true, class: 'border-red-200 bg-red-200' },
+		{ variant: 'warning', fill: true, class: 'border-amber-200 bg-amber-200' },
+		{ variant: 'violet', fill: true, class: 'border-purple-200 bg-purple-200' },
+		{ variant: 'cyan', fill: true, class: 'border-teal-200 bg-teal-200' }
 	],
 	defaultVariants: {
 		variant: 'secondary',
