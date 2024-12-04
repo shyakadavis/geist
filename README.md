@@ -11,14 +11,17 @@ This is a [Svelte](https://svelte.dev/) implementation of the [Geist](https://ve
 - Built with [shadcn-svelte](https://www.shadcn-svelte.com/)
 
 ## Add components with jsrepo
+
 We have setup [jsrepo](https://github.com/ieedan/jsrepo) so that you can install our components just like `shadcn/ui`.
 
 **Setup jsrepo**:
+
 ```bash
 npx jsrepo init --project --repos github/shyakadavis/geist
 ```
 
 **Add components**:
+
 ```bash
 # list components
 npx jsrepo add

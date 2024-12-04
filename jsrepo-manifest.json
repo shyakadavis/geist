@@ -16,16 +16,9 @@
 					"avatar.svelte",
 					"index.ts"
 				],
-				"localDependencies": [
-					"lib/utils",
-					"icons/index",
-					"ui/skeleton"
-				],
+				"localDependencies": ["lib/utils", "icons/index", "ui/skeleton"],
 				"dependencies": [],
-				"devDependencies": [
-					"bits-ui@1.0.0-next.65",
-					"tailwind-variants@^0.2.1"
-				],
+				"devDependencies": ["bits-ui@1.0.0-next.65", "tailwind-variants@^0.2.1"],
 				"_imports_": {
 					"$lib/utils.js": "{{lib/utils}}.js",
 					"$lib/utils": "{{lib/utils}}",
@@ -40,18 +33,10 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"badge.svelte",
-					"index.ts"
-				],
-				"localDependencies": [
-					"icons/index",
-					"lib/utils"
-				],
+				"files": ["badge.svelte", "index.ts"],
+				"localDependencies": ["icons/index", "lib/utils"],
 				"dependencies": [],
-				"devDependencies": [
-					"tailwind-variants@^0.2.1"
-				],
+				"devDependencies": ["tailwind-variants@^0.2.1"],
 				"_imports_": {
 					"$lib/assets/icons/index.js": "{{icons/index}}.js",
 					"$lib/utils.js": "{{lib/utils}}.js"
@@ -64,20 +49,10 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"button.svelte",
-					"index.ts"
-				],
-				"localDependencies": [
-					"ui/spinner",
-					"lib/utils",
-					"icons/index"
-				],
+				"files": ["button.svelte", "index.ts"],
+				"localDependencies": ["ui/spinner", "lib/utils", "icons/index"],
 				"dependencies": [],
-				"devDependencies": [
-					"bits-ui@1.0.0-next.65",
-					"tailwind-variants@^0.2.1"
-				],
+				"devDependencies": ["bits-ui@1.0.0-next.65", "tailwind-variants@^0.2.1"],
 				"_imports_": {
 					"$lib/components/ui/spinner/index.js": "{{ui/spinner}}/index.js",
 					"$lib/utils.js": "{{lib/utils}}.js",
@@ -107,17 +82,9 @@
 					"calendar.svelte",
 					"index.ts"
 				],
-				"localDependencies": [
-					"lib/utils",
-					"ui/button",
-					"icons/index",
-					"ui/popover"
-				],
+				"localDependencies": ["lib/utils", "ui/button", "icons/index", "ui/popover"],
 				"dependencies": [],
-				"devDependencies": [
-					"bits-ui@1.0.0-next.65",
-					"@internationalized/date@^3.6.0"
-				],
+				"devDependencies": ["bits-ui@1.0.0-next.65", "@internationalized/date@^3.6.0"],
 				"_imports_": {
 					"$lib/utils.js": "{{lib/utils}}.js",
 					"../button": "{{ui/button}}",
@@ -134,19 +101,10 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"checkbox.svelte",
-					"index.ts"
-				],
-				"localDependencies": [
-					"icons/index",
-					"lib/utils",
-					"ui/label"
-				],
+				"files": ["checkbox.svelte", "index.ts"],
+				"localDependencies": ["icons/index", "lib/utils", "ui/label"],
 				"dependencies": [],
-				"devDependencies": [
-					"bits-ui@1.0.0-next.65"
-				],
+				"devDependencies": ["bits-ui@1.0.0-next.65"],
 				"_imports_": {
 					"$lib/assets/icons": "{{icons/index}}",
 					"$lib/utils.js": "{{lib/utils}}.js",
@@ -166,14 +124,9 @@
 					"choicebox.svelte",
 					"index.ts"
 				],
-				"localDependencies": [
-					"icons/index",
-					"lib/utils"
-				],
+				"localDependencies": ["icons/index", "lib/utils"],
 				"dependencies": [],
-				"devDependencies": [
-					"bits-ui@1.0.0-next.65"
-				],
+				"devDependencies": ["bits-ui@1.0.0-next.65"],
 				"_imports_": {
 					"$lib/assets/icons": "{{icons/index}}",
 					"$lib/utils.js": "{{lib/utils}}.js"
@@ -193,14 +146,9 @@
 					"collapse.svelte",
 					"index.ts"
 				],
-				"localDependencies": [
-					"lib/utils",
-					"icons/index"
-				],
+				"localDependencies": ["lib/utils", "icons/index"],
 				"dependencies": [],
-				"devDependencies": [
-					"bits-ui@1.0.0-next.65"
-				],
+				"devDependencies": ["bits-ui@1.0.0-next.65"],
 				"_imports_": {
 					"$lib/utils.js": "{{lib/utils}}.js",
 					"$lib/assets/icons": "{{icons/index}}"
@@ -213,19 +161,10 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"combobox.svelte",
-					"index.ts"
-				],
-				"localDependencies": [
-					"icons/index",
-					"lib/utils",
-					"ui/input"
-				],
+				"files": ["combobox.svelte", "index.ts"],
+				"localDependencies": ["icons/index", "lib/utils", "ui/input"],
 				"dependencies": [],
-				"devDependencies": [
-					"bits-ui@1.0.0-next.65"
-				],
+				"devDependencies": ["bits-ui@1.0.0-next.65"],
 				"_imports_": {
 					"$lib/assets/icons": "{{icons/index}}",
 					"$lib/utils": "{{lib/utils}}",
@@ -253,15 +192,9 @@
 					"command.svelte",
 					"index.ts"
 				],
-				"localDependencies": [
-					"ui/dialog",
-					"lib/utils",
-					"icons/index"
-				],
+				"localDependencies": ["ui/dialog", "lib/utils", "icons/index"],
 				"dependencies": [],
-				"devDependencies": [
-					"bits-ui@1.0.0-next.65"
-				],
+				"devDependencies": ["bits-ui@1.0.0-next.65"],
 				"_imports_": {
 					"$lib/components/ui/dialog/index.js": "{{ui/dialog}}/index.js",
 					"$lib/utils": "{{lib/utils}}",
@@ -288,14 +221,9 @@
 					"context-menu-sub-trigger.svelte",
 					"index.ts"
 				],
-				"localDependencies": [
-					"icons/index",
-					"lib/utils"
-				],
+				"localDependencies": ["icons/index", "lib/utils"],
 				"dependencies": [],
-				"devDependencies": [
-					"bits-ui@1.0.0-next.65"
-				],
+				"devDependencies": ["bits-ui@1.0.0-next.65"],
 				"_imports_": {
 					"$lib/assets/icons": "{{icons/index}}",
 					"$lib/utils.js": "{{lib/utils}}.js"
@@ -308,15 +236,8 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"description.svelte",
-					"index.ts"
-				],
-				"localDependencies": [
-					"icons/index",
-					"ui/tooltip",
-					"lib/utils"
-				],
+				"files": ["description.svelte", "index.ts"],
+				"localDependencies": ["icons/index", "ui/tooltip", "lib/utils"],
 				"dependencies": [],
 				"devDependencies": [],
 				"_imports_": {
@@ -341,15 +262,9 @@
 					"dialog-title.svelte",
 					"index.ts"
 				],
-				"localDependencies": [
-					"icons/index",
-					"lib/utils",
-					"ui/button"
-				],
+				"localDependencies": ["icons/index", "lib/utils", "ui/button"],
 				"dependencies": [],
-				"devDependencies": [
-					"bits-ui@1.0.0-next.65"
-				],
+				"devDependencies": ["bits-ui@1.0.0-next.65"],
 				"_imports_": {
 					"$lib/assets/icons/index.js": "{{icons/index}}.js",
 					"$lib/utils.js": "{{lib/utils}}.js",
@@ -374,14 +289,9 @@
 					"drawer.svelte",
 					"index.ts"
 				],
-				"localDependencies": [
-					"lib/utils"
-				],
+				"localDependencies": ["lib/utils"],
 				"dependencies": [],
-				"devDependencies": [
-					"vaul-svelte@1.0.0-next.3",
-					"bits-ui@1.0.0-next.65"
-				],
+				"devDependencies": ["vaul-svelte@1.0.0-next.3", "bits-ui@1.0.0-next.65"],
 				"_imports_": {
 					"$lib/utils.js": "{{lib/utils}}.js"
 				}
@@ -393,18 +303,10 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"empty-state.svelte",
-					"index.ts"
-				],
-				"localDependencies": [
-					"icons/index",
-					"lib/utils"
-				],
+				"files": ["empty-state.svelte", "index.ts"],
+				"localDependencies": ["icons/index", "lib/utils"],
 				"dependencies": [],
-				"devDependencies": [
-					"tailwind-variants@^0.2.1"
-				],
+				"devDependencies": ["tailwind-variants@^0.2.1"],
 				"_imports_": {
 					"$lib/assets/icons": "{{icons/index}}",
 					"$lib/utils.js": "{{lib/utils}}.js"
@@ -417,19 +319,10 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"error.svelte",
-					"index.ts"
-				],
-				"localDependencies": [
-					"icons/index",
-					"lib/utils",
-					"ui/link"
-				],
+				"files": ["error.svelte", "index.ts"],
+				"localDependencies": ["icons/index", "lib/utils", "ui/link"],
 				"dependencies": [],
-				"devDependencies": [
-					"tailwind-variants@^0.2.1"
-				],
+				"devDependencies": ["tailwind-variants@^0.2.1"],
 				"_imports_": {
 					"$lib/assets/icons/index.js": "{{icons/index}}.js",
 					"$lib/utils.js": "{{lib/utils}}.js",
@@ -443,21 +336,10 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"feedback.svelte",
-					"index.ts"
-				],
-				"localDependencies": [
-					"icons/index",
-					"ui/button",
-					"ui/popover",
-					"ui/textarea",
-					"lib/utils"
-				],
+				"files": ["feedback.svelte", "index.ts"],
+				"localDependencies": ["icons/index", "ui/button", "ui/popover", "ui/textarea", "lib/utils"],
 				"dependencies": [],
-				"devDependencies": [
-					"svelte-exmarkdown@^3.0.5"
-				],
+				"devDependencies": ["svelte-exmarkdown@^3.0.5"],
 				"_imports_": {
 					"$lib/assets/icons/index.js": "{{icons/index}}.js",
 					"$lib/components/ui/button": "{{ui/button}}",
@@ -473,13 +355,8 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"gauge.svelte",
-					"index.ts"
-				],
-				"localDependencies": [
-					"lib/utils"
-				],
+				"files": ["gauge.svelte", "index.ts"],
+				"localDependencies": ["lib/utils"],
 				"dependencies": [],
 				"devDependencies": [],
 				"_imports_": {
@@ -493,20 +370,10 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"index.ts",
-					"input.svelte",
-					"search.svelte"
-				],
-				"localDependencies": [
-					"icons/index",
-					"lib/utils",
-					"ui/label"
-				],
+				"files": ["index.ts", "input.svelte", "search.svelte"],
+				"localDependencies": ["icons/index", "lib/utils", "ui/label"],
 				"dependencies": [],
-				"devDependencies": [
-					"tailwind-variants@^0.2.1"
-				],
+				"devDependencies": ["tailwind-variants@^0.2.1"],
 				"_imports_": {
 					"$lib/assets/icons/index.js": "{{icons/index}}.js",
 					"$lib/utils.js": "{{lib/utils}}.js",
@@ -522,17 +389,10 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"index.ts",
-					"kbd.svelte"
-				],
-				"localDependencies": [
-					"lib/utils"
-				],
+				"files": ["index.ts", "kbd.svelte"],
+				"localDependencies": ["lib/utils"],
 				"dependencies": [],
-				"devDependencies": [
-					"tailwind-variants@^0.2.1"
-				],
+				"devDependencies": ["tailwind-variants@^0.2.1"],
 				"_imports_": {
 					"$lib/utils.js": "{{lib/utils}}.js"
 				}
@@ -544,17 +404,10 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"index.ts",
-					"label.svelte"
-				],
-				"localDependencies": [
-					"lib/utils"
-				],
+				"files": ["index.ts", "label.svelte"],
+				"localDependencies": ["lib/utils"],
 				"dependencies": [],
-				"devDependencies": [
-					"bits-ui@1.0.0-next.65"
-				],
+				"devDependencies": ["bits-ui@1.0.0-next.65"],
 				"_imports_": {
 					"$lib/utils.js": "{{lib/utils}}.js"
 				}
@@ -566,19 +419,10 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"index.ts",
-					"link.svelte"
-				],
-				"localDependencies": [
-					"icons/index",
-					"lib/utils"
-				],
+				"files": ["index.ts", "link.svelte"],
+				"localDependencies": ["icons/index", "lib/utils"],
 				"dependencies": [],
-				"devDependencies": [
-					"tailwind-variants@^0.2.1",
-					"bits-ui@1.0.0-next.65"
-				],
+				"devDependencies": ["tailwind-variants@^0.2.1", "bits-ui@1.0.0-next.65"],
 				"_imports_": {
 					"$lib/assets/icons/index.js": "{{icons/index}}.js",
 					"$lib/utils.js": "{{lib/utils}}.js"
@@ -591,10 +435,7 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"index.ts",
-					"loading-dots.svelte"
-				],
+				"files": ["index.ts", "loading-dots.svelte"],
 				"localDependencies": [],
 				"dependencies": [],
 				"devDependencies": [],
@@ -618,14 +459,9 @@
 					"menu-sub-content.svelte",
 					"menu-sub-trigger.svelte"
 				],
-				"localDependencies": [
-					"icons/index",
-					"lib/utils"
-				],
+				"localDependencies": ["icons/index", "lib/utils"],
 				"dependencies": [],
-				"devDependencies": [
-					"bits-ui@1.0.0-next.65"
-				],
+				"devDependencies": ["bits-ui@1.0.0-next.65"],
 				"_imports_": {
 					"$lib/assets/icons": "{{icons/index}}",
 					"$lib/utils.js": "{{lib/utils}}.js"
@@ -649,16 +485,9 @@
 					"modal-trigger.svelte",
 					"modal.svelte"
 				],
-				"localDependencies": [
-					"ui/dialog",
-					"ui/drawer",
-					"lib/utils",
-					"ui/button"
-				],
+				"localDependencies": ["ui/dialog", "ui/drawer", "lib/utils", "ui/button"],
 				"dependencies": [],
-				"devDependencies": [
-					"runed@^0.15.4"
-				],
+				"devDependencies": ["runed@^0.15.4"],
 				"_imports_": {
 					"$lib/components/ui/dialog/index.js": "{{ui/dialog}}/index.js",
 					"$lib/components/ui/drawer/index.js": "{{ui/drawer}}/index.js",
@@ -674,18 +503,10 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"index.ts",
-					"note.svelte"
-				],
-				"localDependencies": [
-					"icons/index",
-					"lib/utils"
-				],
+				"files": ["index.ts", "note.svelte"],
+				"localDependencies": ["icons/index", "lib/utils"],
 				"dependencies": [],
-				"devDependencies": [
-					"tailwind-variants@^0.2.1"
-				],
+				"devDependencies": ["tailwind-variants@^0.2.1"],
 				"_imports_": {
 					"$lib/assets/icons/index.js": "{{icons/index}}.js",
 					"$lib/utils.js": "{{lib/utils}}.js"
@@ -698,13 +519,8 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"index.ts",
-					"pagination.svelte"
-				],
-				"localDependencies": [
-					"icons/index"
-				],
+				"files": ["index.ts", "pagination.svelte"],
+				"localDependencies": ["icons/index"],
 				"dependencies": [],
 				"devDependencies": [],
 				"_imports_": {
@@ -718,17 +534,10 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"index.ts",
-					"popover-content.svelte"
-				],
-				"localDependencies": [
-					"lib/utils"
-				],
+				"files": ["index.ts", "popover-content.svelte"],
+				"localDependencies": ["lib/utils"],
 				"dependencies": [],
-				"devDependencies": [
-					"bits-ui@1.0.0-next.65"
-				],
+				"devDependencies": ["bits-ui@1.0.0-next.65"],
 				"_imports_": {
 					"$lib/utils.js": "{{lib/utils}}.js"
 				}
@@ -740,18 +549,10 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"index.ts",
-					"progress.svelte"
-				],
-				"localDependencies": [
-					"lib/utils"
-				],
+				"files": ["index.ts", "progress.svelte"],
+				"localDependencies": ["lib/utils"],
 				"dependencies": [],
-				"devDependencies": [
-					"tailwind-variants@^0.2.1",
-					"bits-ui@1.0.0-next.65"
-				],
+				"devDependencies": ["tailwind-variants@^0.2.1", "bits-ui@1.0.0-next.65"],
 				"_imports_": {
 					"$lib/utils.js": "{{lib/utils}}.js"
 				}
@@ -763,19 +564,10 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"index.ts",
-					"radio-item.svelte",
-					"radio.svelte"
-				],
-				"localDependencies": [
-					"ui/label",
-					"lib/utils"
-				],
+				"files": ["index.ts", "radio-item.svelte", "radio.svelte"],
+				"localDependencies": ["ui/label", "lib/utils"],
 				"dependencies": [],
-				"devDependencies": [
-					"bits-ui@1.0.0-next.65"
-				],
+				"devDependencies": ["bits-ui@1.0.0-next.65"],
 				"_imports_": {
 					"$lib/components/ui/label/index.js": "{{ui/label}}/index.js",
 					"$lib/utils.js": "{{lib/utils}}.js"
@@ -814,10 +606,7 @@
 					"ui/label"
 				],
 				"dependencies": [],
-				"devDependencies": [
-					"bits-ui@1.0.0-next.65",
-					"@internationalized/date@^3.6.0"
-				],
+				"devDependencies": ["bits-ui@1.0.0-next.65", "@internationalized/date@^3.6.0"],
 				"_imports_": {
 					"$lib/assets/icons": "{{icons/index}}",
 					"$lib/utils": "{{lib/utils}}",
@@ -848,16 +637,9 @@
 					"select-separator.svelte",
 					"select-trigger.svelte"
 				],
-				"localDependencies": [
-					"lib/utils",
-					"icons/index",
-					"ui/separator"
-				],
+				"localDependencies": ["lib/utils", "icons/index", "ui/separator"],
 				"dependencies": [],
-				"devDependencies": [
-					"bits-ui@1.0.0-next.65",
-					"lucide-svelte@^0.451.0"
-				],
+				"devDependencies": ["bits-ui@1.0.0-next.65", "lucide-svelte@^0.451.0"],
 				"_imports_": {
 					"$lib/utils.js": "{{lib/utils}}.js",
 					"$lib/assets/icons": "{{icons/index}}",
@@ -871,17 +653,10 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"index.ts",
-					"separator.svelte"
-				],
-				"localDependencies": [
-					"lib/utils"
-				],
+				"files": ["index.ts", "separator.svelte"],
+				"localDependencies": ["lib/utils"],
 				"dependencies": [],
-				"devDependencies": [
-					"bits-ui@1.0.0-next.65"
-				],
+				"devDependencies": ["bits-ui@1.0.0-next.65"],
 				"_imports_": {
 					"$lib/utils.js": "{{lib/utils}}.js"
 				}
@@ -893,15 +668,8 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"index.ts",
-					"show-more.svelte"
-				],
-				"localDependencies": [
-					"icons/index",
-					"ui/button",
-					"lib/utils"
-				],
+				"files": ["index.ts", "show-more.svelte"],
+				"localDependencies": ["icons/index", "ui/button", "lib/utils"],
 				"dependencies": [],
 				"devDependencies": [],
 				"_imports_": {
@@ -917,17 +685,10 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"index.ts",
-					"skeleton.svelte"
-				],
-				"localDependencies": [
-					"lib/utils"
-				],
+				"files": ["index.ts", "skeleton.svelte"],
+				"localDependencies": ["lib/utils"],
 				"dependencies": [],
-				"devDependencies": [
-					"bits-ui@1.0.0-next.65"
-				],
+				"devDependencies": ["bits-ui@1.0.0-next.65"],
 				"_imports_": {
 					"$lib/utils.js": "{{lib/utils}}.js"
 				}
@@ -939,18 +700,10 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"index.ts",
-					"snippet.svelte"
-				],
-				"localDependencies": [
-					"icons/index",
-					"lib/utils"
-				],
+				"files": ["index.ts", "snippet.svelte"],
+				"localDependencies": ["icons/index", "lib/utils"],
 				"dependencies": [],
-				"devDependencies": [
-					"tailwind-variants@^0.2.1"
-				],
+				"devDependencies": ["tailwind-variants@^0.2.1"],
 				"_imports_": {
 					"$lib/assets/icons": "{{icons/index}}",
 					"$lib/utils": "{{lib/utils}}"
@@ -963,10 +716,7 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"index.ts",
-					"spinner.svelte"
-				],
+				"files": ["index.ts", "spinner.svelte"],
 				"localDependencies": [],
 				"dependencies": [],
 				"devDependencies": [],
@@ -979,17 +729,10 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"index.ts",
-					"status-dot.svelte"
-				],
-				"localDependencies": [
-					"lib/utils"
-				],
+				"files": ["index.ts", "status-dot.svelte"],
+				"localDependencies": ["lib/utils"],
 				"dependencies": [],
-				"devDependencies": [
-					"tailwind-variants@^0.2.1"
-				],
+				"devDependencies": ["tailwind-variants@^0.2.1"],
 				"_imports_": {
 					"$lib/utils": "{{lib/utils}}"
 				}
@@ -1001,19 +744,10 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"index.ts",
-					"switch.svelte"
-				],
-				"localDependencies": [
-					"icons/index",
-					"lib/utils"
-				],
+				"files": ["index.ts", "switch.svelte"],
+				"localDependencies": ["icons/index", "lib/utils"],
 				"dependencies": [],
-				"devDependencies": [
-					"tailwind-variants@^0.2.1",
-					"bits-ui@1.0.0-next.65"
-				],
+				"devDependencies": ["tailwind-variants@^0.2.1", "bits-ui@1.0.0-next.65"],
 				"_imports_": {
 					"$lib/assets/icons": "{{icons/index}}",
 					"$lib/utils.js": "{{lib/utils}}.js"
@@ -1037,13 +771,9 @@
 					"table-row.svelte",
 					"table.svelte"
 				],
-				"localDependencies": [
-					"lib/utils"
-				],
+				"localDependencies": ["lib/utils"],
 				"dependencies": [],
-				"devDependencies": [
-					"bits-ui@1.0.0-next.65"
-				],
+				"devDependencies": ["bits-ui@1.0.0-next.65"],
 				"_imports_": {
 					"$lib/utils.js": "{{lib/utils}}.js"
 				}
@@ -1055,21 +785,10 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"index.ts",
-					"tabs-content.svelte",
-					"tabs-list.svelte",
-					"tabs-trigger.svelte"
-				],
-				"localDependencies": [
-					"lib/utils",
-					"icons/index",
-					"ui/tooltip"
-				],
+				"files": ["index.ts", "tabs-content.svelte", "tabs-list.svelte", "tabs-trigger.svelte"],
+				"localDependencies": ["lib/utils", "icons/index", "ui/tooltip"],
 				"dependencies": [],
-				"devDependencies": [
-					"bits-ui@1.0.0-next.65"
-				],
+				"devDependencies": ["bits-ui@1.0.0-next.65"],
 				"_imports_": {
 					"$lib/utils.js": "{{lib/utils}}.js",
 					"$lib/assets/icons": "{{icons/index}}",
@@ -1083,17 +802,10 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"index.ts",
-					"textarea.svelte"
-				],
-				"localDependencies": [
-					"lib/utils"
-				],
+				"files": ["index.ts", "textarea.svelte"],
+				"localDependencies": ["lib/utils"],
 				"dependencies": [],
-				"devDependencies": [
-					"bits-ui@1.0.0-next.65"
-				],
+				"devDependencies": ["bits-ui@1.0.0-next.65"],
 				"_imports_": {
 					"$lib/utils.js": "{{lib/utils}}.js"
 				}
@@ -1105,17 +817,10 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"index.ts",
-					"tooltip-content.svelte"
-				],
-				"localDependencies": [
-					"lib/utils"
-				],
+				"files": ["index.ts", "tooltip-content.svelte"],
+				"localDependencies": ["lib/utils"],
 				"dependencies": [],
-				"devDependencies": [
-					"bits-ui@1.0.0-next.65"
-				],
+				"devDependencies": ["bits-ui@1.0.0-next.65"],
 				"_imports_": {
 					"$lib/utils.js": "{{lib/utils}}.js"
 				}
@@ -1127,13 +832,8 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": true,
-				"files": [
-					"index.ts",
-					"window.svelte"
-				],
-				"localDependencies": [
-					"lib/utils"
-				],
+				"files": ["index.ts", "window.svelte"],
+				"localDependencies": ["lib/utils"],
 				"dependencies": [],
 				"devDependencies": [],
 				"_imports_": {
@@ -1152,9 +852,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"accessibility.svg"
-				],
+				"files": ["accessibility.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1167,9 +865,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"arrow-circle-up.svg"
-				],
+				"files": ["arrow-circle-up.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1182,9 +878,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"arrow-left.svg"
-				],
+				"files": ["arrow-left.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1197,9 +891,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"arrow-right.svg"
-				],
+				"files": ["arrow-right.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1212,9 +904,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"arrow-up.svg"
-				],
+				"files": ["arrow-up.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1227,9 +917,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"bell.svg"
-				],
+				"files": ["bell.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1242,9 +930,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"box.svg"
-				],
+				"files": ["box.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1257,9 +943,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"brand-assets.svg"
-				],
+				"files": ["brand-assets.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1272,9 +956,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"calendar.svg"
-				],
+				"files": ["calendar.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1287,9 +969,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"chart-bar-middle.svg"
-				],
+				"files": ["chart-bar-middle.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1302,9 +982,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"chart-bar-peak.svg"
-				],
+				"files": ["chart-bar-peak.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1317,9 +995,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"chart-pie.svg"
-				],
+				"files": ["chart-pie.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1332,9 +1008,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"chart-trending-down.svg"
-				],
+				"files": ["chart-trending-down.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1347,9 +1021,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"check-circle.svg"
-				],
+				"files": ["check-circle.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1362,9 +1034,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"check.svg"
-				],
+				"files": ["check.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1377,9 +1047,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"chevron-down-small.svg"
-				],
+				"files": ["chevron-down-small.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1392,9 +1060,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"chevron-down.svg"
-				],
+				"files": ["chevron-down.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1407,9 +1073,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"chevron-left.svg"
-				],
+				"files": ["chevron-left.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1422,9 +1086,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"chevron-right-small.svg"
-				],
+				"files": ["chevron-right-small.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1437,9 +1099,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"chevron-right.svg"
-				],
+				"files": ["chevron-right.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1452,9 +1112,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"chevron-up-small.svg"
-				],
+				"files": ["chevron-up-small.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1467,9 +1125,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"chevron-up.svg"
-				],
+				"files": ["chevron-up.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1482,9 +1138,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"clock-dashed.svg"
-				],
+				"files": ["clock-dashed.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1497,9 +1151,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"clock.svg"
-				],
+				"files": ["clock.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1512,9 +1164,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"code-bracket.svg"
-				],
+				"files": ["code-bracket.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1527,9 +1177,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"command.svg"
-				],
+				"files": ["command.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1542,9 +1190,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"copy.svg"
-				],
+				"files": ["copy.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1557,9 +1203,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"cross.svg"
-				],
+				"files": ["cross.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1572,9 +1216,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"cursor-click.svg"
-				],
+				"files": ["cursor-click.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1587,9 +1229,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"database.svg"
-				],
+				"files": ["database.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1602,9 +1242,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"dollar.svg"
-				],
+				"files": ["dollar.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1617,9 +1255,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"error-states.svg"
-				],
+				"files": ["error-states.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1632,9 +1268,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"external-small.svg"
-				],
+				"files": ["external-small.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1647,9 +1281,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"external.svg"
-				],
+				"files": ["external.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1662,9 +1294,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"face-happy.svg"
-				],
+				"files": ["face-happy.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1677,9 +1307,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"face-sad.svg"
-				],
+				"files": ["face-sad.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1692,9 +1320,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"face-smile.svg"
-				],
+				"files": ["face-smile.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1707,9 +1333,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"face-unhappy.svg"
-				],
+				"files": ["face-unhappy.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1722,9 +1346,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"file-text.svg"
-				],
+				"files": ["file-text.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1737,9 +1359,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"flag.svg"
-				],
+				"files": ["flag.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1752,9 +1372,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"floppy-disk.svg"
-				],
+				"files": ["floppy-disk.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1767,9 +1385,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"git-branch.svg"
-				],
+				"files": ["git-branch.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1782,9 +1398,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"globe.svg"
-				],
+				"files": ["globe.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1797,9 +1411,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"grid-square.svg"
-				],
+				"files": ["grid-square.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1812,9 +1424,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"inbox.svg"
-				],
+				"files": ["inbox.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -1827,9 +1437,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"index.ts"
-				],
+				"files": ["index.ts"],
 				"localDependencies": [
 					"icons/accessibility",
 					"icons/arrow-circle-up",
@@ -2008,9 +1616,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"information-fill-small.svg"
-				],
+				"files": ["information-fill-small.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2023,9 +1629,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"information.svg"
-				],
+				"files": ["information.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2038,9 +1642,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"key.svg"
-				],
+				"files": ["key.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2053,9 +1655,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"link.svg"
-				],
+				"files": ["link.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2068,9 +1668,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"loader-circle.svg"
-				],
+				"files": ["loader-circle.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2083,9 +1681,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"lock-closed-small.svg"
-				],
+				"files": ["lock-closed-small.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2098,9 +1694,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"lock-open-small.svg"
-				],
+				"files": ["lock-open-small.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2113,9 +1707,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"logo-bitbucket-color.svg"
-				],
+				"files": ["logo-bitbucket-color.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2128,9 +1720,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"logo-geist.svg"
-				],
+				"files": ["logo-geist.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2143,9 +1733,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"logo-github.svg"
-				],
+				"files": ["logo-github.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2158,9 +1746,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"logo-gitlab.svg"
-				],
+				"files": ["logo-gitlab.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2173,9 +1759,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"logo-next.svg"
-				],
+				"files": ["logo-next.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2188,9 +1772,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"logo-svelte.svg"
-				],
+				"files": ["logo-svelte.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2203,9 +1785,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"logo-turborepo.svg"
-				],
+				"files": ["logo-turborepo.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2218,9 +1798,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"logo-v0.svg"
-				],
+				"files": ["logo-v0.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2233,9 +1811,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"logo-vercel-circle.svg"
-				],
+				"files": ["logo-vercel-circle.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2248,9 +1824,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"logo-vercel.svg"
-				],
+				"files": ["logo-vercel.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2263,9 +1837,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"magnifying-glass.svg"
-				],
+				"files": ["magnifying-glass.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2278,9 +1850,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"markdown.svg"
-				],
+				"files": ["markdown.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2293,9 +1863,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"minus.svg"
-				],
+				"files": ["minus.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2308,9 +1876,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"more-horizontal.svg"
-				],
+				"files": ["more-horizontal.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2323,9 +1889,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"notification.svg"
-				],
+				"files": ["notification.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2338,9 +1902,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"paperclip.svg"
-				],
+				"files": ["paperclip.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2353,9 +1915,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"pencil-edit.svg"
-				],
+				"files": ["pencil-edit.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2368,9 +1928,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"router.svg"
-				],
+				"files": ["router.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2383,9 +1941,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"settings-sliders.svg"
-				],
+				"files": ["settings-sliders.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2398,9 +1954,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"shield-globe.svg"
-				],
+				"files": ["shield-globe.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2413,9 +1967,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"shield.svg"
-				],
+				"files": ["shield.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2428,9 +1980,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"star.svg"
-				],
+				"files": ["star.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2443,9 +1993,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"status.svg"
-				],
+				"files": ["status.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2458,9 +2006,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"stop.svg"
-				],
+				"files": ["stop.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2473,9 +2019,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"tabs.svg"
-				],
+				"files": ["tabs.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2488,9 +2032,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"theme-switch-dark.svg"
-				],
+				"files": ["theme-switch-dark.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2503,9 +2045,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"theme-switch-light.svg"
-				],
+				"files": ["theme-switch-light.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2518,9 +2058,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"theme-switch-system.svg"
-				],
+				"files": ["theme-switch-system.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2533,9 +2071,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"user-plus.svg"
-				],
+				"files": ["user-plus.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2548,9 +2084,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"warning.svg"
-				],
+				"files": ["warning.svg"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2568,9 +2102,7 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": false,
-				"files": [
-					"icons"
-				],
+				"files": ["icons"],
 				"localDependencies": [],
 				"dependencies": [],
 				"devDependencies": [],
@@ -2583,10 +2115,7 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": false,
-				"files": [
-					"shared",
-					"ui"
-				],
+				"files": ["shared", "ui"],
 				"localDependencies": [],
 				"dependencies": [],
 				"devDependencies": [],
@@ -2599,12 +2128,8 @@
 				"tests": false,
 				"subdirectory": true,
 				"list": false,
-				"files": [
-					"sitemap.ts"
-				],
-				"localDependencies": [
-					"lib/assets"
-				],
+				"files": ["sitemap.ts"],
+				"localDependencies": ["lib/assets"],
 				"dependencies": [],
 				"devDependencies": [],
 				"_imports_": {
@@ -2618,9 +2143,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"index.ts"
-				],
+				"files": ["index.ts"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2633,9 +2156,7 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"stores.ts"
-				],
+				"files": ["stores.ts"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
@@ -2648,17 +2169,11 @@
 				"tests": false,
 				"subdirectory": false,
 				"list": false,
-				"files": [
-					"utils.ts"
-				],
+				"files": ["utils.ts"],
 				"localDependencies": [],
 				"_imports_": {},
 				"dependencies": [],
-				"devDependencies": [
-					"bits-ui@1.0.0-next.65",
-					"clsx@^2.1.1",
-					"tailwind-merge@^2.5.5"
-				]
+				"devDependencies": ["bits-ui@1.0.0-next.65", "clsx@^2.1.1", "tailwind-merge@^2.5.5"]
 			}
 		]
 	}
