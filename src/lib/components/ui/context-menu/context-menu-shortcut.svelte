@@ -3,11 +3,18 @@
 	import type { WithElementRef } from 'bits-ui';
 	import type { HTMLAttributes } from 'svelte/elements';
 
-	type Props = WithElementRef<HTMLAttributes<HTMLSpanElement>>;
-
-	let { class: class_name = undefined, children, ...rest }: Props = $props();
+	let {
+		ref = $bindable(null),
+		class: className,
+		children,
+		...restProps
+	}: WithElementRef<HTMLAttributes<HTMLSpanElement>> = $props();
 </script>
 
-<span class={cn('ml-auto text-xs tracking-widest text-gray-700', class_name)} {...rest}>
+<span
+	bind:this={ref}
+	class={cn('ml-auto text-xs tracking-widest text-gray-700', className)}
+	{...restProps}
+>
 	{@render children?.()}
 </span>

@@ -5,16 +5,21 @@
 
 	type Props = WithoutChild<ContextMenuPrimitive.RadioItemProps>;
 
-	let { class: class_name = undefined, value, children: children_prop, ...rest }: Props = $props();
+	let {
+		ref = $bindable(null),
+		class: className,
+		children: childrenProp,
+		...restProps
+	}: Props = $props();
 </script>
 
 <ContextMenuPrimitive.RadioItem
+	bind:ref
 	class={cn(
 		'relative flex h-10 cursor-pointer select-none items-center rounded-md pl-8 pr-2 text-sm outline-none data-[disabled]:cursor-default data-[highlighted]:bg-gray-200',
-		class_name
+		className
 	)}
-	{value}
-	{...rest}
+	{...restProps}
 >
 	{#snippet children({ checked })}
 		<span class="absolute left-2 flex size-3.5 items-center justify-center">
@@ -22,6 +27,6 @@
 				<Icons.Status class="size-3 fill-current" />
 			{/if}
 		</span>
-		{@render children_prop?.({ checked })}
+		{@render childrenProp?.({ checked })}
 	{/snippet}
 </ContextMenuPrimitive.RadioItem>
