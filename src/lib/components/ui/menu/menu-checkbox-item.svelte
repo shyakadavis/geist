@@ -12,6 +12,7 @@
 	let {
 		class: className = undefined,
 		checked = $bindable(undefined),
+		indeterminate = $bindable(false),
 		children,
 		...rest
 	}: Props = $props();
@@ -26,9 +27,9 @@
 	{...rest}
 >
 	<span class="absolute left-2 flex size-3.5 items-center justify-center">
-		{#if checked === true}
+		{#if checked}
 			<Icons.Check aria-hidden="true" class="size-3" />
-		{:else if checked === 'indeterminate'}
+		{:else if indeterminate}
 			<Icons.Minus aria-hidden="true" class="size-3" />
 		{/if}
 	</span>
