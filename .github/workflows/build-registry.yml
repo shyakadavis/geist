@@ -24,10 +24,12 @@ jobs:
           node-version: 20
           cache: pnpm
 
-      # jsrepo doesn't need any of your
-      # dependencies to be installed to work
+      # we need to install here so that .svelte-kit is generated for path aliases
+      - name: Install dependencies
+        run: pnpm install
+
       - name: Build jsrepo-manifest.json
-        run: pnpm dlx jsrepo build
+        run: pnpm build:registry
 
       - name: Create pull request with changes
         uses: peter-evans/create-pull-request@v7
