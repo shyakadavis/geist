@@ -53,7 +53,7 @@
 		<IntroductionLink
 			title="Brand Assets"
 			description="Learn how to work with our brand assets."
-			href="/brands"
+			href="#"
 			class="bg-clip-padding"
 		>
 			<div class="relative mx-auto w-fit">
@@ -127,10 +127,7 @@
 				{/each}
 			</div>
 		</IntroductionLink>
-		<IntroductionLink
-			title="Grid"
-			description="A huge part of the new Vercel aesthetic."
-			href="/grid"
+		<IntroductionLink title="Grid" description="A huge part of the new Vercel aesthetic." href="#"
 		></IntroductionLink>
 		<IntroductionLink
 			title="Typeface"
