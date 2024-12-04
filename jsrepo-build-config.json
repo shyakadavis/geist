@@ -1,0 +1,15 @@
+{
+	"$schema": "https://unpkg.com/jsrepo@1.16.3/schemas/project-config.json",
+	"dirs": [
+		"./src/lib/components",
+		"./src/lib/assets",
+		"./src"
+	],
+	"doNotListBlocks": [],
+	"doNotListCategories": ["icons", "lib"],
+	"excludeDeps": ["svelte"],
+	"includeBlocks": [],
+	"includeCategories": ["ui", "lib", "icons"],
+	"errorOnWarn": false,
+	"output": true
+}
