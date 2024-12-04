@@ -1,19 +1,19 @@
 <script lang="ts">
-	import { Icons } from '$lib/assets/icons';
-	import { cn } from '$lib/utils.js';
+	import ChevronUp from 'lucide-svelte/icons/chevron-up';
 	import { Select as SelectPrimitive, type WithoutChildrenOrChild } from 'bits-ui';
+	import { cn } from '$lib/utils.js';
 
 	let {
 		ref = $bindable(null),
-		class: class_name,
-		...rest
+		class: className,
+		...restProps
 	}: WithoutChildrenOrChild<SelectPrimitive.ScrollUpButtonProps> = $props();
 </script>
 
 <SelectPrimitive.ScrollUpButton
 	bind:ref
-	class={cn('flex cursor-default items-center justify-center py-1', class_name)}
-	{...rest}
+	class={cn('flex cursor-default items-center justify-center py-1', className)}
+	{...restProps}
 >
-	<Icons.ChevronUp class="size-4" />
+	<ChevronUp class="size-4" />
 </SelectPrimitive.ScrollUpButton>

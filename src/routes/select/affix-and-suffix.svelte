@@ -4,27 +4,27 @@
 </script>
 
 <div class="flex flex-col items-start justify-between gap-2 md:flex-row">
-	<Select.Root>
+	<Select.Root type="single">
 		<Select.Trigger affix={Icons.ArrowCircleUp} size="sm" suffix={Icons.ArrowCircleUp}>
-			<Select.Value placeholder="Small" />
+			Small
 		</Select.Trigger>
 		<Select.Content>
 			<Select.Item value="small">Small</Select.Item>
 		</Select.Content>
 	</Select.Root>
 
-	<Select.Root>
+	<Select.Root type="single">
 		<Select.Trigger affix={Icons.ArrowCircleUp} suffix={Icons.ArrowCircleUp}>
-			<Select.Value placeholder="Default" />
+			Default
 		</Select.Trigger>
 		<Select.Content>
 			<Select.Item value="default">Default</Select.Item>
 		</Select.Content>
 	</Select.Root>
 
-	<Select.Root>
+	<Select.Root type="single">
 		<Select.Trigger affix={Icons.ArrowCircleUp} size="lg" suffix={Icons.ArrowCircleUp}>
-			<Select.Value placeholder="Large" />
+			Large
 		</Select.Trigger>
 		<Select.Content>
 			<Select.Item value="large">Large</Select.Item>

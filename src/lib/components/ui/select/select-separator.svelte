@@ -1,10 +1,13 @@
 <script lang="ts">
+	import type { Separator as SeparatorPrimitive } from 'bits-ui';
+	import { Separator } from '$lib/components/ui/separator/index.js';
 	import { cn } from '$lib/utils.js';
-	import { Select as SelectPrimitive } from 'bits-ui';
 
-	type Props = SelectPrimitive.SeparatorProps;
-
-	let { class: class_name = undefined, ...rest }: Props = $props();
+	let {
+		ref = $bindable(null),
+		class: className,
+		...restProps
+	}: SeparatorPrimitive.RootProps = $props();
 </script>
 
-<SelectPrimitive.Separator class={cn('bg-muted -mx-1 my-1 h-px', class_name)} {...rest} />
+<Separator bind:ref class={cn('bg-muted -mx-1 my-1 h-px', className)} {...restProps} />

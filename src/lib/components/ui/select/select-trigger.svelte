@@ -10,6 +10,7 @@
 	};
 
 	let {
+		ref = $bindable(null),
 		class: class_name,
 		children,
 		size = 'md',

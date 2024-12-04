@@ -1,45 +1,45 @@
 <script lang="ts">
-	import * as Select from '$lib/components/ui/select/index.js';
 	import { cn } from '$lib/utils.js';
-	import { Select as SelectPrimitive } from 'bits-ui';
-
-	type Props = SelectPrimitive.ContentProps;
+	import { Select as SelectPrimitive, type WithoutChild } from 'bits-ui';
+	import SelectScrollDownButton from './select-scroll-down-button.svelte';
+	import SelectScrollUpButton from './select-scroll-up-button.svelte';
 
 	let {
-		class: class_name = undefined,
+		ref = $bindable(null),
+		class: className,
 		sideOffset = 4,
-		position = 'floating',
+		portalProps,
 		children,
-		...rest
-	}: Props = $props();
+		...restProps
+	}: WithoutChild<SelectPrimitive.ContentProps> & {
+		portalProps?: SelectPrimitive.PortalProps;
+	} = $props();
 </script>
 
-<SelectPrimitive.Portal>
+<SelectPrimitive.Portal {...portalProps}>
 	<SelectPrimitive.Content
+		bind:ref
 		{sideOffset}
 		class={cn(
 			'relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-md border bg-background-100 text-gray-1000 shadow-md',
 			// open animation
 			'data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
-			// open animation
+			// close animation
 			'data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95',
-			position === 'floating' &&
-				'data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1',
-			class_name
+			//
+			'data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1',
+			className
 		)}
-		{position}
-		{...rest}
+		{...restProps}
 	>
-		<Select.ScrollUpButton />
+		<SelectScrollUpButton />
 		<SelectPrimitive.Viewport
 			class={cn(
-				'p-1',
-				position === 'floating' &&
-					'h-[var(--bits-select-trigger-height)] w-full min-w-[var(--bits-select-trigger-width)]'
+				'h-[var(--bits-select-anchor-height)] w-full min-w-[var(--bits-select-anchor-width)] p-1'
 			)}
 		>
 			{@render children?.()}
 		</SelectPrimitive.Viewport>
-		<Select.ScrollDownButton />
+		<SelectScrollDownButton />
 	</SelectPrimitive.Content>
 </SelectPrimitive.Portal>
