@@ -5,5 +5,5 @@
 <div class="flex flex-col gap-4">
 	<Checkbox disabled>Disabled</Checkbox>
 	<Checkbox checked disabled>Disabled Checked</Checkbox>
-	<Checkbox disabled checked="indeterminate">Disabled Indeterminate</Checkbox>
+	<Checkbox disabled indeterminate>Disabled Indeterminate</Checkbox>
 </div>

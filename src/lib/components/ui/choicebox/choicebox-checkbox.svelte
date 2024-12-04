@@ -14,6 +14,7 @@
 	let {
 		class: class_name = undefined,
 		checked = $bindable(false),
+		indeterminate = $bindable(false),
 		id = undefined,
 		title,
 		description,
@@ -49,11 +50,11 @@
 		bind:checked
 		{...rest}
 	>
-		{#snippet children({ checked })}
+		{#snippet children({ checked, indeterminate })}
 			<div class={cn('flex size-4 items-center justify-center p-0.5 text-current')}>
-				{#if checked === true}
+				{#if checked}
 					<Icons.Check aria-hidden="true" class="size-4" />
-				{:else if checked === 'indeterminate'}
+				{:else if indeterminate}
 					<Icons.Minus aria-hidden="true" class="size-4" />
 				{/if}
 			</div>
