@@ -2,18 +2,18 @@
 	import { cn } from '$lib/utils.js';
 	import { Command as CommandPrimitive } from 'bits-ui';
 
-	type Props = CommandPrimitive.ItemProps;
-
-	// TODO: Figure out how `asChild` should be replaced
-	let { class: class_name = undefined, children, ...rest }: Props = $props();
+	let {
+		ref = $bindable(null),
+		class: className,
+		...restProps
+	}: CommandPrimitive.ItemProps = $props();
 </script>
 
 <CommandPrimitive.Item
 	class={cn(
-		'relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none aria-selected:bg-gray-alpha-100 aria-selected:text-gray-1000 data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
-		class_name
+		'relative flex cursor-default select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none aria-selected:bg-gray-alpha-100 aria-selected:text-gray-1000 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
+		className
 	)}
-	{...rest}
->
-	{@render children?.()}
-</CommandPrimitive.Item>
+	bind:ref
+	{...restProps}
+/>

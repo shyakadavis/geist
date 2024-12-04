@@ -7,6 +7,7 @@
 	import * as Dialog from './index.js';
 
 	type Props = WithoutChildrenOrChild<DialogPrimitive.ContentProps> & {
+		portalProps?: DialogPrimitive.PortalProps;
 		children: Snippet;
 		close_button?: 'esc' | 'x';
 		hide_close_button?: boolean;
@@ -19,12 +20,14 @@
 		hide_close_button = false,
 		overlay_classes = undefined,
 		ref = $bindable(null),
+		class: className,
+		portalProps,
 		children,
-		...rest
+		...restProps
 	}: Props = $props();
 </script>
 
-<Dialog.Portal>
+<Dialog.Portal {...portalProps}>
 	<Dialog.Overlay class={overlay_classes} />
 	<DialogPrimitive.Content
 		bind:ref
@@ -36,7 +39,7 @@
 			'data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%]',
 			class_name
 		)}
-		{...rest}
+		{...restProps}
 	>
 		{@render children?.()}
 		{#if !hide_close_button}

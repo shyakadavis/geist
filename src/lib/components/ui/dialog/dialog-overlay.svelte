@@ -2,12 +2,18 @@
 	import { cn } from '$lib/utils.js';
 	import { Dialog as DialogPrimitive } from 'bits-ui';
 
-	type Props = DialogPrimitive.OverlayProps;
-
-	let { class: class_name = undefined, ...rest }: Props = $props();
+	let {
+		ref = $bindable(null),
+		class: className,
+		...restProps
+	}: DialogPrimitive.OverlayProps = $props();
 </script>
 
 <DialogPrimitive.Overlay
-	class={cn('fixed inset-0 z-50 bg-background-100/80 backdrop-blur-[1px]', class_name)}
-	{...rest}
+	bind:ref
+	class={cn(
+		'fixed inset-0 z-50 bg-background-100/80 backdrop-blur-[1px] data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',
+		className
+	)}
+	{...restProps}
 />
