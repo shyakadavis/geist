@@ -15,7 +15,7 @@ We have setup [jsrepo](https://github.com/ieedan/jsrepo) so that you can install
 
 **Setup jsrepo**:
 ```bash
-npx jsrepo init --repos github/shyakadavis/geist
+npx jsrepo init --project --repos github/shyakadavis/geist
 ```
 
 **Add components**:
