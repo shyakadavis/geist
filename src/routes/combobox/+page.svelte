@@ -11,8 +11,6 @@
 	import default_code from './default.svelte?raw';
 	import Disabled from './disabled.svelte';
 	import disabled_code from './disabled.svelte?raw';
-	import Errored from './errored.svelte';
-	import errored_code from './errored.svelte?raw';
 	import Sizes from './sizes.svelte';
 	import sizes_code from './sizes.svelte?raw';
 	import UsedInsideAModal from './used-inside-a-modal.svelte';
@@ -30,9 +28,9 @@
 		<Disabled />
 	</Demo>
 
-	<Demo id="errored" code={errored_code}>
+	<!-- <Demo id="errored" code={errored_code}>
 		<Errored />
-	</Demo>
+	</Demo> -->
 
 	<Demo id="custom-width-input" code={custom_width_input_code}>
 		<CustomWidthInput />

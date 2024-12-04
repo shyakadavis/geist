@@ -5,10 +5,10 @@
 	import { CalendarDate, DateFormatter, getLocalTimeZone } from '@internationalized/date';
 	import { RangeCalendar as RangeCalendarPrimitive, type WithoutChildrenOrChild } from 'bits-ui';
 	import { button_variants } from '../button/index.js';
-	import Combobox from '../combobox/combobox.svelte';
 	import Input from '../input/input.svelte';
 	import Label from '../label/label.svelte';
 	import * as RangeCalendar from './index.js';
+	import PresetsCombobox from './presets-combobox.svelte';
 
 	type Props = WithoutChildrenOrChild<RangeCalendarPrimitive.RootProps> & {
 		trigger_class?: string;
@@ -46,7 +46,7 @@
 </script>
 
 {#if presets}
-	<Combobox
+	<PresetsCombobox
 		type="single"
 		onValueChange={handle_preset_change}
 		placeholder="Select Period"

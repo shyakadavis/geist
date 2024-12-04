@@ -50,5 +50,5 @@
 		"tailwind-variants": "^0.2.1",
 		"vaul-svelte": "https://pkg.pr.new/vaul-svelte@ed3195e"
 	},
-	"packageManager": "pnpm@9.5.0"
+	"packageManager": "pnpm@9.14.4"
 }
