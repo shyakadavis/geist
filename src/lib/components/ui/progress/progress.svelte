@@ -35,7 +35,7 @@
 </script>
 
 <ProgressPrimitive.Root
-	class={cn('relative h-2.5 w-full overflow-hidden rounded-full bg-gray-1000', class_name)}
+	class={cn('relative h-2.5 w-full overflow-hidden rounded-full bg-gray-200', class_name)}
 	{...rest}
 >
 	<div
