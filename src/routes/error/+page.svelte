@@ -10,7 +10,7 @@
 	import WithAnErrorProperty from './with-an-error-property.svelte';
 	import with_an_error_property_code from './with-an-error-property.svelte?raw';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <PageWrapper title={data.title} description={data.description}>

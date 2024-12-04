@@ -16,13 +16,11 @@ export const aside_items: Aside = {
 		},
 		{
 			title: 'Colors',
-			href: '/colors',
-			status: 'soon'
+			href: '/colors'
 		},
 		{
 			title: 'Icons',
-			href: '/icons',
-			status: 'draft'
+			href: '/icons'
 		}
 	],
 	brands: [
@@ -33,9 +31,9 @@ export const aside_items: Aside = {
 			status: 'soon'
 		},
 		{
-			title: 'Next.js',
-			href: 'brands#next.js',
-			icon: Icons.LogoNext,
+			title: 'Svelte',
+			href: 'brands#svelte',
+			icon: Icons.LogoSvelte,
 			status: 'soon'
 		},
 		{
@@ -54,13 +52,11 @@ export const aside_items: Aside = {
 	components: [
 		{
 			title: 'Avatar',
-			href: '/avatar',
-			status: 'new'
+			href: '/avatar'
 		},
 		{
 			title: 'Badge',
-			href: '/badge',
-			status: 'new'
+			href: '/badge'
 		},
 		{
 			title: 'Book',
@@ -69,23 +65,21 @@ export const aside_items: Aside = {
 		},
 		{
 			title: 'Button',
-			href: '/button',
-			status: 'draft'
+			href: '/button'
 		},
 		{
 			title: 'Calendar',
 			href: '/calendar',
-			status: 'soon'
+			status: 'draft'
 		},
 		{
 			title: 'Checkbox',
-			href: '/checkbox',
-			status: 'draft'
+			href: '/checkbox'
 		},
 		{
 			title: 'Choicebox',
 			href: '/choicebox',
-			status: 'soon'
+			status: 'draft'
 		},
 		{
 			title: 'Code Block',
@@ -94,8 +88,7 @@ export const aside_items: Aside = {
 		},
 		{
 			title: 'Collapse',
-			href: '/collapse',
-			status: 'new'
+			href: '/collapse'
 		},
 		{
 			title: 'Combobox',
@@ -104,28 +97,23 @@ export const aside_items: Aside = {
 		},
 		{
 			title: 'Context Menu',
-			href: '/context-menu',
-			status: 'draft'
+			href: '/context-menu'
 		},
 		{
 			title: 'Description',
-			href: '/description',
-			status: 'soon'
+			href: '/description'
 		},
 		{
 			title: 'Drawer',
-			href: '/drawer',
-			status: 'new'
+			href: '/drawer'
 		},
 		{
 			title: 'Empty State',
-			href: '/empty-state',
-			status: 'draft'
+			href: '/empty-state'
 		},
 		{
 			title: 'Error',
-			href: '/error',
-			status: 'draft'
+			href: '/error'
 		},
 		{
 			title: 'Feedback',
@@ -144,48 +132,39 @@ export const aside_items: Aside = {
 		},
 		{
 			title: 'Input',
-			href: '/input',
-			status: 'draft'
+			href: '/input'
 		},
 		{
 			title: 'Keyboard Input',
-			href: '/keyboard-input',
-			status: 'draft'
+			href: '/keyboard-input'
 		},
 		{
 			title: 'Loading Dots',
-			href: '/loading-dots',
-			status: 'new'
+			href: '/loading-dots'
 		},
 		{
 			title: 'Menu',
-			href: '/menu',
-			status: 'new'
+			href: '/menu'
 		},
 		{
 			title: 'Modal',
-			href: '/modal',
-			status: 'draft'
+			href: '/modal'
 		},
 		{
 			title: 'Note',
-			href: '/note',
-			status: 'draft'
+			href: '/note'
 		},
 		{
 			title: 'Pagination',
-			href: '/pagination',
-			status: 'new'
+			href: '/pagination'
 		},
 		{
 			title: 'Progress',
-			href: '/progress',
-			status: 'new'
+			href: '/progress'
 		},
 		{
 			title: 'Radio',
-			href: '/radio',
-			status: 'draft'
+			href: '/radio'
 		},
 		{
 			title: 'Scroller',
@@ -195,27 +174,23 @@ export const aside_items: Aside = {
 		{
 			title: 'Select',
 			href: '/select',
-			status: 'soon'
-		},
-		{
-			title: 'Show more',
-			href: '/show-more',
-			status: 'new'
-		},
-		{
-			title: 'Skeleton',
-			href: '/skeleton',
 			status: 'draft'
 		},
 		{
+			title: 'Show more',
+			href: '/show-more'
+		},
+		{
+			title: 'Skeleton',
+			href: '/skeleton'
+		},
+		{
 			title: 'Snippet',
-			href: '/snippet',
-			status: 'new'
+			href: '/snippet'
 		},
 		{
 			title: 'Spinner',
-			href: '/spinner',
-			status: 'new'
+			href: '/spinner'
 		},
 		{
 			title: 'Stack',
@@ -224,38 +199,27 @@ export const aside_items: Aside = {
 		},
 		{
 			title: 'Status Dot',
-			href: '/status-dot',
-			status: 'new'
+			href: '/status-dot'
 		},
 		{
 			title: 'Switch',
-			href: '/switch',
-			status: 'new'
+			href: '/switch'
 		},
 		{
 			title: 'Table',
-			href: '/table',
-			status: 'new'
+			href: '/table'
 		},
 		{
 			title: 'Tabs',
-			href: '/tabs',
-			status: 'draft'
-		},
-		{
-			title: 'Text',
-			href: '/text',
-			status: 'soon'
+			href: '/tabs'
 		},
 		{
 			title: 'Textarea',
-			href: '/textarea',
-			status: 'draft'
+			href: '/textarea'
 		},
 		{
 			title: 'Theme Switcher',
-			href: '/theme-switcher',
-			status: 'new'
+			href: '/theme-switcher'
 		},
 		{
 			title: 'Toast',
@@ -269,13 +233,11 @@ export const aside_items: Aside = {
 		},
 		{
 			title: 'Tooltip',
-			href: '/tooltip',
-			status: 'new'
+			href: '/tooltip'
 		},
 		{
 			title: 'Window',
-			href: '/window',
-			status: 'new'
+			href: '/window'
 		}
 	]
 };

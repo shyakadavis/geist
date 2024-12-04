@@ -7,6 +7,7 @@ export const snippet_variants = tv({
 		variant: {
 			default: 'border-gray-alpha-400',
 			success: 'bg-blue-100 text-blue-900',
+			secondary: 'bg-gray-100 text-gray-900',
 			error: 'bg-red-100 text-red-900',
 			warning: 'bg-amber-100 text-amber-900'
 		}
@@ -19,21 +20,13 @@ export const copy_button_variants = tv({
 		variant: {
 			default: 'text-gray-1000',
 			success: 'text-blue-900',
+			secondary: 'text-gray-900',
 			error: 'text-red-900',
 			warning: 'text-amber-900'
 		}
 	}
 });
 
-type Variant = VariantProps<typeof snippet_variants>['variant'];
-
-export type Props = {
-	variant?: Variant;
-	text: string | string[];
-	class?: string;
-	prompt?: boolean;
-	on_copy?: () => void;
-	inverted?: boolean;
-};
+export type Variant = VariantProps<typeof snippet_variants>['variant'];
 
 export { Snippet };

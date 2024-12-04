@@ -1,8 +1,9 @@
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button';
+	import { Button, button_variants } from '$lib/components/ui/button';
 	import { Combobox } from '$lib/components/ui/combobox';
 	import { Label } from '$lib/components/ui/label';
 	import * as Modal from '$lib/components/ui/modal';
+	import { cn } from '$lib/utils';
 
 	const items = [
 		{ label: 'One', value: 'one' },
@@ -12,9 +13,7 @@
 </script>
 
 <Modal.Root>
-	<Modal.Trigger let:builder>
-		<Button size="sm" builders={[builder]}>Open Modal</Button>
-	</Modal.Trigger>
+	<Modal.Trigger class={cn(button_variants({ size: 'sm' }))}>Open Modal</Modal.Trigger>
 
 	<Modal.Content>
 		<Modal.Header>
@@ -28,7 +27,7 @@
 
 		<Modal.Inset>
 			<Label value="Region">
-				<Combobox placeholder="Search..." {items} size="sm" />
+				<Combobox type="single" placeholder="Search..." {items} size="sm" />
 			</Label>
 			<p class="text-xs text-gray-900">
 				This is the region where your database reads and writes will take place.

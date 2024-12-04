@@ -10,7 +10,7 @@
 	import Themed from './themed.svelte';
 	import themed_code from './themed.svelte?raw';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <PageWrapper title={data.title} description={data.description}>

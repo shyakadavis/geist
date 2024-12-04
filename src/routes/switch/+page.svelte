@@ -12,7 +12,7 @@
 	import WithLabel from './with-label.svelte';
 	import with_label from './with-label.svelte?raw';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <PageWrapper title={data.title} description={data.description}>

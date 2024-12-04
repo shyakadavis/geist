@@ -1,6 +1,10 @@
 <script lang="ts">
-	export let color = 'bg-gray-700';
-	export let size = 20;
+	type Props = {
+		color?: string;
+		size?: number;
+	};
+
+	let { color = 'bg-gray-700', size = 20 }: Props = $props();
 </script>
 
 <div style:--spinner-size="{size}px" class="size-[var(--spinner-size)]">

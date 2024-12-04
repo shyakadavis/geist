@@ -1,14 +1,15 @@
 <script lang="ts">
 	import { cn } from '$lib/utils.js';
+	import type { Snippet } from 'svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
 
-	type $$Props = HTMLAttributes<HTMLDivElement> & {
-		class?: string;
+	type Props = HTMLAttributes<HTMLDivElement> & {
+		children?: Snippet;
 	};
-	let class_name: $$Props['class'] = undefined;
-	export { class_name as class };
+
+	let { class: class_name = undefined, children }: Props = $props();
 </script>
 
 <div class={cn('flex flex-col gap-2 bg-accents-1 p-6', class_name)}>
-	<slot></slot>
+	{@render children?.()}
 </div>

@@ -8,21 +8,29 @@
 	<Note variant="error">This note details some error information.</Note>
 	<Note variant="error">
 		This note details some error information.
-		<Button slot="action" size="sm">Upgrade</Button>
+		{#snippet action()}
+			<Button size="sm">Upgrade</Button>
+		{/snippet}
 	</Note>
 	<Note variant="error">
 		This note details some error information. Check <Link href="/#">the documentation</Link> to learn
 		more.
-		<Button slot="action" size="sm">Upgrade</Button>
+		{#snippet action()}
+			<Button size="sm">Upgrade</Button>
+		{/snippet}
 	</Note>
 	<Note fill variant="error">This filled note details some error information.</Note>
 	<Note fill variant="error">
 		This filled note details some error information.
-		<Button slot="action" size="sm">Upgrade</Button>
+		{#snippet action()}
+			<Button size="sm">Upgrade</Button>
+		{/snippet}
 	</Note>
 	<Note fill variant="error">
 		This filled note details some error information. Check
 		<Link href="/#">the documentation</Link> to learn more.
-		<Button slot="action" size="sm">Upgrade</Button>
+		{#snippet action()}
+			<Button size="sm">Upgrade</Button>
+		{/snippet}
 	</Note>
 </div>

@@ -14,7 +14,7 @@
 	import Other from './other.svelte';
 	import other_code from './other.svelte?raw';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <PageWrapper title={data.title} description={data.description}>

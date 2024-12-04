@@ -1,23 +1,40 @@
+<script lang="ts" module>
+	import type { Snippet } from 'svelte';
+	import { note_variants, type Fill, type Size, type Variant } from './index.js';
+
+	export type Props = {
+		class?: string;
+		variant?: Variant;
+		size?: Size;
+		fill?: Fill;
+		disabled?: boolean;
+		label?: string | boolean;
+		children: Snippet;
+		action?: Snippet;
+	};
+</script>
+
 <script lang="ts">
 	import { Icons } from '$lib/assets/icons/index.js';
 	import { cn } from '$lib/utils.js';
-	import { type Props, note_variants } from './index.js';
 
-	type $$Props = Props;
-
-	let class_name: string | undefined | null = undefined;
-	export let variant: $$Props['variant'] = 'secondary';
-	export let size: $$Props['size'] = 'md';
-	export let fill: $$Props['fill'] = false;
-	export let disabled: $$Props['disabled'] = false;
-	export let label: $$Props['label'] = undefined;
-	export { class_name as class };
+	let {
+		class: class_name = undefined,
+		variant = 'secondary',
+		size = 'md',
+		fill = false,
+		disabled = false,
+		label = undefined,
+		children,
+		action,
+		...rest
+	}: Props = $props();
 </script>
 
 <div
 	data-disabled={disabled}
 	class={cn(note_variants({ variant, size, className: class_name, fill }))}
-	{...$$restProps}
+	{...rest}
 >
 	<div class="flex items-center gap-2">
 		{#if label}
@@ -36,8 +53,8 @@
 			</span>
 		{/if}
 		<div>
-			<slot />
+			{@render children?.()}
 		</div>
 	</div>
-	<slot name="action" {disabled}></slot>
+	{@render action?.()}
 </div>

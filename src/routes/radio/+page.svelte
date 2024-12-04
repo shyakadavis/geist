@@ -8,7 +8,7 @@
 	import RadioStandalone from './radio-standalone.svelte';
 	import radio_standalone_code from './radio-standalone.svelte?raw';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <PageWrapper title={data.title} description={data.description}>
@@ -20,9 +20,8 @@
 		<RadioDisabled />
 	</Demo>
 
-	<!-- 
-    TODO: Why isn't native browser validation kicking in? Is it because underneath it all, there's no hidden input associated with the radio button?
-    <Demo id="radio-required" code={radio_required_code}>
+	<!-- TODO: Why isn't native browser validation kicking in? Is it because underneath it all, there's no hidden input associated with the radio button? -->
+	<!-- <Demo id="radio-required" code={radio_required_code}>
 		<RadioRequired />
 	</Demo>
     -->

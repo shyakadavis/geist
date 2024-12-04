@@ -2,19 +2,27 @@
 	import { Icons } from '$lib/assets/icons';
 	import { cn } from '$lib/utils';
 	import { scale } from 'svelte/transition';
-	import { copy_button_variants, snippet_variants, type Props } from '.';
+	import { copy_button_variants, snippet_variants, type Variant } from '.';
 
-	type $$Props = Props;
+	type Props = {
+		variant?: Variant;
+		text: string | string[];
+		class?: string;
+		prompt?: boolean;
+		on_copy?: () => void;
+		inverted?: boolean;
+	};
 
-	export let text: $$Props['text'];
-	export let prompt: $$Props['prompt'] = true;
-	export let variant: $$Props['variant'] = 'default';
-	export let on_copy: $$Props['on_copy'] = undefined;
-	export let inverted: $$Props['inverted'] = false;
-	let class_name: $$Props['class'] = undefined;
-	export { class_name as class };
+	let {
+		text,
+		prompt = true,
+		variant = 'default',
+		on_copy = undefined,
+		inverted = false,
+		class: class_name = undefined
+	}: Props = $props();
 
-	let copied = false;
+	let copied = $state(false);
 
 	async function copy_snippet() {
 		if (typeof text == 'string') {
@@ -57,7 +65,7 @@
 	{/if}
 
 	<button
-		on:click={copy_snippet}
+		onclick={copy_snippet}
 		type="button"
 		class={cn(copy_button_variants({ variant }), {
 			'bg-gray-1000 text-gray-100': inverted

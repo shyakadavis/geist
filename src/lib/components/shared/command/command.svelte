@@ -1,10 +1,14 @@
 <script lang="ts">
+	import { Icons } from '$lib/assets/icons';
+	import { Badge } from '$lib/components/ui/badge';
 	import { Button } from '$lib/components/ui/button';
-	import * as Command from '$lib/components/ui/command';
-	import * as Drawer from '$lib/components/ui/drawer/index.js';
+	import * as Command from '$lib/components/ui/command/index.js';
+	import * as Drawer from '$lib/components/ui/drawer';
+	import { aside_items } from '$lib/config/sitemap';
 	import { command_open_state } from '$lib/stores';
-	import { mediaQuery } from 'svelte-legos';
-	import CommandList from './command-list.svelte';
+	import { MediaQuery } from 'runed';
+
+	const is_desktop = new MediaQuery('(min-width: 640px)');
 
 	function doc_keydown(e: KeyboardEvent) {
 		if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
@@ -12,42 +16,28 @@
 			command_open_state.toggle();
 		}
 	}
-
-	const is_desktop = mediaQuery('(min-width: 640px)');
-
-	let search = '';
 </script>
 
-<svelte:document on:keydown={doc_keydown} />
+<svelte:document onkeydown={doc_keydown} />
 
-{#if $is_desktop}
-	<Command.Dialog
-		bind:open={$command_open_state}
-		class="max-w-[640px] sm:rounded-xl"
-		close_button="esc"
-	>
-		<Command.Input
-			placeholder="Search..."
-			hide_search_icon
-			bind:value={search}
-			class="h-[53px] p-0 px-1 text-lg"
-		/>
-		<CommandList {search} class="h-[436px] max-h-none" />
+{#if is_desktop.matches}
+	<Command.Dialog bind:open={$command_open_state} close_button="esc" class="w-full max-w-[640px]">
+		<Command.Input placeholder="Search..." class="h-[53px] px-2 text-lg" hide_search_icon />
+		<Command.List class="h-[436px] max-h-none">
+			{@render empty_command()}
+			{@render command_items()}
+		</Command.List>
 	</Command.Dialog>
 {:else}
 	<Drawer.Root bind:open={$command_open_state}>
-		<Drawer.Content class="h-3/4" hide_dismiss_bar>
+		<Drawer.Content preventScroll class="h-3/4" hide_dismiss_bar>
 			<Command.Root>
-				<Drawer.Header class="flex h-[53px] items-center justify-between border-b px-2">
-					<Command.Input
-						hide_search_icon
-						placeholder="Search..."
-						class="h-7 flex-grow border-none text-lg"
-						bind:value={search}
-						wrapper_class="border-none w-full flex items-center"
-					/>
+				<Drawer.Header
+					class="flex h-[53px] items-center justify-between px-2 [&_[data-command-input-wrapper]]:w-full"
+				>
+					<Command.Input placeholder="Search..." class="h-7 px-2 text-base" hide_search_icon />
 					<Button
-						on:click={command_open_state.toggle}
+						onclick={command_open_state.toggle}
 						size="sm"
 						variant="secondary"
 						class="h-5 px-1.5 text-xs"
@@ -55,8 +45,53 @@
 						Esc
 					</Button>
 				</Drawer.Header>
-				<CommandList {search} class="max-h-full" />
+				{@render command_items()}
 			</Command.Root>
 		</Drawer.Content>
 	</Drawer.Root>
 {/if}
+
+{#snippet empty_command()}
+	<Command.Empty class="flex w-full items-center justify-center pb-6 pt-8 text-sm text-gray-700">
+		No results found.
+	</Command.Empty>
+{/snippet}
+
+{#snippet command_items()}
+	{#each Object.entries(aside_items) as item}
+		{@const [group, links] = item}
+		<Command.Group heading={group} class="capitalize">
+			{#each links as link}
+				{@const disabled = link.status == 'soon'}
+				<Command.LinkItem
+					href={link.href}
+					{disabled}
+					value={link.title}
+					onclick={command_open_state.toggle}
+					class="h-10 gap-2 data-[selected]:rounded-lg"
+				>
+					{#if link.icon}
+						{@const Icon = link.icon}
+						<span class="text-gray-1000">
+							<Icon aria-hidden="true" width="16" height="16" />
+						</span>
+					{:else}
+						<span class="text-gray-1000">
+							<Icons.ArrowRight width="16" height="16" class="text-gray-600" aria-hidden="true" />
+						</span>
+					{/if}
+					<span>{link.title}</span>
+					{#if link.status === 'new'}
+						<Badge variant="blue" size="sm">New</Badge>
+					{/if}
+					{#if link.status === 'soon'}
+						<Badge variant="gray-subtle" size="sm">Soon</Badge>
+					{/if}
+					{#if link.status === 'draft'}
+						<Badge variant="purple-subtle" size="sm">Draft</Badge>
+					{/if}
+				</Command.LinkItem>
+			{/each}
+		</Command.Group>
+	{/each}
+{/snippet}

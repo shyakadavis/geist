@@ -14,7 +14,7 @@
 	import MenuPosition from './menu-position.svelte';
 	import menu_position_code from './menu-position.svelte?raw';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <PageWrapper title={data.title} description={data.description}>

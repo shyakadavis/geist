@@ -2,13 +2,15 @@
 	import { cn } from '$lib/utils.js';
 	import { ContextMenu as ContextMenuPrimitive } from 'bits-ui';
 
-	type $$Props = ContextMenuPrimitive.SeparatorProps;
-
-	let className: $$Props['class'] = undefined;
-	export { className as class };
+	let {
+		ref = $bindable(null),
+		class: className,
+		...restProps
+	}: ContextMenuPrimitive.SeparatorProps = $props();
 </script>
 
 <ContextMenuPrimitive.Separator
+	bind:ref
 	class={cn('-mx-1 my-1 h-px bg-gray-400', className)}
-	{...$$restProps}
+	{...restProps}
 />

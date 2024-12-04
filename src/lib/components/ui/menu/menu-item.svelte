@@ -3,20 +3,22 @@
 	import { cn } from '$lib/utils.js';
 	import { DropdownMenu as MenuPrimitive } from 'bits-ui';
 
-	type $$Props = MenuPrimitive.ItemProps & {
+	type Props = MenuPrimitive.ItemProps & {
 		inset?: boolean;
 		type?: 'error';
 		affix?: typeof Icons.Accessibility;
 		suffix?: typeof Icons.Accessibility;
 	};
-	type $$Events = MenuPrimitive.ItemEvents;
 
-	let className: $$Props['class'] = undefined;
-	export let inset: $$Props['inset'] = undefined;
-	export let type: $$Props['type'] = undefined;
-	export let affix: $$Props['affix'] = undefined;
-	export let suffix: $$Props['suffix'] = undefined;
-	export { className as class };
+	let {
+		class: class_name = undefined,
+		inset = undefined,
+		type = undefined,
+		affix: Affix = undefined,
+		suffix: Suffix = undefined,
+		children,
+		...rest
+	}: Props = $props();
 </script>
 
 <MenuPrimitive.Item
@@ -26,22 +28,15 @@
 		{
 			'text-red-900 data-[disabled]:text-red-600': type === 'error'
 		},
-		className
+		class_name
 	)}
-	{...$$restProps}
-	on:click
-	on:keydown
-	on:focusin
-	on:focusout
-	on:pointerdown
-	on:pointerleave
-	on:pointermove
+	{...rest}
 >
-	{#if affix}
-		<svelte:component this={affix} class="size-4" aria-hidden="true" />
+	{#if Affix}
+		<Affix class="size-4" aria-hidden="true" />
 	{/if}
-	<slot />
-	{#if suffix}
-		<svelte:component this={suffix} class="ml-auto size-4" aria-hidden="true" />
+	{@render children?.()}
+	{#if Suffix}
+		<Suffix class="ml-auto size-4" aria-hidden="true" />
 	{/if}
 </MenuPrimitive.Item>

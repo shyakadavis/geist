@@ -2,4 +2,4 @@
 	import { Avatar } from '$lib/components/ui/avatar';
 </script>
 
-<Avatar class="size-20" />
+<Avatar placeholder class="size-20" />

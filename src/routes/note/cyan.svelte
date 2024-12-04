@@ -8,21 +8,29 @@
 	<Note variant="cyan">This note details some cyan information.</Note>
 	<Note variant="cyan">
 		This note details some cyan information.
-		<Button slot="action" size="sm">Upgrade</Button>
+		{#snippet action()}
+			<Button size="sm">Upgrade</Button>
+		{/snippet}
 	</Note>
 	<Note variant="cyan">
 		This note details some cyan information. Check <Link href="/#">the documentation</Link> to learn
 		more.
-		<Button slot="action" size="sm">Upgrade</Button>
+		{#snippet action()}
+			<Button size="sm">Upgrade</Button>
+		{/snippet}
 	</Note>
 	<Note fill variant="cyan">This filled note details some cyan information.</Note>
 	<Note fill variant="cyan">
 		This filled note details some cyan information.
-		<Button slot="action" size="sm">Upgrade</Button>
+		{#snippet action()}
+			<Button size="sm">Upgrade</Button>
+		{/snippet}
 	</Note>
 	<Note fill variant="cyan">
 		This filled note details some cyan information. Check
 		<Link href="/#">the documentation</Link> to learn more.
-		<Button slot="action" size="sm">Upgrade</Button>
+		{#snippet action()}
+			<Button size="sm">Upgrade</Button>
+		{/snippet}
 	</Note>
 </div>

@@ -1,17 +1,19 @@
 <script lang="ts">
 	import { cn } from '$lib/utils';
-	import type { Props } from './index.js';
+	import type { Snippet } from 'svelte';
 
-	type $$Props = Props;
+	type Props = {
+		title: string;
+		class?: string | null;
+		children?: Snippet;
+	};
 
-	let class_name: $$Props['class'] = undefined;
-	export let title: $$Props['title'];
-	export { class_name as class };
+	let { class: class_name = undefined, title, children, ...rest }: Props = $props();
 </script>
 
 <div
 	class={cn('flex flex-col rounded-md border bg-background-200 shadow-sm', class_name)}
-	{...$$restProps}
+	{...rest}
 >
 	<div class="relative flex h-9 w-full border-b px-2">
 		<div class="flex place-items-center gap-2">
@@ -26,6 +28,6 @@
 		</p>
 	</div>
 	<div class="flex-grow">
-		<slot />
+		{@render children?.()}
 	</div>
 </div>

@@ -1,27 +1,44 @@
 <script lang="ts">
 	import * as Dialog from '$lib/components/ui/dialog/index.js';
 	import { cn } from '$lib/utils';
-	import type { Dialog as DialogPrimitive } from 'bits-ui';
-	import type { Command as CommandPrimitive } from 'cmdk-sv';
+	import type {
+		Command as CommandPrimitive,
+		Dialog as DialogPrimitive,
+		WithoutChildrenOrChild
+	} from 'bits-ui';
+	import type { Snippet } from 'svelte';
 	import Command from './command.svelte';
 
-	// TODO: Yuck! I can't believe I'm defining a prop in 2 different places. (Check dialog-content.svelte)
-	// Find a way to define this prop in one place.
-	type $$Props = DialogPrimitive.Props &
-		CommandPrimitive.CommandProps & {
+	// TODO: Find a way to define this close_button prop in one place.
+	type Props = WithoutChildrenOrChild<DialogPrimitive.RootProps> &
+		WithoutChildrenOrChild<CommandPrimitive.RootProps> & {
+			portalProps?: DialogPrimitive.PortalProps;
+			children?: Snippet;
 			close_button?: 'esc' | 'x';
 		};
 
-	export let open: $$Props['open'] = false;
-	export let value: $$Props['value'] = undefined;
-	let class_name: string | undefined | null = undefined;
-	export { class_name as class };
-	export let close_button: $$Props['close_button'] = 'x';
+	let {
+		open = $bindable(false),
+		ref = $bindable(null),
+		value = $bindable(''),
+		class: class_name = undefined,
+		close_button = 'x',
+		portalProps,
+		children,
+		...restProps
+	}: Props = $props();
 </script>
 
-<Dialog.Root bind:open {...$$restProps}>
-	<Dialog.Content class={cn('overflow-hidden p-0 shadow-lg', class_name)} {close_button}>
+<Dialog.Root bind:open {...restProps}>
+	<Dialog.Content
+		class={cn('overflow-hidden p-0 shadow-lg', class_name)}
+		{close_button}
+		{portalProps}
+	>
 		<Command
+			{...restProps}
+			bind:value
+			bind:ref
 			class={cn(
 				// Command Heading
 				'[&_[data-cmdk-group-heading]]:px-2 [&_[data-cmdk-group-heading]]:font-medium [&_[data-cmdk-group-heading]]:capitalize [&_[data-cmdk-group-heading]]:text-gray-900',
@@ -32,10 +49,7 @@
 				// Command Item
 				'[&_[data-cmdk-item]]:px-2 [&_[data-cmdk-item]]:py-3 [&_[data-cmdk-item]_svg]:size-5'
 			)}
-			{...$$restProps}
-			bind:value
-		>
-			<slot />
-		</Command>
+			{children}
+		/>
 	</Dialog.Content>
 </Dialog.Root>

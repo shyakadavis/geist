@@ -30,17 +30,28 @@
 		size: number;
 	};
 
-	let class_name: string | undefined = undefined;
-	export let members: AvatarGroupProps['members'];
-	export let limit: AvatarGroupProps['limit'] = 3;
-	export let orientation: AvatarGroupProps['orientation'] = 'horizontal';
-	export let spacing: AvatarGroupProps['spacing'] = 'md';
-	export let size: AvatarGroupProps['size'];
-	export { class_name as class };
+	type Props = {
+		class?: string | undefined;
+		members: AvatarGroupProps['members'];
+		limit?: AvatarGroupProps['limit'];
+		orientation?: AvatarGroupProps['orientation'];
+		spacing?: AvatarGroupProps['spacing'];
+		size: AvatarGroupProps['size'];
+	};
 
-	$: visible_avatars = members.slice(0, limit);
-	$: hidden_avatars = members.slice(limit);
-	let placeholder_font_styles = '';
+	let {
+		class: class_name = undefined,
+		members,
+		limit = 3,
+		orientation = 'horizontal',
+		spacing = 'md',
+		size
+	}: Props = $props();
+
+	let visible_avatars = $derived(members.slice(0, limit));
+	let hidden_avatars = $derived(members.slice(limit));
+	let placeholder_font_styles = $state('');
+
 	if (size <= 32) {
 		placeholder_font_styles = 'font-size: 0.625rem; line-height: 0.75rem;';
 	} else {

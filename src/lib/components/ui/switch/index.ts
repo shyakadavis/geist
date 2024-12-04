@@ -1,5 +1,3 @@
-import type { Icons } from '$lib/assets/icons';
-import { Switch as SwitchPrimitive } from 'bits-ui';
 import { tv, type VariantProps } from 'tailwind-variants';
 import Root from './switch.svelte';
 
@@ -22,17 +20,7 @@ export const switch_variants = tv({
 	}
 });
 
-type Variant = VariantProps<typeof switch_variants>['variant'];
-type Size = VariantProps<typeof switch_variants>['size'];
-
-export type Props = SwitchPrimitive.Props & {
-	variant?: Variant;
-	size?: Size;
-	icon?: {
-		checked: typeof Icons.Accessibility;
-		unchecked: typeof Icons.Accessibility;
-	};
-	direction?: 'switch-first' | 'switch-last';
-};
+export type Variant = VariantProps<typeof switch_variants>['variant'];
+export type Size = VariantProps<typeof switch_variants>['size'];
 
 export { Root, Root as Switch };

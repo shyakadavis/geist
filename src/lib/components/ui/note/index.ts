@@ -1,7 +1,5 @@
 import { type VariantProps, tv } from 'tailwind-variants';
 
-export { default as Note } from './note.svelte';
-
 export const note_variants = tv({
 	base: 'flex grow flex-wrap items-center justify-between gap-3 text-pretty rounded-md border data-[disabled=true]:border-gray-alpha-200 data-[disabled=true]:bg-transparent data-[disabled=true]:text-gray-700 sm:flex-nowrap hover:[&>div>div>a]:underline [&>div>div>a]:data-[disabled=true]:text-gray-900',
 	variants: {
@@ -23,12 +21,12 @@ export const note_variants = tv({
 		fill: { true: true, false: false }
 	},
 	compoundVariants: [
-		{ variant: 'secondary', fill: true, class: 'bg-gray-200' },
-		{ variant: 'success', fill: true, class: 'bg-blue-200' },
-		{ variant: 'error', fill: true, class: 'bg-red-200' },
-		{ variant: 'warning', fill: true, class: 'bg-amber-200' },
-		{ variant: 'violet', fill: true, class: 'bg-purple-200' },
-		{ variant: 'cyan', fill: true, class: 'bg-teal-200' }
+		{ variant: 'secondary', fill: true, class: 'border-gray-200 bg-gray-200' },
+		{ variant: 'success', fill: true, class: 'border-blue-200 bg-blue-200' },
+		{ variant: 'error', fill: true, class: 'border-red-200 bg-red-200' },
+		{ variant: 'warning', fill: true, class: 'border-amber-200 bg-amber-200' },
+		{ variant: 'violet', fill: true, class: 'border-purple-200 bg-purple-200' },
+		{ variant: 'cyan', fill: true, class: 'border-teal-200 bg-teal-200' }
 	],
 	defaultVariants: {
 		variant: 'secondary',
@@ -37,14 +35,8 @@ export const note_variants = tv({
 	}
 });
 
-type Variant = VariantProps<typeof note_variants>['variant'];
-type Size = VariantProps<typeof note_variants>['size'];
-type Fill = VariantProps<typeof note_variants>['fill'];
+export type Variant = VariantProps<typeof note_variants>['variant'];
+export type Size = VariantProps<typeof note_variants>['size'];
+export type Fill = VariantProps<typeof note_variants>['fill'];
 
-export type Props = {
-	variant?: Variant;
-	size?: Size;
-	fill?: Fill;
-	disabled?: boolean;
-	label?: string | boolean;
-};
+export { default as Note } from './note.svelte';

@@ -1,12 +1,11 @@
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button';
+	import { button_variants } from '$lib/components/ui/button';
 	import * as Menu from '$lib/components/ui/menu';
+	import { cn } from '$lib/utils';
 </script>
 
 <Menu.Root>
-	<Menu.Trigger asChild let:builder>
-		<Button builders={[builder]}>Left Start</Button>
-	</Menu.Trigger>
+	<Menu.Trigger class={cn(button_variants())}>Left Start</Menu.Trigger>
 	<Menu.Content side="left" align="start" class="w-[200px]">
 		<Menu.Group>
 			<Menu.Item>One</Menu.Item>

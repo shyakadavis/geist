@@ -12,7 +12,7 @@
 	import Search from './search.svelte';
 	import search_code from './search.svelte?raw';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <PageWrapper title={data.title} description={data.description}>
@@ -36,8 +36,7 @@
 		<Search />
 	</Demo>
 
-	<!-- TODO: Error
-      Something in the areas of how Formsnap does it. -->
+	<!-- TODO: Error Something in the areas of how Formsnap does it. -->
 
 	<Demo id="label" code={label_code}>
 		<Label />

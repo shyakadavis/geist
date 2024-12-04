@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { cn } from '$lib/utils.js';
+	import type { WithElementRef } from 'bits-ui';
 	import type { HTMLAttributes } from 'svelte/elements';
 
-	type $$Props = HTMLAttributes<HTMLDivElement> & {
+	type Props = WithElementRef<HTMLAttributes<HTMLSpanElement>> & {
 		width?: number | string;
 		height?: number | string;
 		box_height?: number;
@@ -13,19 +14,24 @@
 		animated?: boolean;
 	};
 
-	let class_name: $$Props['class'] = undefined;
-	export { class_name as class };
-	export let width: $$Props['width'] = undefined;
-	export let height: $$Props['height'] = 24;
-	export let box_height: $$Props['box_height'] = undefined;
-	export let show: $$Props['show'] = true;
-	export let pill: $$Props['pill'] = false;
-	export let rounded: $$Props['rounded'] = false;
-	export let squared: $$Props['squared'] = false;
-	export let animated: $$Props['animated'] = true;
+	let {
+		ref = $bindable(null),
+		class: class_name = undefined,
+		width = undefined,
+		height = 24,
+		box_height = undefined,
+		show = true,
+		pill = false,
+		rounded = false,
+		squared = false,
+		animated = true,
+		children,
+		...rest
+	}: Props = $props();
 </script>
 
 <span
+	bind:this={ref}
 	style:--width={typeof width === 'number' ? `${width}px` : width}
 	style:--height={typeof height === 'number' ? `${height}px` : height}
 	style:--box-height="{box_height}px"
@@ -46,7 +52,7 @@
 		},
 		class_name
 	)}
-	{...$$restProps}
+	{...rest}
 >
-	<slot></slot>
+	{@render children?.()}
 </span>

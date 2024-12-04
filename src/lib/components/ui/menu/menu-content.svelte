@@ -1,27 +1,32 @@
 <script lang="ts">
-	import { cn, flyAndScale } from '$lib/utils.js';
-	import { DropdownMenu as MenuPrimitive } from 'bits-ui';
+	import { cn } from '$lib/utils.js';
+	import { DropdownMenu as MenuPrimitive, type WithoutChildrenOrChild } from 'bits-ui';
+	import type { Snippet } from 'svelte';
 
-	type $$Props = MenuPrimitive.ContentProps;
-	type $$Events = MenuPrimitive.ContentEvents;
+	// TODO: Is it WithoutChildrenOrChild or WithoutChild
+	type Props = WithoutChildrenOrChild<MenuPrimitive.ContentProps> & {
+		children?: Snippet;
+	};
 
-	let className: $$Props['class'] = undefined;
-	export let sideOffset: $$Props['sideOffset'] = 4;
-	export let transition: $$Props['transition'] = flyAndScale;
-	export let transitionConfig: $$Props['transitionConfig'] = undefined;
-	export { className as class };
+	let {
+		class: class_name = undefined,
+		sideOffset = 8,
+		align = 'start',
+		children,
+		...rest
+	}: Props = $props();
 </script>
 
-<MenuPrimitive.Content
-	{transition}
-	{transitionConfig}
-	{sideOffset}
-	class={cn(
-		'z-50 min-w-[10rem] rounded-xl bg-background-100 p-2 text-gray-1000 shadow-shadow-menu focus:outline-none',
-		className
-	)}
-	{...$$restProps}
-	on:keydown
->
-	<slot />
-</MenuPrimitive.Content>
+<MenuPrimitive.Portal>
+	<MenuPrimitive.Content
+		{align}
+		{sideOffset}
+		class={cn(
+			'z-50 min-w-[10rem] rounded-xl bg-background-100 p-2 text-gray-1000 shadow-shadow-menu focus:outline-none',
+			class_name
+		)}
+		{...rest}
+	>
+		{@render children?.()}
+	</MenuPrimitive.Content>
+</MenuPrimitive.Portal>

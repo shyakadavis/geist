@@ -12,7 +12,7 @@
 	import Sticky from './sticky.svelte';
 	import sticky_code from './sticky.svelte?raw';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <PageWrapper title={data.title} description={data.description}>

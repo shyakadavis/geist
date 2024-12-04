@@ -1,5 +1,4 @@
-import type { Icons } from '$lib/assets/icons';
-import type { Button as ButtonPrimitive } from 'bits-ui';
+import type { Icons } from '$lib/assets/icons/index.js';
 import { type VariantProps, tv } from 'tailwind-variants';
 import Root from './button.svelte';
 
@@ -10,8 +9,9 @@ const button_variants = tv({
 			default: 'bg-gray-1000 text-background-100',
 			secondary: 'bg-background-100 text-gray-1000 shadow-shadow-border hover:bg-gray-alpha-100',
 			tertiary: 'bg-transparent hover:bg-gray-alpha-200',
-			error: 'bg-red-800 text-contrast-fg hover:bg-red-900',
-			warning: 'active:bg-[#a35200; bg-amber-800 text-[#0a0a0a] hover:bg-[#d27504]'
+			error: 'bg-red-700 text-contrast-fg hover:bg-red-800',
+			warning: 'active:bg-[#a35200; bg-amber-800 text-[#0a0a0a] hover:bg-[#d27504]',
+			success: 'bg-blue-700 text-contrast-fg hover:bg-blue-800'
 		},
 		size: {
 			sm: 'h-8 px-3',
@@ -37,7 +37,7 @@ type Size = VariantProps<typeof button_variants>['size'];
 
 type SVGSize = VariantProps<typeof button_variants>['svg_size'];
 
-type SVGButton = {
+export type SVGButton = {
 	'aria-label': string;
 	svg_only: true;
 	variant?: Variant;
@@ -45,7 +45,7 @@ type SVGButton = {
 	shape: 'square' | 'circle';
 };
 
-type NormalButton = {
+export type NormalButton = {
 	svg_only?: false;
 	size?: Exclude<Size, 'tiny'>;
 	variant?: Variant;
@@ -57,16 +57,4 @@ type NormalButton = {
 	disabled?: boolean;
 };
 
-type Props = ButtonPrimitive.Props & (NormalButton | SVGButton);
-
-type Events = ButtonPrimitive.Events;
-
-export {
-	Root as Button,
-	Root,
-	button_variants,
-	type Events as ButtonEvents,
-	type Props as ButtonProps,
-	type Events,
-	type Props
-};
+export { Root as Button, Root, button_variants };

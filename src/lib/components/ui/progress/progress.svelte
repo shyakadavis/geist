@@ -1,37 +1,42 @@
 <script lang="ts">
 	import { cn } from '$lib/utils.js';
 	import { Progress as ProgressPrimitive } from 'bits-ui';
-	import { progress_bar_variants, type Props } from '.';
+	import { progress_bar_variants, type Variant } from '.';
 
-	type $$Props = ProgressPrimitive.Props & Props;
+	type Props = ProgressPrimitive.RootProps & {
+		variant?: Variant;
+		colors?: Record<number, string>;
+	};
 
-	let class_name: $$Props['class'] = undefined;
-	export let max: $$Props['max'] = 100;
-	export let value: $$Props['value'] = undefined;
-	export let variant: $$Props['variant'] = 'default';
-	export let colors: $$Props['colors'] = undefined;
-	export { class_name as class };
+	let {
+		class: class_name = undefined,
+		max = 100,
+		value = undefined,
+		variant = 'default',
+		colors = undefined,
+		...rest
+	}: Props = $props();
 
-	$: bar_bg_color = get_bg_color(colors, value);
-
-	function get_bg_color(colors: $$Props['colors'], value: $$Props['value']) {
-		if (colors && typeof value === 'number') {
-			const percentages = Object.keys(colors)
+	function get_bg_color(c: typeof colors, v: typeof value) {
+		if (c && typeof v === 'number') {
+			const percentages = Object.keys(c)
 				.map(Number)
 				.sort((a, b) => a - b);
 			for (let i = percentages.length - 1; i >= 0; i--) {
-				if (value >= percentages[i]) {
-					return colors[percentages[i]];
+				if (v >= percentages[i]) {
+					return c[percentages[i]];
 				}
 			}
 		}
 		return undefined;
 	}
+
+	let bar_bg_color = $derived(get_bg_color(colors, value));
 </script>
 
 <ProgressPrimitive.Root
 	class={cn('relative h-2.5 w-full overflow-hidden rounded-full bg-gray-1000', class_name)}
-	{...$$restProps}
+	{...rest}
 >
 	<div
 		class={cn(progress_bar_variants({ variant, className: class_name }), bar_bg_color)}

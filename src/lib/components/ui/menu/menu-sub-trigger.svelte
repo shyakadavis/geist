@@ -3,30 +3,21 @@
 	import { cn } from '$lib/utils.js';
 	import { DropdownMenu as MenuPrimitive } from 'bits-ui';
 
-	type $$Props = MenuPrimitive.SubTriggerProps & {
+	type Props = MenuPrimitive.SubTriggerProps & {
 		inset?: boolean;
 	};
-	type $$Events = MenuPrimitive.SubTriggerEvents;
 
-	let className: $$Props['class'] = undefined;
-	export let inset: $$Props['inset'] = undefined;
-	export { className as class };
+	let { class: class_name = undefined, inset = undefined, children, ...rest }: Props = $props();
 </script>
 
 <MenuPrimitive.SubTrigger
 	class={cn(
 		'flex h-10 cursor-pointer select-none items-center rounded-md px-2 text-sm outline-none data-[highlighted]:bg-gray-200 data-[state=open]:bg-gray-200',
 		inset && 'pl-8',
-		className
+		class_name
 	)}
-	{...$$restProps}
-	on:click
-	on:keydown
-	on:focusin
-	on:focusout
-	on:pointerleave
-	on:pointermove
+	{...rest}
 >
-	<slot />
+	{@render children?.()}
 	<Icons.ChevronRight class="ml-auto size-4" />
 </MenuPrimitive.SubTrigger>

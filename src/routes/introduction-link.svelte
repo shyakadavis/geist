@@ -1,11 +1,16 @@
 <script lang="ts">
 	import { cn } from '$lib/utils';
+	import type { Snippet } from 'svelte';
 
-	export let title: string;
-	export let description: string;
-	export let href: string;
-	let class_name: string | undefined = undefined;
-	export { class_name as class };
+	type Props = {
+		title: string;
+		description: string;
+		href: string;
+		class?: string | undefined;
+		children?: Snippet;
+	};
+
+	let { title, description, href, class: class_name = undefined, children }: Props = $props();
 
 	function is_link_external(href: string) {
 		return href.startsWith('http');
@@ -21,7 +26,7 @@
 	target={is_link_external(href) ? '_blank' : undefined}
 	rel={is_link_external(href) ? 'noopener noreferrer' : undefined}
 >
-	<slot></slot>
+	{@render children?.()}
 	<div class="mt-auto">
 		<p class="font-semibold">{title}</p>
 		<p class="text-gray-900">{description}</p>

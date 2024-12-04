@@ -4,7 +4,7 @@ import { type VariantProps, tv } from 'tailwind-variants';
 export { default as Kbd } from './kbd.svelte';
 
 export const kbd_variants = tv({
-	base: 'ml-1 inline-flex h-6 min-w-6 items-center justify-center gap-1 rounded bg-background-100 px-1.5 font-medium text-gray-1000 shadow-shadow-border',
+	base: 'ml-1 inline-flex h-6 min-w-6 items-center justify-center gap-1 rounded bg-background-100 px-1.5 font-sans font-medium text-gray-1000 shadow-shadow-border',
 	variants: {
 		size: {
 			sm: '[&>span]:text-xs',
@@ -16,7 +16,7 @@ export const kbd_variants = tv({
 	}
 });
 
-type Size = VariantProps<typeof kbd_variants>['size'];
+export type Size = VariantProps<typeof kbd_variants>['size'];
 
 export function is_mac_os() {
 	if (!browser) return false;
@@ -83,8 +83,3 @@ export const keys_map = {
 	'/': '/',
 	'\\': '\\'
 } as const;
-
-export type Props = {
-	size?: Size;
-	keys: (keyof typeof keys_map)[];
-};

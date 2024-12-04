@@ -8,21 +8,29 @@
 	<Note variant="success">This note details some success information.</Note>
 	<Note variant="success">
 		This note details some success information.
-		<Button slot="action" size="sm">Upgrade</Button>
+		{#snippet action()}
+			<Button size="sm">Upgrade</Button>
+		{/snippet}
 	</Note>
 	<Note variant="success">
 		This note details some success information. Check <Link href="/#">the documentation</Link> to learn
 		more.
-		<Button slot="action" size="sm">Upgrade</Button>
+		{#snippet action()}
+			<Button size="sm">Upgrade</Button>
+		{/snippet}
 	</Note>
 	<Note fill variant="success">This filled note details some success information.</Note>
 	<Note fill variant="success">
 		This filled note details some success information.
-		<Button slot="action" size="sm">Upgrade</Button>
+		{#snippet action()}
+			<Button size="sm">Upgrade</Button>
+		{/snippet}
 	</Note>
 	<Note fill variant="success">
 		This filled note details some success information. Check
 		<Link href="/#">the documentation</Link> to learn more.
-		<Button slot="action" size="sm">Upgrade</Button>
+		{#snippet action()}
+			<Button size="sm">Upgrade</Button>
+		{/snippet}
 	</Note>
 </div>

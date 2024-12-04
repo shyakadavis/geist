@@ -3,14 +3,14 @@
 	import { Button } from '$lib/components/ui/button';
 	import * as Modal from '$lib/components/ui/modal';
 
-	let open = false;
+	let open = $state(false);
 
 	const close = () => (open = !open);
 </script>
 
 <Modal.Root bind:open>
-	<Modal.Trigger let:builder>
-		<Button size="sm" builders={[builder]}>Open Modal</Button>
+	<Modal.Trigger>
+		<Button size="sm">Open Modal</Button>
 	</Modal.Trigger>
 
 	<Modal.Content>
@@ -55,8 +55,8 @@
 
 		<Modal.Footer>
 			<div class="flex w-full justify-between">
-				<Button affix={Icons.ArrowLeft} variant="secondary" on:click={close}>Previous</Button>
-				<Button on:click={close}>Submit</Button>
+				<Button affix={Icons.ArrowLeft} variant="secondary" onclick={close}>Previous</Button>
+				<Button onclick={close}>Submit</Button>
 			</div>
 		</Modal.Footer>
 	</Modal.Content>

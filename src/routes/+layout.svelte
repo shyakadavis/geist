@@ -1,18 +1,19 @@
-<script>
+<script lang="ts">
 	import { page } from '$app/stores';
-	import extend from 'just-extend';
 	import { ModeWatcher } from 'mode-watcher';
-	import { MetaTags } from 'svelte-meta-tags';
+	import { MetaTags, deepMerge } from 'svelte-meta-tags';
 	import '../app.css';
 	import Aside from './aside.svelte';
 	import Header from './header.svelte';
 
-	export let data;
+	let { data, children } = $props();
 
-	$: metaTags = extend(true, {}, data.baseMetaTags, $page.data.pageMetaTags);
+	let metaTags = $derived(deepMerge(data.baseMetaTags, $page.data.pageMetaTags));
 </script>
 
 <MetaTags {...metaTags} />
+<!-- TODO: [svelte] hydration_html_changed
+The value of an `{@html ...}` block in node_modules/​.pnpm/​mode-watcher@0.4.0_svelte@5.0.0-next.260/​node_modules/​mode-watcher/​dist/​mode-watcher.svelte changed between server and client renders. The client value will be ignored in favour of the server value -->
 <ModeWatcher />
 <div>
 	<Header />
@@ -21,7 +22,7 @@
 	>
 		<Aside />
 		<div class="order-2 grow">
-			<slot></slot>
+			{@render children?.()}
 		</div>
 	</main>
 </div>

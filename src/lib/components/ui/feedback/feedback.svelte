@@ -1,18 +1,21 @@
 <script lang="ts">
 	import { Icons } from '$lib/assets/icons/index.js';
-	import { Button } from '$lib/components/ui/button';
+	import { Button, button_variants } from '$lib/components/ui/button';
 	import * as Popover from '$lib/components/ui/popover';
 	import { Textarea } from '$lib/components/ui/textarea';
 	import { cn } from '$lib/utils';
 	import Markdown from 'svelte-exmarkdown';
-	import { clickOutsideAction } from 'svelte-legos';
 	import { spring } from 'svelte/motion';
 	import { slide } from 'svelte/transition';
 
-	export let variant: 'default' | 'inline' | undefined = 'default';
-	export let label = 'Was this helpful?';
+	type Props = {
+		variant?: 'default' | 'inline' | undefined;
+		label?: string;
+	};
 
-	let md = '';
+	let { variant = 'default', label = 'Was this helpful?' }: Props = $props();
+
+	let md = $state('');
 	const reactions = [
 		{ emoji: Icons.FaceSmile, label: 'Select Love it! emoji' },
 		{ emoji: Icons.FaceHappy, label: "Select It's okay emoji" },
@@ -22,8 +25,8 @@
 	let width = spring(274.883, { stiffness: 0.2, damping: 1.2 });
 	let height = spring(48, { stiffness: 0.2, damping: 1.2 });
 	let radius = spring(30, { stiffness: 0.2, damping: 1.2 });
-	let current_reaction: number | undefined = undefined;
-	let inline_feedback_el: HTMLTextAreaElement | undefined = undefined;
+	let current_reaction: number | undefined = $state(undefined);
+	let inline_feedback_el: HTMLTextAreaElement | null = $state(null);
 
 	function toggle_inline_feedback(i: number | undefined) {
 		if (current_reaction === i || i === undefined) {
@@ -53,59 +56,57 @@
 
 {#if variant === 'default'}
 	<Popover.Root>
-		<Popover.Trigger asChild let:builder>
-			<Button builders={[builder]} variant="secondary" size="sm" class="text-gray-900">
-				Feedback
-			</Button>
+		<Popover.Trigger
+			class={cn(button_variants({ size: 'sm', variant: 'secondary' }), 'text-gray-900')}
+		>
+			Feedback
 		</Popover.Trigger>
-		<Popover.Content sideOffset={8} class="w-[340px] rounded-xl p-0">
-			<form>
-				<main class="grid gap-3 p-2">
-					<Textarea placeholder="Your feedback..." bind:value={md} />
-					{#if md}
-						<div transition:slide class="grid gap-2 text-sm">
-							<h2 class="text-xs text-gray-900">Preview</h2>
-							<Markdown {md} />
+		<Popover.Portal>
+			<Popover.Content sideOffset={8} class="w-[340px] rounded-xl p-0">
+				<form>
+					<main class="grid gap-3 p-2">
+						<Textarea placeholder="Your feedback..." bind:value={md} />
+						{#if md}
+							<div transition:slide class="grid gap-2 text-sm">
+								<h2 class="text-xs text-gray-900">Preview</h2>
+								<Markdown {md} />
+							</div>
+						{/if}
+						<div class="flex w-full items-center justify-end gap-1 text-xs text-gray-900">
+							<Icons.Markdown aria-hidden class="h-[14px] w-[22px]" />
+							<span class="sr-only">Markdown</span>
+							supported.
 						</div>
-					{/if}
-					<div class="flex w-full items-center justify-end gap-1 text-xs text-gray-900">
-						<Icons.Markdown aria-hidden class="h-[14px] w-[22px]" />
-						<span class="sr-only">Markdown</span>
-						supported.
-					</div>
-				</main>
-				<footer
-					class="flex items-center justify-between rounded-b-xl border-t border-accents-2 bg-accents-1 p-3"
-				>
-					<span class="flex items-center gap-1">
-						{#each reactions as { emoji, label }}
-							<Button
-								variant="tertiary"
-								svg_only
-								aria-label={label}
-								size="sm"
-								shape="circle"
-								class="group hover:bg-blue-300"
-							>
-								<svelte:component
-									this={emoji}
-									aria-hidden="true"
-									class="text-gray-900 group-hover:text-blue-900 [&>path]:group-hover:fill-blue-900"
-								/>
-							</Button>
-						{/each}
-					</span>
-					<Button type="submit" size="sm">Send</Button>
-				</footer>
-			</form>
-		</Popover.Content>
+					</main>
+					<footer
+						class="flex items-center justify-between rounded-b-xl border-t border-accents-2 bg-accents-1 p-3"
+					>
+						<span class="flex items-center gap-1">
+							{#each reactions as { emoji: Emoji, label }}
+								<Button
+									variant="tertiary"
+									svg_only
+									aria-label={label}
+									size="sm"
+									shape="circle"
+									class="group hover:bg-blue-300"
+								>
+									<Emoji
+										aria-hidden="true"
+										class="text-gray-900 group-hover:text-blue-900 [&>path]:group-hover:fill-blue-900"
+									/>
+								</Button>
+							{/each}
+						</span>
+						<Button type="submit" size="sm">Send</Button>
+					</footer>
+				</form>
+			</Popover.Content>
+		</Popover.Portal>
 	</Popover.Root>
 {:else if variant === 'inline'}
-	<div
-		class="flex justify-center"
-		use:clickOutsideAction
-		on:clickoutside={() => toggle_inline_feedback(undefined)}
-	>
+	<!-- TODO: Toggle on click outside: https://github.com/svecosystem/runed/pull/46 -->
+	<div class="flex justify-center">
 		<div
 			style="
     width: {$width}px;
@@ -116,7 +117,7 @@
 		>
 			<div class="flex items-center justify-center p-2">
 				<p class="mr-1 text-sm text-gray-900">{label}</p>
-				{#each reactions as { emoji, label }, i}
+				{#each reactions as { emoji: Emoji, label }, i}
 					<Button
 						variant="tertiary"
 						svg_only
@@ -126,10 +127,9 @@
 						class={cn('group/inline hover:bg-blue-300', {
 							'bg-blue-300': i === current_reaction
 						})}
-						on:click={() => toggle_inline_feedback(i)}
+						onclick={() => toggle_inline_feedback(i)}
 					>
-						<svelte:component
-							this={emoji}
+						<Emoji
 							aria-hidden="true"
 							class={cn(
 								'text-gray-900 group-hover/inline:text-blue-900 [&>path]:group-hover/inline:fill-blue-900',
@@ -144,7 +144,7 @@
 
 			<form class="flex grow flex-col">
 				<main class="grid grow gap-3 p-2">
-					<Textarea bind:el={inline_feedback_el} placeholder="Your feedback..." />
+					<Textarea bind:ref={inline_feedback_el} placeholder="Your feedback..." />
 					<div class="flex w-full items-center justify-end gap-1 text-xs text-gray-900">
 						<Icons.Markdown aria-hidden class="h-[14px] w-[22px]" />
 						<span class="sr-only">Markdown</span>
