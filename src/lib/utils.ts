@@ -79,7 +79,7 @@ export const flyAndScale = (
  */
 export function format_string(str: string) {
 	// Replace escaped hyphens with a temporary placeholder
-	let processedString = str.replace(/\\-/g, '{{HYPHEN}}');
+	const processedString = str.replace(/\\-/g, '{{HYPHEN}}');
 
 	// Split the string by unescaped hyphens
 	const parts = processedString.split('-');
@@ -96,7 +96,7 @@ export function format_string(str: string) {
 	});
 
 	// Join the parts and fix spacing around colons
-	let result = formattedParts.join(' ').replace(/ : /g, ': ');
+	const result = formattedParts.join(' ').replace(/ : /g, ': ');
 
 	return result;
 }
