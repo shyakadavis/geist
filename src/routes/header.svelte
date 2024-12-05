@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Icons } from '$lib/assets/icons';
 	import Command from '$lib/components/shared/command/command.svelte';
-	import ThemeSwitcher from '$lib/components/shared/theme-switcher.svelte';
+	import ThemeSwitcher from '$lib/components/ui/theme-switcher/theme-switcher.svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { command_open_state } from '$lib/stores';
 </script>

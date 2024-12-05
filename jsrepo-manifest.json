@@ -811,6 +811,21 @@
 				}
 			},
 			{
+				"name": "theme-switcher",
+				"directory": "src/lib/components/ui/theme-switcher",
+				"category": "ui",
+				"tests": false,
+				"subdirectory": true,
+				"list": true,
+				"files": ["theme-switcher.svelte"],
+				"localDependencies": ["icons/index"],
+				"dependencies": [],
+				"devDependencies": ["mode-watcher@^0.4.1"],
+				"_imports_": {
+					"$lib/assets/icons": "{{icons/index}}"
+				}
+			},
+			{
 				"name": "tooltip",
 				"directory": "src/lib/components/ui/tooltip",
 				"category": "ui",
