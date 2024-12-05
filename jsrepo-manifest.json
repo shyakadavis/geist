@@ -18,7 +18,7 @@
 				],
 				"localDependencies": ["lib/utils", "icons/index", "ui/skeleton"],
 				"dependencies": [],
-				"devDependencies": ["bits-ui@1.0.0-next.65", "tailwind-variants@^0.2.1"],
+				"devDependencies": ["bits-ui@1.0.0-next.65", "tailwind-variants@^0.3.0"],
 				"_imports_": {
 					"$lib/utils.js": "{{lib/utils}}.js",
 					"$lib/utils": "{{lib/utils}}",
@@ -36,7 +36,7 @@
 				"files": ["badge.svelte", "index.ts"],
 				"localDependencies": ["icons/index", "lib/utils"],
 				"dependencies": [],
-				"devDependencies": ["tailwind-variants@^0.2.1"],
+				"devDependencies": ["tailwind-variants@^0.3.0"],
 				"_imports_": {
 					"$lib/assets/icons/index.js": "{{icons/index}}.js",
 					"$lib/utils.js": "{{lib/utils}}.js"
@@ -52,7 +52,7 @@
 				"files": ["button.svelte", "index.ts"],
 				"localDependencies": ["ui/spinner", "lib/utils", "icons/index"],
 				"dependencies": [],
-				"devDependencies": ["bits-ui@1.0.0-next.65", "tailwind-variants@^0.2.1"],
+				"devDependencies": ["bits-ui@1.0.0-next.65", "tailwind-variants@^0.3.0"],
 				"_imports_": {
 					"$lib/components/ui/spinner/index.js": "{{ui/spinner}}/index.js",
 					"$lib/utils.js": "{{lib/utils}}.js",
@@ -306,7 +306,7 @@
 				"files": ["empty-state.svelte", "index.ts"],
 				"localDependencies": ["icons/index", "lib/utils"],
 				"dependencies": [],
-				"devDependencies": ["tailwind-variants@^0.2.1"],
+				"devDependencies": ["tailwind-variants@^0.3.0"],
 				"_imports_": {
 					"$lib/assets/icons": "{{icons/index}}",
 					"$lib/utils.js": "{{lib/utils}}.js"
@@ -322,7 +322,7 @@
 				"files": ["error.svelte", "index.ts"],
 				"localDependencies": ["icons/index", "lib/utils", "ui/link"],
 				"dependencies": [],
-				"devDependencies": ["tailwind-variants@^0.2.1"],
+				"devDependencies": ["tailwind-variants@^0.3.0"],
 				"_imports_": {
 					"$lib/assets/icons/index.js": "{{icons/index}}.js",
 					"$lib/utils.js": "{{lib/utils}}.js",
@@ -373,7 +373,7 @@
 				"files": ["index.ts", "input.svelte", "search.svelte"],
 				"localDependencies": ["icons/index", "lib/utils", "ui/label"],
 				"dependencies": [],
-				"devDependencies": ["tailwind-variants@^0.2.1"],
+				"devDependencies": ["tailwind-variants@^0.3.0"],
 				"_imports_": {
 					"$lib/assets/icons/index.js": "{{icons/index}}.js",
 					"$lib/utils.js": "{{lib/utils}}.js",
@@ -392,7 +392,7 @@
 				"files": ["index.ts", "kbd.svelte"],
 				"localDependencies": ["lib/utils"],
 				"dependencies": [],
-				"devDependencies": ["tailwind-variants@^0.2.1"],
+				"devDependencies": ["tailwind-variants@^0.3.0"],
 				"_imports_": {
 					"$lib/utils.js": "{{lib/utils}}.js"
 				}
@@ -422,7 +422,7 @@
 				"files": ["index.ts", "link.svelte"],
 				"localDependencies": ["icons/index", "lib/utils"],
 				"dependencies": [],
-				"devDependencies": ["tailwind-variants@^0.2.1", "bits-ui@1.0.0-next.65"],
+				"devDependencies": ["tailwind-variants@^0.3.0", "bits-ui@1.0.0-next.65"],
 				"_imports_": {
 					"$lib/assets/icons/index.js": "{{icons/index}}.js",
 					"$lib/utils.js": "{{lib/utils}}.js"
@@ -506,7 +506,7 @@
 				"files": ["index.ts", "note.svelte"],
 				"localDependencies": ["icons/index", "lib/utils"],
 				"dependencies": [],
-				"devDependencies": ["tailwind-variants@^0.2.1"],
+				"devDependencies": ["tailwind-variants@^0.3.0"],
 				"_imports_": {
 					"$lib/assets/icons/index.js": "{{icons/index}}.js",
 					"$lib/utils.js": "{{lib/utils}}.js"
@@ -552,7 +552,7 @@
 				"files": ["index.ts", "progress.svelte"],
 				"localDependencies": ["lib/utils"],
 				"dependencies": [],
-				"devDependencies": ["tailwind-variants@^0.2.1", "bits-ui@1.0.0-next.65"],
+				"devDependencies": ["tailwind-variants@^0.3.0", "bits-ui@1.0.0-next.65"],
 				"_imports_": {
 					"$lib/utils.js": "{{lib/utils}}.js"
 				}
@@ -639,7 +639,7 @@
 				],
 				"localDependencies": ["lib/utils", "icons/index", "ui/separator"],
 				"dependencies": [],
-				"devDependencies": ["bits-ui@1.0.0-next.65", "lucide-svelte@^0.451.0"],
+				"devDependencies": ["bits-ui@1.0.0-next.65", "lucide-svelte@^0.468.0"],
 				"_imports_": {
 					"$lib/utils.js": "{{lib/utils}}.js",
 					"$lib/assets/icons": "{{icons/index}}",
@@ -703,7 +703,7 @@
 				"files": ["index.ts", "snippet.svelte"],
 				"localDependencies": ["icons/index", "lib/utils"],
 				"dependencies": [],
-				"devDependencies": ["tailwind-variants@^0.2.1"],
+				"devDependencies": ["tailwind-variants@^0.3.0"],
 				"_imports_": {
 					"$lib/assets/icons": "{{icons/index}}",
 					"$lib/utils": "{{lib/utils}}"
@@ -732,7 +732,7 @@
 				"files": ["index.ts", "status-dot.svelte"],
 				"localDependencies": ["lib/utils"],
 				"dependencies": [],
-				"devDependencies": ["tailwind-variants@^0.2.1"],
+				"devDependencies": ["tailwind-variants@^0.3.0"],
 				"_imports_": {
 					"$lib/utils": "{{lib/utils}}"
 				}
@@ -747,7 +747,7 @@
 				"files": ["index.ts", "switch.svelte"],
 				"localDependencies": ["icons/index", "lib/utils"],
 				"dependencies": [],
-				"devDependencies": ["tailwind-variants@^0.2.1", "bits-ui@1.0.0-next.65"],
+				"devDependencies": ["tailwind-variants@^0.3.0", "bits-ui@1.0.0-next.65"],
 				"_imports_": {
 					"$lib/assets/icons": "{{icons/index}}",
 					"$lib/utils.js": "{{lib/utils}}.js"
@@ -820,7 +820,7 @@
 				"files": ["theme-switcher.svelte"],
 				"localDependencies": ["icons/index"],
 				"dependencies": [],
-				"devDependencies": ["mode-watcher@^0.4.1"],
+				"devDependencies": ["mode-watcher@^0.5.0"],
 				"_imports_": {
 					"$lib/assets/icons": "{{icons/index}}"
 				}
