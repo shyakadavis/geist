@@ -1,10 +1,20 @@
 {
-	"$schema": "https://unpkg.com/jsrepo@1.17.2/schemas/registry-config.json",
+	"$schema": "https://unpkg.com/jsrepo@1.18.0/schemas/registry-config.json",
 	"dirs": ["./src/lib/components", "./src/lib/assets", "./src"],
 	"includeBlocks": [],
 	"includeCategories": ["ui", "lib", "icons"],
-	"doNotListBlocks": [],
+	"doNotListBlocks": [
+		"command",
+		"dialog",
+		"drawer",
+		"label",
+		"link",
+		"popover",
+		"range-calender",
+		"separator"
+	],
 	"doNotListCategories": ["icons", "lib"],
+	"preview": true,
 	"excludeDeps": ["svelte"],
 	"rules": {
 		"no-category-index-file-dependency": "off",
