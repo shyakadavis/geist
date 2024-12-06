@@ -29,7 +29,7 @@ Copy [app.css](https://github.com/shyakadavis/geist/blob/main/src/app.css) to `s
 
 Copy [tailwind.config.ts](https://github.com/shyakadavis/geist/blob/main/tailwind.config.ts) to `tailwind.config.ts`
 
-Install tailwind dependencies:
+Install tailwind plugins:
 
 ```bash
 pnpm add -D @pyncz/tailwind-mask-image @tailwindcss/typography tailwindcss-animate
