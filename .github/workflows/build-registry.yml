@@ -1,0 +1,43 @@
+name: build-registry
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      # we need to install here so that .svelte-kit is generated for path aliases
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build jsrepo-manifest.json
+        run: pnpm build:registry
+
+      - name: Create pull request with changes
+        uses: peter-evans/create-pull-request@v7
+        with:
+          title: 'chore: update `jsrepo-manifest.json`'
+          body: |
+            - Update `jsrepo-manifest.json`
+
+            *This PR was auto generated*
+          branch: build-manifest
+          commit-message: build `jsrepo-manifest.json`

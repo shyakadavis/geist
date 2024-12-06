@@ -1,3 +1,5 @@
 Geist
 Vercel
 shadcn-svelte
+jsrepo
+SvelteKit
