@@ -59,7 +59,7 @@ export default defineConfig({
 ```
 
 > [!TIP]
-> For Typescript not to complain about `file.svg?component` et al., add the following import statement to `src/app.d.ts` (or any `.d.ts` file somewhere in the path of your project where `tsc` can find it).
+> For Typescript support of `file.svg?component`, add this import to any `.d.ts` file in your project path:
 
 ```diff
 + import '@poppanator/sveltekit-svg/dist/svg';
