@@ -59,6 +59,7 @@ export default defineConfig({
 ```
 
 > [!TIP]
+
 > For Typescript not to complain about `file.svg?component` et al., add the following import statement to `src/app.d.ts` (or any `.d.ts` file somewhere in the path of your project where `tsc` can find it).
 
 ### 4. Install fonts
