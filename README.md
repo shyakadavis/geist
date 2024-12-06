@@ -59,6 +59,7 @@ export default defineConfig({
 ```
 
 > [!TIP]
+
 > For Typescript support of `file.svg?component`, add this import to any `.d.ts` file in your project path:
 
 ```diff
