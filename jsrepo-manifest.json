@@ -246,7 +246,7 @@
 				"category": "ui",
 				"tests": false,
 				"subdirectory": true,
-				"list": false,
+				"list": true,
 				"files": [
 					"drawer-content.svelte",
 					"drawer-description.svelte",
