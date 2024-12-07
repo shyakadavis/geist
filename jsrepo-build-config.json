@@ -6,7 +6,7 @@
 	"doNotListBlocks": [
 		"command",
 		"dialog",
-		"drawer",
+--		"drawer",
 		"label",
 		"link",
 		"popover",
