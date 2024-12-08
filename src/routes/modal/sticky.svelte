@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { Icons } from '$lib/assets/icons';
-	import { Button } from '$lib/components/ui/button';
+	import { Button, button_variants } from '$lib/components/ui/button';
 	import * as Modal from '$lib/components/ui/modal';
+	import { cn } from '$lib/utils';
 
 	let open = $state(false);
 
@@ -9,16 +10,24 @@
 </script>
 
 <Modal.Root bind:open>
-	<Modal.Trigger>
-		<Button size="sm">Open Modal</Button>
-	</Modal.Trigger>
+	<Modal.Trigger class={cn(button_variants({ size: 'sm' }))}>Open Modal</Modal.Trigger>
 
 	<Modal.Content>
 		<Modal.Header>
 			<Modal.Title>Create Token</Modal.Title>
 		</Modal.Header>
 
-		<div class="px-6 py-3 text-sm">
+		<!-- ! Overflow must be handled consumer-side. -->
+		<div class="max-h-96 overflow-y-auto px-6 py-3 text-sm md:max-h-[60dvh]">
+			<p>Some content contained within the modal.</p>
+			<p>Some content contained within the modal.</p>
+			<p>Some content contained within the modal.</p>
+			<p>Some content contained within the modal.</p>
+			<p>Some content contained within the modal.</p>
+			<p>Some content contained within the modal.</p>
+			<p>Some content contained within the modal.</p>
+			<p>Some content contained within the modal.</p>
+			<p>Some content contained within the modal.</p>
 			<p>Some content contained within the modal.</p>
 			<p>Some content contained within the modal.</p>
 			<p>Some content contained within the modal.</p>

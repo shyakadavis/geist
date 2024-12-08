@@ -39,7 +39,13 @@
 	</Dialog.Footer>
 {:else}
 	<Drawer.Footer class="flex-row justify-between border-t bg-background-200 dark:bg-background-100">
-		<Drawer.Close class={cn(button_variants({ variant: 'secondary' }))}>Cancel</Drawer.Close>
+		<Drawer.Close
+			class={cn(button_variants({ variant: 'secondary' }), {
+				'w-full': full_width
+			})}
+		>
+			Cancel
+		</Drawer.Close>
 		{@render children?.()}
 	</Drawer.Footer>
 {/if}

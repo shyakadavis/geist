@@ -20,7 +20,7 @@
 		<Default />
 	</Demo>
 
-	<Demo id="sticky" code={sticky_code}>
+	<Demo id="sticky" subtitle="`Note:` Overflow must be handled consumer-side." code={sticky_code}>
 		<Sticky />
 	</Demo>
 

@@ -1,12 +1,11 @@
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button';
+	import { button_variants } from '$lib/components/ui/button';
 	import * as Modal from '$lib/components/ui/modal';
+	import { cn } from '$lib/utils';
 </script>
 
 <Modal.Root>
-	<Modal.Trigger>
-		<Button size="sm">Open Modal</Button>
-	</Modal.Trigger>
+	<Modal.Trigger class={cn(button_variants({ size: 'sm' }))}>Open Modal</Modal.Trigger>
 
 	<Modal.Content>
 		<Modal.Header>
