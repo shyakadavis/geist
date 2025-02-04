@@ -66,8 +66,8 @@ importers:
         specifier: ^0.6.11
         version: 0.6.11(prettier-plugin-svelte@3.3.3(prettier@3.4.2)(svelte@5.19.7))(prettier@3.4.2)
       runed:
-        specifier: ^0.15.4
-        version: 0.15.4(svelte@5.19.7)
+        specifier: ^0.23.2
+        version: 0.23.2(svelte@5.19.7)
       shiki:
         specifier: ^2.3.0
         version: 2.3.0
@@ -1773,11 +1773,6 @@ packages:
 
   run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
-
-  runed@0.15.4:
-    resolution: {integrity: sha512-kmbpstUd7v2FdlBM+MT78IyuOVd38tq/e7MHvVb0fnVCsPSPMD/m2Xh+wUhzg9qCJgxRjBbIKu68DlH/x5VXJA==}
-    peerDependencies:
-      svelte: ^5.0.0-next.1
 
   runed@0.23.2:
     resolution: {integrity: sha512-AhHCb5/B+YQW6ar1pzhGQOQy+byfjCH63ofuhrexSWwQKhC0EbQ60Z/wMYwETLo3ZubhwlNryxBt0seOMOrVFQ==}
@@ -3956,11 +3951,6 @@ snapshots:
   run-parallel@1.2.0:
     dependencies:
       queue-microtask: 1.2.3
-
-  runed@0.15.4(svelte@5.19.7):
-    dependencies:
-      esm-env: 1.2.2
-      svelte: 5.19.7
 
   runed@0.23.2(svelte@5.19.7):
     dependencies:

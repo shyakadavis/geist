@@ -6,7 +6,7 @@
 	import * as Drawer from '$lib/components/ui/drawer';
 	import { aside_items } from '$lib/config/sitemap';
 	import { command_open_state } from '$lib/stores';
-	import { MediaQuery } from 'runed';
+	import { MediaQuery } from 'svelte/reactivity';
 
 	const is_desktop = new MediaQuery('(min-width: 640px)');
 
@@ -20,7 +20,7 @@
 
 <svelte:document onkeydown={doc_keydown} />
 
-{#if is_desktop.matches}
+{#if is_desktop.current}
 	<Command.Dialog bind:open={$command_open_state} close_button="esc" class="w-full max-w-[640px]">
 		<Command.Input placeholder="Search..." class="h-[53px] px-2 text-lg" hide_search_icon />
 		<Command.List class="h-[436px] max-h-none">

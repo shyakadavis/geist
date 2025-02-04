@@ -12,7 +12,7 @@
 	let { children }: Props = $props();
 </script>
 
-{#if is_desktop.matches}
+{#if is_desktop.current}
 	<Dialog.Header
 		class={cn('sticky top-0 px-6 pt-6', {
 			'border-b bg-background-100 pb-3 pt-3': $is_overflowing || $is_single_button
