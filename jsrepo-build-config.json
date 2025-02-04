@@ -1,5 +1,5 @@
 {
-	"$schema": "https://unpkg.com/jsrepo@1.18.0/schemas/registry-config.json",
+	"$schema": "https://unpkg.com/jsrepo@1.31.0/schemas/registry-config.json",
 	"dirs": ["./src/lib/components", "./src/lib/assets", "./src"],
 	"includeBlocks": [],
 	"includeCategories": ["ui", "lib", "icons"],
