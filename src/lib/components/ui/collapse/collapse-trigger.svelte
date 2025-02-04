@@ -17,7 +17,6 @@
 			class_name
 		)}
 		{...rest}
-		on:click
 	>
 		{@render children?.()}
 		<Icons.ChevronDown class="size-4 transition-transform duration-200" />
