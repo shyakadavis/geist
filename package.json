@@ -11,7 +11,7 @@
 		"format": "prettier --write .",
 		"lint": "prettier --check .",
 		"ready": "pnpm format && pnpm lint && pnpm check",
-		"build:registry": "jsrepo build"
+		"build:registry": "pnpm i && jsrepo build"
 	},
 	"devDependencies": {
 		"@fontsource/geist-mono": "^5.1.1",
