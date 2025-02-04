@@ -70,7 +70,7 @@
 	{/if}
 	<input
 		id={label}
-		class={cn(input_variants({ size, className: class_name }))}
+		class={cn(input_variants({ size }), class_name)}
 		bind:value
 		bind:this={ref}
 		autocapitalize="none"

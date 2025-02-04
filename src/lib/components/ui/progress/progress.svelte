@@ -39,7 +39,7 @@
 	{...rest}
 >
 	<div
-		class={cn(progress_bar_variants({ variant, className: class_name }), bar_bg_color)}
+		class={cn(progress_bar_variants({ variant }), bar_bg_color, class_name)}
 		style={`transform: translateX(-${100 - (100 * (value ?? 0)) / (max ?? 1)}%)`}
 	></div>
 </ProgressPrimitive.Root>
