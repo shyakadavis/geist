@@ -28,7 +28,7 @@
 		"bits-ui": "1.0.0-next.85",
 		"clsx": "^2.1.1",
 		"jsrepo": "^1.31.0",
-		"lucide-svelte": "^0.468.0",
+		"lucide-svelte": "^0.474.0",
 		"mode-watcher": "^0.5.1",
 		"postcss": "^8.5.1",
 		"prettier": "^3.4.2",
