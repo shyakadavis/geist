@@ -25,7 +25,7 @@
 	});
 </script>
 
-{#if is_desktop.matches}
+{#if is_desktop.current}
 	<Dialog.Content
 		bind:ref
 		class={cn(

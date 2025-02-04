@@ -1,4 +1,4 @@
-import { MediaQuery } from 'runed';
+import { MediaQuery } from 'svelte/reactivity';
 import { writable } from 'svelte/store';
 import ModalContent from './modal-content.svelte';
 import ModalDescription from './modal-description.svelte';
