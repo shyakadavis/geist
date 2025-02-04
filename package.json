@@ -11,7 +11,8 @@
 		"format": "prettier --write .",
 		"lint": "prettier --check .",
 		"ready": "pnpm format && pnpm lint && pnpm check",
-		"build:registry": "jsrepo build"
+		"build:registry": "jsrepo build",
+		"prepare": "svelte-kit sync || echo ''"
 	},
 	"devDependencies": {
 		"@fontsource/geist-mono": "^5.1.1",
@@ -49,5 +50,5 @@
 		"vite": "^6.0.11"
 	},
 	"type": "module",
-	"packageManager": "pnpm@9.14.4"
+	"packageManager": "pnpm@10.2.0"
 }
