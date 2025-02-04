@@ -28,9 +28,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Run prepare
-        run: pnpm prepare
-
       - name: Build jsrepo-manifest.json
         run: pnpm build:registry
 
