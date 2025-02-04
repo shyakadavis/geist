@@ -35,7 +35,7 @@
 		"prettier-plugin-svelte": "^3.3.3",
 		"prettier-plugin-tailwindcss": "^0.6.11",
 		"runed": "^0.15.4",
-		"shiki": "^1.29.2",
+		"shiki": "^2.3.0",
 		"svelte": "5.19.7",
 		"svelte-check": "^4.1.4",
 		"svelte-exmarkdown": "^3.0.5",
