@@ -253,7 +253,9 @@
 		--shadow-border-inset: inset 0 0 0 1px hsla(0, 0%, 100%, 0.1);
 		--shadow-border-small: var(--shadow-border), 0px 1px 2px rgba(0, 0, 0, 0.16);
 		--shadow-input: 0 0 0 1px var(--gray-alpha-600), 0 0 0 4px hsla(0, 0%, 100%, 0.24);
-		--shadow-book: 0 1.8px 3.6px rgba(0, 0, 0, .05), 0 10.8px 21.6px rgba(0, 0, 0, .08), inset 0 -.9px 0 rgba(0, 0, 0, .1), inset 0 1.8px 1.8px rgba(255, 255, 255, .1), inset 3.6px 0 3.6px rgba(0, 0, 0, .1);
+		--shadow-book: 0 1.8px 3.6px rgba(0, 0, 0, 0.05), 0 10.8px 21.6px rgba(0, 0, 0, 0.08),
+			inset 0 -0.9px 0 rgba(0, 0, 0, 0.1), inset 0 1.8px 1.8px rgba(255, 255, 255, 0.1),
+			inset 3.6px 0 3.6px rgba(0, 0, 0, 0.1);
 	}
 }
 

@@ -180,7 +180,7 @@ const config: Config = {
 				'250': '250ms'
 			},
 			aspectRatio: {
-				'book': '49 / 60'
+				book: '49 / 60'
 			}
 		}
 	},
@@ -191,19 +191,23 @@ const config: Config = {
 		function ({ addUtilities }) {
 			const newUtilities = {
 				'.bg-book-front': {
-					background: 'linear-gradient(180deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0)), hsla(0, 0%, 12%, 1)'
+					background:
+						'linear-gradient(180deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0)), hsla(0, 0%, 12%, 1)'
 				},
 				'.bg-book-pages': {
-					background: 'linear-gradient(90deg, #eaeaea, transparent 70%), linear-gradient(#fff, #fafafa)'
+					background:
+						'linear-gradient(90deg, #eaeaea, transparent 70%), linear-gradient(#fff, #fafafa)'
 				},
 				'.bg-book-bind': {
-					background: ' linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 12%, rgba(255, 255, 255, 0.25) 29.25%, rgba(255, 255, 255, 0) 50.5%, rgba(255, 255, 255, 0) 75.25%, rgba(255, 255, 255, 0.25) 91%, rgba(255, 255, 255, 0)), linear-gradient(90deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.1) 12%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.02) 50%, rgba(0, 0, 0, 0.2) 73.5%, rgba(0, 0, 0, 0.5) 75.25%, rgba(0, 0, 0, 0.15) 85.25%, rgba(0, 0, 0, 0))'
+					background:
+						' linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 12%, rgba(255, 255, 255, 0.25) 29.25%, rgba(255, 255, 255, 0) 50.5%, rgba(255, 255, 255, 0) 75.25%, rgba(255, 255, 255, 0.25) 91%, rgba(255, 255, 255, 0)), linear-gradient(90deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.1) 12%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.02) 50%, rgba(0, 0, 0, 0.2) 73.5%, rgba(0, 0, 0, 0.5) 75.25%, rgba(0, 0, 0, 0.15) 85.25%, rgba(0, 0, 0, 0))'
 				},
 				'.bg-book-textured': {
 					backgroundImage: 'url("lib/assets/book-texture.avif")'
 				},
 				'.transform-book-pages': {
-					transform: 'translateX(calc(var(--book-width)* 1px - 29cqw / 2 - 3px)) rotateY(90deg) translateX(calc(29cqw / 2))'
+					transform:
+						'translateX(calc(var(--book-width)* 1px - 29cqw / 2 - 3px)) rotateY(90deg) translateX(calc(29cqw / 2))'
 				},
 				'.transform-book-back': {
 					transform: 'translateZ(calc(-1* 29cqw))'
@@ -214,8 +218,8 @@ const config: Config = {
 				'.perspective-900': {
 					perspective: '900px'
 				},
-				'.-rotate-y-20': {
-					transform: 'rotateY(-20deg)'
+				'.book-transform': {
+					transform: 'rotateY(-20deg) scale(1.03)'
 				},
 				'.rotate-y-0': {
 					transform: 'rotateY(0deg)'
