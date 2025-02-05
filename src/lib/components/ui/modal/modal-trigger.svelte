@@ -14,7 +14,7 @@
 </script>
 
 <!-- TODO: Is there a better way to do this? -->
-{#if is_desktop.matches}
+{#if is_desktop.current}
 	{#if child_prop}
 		<Dialog.Trigger class={class_name}>
 			{#snippet child({ props })}

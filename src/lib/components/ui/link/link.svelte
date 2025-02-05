@@ -21,7 +21,7 @@
 </script>
 
 <LinkPrimitive.Root
-	class={cn(link_variants({ variant, className: class_name }))}
+	class={cn(link_variants({ variant }), class_name)}
 	{href}
 	target={external ? '_blank' : undefined}
 	rel={external ? 'noopener' : undefined}

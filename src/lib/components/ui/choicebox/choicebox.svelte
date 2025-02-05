@@ -40,6 +40,7 @@
 			{@render children?.()}
 		</ChoiceboxGroupPrimitive.Root>
 	{:else if type === 'checkbox'}
+		<!-- TODO: When spreading the `rest` props, TS complains. -->
 		<div
 			class={cn(
 				'flex gap-3',
@@ -49,7 +50,6 @@
 				},
 				class_name
 			)}
-			{...rest}
 		>
 			{@render children?.()}
 		</div>
