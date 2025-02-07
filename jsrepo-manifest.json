@@ -70,6 +70,22 @@
 					}
 				},
 				{
+					"name": "book",
+					"directory": "src/lib/components/ui/book",
+					"category": "ui",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": ["book.svelte", "index.ts"],
+					"localDependencies": ["icons/index", "lib/utils"],
+					"dependencies": [],
+					"devDependencies": ["tailwind-variants@^0.3.1"],
+					"_imports_": {
+						"$lib/assets/icons": "{{icons/index}}",
+						"$lib/utils.js": "{{lib/utils}}.js"
+					}
+				},
+				{
 					"name": "button",
 					"directory": "src/lib/components/ui/button",
 					"category": "ui",
@@ -641,7 +657,7 @@
 					],
 					"localDependencies": ["lib/utils", "icons/index", "ui/separator"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.85", "lucide-svelte@^0.474.0"],
+					"devDependencies": ["bits-ui@1.0.0-next.85", "lucide-svelte@^0.475.0"],
 					"_imports_": {
 						"$lib/utils.js": "{{lib/utils}}.js",
 						"$lib/assets/icons": "{{icons/index}}",
@@ -1537,7 +1553,8 @@
 						"icons/theme-switch-light",
 						"icons/theme-switch-system",
 						"icons/user-plus",
-						"icons/warning"
+						"icons/warning",
+						"icons/simple-illustration"
 					],
 					"_imports_": {
 						"./accessibility.svg?component": "{{icons/accessibility}}.svg?component",
@@ -1621,7 +1638,8 @@
 						"./theme-switch-light.svg?component": "{{icons/theme-switch-light}}.svg?component",
 						"./theme-switch-system.svg?component": "{{icons/theme-switch-system}}.svg?component",
 						"./user-plus.svg?component": "{{icons/user-plus}}.svg?component",
-						"./warning.svg?component": "{{icons/warning}}.svg?component"
+						"./warning.svg?component": "{{icons/warning}}.svg?component",
+						"./simple-illustration.svg?component": "{{icons/simple-illustration}}.svg?component"
 					},
 					"dependencies": [],
 					"devDependencies": []
@@ -1985,6 +2003,19 @@
 					"subdirectory": false,
 					"list": false,
 					"files": ["shield.svg"],
+					"localDependencies": [],
+					"_imports_": {},
+					"dependencies": [],
+					"devDependencies": []
+				},
+				{
+					"name": "simple-illustration",
+					"directory": "src/lib/assets/icons",
+					"category": "icons",
+					"tests": false,
+					"subdirectory": false,
+					"list": false,
+					"files": ["simple-illustration.svg"],
 					"localDependencies": [],
 					"_imports_": {},
 					"dependencies": [],
