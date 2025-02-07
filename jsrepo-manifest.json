@@ -17,6 +17,12 @@
 			"path": "./tailwind.config.ts",
 			"expectedPath": "./tailwind.config.ts",
 			"optional": false
+		},
+		{
+			"name": "Vite config",
+			"path": "./vite.config.ts",
+			"expectedPath": "./vite.config.ts",
+			"optional": false
 		}
 	],
 	"categories": [

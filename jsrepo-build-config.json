@@ -1,5 +1,5 @@
 {
-	"$schema": "https://unpkg.com/jsrepo@1.31.0/schemas/registry-config.json",
+	"$schema": "https://unpkg.com/jsrepo@1.33.0/schemas/registry-config.json",
 	"dirs": ["./src/lib/components", "./src/lib/assets", "./src"],
 	"meta": {
 		"authors": ["SHYAKA Davis"],
@@ -17,6 +17,11 @@
 			"name": "Tailwind Config",
 			"path": "./tailwind.config.ts",
 			"expectedPath": "./tailwind.config.ts"
+		},
+		{
+			"name": "Vite config",
+			"path": "./vite.config.ts",
+			"expectedPath": "./vite.config.ts"
 		}
 	],
 	"includeBlocks": [],
