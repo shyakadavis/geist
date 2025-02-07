@@ -43,7 +43,7 @@ type Variant = VariantProps<typeof book_variants>['variant'];
 
 export type NormalBook = {
 	color?: string;
-	textColor?: string;
+	text_color?: string;
 	title: string;
 	variant?: Variant;
 	width?: number | { sm?: number; md?: number; lg?: number; xl?: number; '2xl'?: number };
