@@ -1,4 +1,30 @@
 {
+	"meta": {
+		"authors": ["SHYAKA Davis"],
+		"bugs": "https://github.com/shyakadavis/geist/issues",
+		"homepage": "https://geist.shyakadavis.me/",
+		"tags": ["svelte", "geist", "ui", "design", "shadcn-svelte"]
+	},
+	"configFiles": [
+		{
+			"name": "Global CSS",
+			"path": "./src/app.css",
+			"expectedPath": "./src/app.css",
+			"optional": false
+		},
+		{
+			"name": "Tailwind Config",
+			"path": "./tailwind.config.ts",
+			"expectedPath": "./tailwind.config.ts",
+			"optional": false
+		},
+		{
+			"name": "Vite config",
+			"path": "./vite.config.ts",
+			"expectedPath": "./vite.config.ts",
+			"optional": false
+		}
+	],
 	"categories": [
 		{
 			"name": "ui",
@@ -170,37 +196,6 @@
 						"$lib/assets/icons": "{{icons/index}}",
 						"$lib/utils": "{{lib/utils}}",
 						"../input": "{{ui/input}}"
-					}
-				},
-				{
-					"name": "command",
-					"directory": "src/lib/components/ui/command",
-					"category": "ui",
-					"tests": false,
-					"subdirectory": true,
-					"list": false,
-					"files": [
-						"command-dialog.svelte",
-						"command-empty.svelte",
-						"command-group-heading.svelte",
-						"command-group.svelte",
-						"command-input.svelte",
-						"command-item.svelte",
-						"command-link-item.svelte",
-						"command-list.svelte",
-						"command-separator.svelte",
-						"command-shortcut.svelte",
-						"command.svelte",
-						"index.ts"
-					],
-					"localDependencies": ["ui/dialog", "lib/utils", "icons/index"],
-					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.85"],
-					"_imports_": {
-						"$lib/components/ui/dialog/index.js": "{{ui/dialog}}/index.js",
-						"$lib/utils": "{{lib/utils}}",
-						"$lib/utils.js": "{{lib/utils}}.js",
-						"$lib/assets/icons": "{{icons/index}}"
 					}
 				},
 				{
@@ -2117,73 +2112,6 @@
 		{
 			"name": "lib",
 			"blocks": [
-				{
-					"name": "assets",
-					"directory": "src/lib/assets",
-					"category": "lib",
-					"tests": false,
-					"subdirectory": true,
-					"list": false,
-					"files": [],
-					"localDependencies": [],
-					"dependencies": [],
-					"devDependencies": [],
-					"_imports_": {}
-				},
-				{
-					"name": "components",
-					"directory": "src/lib/components",
-					"category": "lib",
-					"tests": false,
-					"subdirectory": true,
-					"list": false,
-					"files": [],
-					"localDependencies": [],
-					"dependencies": [],
-					"devDependencies": [],
-					"_imports_": {}
-				},
-				{
-					"name": "config",
-					"directory": "src/lib/config",
-					"category": "lib",
-					"tests": false,
-					"subdirectory": true,
-					"list": false,
-					"files": ["sitemap.ts"],
-					"localDependencies": ["lib/assets"],
-					"dependencies": [],
-					"devDependencies": [],
-					"_imports_": {
-						"$lib/assets/icons": "{{lib/assets}}/icons"
-					}
-				},
-				{
-					"name": "index",
-					"directory": "src/lib",
-					"category": "lib",
-					"tests": false,
-					"subdirectory": false,
-					"list": false,
-					"files": ["index.ts"],
-					"localDependencies": [],
-					"_imports_": {},
-					"dependencies": [],
-					"devDependencies": []
-				},
-				{
-					"name": "stores",
-					"directory": "src/lib",
-					"category": "lib",
-					"tests": false,
-					"subdirectory": false,
-					"list": false,
-					"files": ["stores.ts"],
-					"localDependencies": [],
-					"_imports_": {},
-					"dependencies": [],
-					"devDependencies": []
-				},
 				{
 					"name": "utils",
 					"directory": "src/lib",
