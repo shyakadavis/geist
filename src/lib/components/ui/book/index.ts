@@ -17,7 +17,7 @@ const book_variants = tv({
 		body_illustration:
 			'flex w-full flex-col items-stretch object-cover p-[6.1%] pl-[14.2%] text-[var(--book-text-color)] inline-size',
 		textured:
-			'pointer-events-none absolute inset-0 rounded-[var(--book-border-radius)] bg-cover bg-no-repeat mix-blend-hard-light brightness-100 bg-book-textured',
+			'pointer-events-none absolute inset-0 rotate-180 rounded-[var(--book-border-radius)] bg-cover bg-no-repeat opacity-50 mix-blend-hard-light brightness-110 bg-book-textured dark:opacity-100 dark:brightness-100',
 		pages:
 			'absolute top-[3px] h-[calc(100%-2*3px)] w-[calc(29cqw-2px)] bg-book-pages transform-book-pages',
 		back: 'absolute left-0 top-0 h-full min-w-[calc(var(--book-width)*1px)] transform-book-back rounded-book'
