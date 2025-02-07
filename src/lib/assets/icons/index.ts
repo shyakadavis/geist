@@ -80,6 +80,7 @@ import ThemeSwitchLight from './theme-switch-light.svg?component';
 import ThemeSwitchSystem from './theme-switch-system.svg?component';
 import UserPlus from './user-plus.svg?component';
 import Warning from './warning.svg?component';
+import SimpleIllustration from './simple-illustration.svg?component';
 
 export const Icons = {
 	Accessibility,
@@ -163,5 +164,6 @@ export const Icons = {
 	ThemeSwitchLight,
 	ThemeSwitchSystem,
 	UserPlus,
-	Warning
+	Warning,
+	SimpleIllustration
 };

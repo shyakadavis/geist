@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Icons } from '$lib/assets/icons';
 	import { cn } from '$lib/utils.js';
-	import { book_variants, type NormalBook, simpleIllustration } from './index.js';
+	import { book_variants, type NormalBook } from './index.js';
 
 	type Props = NormalBook;
 
@@ -63,7 +63,7 @@
 					{#if rest.illustration && rest.variant === 'simple'}
 						<rest.illustration />
 					{:else if rest.variant === 'simple'}
-						{@html simpleIllustration}
+						<Icons.SimpleIllustration />
 					{:else}
 						<Icons.LogoVercel aria-hidden="true" height="16" width="16" />
 					{/if}
