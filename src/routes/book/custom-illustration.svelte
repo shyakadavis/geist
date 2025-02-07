@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Book from '$lib/components/ui/book/book.svelte';
-	import Icon from './icon.svelte';
-	import Line from './line.svelte';
+	import Icon from './icon.svg?component';
+	import Line from './line.svg?component';
 </script>
 
 <div class="flex items-end gap-8">

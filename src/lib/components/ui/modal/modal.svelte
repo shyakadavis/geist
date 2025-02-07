@@ -12,7 +12,7 @@
 	let { open = $bindable(false), children }: Props = $props();
 </script>
 
-{#if is_desktop.matches}
+{#if is_desktop.current}
 	<Dialog.Root bind:open>
 		{@render children?.()}
 	</Dialog.Root>

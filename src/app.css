@@ -131,6 +131,8 @@
 			0px 4px 8px -4px rgba(0, 0, 0, 0.04), 0px 16px 24px -8px rgba(0, 0, 0, 0.06);
 		--shadow-input: 0 0 0 1px var(--gray-alpha-600), 0 0 0 4px rgba(0, 0, 0, 0.16);
 		--shadow-border-inset: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+		--shadow-book: 0 1px 1px 0 rgba(0, 0, 0, 0.02), 0 4px 8px -4px rgba(0, 0, 0, 0.1),
+			0 16px 24px -8px rgba(0, 0, 0, 0.03);
 	}
 
 	.dark {

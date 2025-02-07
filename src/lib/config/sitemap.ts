@@ -61,7 +61,7 @@ export const aside_items: Aside = {
 		{
 			title: 'Book',
 			href: '/book',
-			status: 'draft'
+			status: 'new'
 		},
 		{
 			title: 'Button',

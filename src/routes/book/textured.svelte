@@ -11,21 +11,21 @@
 	<div class="flex items-end gap-8">
 		<Book
 			color="#7DC1C1"
-			textColor="white"
+			text_color="white"
 			textured
 			title="Design Engineering at Vercel"
 			variant="simple"
 		/>
 		<Book
 			color="#9D2127"
-			textColor="#ece4db"
+			text_color="#ece4db"
 			textured
 			title="Design Engineering at Vercel"
 			variant="simple"
 		/>
 		<Book
 			color="#FED954"
-			textColor="#9d3b05"
+			text_color="#9d3b05"
 			textured
 			title="Design Engineering at Vercel"
 			variant="simple"

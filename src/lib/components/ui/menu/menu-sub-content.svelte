@@ -7,18 +7,15 @@
 		children: Snippet;
 	};
 
-	let { class: className = undefined, children, ...rest }: Props = $props();
+	let { class: class_name = undefined, children, ...rest }: Props = $props();
 </script>
 
 <MenuPrimitive.SubContent
 	class={cn(
 		'z-50 min-w-[10rem] overflow-hidden rounded-xl bg-background-100 p-2 text-sm text-gray-1000 shadow-shadow-menu focus:outline-none',
-		className
+		class_name
 	)}
 	{...rest}
-	on:keydown
-	on:focusout
-	on:pointermove
 >
 	{@render children?.()}
 </MenuPrimitive.SubContent>

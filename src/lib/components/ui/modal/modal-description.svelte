@@ -11,7 +11,7 @@
 	let { children }: Props = $props();
 </script>
 
-{#if is_desktop.matches}
+{#if is_desktop.current}
 	<Dialog.Description class="text-base text-gray-1000">
 		{@render children?.()}
 	</Dialog.Description>

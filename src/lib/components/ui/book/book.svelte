@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Icons } from '$lib/assets/icons';
 	import { cn } from '$lib/utils.js';
-	import { book_variants, type NormalBook, simpleIllustration } from './index.js';
+	import { book_variants, type NormalBook } from './index.js';
 
 	type Props = NormalBook;
 
@@ -23,58 +23,66 @@
 </script>
 
 <div
-	class={cn(container(), {})}
+	class={cn(container())}
 	style="
-    --book-text-color: {rest.textColor ? rest.textColor : 'hsla(var(--gray-1000))'}; 
+    --book-text-color: {rest.text_color ? rest.text_color : 'hsla(var(--gray-1000))'};
     --book-default-width: 196;
     --book-width:{rest.width ? rest.width : 'var(--book-default-width)'};
 "
 >
 	<div
+		id="book"
 		class={cn(book())}
 		style="--book-color: {rest.color ? rest.color : 'hsla(var(--amber-600))'};"
 	>
-		<div class={cn(front())}>
+		<div id="book-front" class={cn(front())}>
 			{#if rest.variant !== 'simple'}
-				<div class={cn(stripe())}>
-					<div class={cn(bind())}></div>
-					<div class={cn(stripe_illustration())}>
+				<div id="book-stripe" class={cn(stripe())}>
+					<div id="book-bind-#1" class={cn(bind())}></div>
+					<div id="book-stripe-illustration" class={cn(stripe_illustration())}>
 						{#if rest.illustration}
 							<rest.illustration />
 						{/if}
 					</div>
 					{#if rest.textured}
-						<div class={cn(textured())}></div>
+						<div id="book-textured" class={cn(textured())}></div>
 					{/if}
 				</div>
 			{/if}
 			<div
-				class={cn(
-					body(),
-					rest.variant === 'simple' && rest.color ? 'bg-[var(--book-color)]' : 'bg-gray-200'
-				)}
+				id="book-body"
+				class={cn(body(), rest.variant === 'simple' && rest.color ? 'bg-[var(--book-color)]' : '')}
 			>
-				<div class={cn(bind())}></div>
-				<div class={cn(body_illustration({ variant: rest.variant }))}>
+				<div
+					id="book-bind-#2"
+					class={cn(bind(), 'opacity-20', {
+						'opacity-100':
+							(rest.textured && rest.variant === 'simple') ||
+							(rest.variant === 'simple' && rest.color)
+					})}
+				></div>
+				<div id="book-body-illustration" class={cn(body_illustration({ variant: rest.variant }))}>
 					<span
 						class="text-balance font-sans text-[10.5cqw] font-semibold leading-[1.25em] tracking-[-.02em]"
-						>{rest.title}</span
 					>
+						{rest.title}
+					</span>
 					{#if rest.illustration && rest.variant === 'simple'}
 						<rest.illustration />
 					{:else if rest.variant === 'simple'}
-						{@html simpleIllustration}
+						<Icons.SimpleIllustration />
 					{:else}
 						<Icons.LogoVercel aria-hidden="true" height="16" width="16" />
 					{/if}
 				</div>
 			</div>
-			{#if rest.textured && rest.variant === 'simple'}
-				<div class={cn(textured())}></div>
+			{#if rest.textured}
+				<div id="book-textured" class={cn(textured())}></div>
 			{/if}
 		</div>
-		<div class={cn(pages())}></div>
+		<div id="book-pages" class={cn(pages())}></div>
 		<div
+			id="book-back"
 			class={cn(
 				back(),
 				rest.variant === 'simple' && rest.color ? 'bg-[var(--book-color)]' : 'bg-gray-200'

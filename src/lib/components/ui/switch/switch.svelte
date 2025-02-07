@@ -31,7 +31,7 @@
 <label class="flex items-center gap-2">
 	<SwitchPrimitive.Root
 		bind:checked
-		class={cn(switch_variants({ variant, size, className: class_name }), class_name)}
+		class={cn(switch_variants({ variant, size }), class_name)}
 		{...rest}
 	>
 		{#if icon}

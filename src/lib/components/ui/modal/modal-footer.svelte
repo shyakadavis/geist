@@ -24,7 +24,7 @@
 	});
 </script>
 
-{#if is_desktop.matches}
+{#if is_desktop.current}
 	<Dialog.Footer
 		class="sticky bottom-0 rounded-b-[inherit] border-t bg-background-200 px-6 py-3 dark:bg-background-100 sm:justify-between"
 	>
