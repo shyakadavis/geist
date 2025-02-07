@@ -1,7 +1,6 @@
-import type { Icons } from '$lib/assets/icons/index.js';
 import { type VariantProps, tv } from 'tailwind-variants';
 import Root from './book.svelte';
-import type { Component, SvelteComponent } from 'svelte';
+import type { Component } from 'svelte';
 
 const book_variants = tv({
 	slots: {

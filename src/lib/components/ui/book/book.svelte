@@ -25,7 +25,7 @@
 <div
 	class={cn(container(), {})}
 	style="
-    --book-text-color: {rest.textColor ? rest.textColor : 'hsla(var(--gray-1000))'}; 
+    --book-text-color: {rest.text_color ? rest.text_color : 'hsla(var(--gray-1000))'}; 
     --book-default-width: 196;
     --book-width:{rest.width ? rest.width : 'var(--book-default-width)'};
 "
