@@ -8,7 +8,7 @@ const book_variants = tv({
 			'inline-block w-fit transition-transform duration-250 ease-out perspective-900 hover:*:book-transform',
 		book: 'relative aspect-book w-fit min-w-[calc(var(--book-width)*1px)] origin-[center_left] rotate-0 transition-transform duration-250 ease-out preserve-3d inline-size',
 		front:
-			'min-w-[calc(var(--book-width)* 1px)] w-[calc(var(--book-width)* 1px)] relative flex h-full flex-col items-stretch overflow-hidden bg-gray-200 shadow-shadow-book bg-book-front rounded-book translate-z-0',
+			"min-w-[calc(var(--book-width)* 1px)] w-[calc(var(--book-width)* 1px)] relative flex h-full flex-col items-stretch overflow-hidden bg-gray-200 shadow-shadow-book bg-book-front rounded-book translate-z-0 after:pointer-events-none after:absolute after:inset-0 after:h-full after:w-full after:rounded-[inherit] after:shadow-[inset_0_1px_2px_0_rgba(255,255,255,.3);] after:content-['']",
 		stripe:
 			'relative flex w-full flex-1 flex-row items-stretch gap-2 overflow-hidden bg-[var(--book-color)] translate-z-0',
 		body: 'relative flex w-full flex-1 flex-row items-stretch overflow-hidden translate-z-0',

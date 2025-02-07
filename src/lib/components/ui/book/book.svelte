@@ -23,7 +23,7 @@
 </script>
 
 <div
-	class={cn(container(), {})}
+	class={cn(container())}
 	style="
     --book-text-color: {rest.text_color ? rest.text_color : 'hsla(var(--gray-1000))'}; 
     --book-default-width: 196;
@@ -58,8 +58,9 @@
 				<div class={cn(body_illustration({ variant: rest.variant }))}>
 					<span
 						class="text-balance font-sans text-[10.5cqw] font-semibold leading-[1.25em] tracking-[-.02em]"
-						>{rest.title}</span
 					>
+						{rest.title}
+					</span>
 					{#if rest.illustration && rest.variant === 'simple'}
 						<rest.illustration />
 					{:else if rest.variant === 'simple'}
