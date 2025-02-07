@@ -70,7 +70,7 @@
 					{/if}
 				</div>
 			</div>
-			{#if rest.textured && rest.variant === 'simple'}
+			{#if rest.textured}
 				<div class={cn(textured())}></div>
 			{/if}
 		</div>
