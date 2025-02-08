@@ -16,9 +16,13 @@
 				<rest.icon />
 			</div>
 
-			<p>
-				{rest.label}
-			</p>
+			{#if typeof rest.label === 'string'}
+				<p>
+					{rest.label}
+				</p>
+			{:else}
+				{@render rest.label()}
+			{/if}
 		</div>
 
 		{#if rest.call_to_action.href}

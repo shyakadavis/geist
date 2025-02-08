@@ -1,4 +1,4 @@
-import type { Component } from 'svelte';
+import type { Component, Snippet } from 'svelte';
 import { type VariantProps, tv } from 'tailwind-variants';
 import Root from './project-banner.svelte';
 
@@ -45,7 +45,7 @@ type CallToAction = {
 
 export type NormalProjectBanner = {
 	icon: Component;
-	label: string;
+	label: string | Snippet;
 	variant: Variant;
 	call_to_action: CallToAction;
 };
