@@ -7,5 +7,5 @@
 	label="Attack Challenge Mode is enabled for this project"
 	icon={Icons.Shield}
 	variant="success"
-	callToAction={{ label: 'Disable', href: '/' }}
+	call_to_action={{ label: 'Disable', href: '/project-banner#success' }}
 />

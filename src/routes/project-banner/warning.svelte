@@ -7,9 +7,9 @@
 	label="This project was rolled back by @johnphamous"
 	icon={Icons.Stop}
 	variant="warning"
-	callToAction={{
+	call_to_action={{
 		label: 'Undo Rollback',
-		onClick: () => {
+		onclick: () => {
 			alert('Button clicked');
 		}
 	}}

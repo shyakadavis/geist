@@ -164,7 +164,8 @@ export const aside_items: Aside = {
 		},
 		{
 			title: 'Project Banner',
-			href: '/project-banner'
+			href: '/project-banner',
+			status: 'new'
 		},
 		{
 			title: 'Radio',
