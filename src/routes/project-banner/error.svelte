@@ -7,5 +7,5 @@
 	label="Payment failed, update credit card information before your account is shut down"
 	icon={Icons.Warning}
 	variant="error"
-	call_to_action={{ label: 'Add Credit Card', href: '/project-banner#error' }}
+	call_to_action={{ label: 'Add Credit Card', href: '/project-banner' }}
 />
