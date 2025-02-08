@@ -16,7 +16,7 @@
 >
 	{#snippet label()}
 		This project was rolled back by
-		<Tooltip.Provider>
+		<Tooltip.Provider delayDuration={300}>
 			<Tooltip.Root>
 				<Tooltip.Trigger class="underline decoration-dashed underline-offset-[5px]">
 					@johnphamous
