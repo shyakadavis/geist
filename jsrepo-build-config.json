@@ -1,6 +1,29 @@
 {
-	"$schema": "https://unpkg.com/jsrepo@1.31.0/schemas/registry-config.json",
+	"$schema": "https://unpkg.com/jsrepo@1.33.0/schemas/registry-config.json",
 	"dirs": ["./src/lib/components", "./src/lib/assets", "./src"],
+	"meta": {
+		"authors": ["SHYAKA Davis"],
+		"bugs": "https://github.com/shyakadavis/geist/issues",
+		"homepage": "https://geist.shyakadavis.me/",
+		"tags": ["svelte", "geist", "ui", "design", "shadcn-svelte"]
+	},
+	"configFiles": [
+		{
+			"name": "Global CSS",
+			"path": "./src/app.css",
+			"expectedPath": "./src/app.css"
+		},
+		{
+			"name": "Tailwind Config",
+			"path": "./tailwind.config.ts",
+			"expectedPath": "./tailwind.config.ts"
+		},
+		{
+			"name": "Vite config",
+			"path": "./vite.config.ts",
+			"expectedPath": "./vite.config.ts"
+		}
+	],
 	"includeBlocks": [],
 	"includeCategories": ["ui", "lib", "icons"],
 	"doNotListBlocks": [
