@@ -576,6 +576,21 @@
 					}
 				},
 				{
+					"name": "project-banner",
+					"directory": "src/lib/components/ui/project-banner",
+					"category": "ui",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": ["index.ts", "project-banner.svelte"],
+					"localDependencies": ["lib/utils"],
+					"dependencies": [],
+					"devDependencies": ["tailwind-variants@^0.3.1"],
+					"_imports_": {
+						"$lib/utils.js": "{{lib/utils}}.js"
+					}
+				},
+				{
 					"name": "radio",
 					"directory": "src/lib/components/ui/radio",
 					"category": "ui",
