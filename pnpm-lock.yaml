@@ -45,8 +45,8 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       jsrepo:
-        specifier: ^1.33.0
-        version: 1.33.0(typescript@5.7.3)
+        specifier: ^1.34.0
+        version: 1.34.0(typescript@5.7.3)
       lucide-svelte:
         specifier: ^0.475.0
         version: 0.475.0(svelte@5.19.9)
@@ -1257,8 +1257,8 @@ packages:
   json-schema-typed@8.0.1:
     resolution: {integrity: sha512-XQmWYj2Sm4kn4WeTYvmpKEbyPsL7nBsb647c7pMe6l02/yx2+Jfc4dT6UZkEXnIUb5LhD55r2HPsJ1milQ4rDg==}
 
-  jsrepo@1.33.0:
-    resolution: {integrity: sha512-vqyrv5O6CE6B5xf2ldW2UXwJhFhSirlrCJLy6YRnreW3jWeFtMsQwHuUziitjn7mT6fpJn/iO2B7qwopIUoDqQ==}
+  jsrepo@1.34.0:
+    resolution: {integrity: sha512-BGIrOQKkl+cr7EDCEFqsHg1i83EO1Q8zfS+oa7eJkgDJw1SmVGdOx4hI0SDUac3RWPDneWi4FrjIcmWcK4YO7A==}
     hasBin: true
 
   kleur@4.1.5:
@@ -3278,7 +3278,7 @@ snapshots:
 
   json-schema-typed@8.0.1: {}
 
-  jsrepo@1.33.0(typescript@5.7.3):
+  jsrepo@1.34.0(typescript@5.7.3):
     dependencies:
       '@anthropic-ai/sdk': 0.36.3
       '@biomejs/js-api': 0.7.1(@biomejs/wasm-nodejs@1.9.4)
