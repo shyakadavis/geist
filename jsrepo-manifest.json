@@ -10,19 +10,29 @@
 			"name": "Global CSS",
 			"path": "./src/app.css",
 			"expectedPath": "./src/app.css",
-			"optional": false
+			"optional": false,
+			"dependencies": [],
+			"devDependencies": []
 		},
 		{
 			"name": "Tailwind Config",
 			"path": "./tailwind.config.ts",
 			"expectedPath": "./tailwind.config.ts",
-			"optional": false
+			"optional": false,
+			"dependencies": [],
+			"devDependencies": [
+				"@pyncz/tailwind-mask-image@^2.0.0",
+				"@tailwindcss/typography@^0.5.16",
+				"tailwindcss-animate@^1.0.7"
+			]
 		},
 		{
 			"name": "Vite config",
 			"path": "./vite.config.ts",
 			"expectedPath": "./vite.config.ts",
-			"optional": false
+			"optional": false,
+			"dependencies": [],
+			"devDependencies": ["@poppanator/sveltekit-svg@5.0.0"]
 		}
 	],
 	"categories": [

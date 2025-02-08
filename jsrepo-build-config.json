@@ -37,7 +37,7 @@
 	],
 	"doNotListCategories": ["icons", "lib"],
 	"preview": true,
-	"excludeDeps": ["svelte"],
+	"excludeDeps": ["svelte", "@sveltejs/kit", "vite", "tailwindcss"],
 	"rules": {
 		"no-category-index-file-dependency": "off",
 		"require-local-dependency-exists": "error",
