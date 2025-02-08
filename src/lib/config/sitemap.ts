@@ -163,6 +163,11 @@ export const aside_items: Aside = {
 			href: '/progress'
 		},
 		{
+			title: 'Project Banner',
+			href: '/project-banner',
+			status: 'new'
+		},
+		{
 			title: 'Radio',
 			href: '/radio'
 		},
