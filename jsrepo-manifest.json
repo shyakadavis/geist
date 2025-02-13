@@ -55,7 +55,7 @@
 					],
 					"localDependencies": ["lib/utils", "icons/index", "ui/skeleton"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.85", "tailwind-variants@^0.3.1"],
+					"devDependencies": ["bits-ui@1.1.0", "tailwind-variants@^0.3.1"],
 					"_imports_": {
 						"$lib/utils.js": "{{lib/utils}}.js",
 						"$lib/utils": "{{lib/utils}}",
@@ -105,7 +105,7 @@
 					"files": ["button.svelte", "index.ts"],
 					"localDependencies": ["ui/spinner", "lib/utils", "icons/index"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.85", "tailwind-variants@^0.3.1"],
+					"devDependencies": ["bits-ui@1.1.0", "tailwind-variants@^0.3.1"],
 					"_imports_": {
 						"$lib/components/ui/spinner/index.js": "{{ui/spinner}}/index.js",
 						"$lib/utils.js": "{{lib/utils}}.js",
@@ -137,7 +137,7 @@
 					],
 					"localDependencies": ["lib/utils", "ui/button", "icons/index", "ui/popover"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.85", "@internationalized/date@^3.7.0"],
+					"devDependencies": ["bits-ui@1.1.0", "@internationalized/date@^3.7.0"],
 					"_imports_": {
 						"$lib/utils.js": "{{lib/utils}}.js",
 						"../button": "{{ui/button}}",
@@ -157,7 +157,7 @@
 					"files": ["checkbox.svelte", "index.ts"],
 					"localDependencies": ["icons/index", "lib/utils", "ui/label"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.85"],
+					"devDependencies": ["bits-ui@1.1.0"],
 					"_imports_": {
 						"$lib/assets/icons": "{{icons/index}}",
 						"$lib/utils.js": "{{lib/utils}}.js",
@@ -179,7 +179,7 @@
 					],
 					"localDependencies": ["icons/index", "lib/utils"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.85"],
+					"devDependencies": ["bits-ui@1.1.0"],
 					"_imports_": {
 						"$lib/assets/icons": "{{icons/index}}",
 						"$lib/utils.js": "{{lib/utils}}.js"
@@ -201,7 +201,7 @@
 					],
 					"localDependencies": ["lib/utils", "icons/index"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.85"],
+					"devDependencies": ["bits-ui@1.1.0"],
 					"_imports_": {
 						"$lib/utils.js": "{{lib/utils}}.js",
 						"$lib/assets/icons": "{{icons/index}}"
@@ -217,7 +217,7 @@
 					"files": ["combobox.svelte", "index.ts"],
 					"localDependencies": ["icons/index", "lib/utils", "ui/input"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.85"],
+					"devDependencies": ["bits-ui@1.1.0"],
 					"_imports_": {
 						"$lib/assets/icons": "{{icons/index}}",
 						"$lib/utils": "{{lib/utils}}",
@@ -245,7 +245,7 @@
 					],
 					"localDependencies": ["icons/index", "lib/utils"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.85"],
+					"devDependencies": ["bits-ui@1.1.0"],
 					"_imports_": {
 						"$lib/assets/icons": "{{icons/index}}",
 						"$lib/utils.js": "{{lib/utils}}.js"
@@ -286,7 +286,7 @@
 					],
 					"localDependencies": ["icons/index", "lib/utils", "ui/button"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.85"],
+					"devDependencies": ["bits-ui@1.1.0"],
 					"_imports_": {
 						"$lib/assets/icons/index.js": "{{icons/index}}.js",
 						"$lib/utils.js": "{{lib/utils}}.js",
@@ -313,7 +313,7 @@
 					],
 					"localDependencies": ["lib/utils"],
 					"dependencies": [],
-					"devDependencies": ["vaul-svelte@1.0.0-next.3", "bits-ui@1.0.0-next.85"],
+					"devDependencies": ["vaul-svelte@1.0.0-next.3", "bits-ui@1.1.0"],
 					"_imports_": {
 						"$lib/utils.js": "{{lib/utils}}.js"
 					}
@@ -435,7 +435,7 @@
 					"files": ["index.ts", "label.svelte"],
 					"localDependencies": ["lib/utils"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.85"],
+					"devDependencies": ["bits-ui@1.1.0"],
 					"_imports_": {
 						"$lib/utils.js": "{{lib/utils}}.js"
 					}
@@ -450,7 +450,7 @@
 					"files": ["index.ts", "link.svelte"],
 					"localDependencies": ["icons/index", "lib/utils"],
 					"dependencies": [],
-					"devDependencies": ["tailwind-variants@^0.3.1", "bits-ui@1.0.0-next.85"],
+					"devDependencies": ["tailwind-variants@^0.3.1", "bits-ui@1.1.0"],
 					"_imports_": {
 						"$lib/assets/icons/index.js": "{{icons/index}}.js",
 						"$lib/utils.js": "{{lib/utils}}.js"
@@ -489,7 +489,7 @@
 					],
 					"localDependencies": ["icons/index", "lib/utils"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.85"],
+					"devDependencies": ["bits-ui@1.1.0"],
 					"_imports_": {
 						"$lib/assets/icons": "{{icons/index}}",
 						"$lib/utils.js": "{{lib/utils}}.js"
@@ -565,7 +565,7 @@
 					"files": ["index.ts", "popover-content.svelte"],
 					"localDependencies": ["lib/utils"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.85"],
+					"devDependencies": ["bits-ui@1.1.0"],
 					"_imports_": {
 						"$lib/utils.js": "{{lib/utils}}.js"
 					}
@@ -580,7 +580,7 @@
 					"files": ["index.ts", "progress.svelte"],
 					"localDependencies": ["lib/utils"],
 					"dependencies": [],
-					"devDependencies": ["tailwind-variants@^0.3.1", "bits-ui@1.0.0-next.85"],
+					"devDependencies": ["tailwind-variants@^0.3.1", "bits-ui@1.1.0"],
 					"_imports_": {
 						"$lib/utils.js": "{{lib/utils}}.js"
 					}
@@ -610,7 +610,7 @@
 					"files": ["index.ts", "radio-item.svelte", "radio.svelte"],
 					"localDependencies": ["ui/label", "lib/utils"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.85"],
+					"devDependencies": ["bits-ui@1.1.0"],
 					"_imports_": {
 						"$lib/components/ui/label/index.js": "{{ui/label}}/index.js",
 						"$lib/utils.js": "{{lib/utils}}.js"
@@ -649,7 +649,7 @@
 						"ui/label"
 					],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.85", "@internationalized/date@^3.7.0"],
+					"devDependencies": ["bits-ui@1.1.0", "@internationalized/date@^3.7.0"],
 					"_imports_": {
 						"$lib/assets/icons": "{{icons/index}}",
 						"$lib/utils": "{{lib/utils}}",
@@ -682,7 +682,7 @@
 					],
 					"localDependencies": ["lib/utils", "icons/index", "ui/separator"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.85", "lucide-svelte@^0.475.0"],
+					"devDependencies": ["bits-ui@1.1.0", "lucide-svelte@^0.475.0"],
 					"_imports_": {
 						"$lib/utils.js": "{{lib/utils}}.js",
 						"$lib/assets/icons": "{{icons/index}}",
@@ -699,7 +699,7 @@
 					"files": ["index.ts", "separator.svelte"],
 					"localDependencies": ["lib/utils"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.85"],
+					"devDependencies": ["bits-ui@1.1.0"],
 					"_imports_": {
 						"$lib/utils.js": "{{lib/utils}}.js"
 					}
@@ -731,7 +731,7 @@
 					"files": ["index.ts", "skeleton.svelte"],
 					"localDependencies": ["lib/utils"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.85"],
+					"devDependencies": ["bits-ui@1.1.0"],
 					"_imports_": {
 						"$lib/utils.js": "{{lib/utils}}.js"
 					}
@@ -790,7 +790,7 @@
 					"files": ["index.ts", "switch.svelte"],
 					"localDependencies": ["icons/index", "lib/utils"],
 					"dependencies": [],
-					"devDependencies": ["tailwind-variants@^0.3.1", "bits-ui@1.0.0-next.85"],
+					"devDependencies": ["tailwind-variants@^0.3.1", "bits-ui@1.1.0"],
 					"_imports_": {
 						"$lib/assets/icons": "{{icons/index}}",
 						"$lib/utils.js": "{{lib/utils}}.js"
@@ -816,7 +816,7 @@
 					],
 					"localDependencies": ["lib/utils"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.85"],
+					"devDependencies": ["bits-ui@1.1.0"],
 					"_imports_": {
 						"$lib/utils.js": "{{lib/utils}}.js"
 					}
@@ -831,7 +831,7 @@
 					"files": ["index.ts", "tabs-content.svelte", "tabs-list.svelte", "tabs-trigger.svelte"],
 					"localDependencies": ["lib/utils", "icons/index", "ui/tooltip"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.85"],
+					"devDependencies": ["bits-ui@1.1.0"],
 					"_imports_": {
 						"$lib/utils.js": "{{lib/utils}}.js",
 						"$lib/assets/icons": "{{icons/index}}",
@@ -848,7 +848,7 @@
 					"files": ["index.ts", "textarea.svelte"],
 					"localDependencies": ["lib/utils"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.85"],
+					"devDependencies": ["bits-ui@1.1.0"],
 					"_imports_": {
 						"$lib/utils.js": "{{lib/utils}}.js"
 					}
@@ -878,7 +878,7 @@
 					"files": ["index.ts", "tooltip-content.svelte"],
 					"localDependencies": ["lib/utils"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.85"],
+					"devDependencies": ["bits-ui@1.1.0"],
 					"_imports_": {
 						"$lib/utils.js": "{{lib/utils}}.js"
 					}
@@ -2179,7 +2179,7 @@
 					"localDependencies": [],
 					"_imports_": {},
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.0.0-next.85", "clsx@^2.1.1", "tailwind-merge@^2.6.0"]
+					"devDependencies": ["bits-ui@1.1.0", "clsx@^2.1.1", "tailwind-merge@^2.6.0"]
 				}
 			]
 		}
