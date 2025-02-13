@@ -108,7 +108,7 @@ Configure paths in `jsrepo.json`:
 
 ```diff
 {
-	"$schema": "https://unpkg.com/jsrepo@1.34.0/schemas/project-config.json",
+	"$schema": "https://unpkg.com/jsrepo@1.36.0/schemas/project-config.json",
 	"repos": ["github/shyakadavis/geist"],
 	"includeTests": false,
 	"watermark": true,
