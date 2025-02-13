@@ -4,7 +4,6 @@
 
 <div class="flex justify-start">
 	<Gauge
-		arc_priority="equal"
 		colors={{ primary: 'stroke-blue-700', secondary: 'stroke-red-700' }}
 		show_value
 		size="md"

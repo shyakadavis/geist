@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { Badge } from '$lib/components/ui/badge';
 	import { aside_items } from '$lib/config/sitemap';
 	import AsideItem from './aside-item.svelte';
 
@@ -31,9 +30,6 @@
 						class="mb-0.5 flex h-10 items-center gap-2 py-1.5 pl-1 text-sm font-bold capitalize text-gray-1000"
 					>
 						{group}
-						{#if group === 'components'}
-							<Badge variant="pink-subtle" size="sm">Internal</Badge>
-						{/if}
 					</dt>
 					<dd>
 						<ul class="relative space-y-0.5" style="width:calc(100% + 8px)">

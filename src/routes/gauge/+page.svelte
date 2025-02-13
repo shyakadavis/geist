@@ -38,11 +38,7 @@
 		<CustomSecondaryColor />
 	</Demo>
 
-	<Demo
-		id="arc-priority"
-		subtitle="When using the gauge to display a ratio, use the `equal` arc priority to make both arcs are equally sized."
-		code={arc_priority_code}
-	>
+	<Demo id="arc-priority" code={arc_priority_code}>
 		<ArcPriority />
 	</Demo>
 </PageWrapper>
