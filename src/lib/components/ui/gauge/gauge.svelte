@@ -2,7 +2,7 @@
 <!-- TODO: Figure out how arc_priority fits in, now. -->
 <script lang="ts">
 	import { cn } from '$lib/utils';
-	import { tweened } from 'svelte/motion';
+	import { Tween } from 'svelte/motion';
 
 	type Props = {
 		class?: string | undefined;
@@ -11,7 +11,6 @@
 		size?: 'tiny' | 'sm' | 'md' | 'lg';
 		show_value?: boolean;
 		colors?: Record<number, string> | { primary: string; secondary: string } | undefined;
-		arc_priority?: 'equal' | 'progress';
 	};
 
 	let {
@@ -20,8 +19,7 @@
 		total = 100,
 		size = 'md',
 		show_value = false,
-		colors = undefined,
-		arc_priority = 'progress'
+		colors = undefined
 	}: Props = $props();
 
 	const sizes_map = {
@@ -48,10 +46,10 @@
 	const circumference = 2 * Math.PI * radius;
 	let percent_px = circumference / 100;
 	let circle_size = 100;
-	const progress = tweened(0, { duration: 1000 });
+	const progress = new Tween(0, { duration: 1000 });
 
 	$effect(() => {
-		$progress = (value / total) * 100;
+		progress.target = (value / total) * 100;
 	});
 
 	// Colors
@@ -125,7 +123,7 @@
         			transition: all var(--transition-length) ease var(--delay);
         			transform-origin:calc(var(--circle-size) / 2) calc(var(--circle-size) / 2);
         		"
-			style:--stroke-percent={value === 0 ? 100 - $progress : 90 - $progress}
+			style:--stroke-percent={value === 0 ? 100 - progress.current : 90 - progress.current}
 			style:--offset-factor-secondary="calc(1 - var(--offset-factor))"
 		/>
 		{#if value > 0}
@@ -145,21 +143,21 @@
         				transform:rotate(calc(-90deg + var(--gap-percent) * var(--offset-factor) * var(--percent-to-deg)));
         				transform-origin:calc(var(--circle-size) / 2) calc(var(--circle-size) / 2);
 					"
-				style:--stroke-percent={$progress}
+				style:--stroke-percent={progress.current}
 			/>
 		{/if}
 	</svg>
 
 	{#if show_value && size !== 'tiny'}
 		<p
-			data-current-value={$progress}
+			data-current-value={progress.current}
 			class={cn('absolute tabular-nums ease-linear', {
 				'text-[0.6875rem] font-medium': size === 'sm',
 				'text-lg font-medium leading-6': size === 'md',
 				'text-[2rem] font-semibold leading-10': size === 'lg'
 			})}
 		>
-			{Math.round($progress)}
+			{Math.round(progress.current)}
 		</p>
 	{/if}
 </div>
