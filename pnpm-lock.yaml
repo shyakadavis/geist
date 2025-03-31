@@ -102,8 +102,8 @@ importers:
         specifier: ^5.8.2
         version: 5.8.2
       vaul-svelte:
-        specifier: 1.0.0-next.3
-        version: 1.0.0-next.3(svelte@5.19.9)
+        specifier: 1.0.0-next.7
+        version: 1.0.0-next.7(svelte@5.19.9)
       vite:
         specifier: ^6.2.3
         version: 6.2.3(@types/node@18.19.75)(jiti@1.21.7)(yaml@2.7.0)
@@ -1897,12 +1897,6 @@ packages:
     peerDependencies:
       svelte: ^5.0.0
 
-  svelte-toolbelt@0.4.6:
-    resolution: {integrity: sha512-k8OUvXBUifHZcAlWeY/HLg/4J0v5m2iOfOhn8fDmjt4AP8ZluaDh9eBFus9lFiLX6O5l6vKqI1dKL5wy7090NQ==}
-    engines: {node: '>=18', pnpm: '>=8.7.0'}
-    peerDependencies:
-      svelte: ^5.0.0-next.126
-
   svelte-toolbelt@0.7.1:
     resolution: {integrity: sha512-HcBOcR17Vx9bjaOceUvxkY3nGmbBmCBBbuWLLEWO6jtmWH8f/QoWmbyUfQZrpDINH39en1b8mptfPQT9VKQ1xQ==}
     engines: {node: '>=18', pnpm: '>=8.7.0'}
@@ -2045,8 +2039,8 @@ packages:
     resolution: {integrity: sha512-d7KLgL1LD3U3fgnvWEY1cQXoO/q6EQ1BSz48Sa149V/5zVTAbgmZIpyI8TRi6U9/JNyeYLlTKsEMPtLC27RFUg==}
     engines: {node: ^18.17.0 || >=20.5.0}
 
-  vaul-svelte@1.0.0-next.3:
-    resolution: {integrity: sha512-bqlCc28z1I6f23Sjv5W6UlNJdAPeX8tZbYZ3+ycOn/4hTvv2fo/5Le4bAX26RyFkpT6n5FXXCZN1/uNs8biyrQ==}
+  vaul-svelte@1.0.0-next.7:
+    resolution: {integrity: sha512-7zN7Bi3dFQixvvbUJY9uGDe7Ws/dGZeBQR2pXdXmzQiakjrxBvWo0QrmsX3HK+VH+SZOltz378cmgmCS9f9rSg==}
     engines: {node: '>=18', pnpm: '>=8.7.0'}
     peerDependencies:
       svelte: ^5.0.0
@@ -4102,12 +4096,6 @@ snapshots:
       schema-dts: 1.1.5
       svelte: 5.19.9
 
-  svelte-toolbelt@0.4.6(svelte@5.19.9):
-    dependencies:
-      clsx: 2.1.1
-      style-to-object: 1.0.8
-      svelte: 5.19.9
-
   svelte-toolbelt@0.7.1(svelte@5.19.9):
     dependencies:
       clsx: 2.1.1
@@ -4276,11 +4264,11 @@ snapshots:
 
   validate-npm-package-name@6.0.0: {}
 
-  vaul-svelte@1.0.0-next.3(svelte@5.19.9):
+  vaul-svelte@1.0.0-next.7(svelte@5.19.9):
     dependencies:
-      bits-ui: 1.3.9(svelte@5.19.9)
+      runed: 0.23.4(svelte@5.19.9)
       svelte: 5.19.9
-      svelte-toolbelt: 0.4.6(svelte@5.19.9)
+      svelte-toolbelt: 0.7.1(svelte@5.19.9)
 
   vfile-message@4.0.2:
     dependencies:
