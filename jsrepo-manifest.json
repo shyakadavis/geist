@@ -12,7 +12,7 @@
 			"expectedPath": "./src/app.css",
 			"optional": false,
 			"dependencies": [],
-			"devDependencies": []
+			"devDependencies": ["@fontsource/geist-sans@^5.1.0", "@fontsource/geist-mono@^5.2.5"]
 		},
 		{
 			"name": "Tailwind Config",
