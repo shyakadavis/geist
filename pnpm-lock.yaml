@@ -78,8 +78,8 @@ importers:
         specifier: ^4.1.6
         version: 4.1.6(picomatch@4.0.2)(svelte@5.19.9)(typescript@5.8.2)
       svelte-exmarkdown:
-        specifier: ^5.0.0
-        version: 5.0.0(svelte@5.19.9)
+        specifier: ^5.0.1
+        version: 5.0.1(svelte@5.19.9)
       svelte-meta-tags:
         specifier: ^4.2.0
         version: 4.2.0(svelte@5.19.9)
@@ -2023,8 +2023,8 @@ packages:
       svelte: ^4.0.0 || ^5.0.0-next.0
       typescript: '>=5.0.0'
 
-  svelte-exmarkdown@5.0.0:
-    resolution: {integrity: sha512-ImkQCbSp6fZJsIgwQCLch1WC1CTjEPioYB2GSdvLcwRa3pI45PCrpW0/MSITs4MjuTFKf1W8z4ij1IGv+uWNOg==}
+  svelte-exmarkdown@5.0.1:
+    resolution: {integrity: sha512-LVfk4WxysQ/jHws30QsTEtTv89TkPO1w/zZR8PjNMK69aqAjYk1S5l5inuPX1JoQwWN0cjg9WqLKxXKLWKOddw==}
     peerDependencies:
       svelte: ^5.1.3
 
@@ -4367,7 +4367,7 @@ snapshots:
     transitivePeerDependencies:
       - picomatch
 
-  svelte-exmarkdown@5.0.0(svelte@5.19.9):
+  svelte-exmarkdown@5.0.1(svelte@5.19.9):
     dependencies:
       remark-gfm: 4.0.1
       remark-parse: 11.0.0
