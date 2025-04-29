@@ -367,7 +367,7 @@
 						"lib/utils"
 					],
 					"dependencies": [],
-					"devDependencies": ["svelte-exmarkdown@^5.0.0"],
+					"devDependencies": ["svelte-exmarkdown@^5.0.1"],
 					"_imports_": {
 						"$lib/assets/icons/index.js": "{{icons/index}}.js",
 						"$lib/components/ui/button": "{{ui/button}}",
