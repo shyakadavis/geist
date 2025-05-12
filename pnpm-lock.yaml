@@ -12,8 +12,8 @@ importers:
         specifier: ^5.2.5
         version: 5.2.5
       '@fontsource/geist-sans':
-        specifier: ^5.1.0
-        version: 5.1.0
+        specifier: ^5.2.5
+        version: 5.2.5
       '@internationalized/date':
         specifier: ^3.8.0
         version: 3.8.0
@@ -332,8 +332,8 @@ packages:
   '@fontsource/geist-mono@5.2.5':
     resolution: {integrity: sha512-7/r9opukyQ3jkAqfhIRnhodWlAc8yVkHogDUAFqBeBSYNpvlpouLJysYO5cIpqyB/lHrazxChiC73Oj8K3+sZg==}
 
-  '@fontsource/geist-sans@5.1.0':
-    resolution: {integrity: sha512-4AI/UxIcZiYgK6/cTo4R9oM4VHHLcFdHVv7m2+M42VyY16hhKJADrGe4HPjTxvolmce2IZX/jc6sFJ+GkLB64w==}
+  '@fontsource/geist-sans@5.2.5':
+    resolution: {integrity: sha512-anllOHyJbElRs9fV15TeDRqAeb1IKm4bSknPl6ZMoyPTx1BBy7logudcUwpNjmQLkzn4Q0JGQLRCUKJYoyST6A==}
 
   '@internationalized/date@3.8.0':
     resolution: {integrity: sha512-J51AJ0fEL68hE4CwGPa6E0PO6JDaVLd8aln48xFCSy7CZkZc96dGEGmLs2OEEbBxcsVZtfrqkXJwI2/MSG8yKw==}
@@ -2461,7 +2461,7 @@ snapshots:
 
   '@fontsource/geist-mono@5.2.5': {}
 
-  '@fontsource/geist-sans@5.1.0': {}
+  '@fontsource/geist-sans@5.2.5': {}
 
   '@internationalized/date@3.8.0':
     dependencies:
