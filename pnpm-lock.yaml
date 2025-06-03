@@ -18,8 +18,8 @@ importers:
         specifier: ^3.8.0
         version: 3.8.0
       '@poppanator/sveltekit-svg':
-        specifier: 5.0.0
-        version: 5.0.0(rollup@4.41.1)(svelte@5.33.3)(svgo@3.3.2)(vite@6.3.5(@types/node@18.19.100)(jiti@1.21.7)(yaml@2.7.0))
+        specifier: 5.0.1
+        version: 5.0.1(rollup@4.41.1)(svelte@5.33.3)(vite@6.3.5(@types/node@18.19.100)(jiti@1.21.7)(yaml@2.7.0))
       '@pyncz/tailwind-mask-image':
         specifier: ^2.0.0
         version: 2.0.0
@@ -456,12 +456,11 @@ packages:
   '@polka/url@1.0.0-next.29':
     resolution: {integrity: sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww==}
 
-  '@poppanator/sveltekit-svg@5.0.0':
-    resolution: {integrity: sha512-b7hk55SF0HjTS+xFgMG20hy6W0F/m+yRA/ZWcjnsa391rB3Ys3desCiUyIKQYcfvcyuRiQCPedUJMYgu00VdCA==}
+  '@poppanator/sveltekit-svg@5.0.1':
+    resolution: {integrity: sha512-eCOm9Wb1eO9N5N49JNokxgbUZN79QV/fe02cRrrWbDbcAOvGoIFU0YKDZEluIaFTP2zOtOxMeCSSobM4foMShA==}
     peerDependencies:
       svelte: '>=5.x'
-      svgo: '>=3.x'
-      vite: '>=5.x'
+      vite: '>=5.x || >= 6.x'
 
   '@pyncz/tailwind-mask-image@2.0.0':
     resolution: {integrity: sha512-BN52RPSp56VIA25ZpLD3SEigwADTrQ6a3Kq8x94rbhU6YP1HpvRjSYtnFenEfGw2nzESvFsNdYT6KKP+JuS73w==}
@@ -650,9 +649,6 @@ packages:
 
   '@types/debug@4.1.12':
     resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
-
-  '@types/estree@1.0.6':
-    resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
 
   '@types/estree@1.0.7':
     resolution: {integrity: sha512-w28IoSUCJpidD/TGviZwwMJckNESJZXFu7NBZ5YJ4mEUnNraUn9Pm8HSZm/jDF1pDWYKspWE7oVphigUPRakIQ==}
@@ -2521,7 +2517,7 @@ snapshots:
 
   '@polka/url@1.0.0-next.29': {}
 
-  '@poppanator/sveltekit-svg@5.0.0(rollup@4.41.1)(svelte@5.33.3)(svgo@3.3.2)(vite@6.3.5(@types/node@18.19.100)(jiti@1.21.7)(yaml@2.7.0))':
+  '@poppanator/sveltekit-svg@5.0.1(rollup@4.41.1)(svelte@5.33.3)(vite@6.3.5(@types/node@18.19.100)(jiti@1.21.7)(yaml@2.7.0))':
     dependencies:
       '@rollup/pluginutils': 5.1.4(rollup@4.41.1)
       svelte: 5.33.3
@@ -2534,7 +2530,7 @@ snapshots:
 
   '@rollup/pluginutils@5.1.4(rollup@4.41.1)':
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
       estree-walker: 2.0.2
       picomatch: 4.0.2
     optionalDependencies:
@@ -2705,8 +2701,6 @@ snapshots:
   '@types/debug@4.1.12':
     dependencies:
       '@types/ms': 2.1.0
-
-  '@types/estree@1.0.6': {}
 
   '@types/estree@1.0.7': {}
 
