@@ -37,7 +37,7 @@
 		"runed": "^0.28.0",
 		"shiki": "^3.4.2",
 		"svelte": "5.33.3",
-		"svelte-check": "^4.1.6",
+		"svelte-check": "^4.2.1",
 		"svelte-exmarkdown": "^5.0.1",
 		"svelte-meta-tags": "^4.3.0",
 		"tailwind-merge": "^2.6.0",
