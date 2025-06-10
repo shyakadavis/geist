@@ -137,7 +137,7 @@
 					],
 					"localDependencies": ["lib/utils", "ui/button", "icons/index", "ui/popover"],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.8.0", "@internationalized/date@^3.8.0"],
+					"devDependencies": ["bits-ui@1.8.0", "@internationalized/date@^3.8.2"],
 					"_imports_": {
 						"$lib/utils.js": "{{lib/utils}}.js",
 						"../button": "{{ui/button}}",
@@ -649,7 +649,7 @@
 						"ui/label"
 					],
 					"dependencies": [],
-					"devDependencies": ["bits-ui@1.8.0", "@internationalized/date@^3.8.0"],
+					"devDependencies": ["bits-ui@1.8.0", "@internationalized/date@^3.8.2"],
 					"_imports_": {
 						"$lib/assets/icons": "{{icons/index}}",
 						"$lib/utils": "{{lib/utils}}",
