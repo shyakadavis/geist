@@ -27,7 +27,7 @@
 		"autoprefixer": "^10.4.21",
 		"bits-ui": "1.8.0",
 		"clsx": "^2.1.1",
-		"jsrepo": "^2.0.2",
+		"jsrepo": "^2.4.1",
 		"lucide-svelte": "^0.511.0",
 		"mode-watcher": "^0.5.1",
 		"postcss": "^8.5.3",
