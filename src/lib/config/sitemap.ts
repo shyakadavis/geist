@@ -60,8 +60,7 @@ export const aside_items: Aside = {
 		},
 		{
 			title: 'Book',
-			href: '/book',
-			status: 'new'
+			href: '/book'
 		},
 		{
 			title: 'Button',
@@ -164,8 +163,7 @@ export const aside_items: Aside = {
 		},
 		{
 			title: 'Project Banner',
-			href: '/project-banner',
-			status: 'new'
+			href: '/project-banner'
 		},
 		{
 			title: 'Radio',
