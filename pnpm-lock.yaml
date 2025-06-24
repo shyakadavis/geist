@@ -2067,6 +2067,11 @@ packages:
     peerDependencies:
       svelte: ^5.7.0
 
+  runed@0.28.0:
+    resolution: {integrity: sha512-k2xx7RuO9hWcdd9f+8JoBeqWtYrm5CALfgpkg2YDB80ds/QE4w0qqu34A7fqiAwiBBSBQOid7TLxwxVC27ymWQ==}
+    peerDependencies:
+      svelte: ^5.7.0
+
   runed@0.29.0:
     resolution: {integrity: sha512-8aewcEjcaHk/dDsAWdPHQMUtsB2J9KSeL/c3USD58/3ijhUYEk0D/XT+BQSHt12ikbHNfaEf/ytJ3fmpBcf0YQ==}
     peerDependencies:
@@ -4635,6 +4640,11 @@ snapshots:
       queue-microtask: 1.2.3
 
   runed@0.23.4(svelte@5.34.3):
+    dependencies:
+      esm-env: 1.2.2
+      svelte: 5.34.3
+
+  runed@0.28.0(svelte@5.34.3):
     dependencies:
       esm-env: 1.2.2
       svelte: 5.34.3
